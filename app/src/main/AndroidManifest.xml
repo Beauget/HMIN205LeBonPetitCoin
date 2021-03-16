@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".accountActivity">
+            <intent-filter>
+                <action android:name="android.intent.VIEW"></action>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
