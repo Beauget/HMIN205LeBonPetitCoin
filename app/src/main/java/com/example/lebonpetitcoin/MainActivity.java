@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private MaterialToolbar topAppBar;
-
+    private MaterialToolbar bottomAppBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

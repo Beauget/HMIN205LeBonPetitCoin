@@ -42,4 +42,22 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/round_add_circle_24dp"
+        app:layout_anchor="@id/bottomAppBar"
+        />
+
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

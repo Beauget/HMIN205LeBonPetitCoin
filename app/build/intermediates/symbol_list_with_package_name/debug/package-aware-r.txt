@@ -1143,6 +1143,7 @@ color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color teal_200
+color teal_5OO
 color teal_700
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
@@ -1685,6 +1686,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable round_add_circle_24dp
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1778,6 +1780,7 @@ id beginOnFirstDraw
 id beginning
 id blocking
 id bottom
+id bottomAppBar
 id bounce
 id buttonPanel
 id cache_measures
