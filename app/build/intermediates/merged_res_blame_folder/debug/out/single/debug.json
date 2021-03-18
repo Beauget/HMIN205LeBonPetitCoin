@@ -52,6 +52,10 @@
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
+        "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/drawable_seal.png.flat",
+        "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/seal.png"
+    },
+    {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
