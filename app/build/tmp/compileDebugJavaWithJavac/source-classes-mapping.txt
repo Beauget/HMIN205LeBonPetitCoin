@@ -8,6 +8,8 @@ com/example/lebonpetitcoin/MainActivity.java
 com/example/lebonpetitcoin/accountActivity.java
  com.example.lebonpetitcoin.accountActivity
  com.example.lebonpetitcoin.accountActivity$1
+com/example/lebonpetitcoin/AnnonceRoom.java
+ com.example.lebonpetitcoin.AnnonceRoom
 com/example/lebonpetitcoin/BuildConfig.java
  com.example.lebonpetitcoin.BuildConfig
 com/example/lebonpetitcoin/MonFileProvider.java
