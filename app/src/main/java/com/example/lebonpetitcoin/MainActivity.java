@@ -9,12 +9,13 @@ import android.view.MenuItem;
 import android.widget.Toolbar;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
 
     private MaterialToolbar topAppBar;
-    private MaterialToolbar bottomAppBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

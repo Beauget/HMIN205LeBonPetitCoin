@@ -7,8 +7,8 @@
     tools:context=".MainActivity">
 
 
-
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -18,8 +18,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="512dp"
-            android:paddingTop="512dp"/>
+            android:paddingTop="512dp"
+            android:paddingBottom="512dp" />
 
     </androidx.core.widget.NestedScrollView>
 
@@ -47,17 +47,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        app:menu="@menu/bottom_app_bar"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
 
         />
 
+
+
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/round_add_circle_24dp"
+        app:backgroundTint="@color/teal_200"
+        app:srcCompat="@drawable/add_24dp"
         app:layout_anchor="@id/bottomAppBar"
         />
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

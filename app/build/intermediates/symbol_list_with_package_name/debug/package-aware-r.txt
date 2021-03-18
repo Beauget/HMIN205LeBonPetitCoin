@@ -1626,6 +1626,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add_24dp
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_manage_accounts_black_24dp
@@ -1638,12 +1639,14 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable chat_24dp
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable favorite_white_24dp
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1854,6 +1857,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id fav
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1957,6 +1961,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id navigation_header_container
+id nestedScrollView
 id never
 id noScroll
 id none
@@ -2252,6 +2257,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu bottom_app_bar
 menu top_appbar_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
