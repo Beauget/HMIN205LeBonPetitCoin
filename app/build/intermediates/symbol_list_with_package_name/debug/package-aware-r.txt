@@ -1764,6 +1764,9 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_main_drawer_news
+id activity_main_drawer_profile
+id activity_main_drawer_settings
 id add
 id addAcount
 id alertTitle
@@ -1785,6 +1788,7 @@ id beginning
 id blocking
 id bottom
 id bottomAppBar
+id bottomLayout
 id bounce
 id buttonPanel
 id cache_measures
@@ -1844,6 +1848,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawerLayout
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -1868,11 +1873,18 @@ id fixed
 id flip
 id floating
 id forever
+id fragment_news_rootview
+id fragment_page_news_title
+id fragment_page_param_title
+id fragment_page_profile_title
+id fragment_params_rootview
+id fragment_profile_rootview
 id ghost_view
 id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id group1
 id group_divider
 id grouping
 id groups
@@ -1888,11 +1900,15 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id img1
 id info
 id invisible
 id inward
 id italic
+id item1
+id item2
+id item3
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -1961,6 +1977,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id navigationView
 id navigation_header_container
 id nestedScrollView
 id never
@@ -2176,6 +2193,7 @@ layout abc_tooltip
 layout account_activity
 layout activity_add_annonce
 layout activity_main
+layout activity_main_nav_header
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2192,6 +2210,9 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_news
+layout fragment_params
+layout fragment_profile
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2258,7 +2279,9 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu activity_main_menu_drawer
 menu bottom_app_bar
+menu navigation_drawer
 menu top_appbar_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
@@ -2360,6 +2383,8 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string navigation_drawer_close
+string navigation_drawer_open
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

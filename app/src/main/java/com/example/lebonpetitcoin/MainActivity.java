@@ -1,20 +1,28 @@
 package com.example.lebonpetitcoin;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toolbar;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
     private MaterialToolbar topAppBar;
+    NavigationView navigationView;
+    DrawerLayout drawerLayout;
+
 
 
     @Override
@@ -24,11 +32,30 @@ public class MainActivity extends AppCompatActivity {
 
         //Ajout de l'app bar
         topAppBar = findViewById(R.id.topAppBar);
-        setSupportActionBar(topAppBar);
-
+        drawerLayout = findViewById(R.id.drawerLayout);
+        //setNavigationViewListener();
+        drawerLayout.openDrawer(GravityCompat.START);
 
     }
 
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        switch (item.getItemId()) {
+
+            case R.id.activity_main_drawer_news: {
+                //do somthing
+                break;
+            }
+        }
+        //close navigation drawer
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+    private void setNavigationViewListener() {
+        NavigationView navigationView =findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
 
     //Création du menu (mais il est à droite HIHI)
     @Override
