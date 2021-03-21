@@ -3,9 +3,10 @@ com/example/lebonpetitcoin/AddAnnonceActivity.java
  com.example.lebonpetitcoin.AddAnnonceActivity$1
  com.example.lebonpetitcoin.AddAnnonceActivity$2
  com.example.lebonpetitcoin.AddAnnonceActivity$3
-com/example/lebonpetitcoin/Fragments/AccountFragment.java
- com.example.lebonpetitcoin.Fragments.AccountFragment
- com.example.lebonpetitcoin.Fragments.AccountFragment$1
+com/example/lebonpetitcoin/MainActivity.java
+ com.example.lebonpetitcoin.MainActivity
+ com.example.lebonpetitcoin.MainActivity$1
+ com.example.lebonpetitcoin.MainActivity$2
 com/example/lebonpetitcoin/Fragments/StatsFragment.java
  com.example.lebonpetitcoin.Fragments.StatsFragment
 com/example/lebonpetitcoin/Fragments/FavFragment.java
@@ -20,7 +21,6 @@ com/example/lebonpetitcoin/Fragments/AccueilFragment.java
  com.example.lebonpetitcoin.Fragments.AccueilFragment
 com/example/lebonpetitcoin/Fragments/MessageFragment.java
  com.example.lebonpetitcoin.Fragments.MessageFragment
-com/example/lebonpetitcoin/MainActivity.java
- com.example.lebonpetitcoin.MainActivity
- com.example.lebonpetitcoin.MainActivity$1
- com.example.lebonpetitcoin.MainActivity$2
+com/example/lebonpetitcoin/Fragments/AccountFragment.java
+ com.example.lebonpetitcoin.Fragments.AccountFragment
+ com.example.lebonpetitcoin.Fragments.AccountFragment$1

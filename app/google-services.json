@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "389070309623",
+    "project_id": "lebonpetitcoin-6928c",
+    "storage_bucket": "lebonpetitcoin-6928c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389070309623:android:26c592a0ad1979623cabf2",
+        "android_client_info": {
+          "package_name": "com.example.lebonpetitcoin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389070309623-7absidil5gjk89vj5phiqr6kcnibcnkc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfzqKNxWrBUvwrJqITVdse0hl3ABkODWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389070309623-7absidil5gjk89vj5phiqr6kcnibcnkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

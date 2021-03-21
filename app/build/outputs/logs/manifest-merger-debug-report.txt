@@ -15,45 +15,61 @@ ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-49:12
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-49:12
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-49:12
-MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0b040ae6fd7360855475a012c5af81a6/material-1.3.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/73327337a728e12c5c3cdecdb4b7e327/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/44b21666f861b2b454523071d69d07d7/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/96fe985dc5018183b0dc03fcf5700e76/jetified-volley-1.2.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7bd8aacdbad91eda2ec484981e9a536a/room-rxjava2-2.2.6/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.room:room-guava:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/02bf5ac586c873cdf388a203474a0b96/room-guava-2.2.6/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:17:1-31:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/082141e7a08ecc0568dc277abb6b2eb2/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/3b91b187821fc6e4f6300506297b769e/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.fragment:fragment:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2caca0665cfc150845d481add640d717/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/78be485c09b159ccd6437b5ce26410a0/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/90ad92d9d7e544d3d7a553e07e526cde/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cardview:cardview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/6a8e87f523c55e5b29d9c4a3f69e8c47/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5fcf58f467c61301f7dd22175ddca6ba/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.transition:transition:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b154dbc73687587a7ce14e229cc71d1e/transition-1.2.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9d3d448a3878af78f8d5e2175d6f4332/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5f1739a336003917307af1b7a40c6ec/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fcc32fb6a5b1c720640eae2793bf295e/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b319768499df63b1d0933a3c55ff3e7/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/921fb1c1970f14455564b73ac43ed75b/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/19ba019dbf22e650e8e95d7507462ba8/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1c867de8727b52b88cec2ad3aed090ac/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/76a75c6502d93031e6f1d463ce4e8940/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4d3225ea5d57f620bf5356e2a6f066d6/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dbd859d1cd89239b42e7382b4fc40d7/core-1.3.1/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/46cb1a4d108400fae8aa890994cc503d/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4be9d11bba6a5edbd5817409ba34d404/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5e93b9f41c3983a761aa6e19533f24ec/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1435e0b5216c3fd72a2d6579c29d3ee1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/660b4d74cde65c33eec276f2ecc73906/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b49f6b12087442447a2c9046372b97f/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/07966c8c4706ffeaf638d555f4c86fb0/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41c41c2fbc05e9a19fa443c48f799c3d/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/634f2f03e50a0eb4514a8d791ceb2f13/print-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5508913c832bc0c65ebd72baf7fb6d8/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/384d88a73e203b8300027f46f36e4e61/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/ac846bd1991b3727d0d9b0a2719ca5c8/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/054d779a91766207571d826869795163/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/3fd5b4b866d23b43b0e15439a0ee99e7/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cd6f2caba378d66250797e09d6bb24e0/material-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/79bbbde5c555640d929a37e27f6c1763/jetified-volley-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/65f4e2c0cf3213d7b67e1c35538334ae/room-rxjava2-2.2.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-guava:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/349f6acc5b206951a8640312395efaba/room-guava-2.2.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cf889bd07421a67e1ec8ca30faafd560/jetified-firebase-analytics-18.0.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:15:1-49:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c7f8487a83fb70bc0fe95934361948bc/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fcf5af611bc33846b591cd77e4d0a38c/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b8be53bfb5356d30a68ac6072d317881/jetified-play-services-measurement-sdk-18.0.2/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d86956f76c508d4b2bdd345449b360c9/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9edf8b03b53bbb784310b0d48600e68/jetified-play-services-measurement-base-18.0.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c23353cbb2c333625d6e3c760fff55f0/jetified-play-services-stats-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a6a6dfc5ddb64f34421d83f6f14bd416/jetified-firebase-installations-interop-16.0.1/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7928ebec4ec285586ace04711a60335/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0d3de3f65111c0a6235469f394c971ec/jetified-firebase-measurement-connector-18.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5d90597b18bcdcedcc1e0f509d077a2f/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7b34cee353deadfb156adcfd673b719/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b5b347edaaec9d51dce7fb65634d8751/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e15d67cf88966cd070b49db599666628/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dcd5551e8c8c2631db5646cd07087de/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/69a36d9bffe1ead383bcaebc78127d3d/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e4f7094beb6f5370b9fdcf59c66c5fd3/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e9ce49bbb246328ed9fbef97d6aa62b4/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5aad1647ae4e889abdeaab4ab07a3603/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/db889ea64d16a07318448041b39e1285/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/860a7cb661f0f6b1bb67f57d27715b94/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2437bf31fd4f83ffb43a1b8c57cc8058/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0c6a2007230dc3432bb5277430ffa586/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/06bdd8e905652ff2ad1e1ea1ee0aa01a/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/024d0659a3246560f1b743f7b8f5313c/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/14367cd2239a2094f32512ae0b5a843c/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/31ad2b91b47a4613df6657dc739f2397/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7b00001b5c0b4edc93270106914d3cc5/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/835595d31abc731d4b50392792845800/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/301e9963fb9b73eff7ba687490009aa7/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0cd7e7a97bc09653a5836529c4f1e6db/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2c57ca5c5cb33722ba8060cd1e094990/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c19316ee24d18218817a41ce7b88a2ac/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9547dd9b77552af1c40af7607ce7366/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e95dc16298086479223b63f14b2fbb17/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5ff18c5cc9b30774e8a197dc12d7cbf/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/bd68bb064f2db47327311ef87fd77014/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1f6b045666a31134b82a56c243bf4255/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-49:12
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-49:12
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-49:12
@@ -73,18 +89,44 @@ INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/m
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:11-69
 application
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:5:5-38:19
-MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0b040ae6fd7360855475a012c5af81a6/material-1.3.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0b040ae6fd7360855475a012c5af81a6/material-1.3.0/AndroidManifest.xml:22:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/73327337a728e12c5c3cdecdb4b7e327/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/73327337a728e12c5c3cdecdb4b7e327/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
-MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:24:5-29:19
-MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:24:5-29:19
-MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dbd859d1cd89239b42e7382b4fc40d7/core-1.3.1/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dbd859d1cd89239b42e7382b4fc40d7/core-1.3.1/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b49f6b12087442447a2c9046372b97f/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b49f6b12087442447a2c9046372b97f/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cd6f2caba378d66250797e09d6bb24e0/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cd6f2caba378d66250797e09d6bb24e0/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:24:5-29:19
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cf889bd07421a67e1ec8ca30faafd560/jetified-firebase-analytics-18.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cf889bd07421a67e1ec8ca30faafd560/jetified-firebase-analytics-18.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:25:5-47:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:25:5-47:19
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b8be53bfb5356d30a68ac6072d317881/jetified-play-services-measurement-sdk-18.0.2/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b8be53bfb5356d30a68ac6072d317881/jetified-play-services-measurement-sdk-18.0.2/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:28:5-29:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d86956f76c508d4b2bdd345449b360c9/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d86956f76c508d4b2bdd345449b360c9/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9edf8b03b53bbb784310b0d48600e68/jetified-play-services-measurement-base-18.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9edf8b03b53bbb784310b0d48600e68/jetified-play-services-measurement-base-18.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c23353cbb2c333625d6e3c760fff55f0/jetified-play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c23353cbb2c333625d6e3c760fff55f0/jetified-play-services-stats-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7928ebec4ec285586ace04711a60335/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7928ebec4ec285586ace04711a60335/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0d3de3f65111c0a6235469f394c971ec/jetified-firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0d3de3f65111c0a6235469f394c971ec/jetified-firebase-measurement-connector-18.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dbd859d1cd89239b42e7382b4fc40d7/core-1.3.1/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:24:18-86
 	android:supportsRtl
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:10:9-35
 	android:label
@@ -133,10 +175,30 @@ ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:25-66
 uses-permission#android.permission.INTERNET
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:40:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:40:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:41:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:24:5-79
 	android:name
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:41:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
@@ -161,84 +223,116 @@ uses-sdk
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
-MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0b040ae6fd7360855475a012c5af81a6/material-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0b040ae6fd7360855475a012c5af81a6/material-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/73327337a728e12c5c3cdecdb4b7e327/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/73327337a728e12c5c3cdecdb4b7e327/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/44b21666f861b2b454523071d69d07d7/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/44b21666f861b2b454523071d69d07d7/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/96fe985dc5018183b0dc03fcf5700e76/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
-MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/96fe985dc5018183b0dc03fcf5700e76/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
-MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7bd8aacdbad91eda2ec484981e9a536a/room-rxjava2-2.2.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7bd8aacdbad91eda2ec484981e9a536a/room-rxjava2-2.2.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-guava:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/02bf5ac586c873cdf388a203474a0b96/room-guava-2.2.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-guava:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/02bf5ac586c873cdf388a203474a0b96/room-guava-2.2.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/082141e7a08ecc0568dc277abb6b2eb2/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/082141e7a08ecc0568dc277abb6b2eb2/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/3b91b187821fc6e4f6300506297b769e/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/3b91b187821fc6e4f6300506297b769e/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2caca0665cfc150845d481add640d717/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2caca0665cfc150845d481add640d717/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/78be485c09b159ccd6437b5ce26410a0/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/78be485c09b159ccd6437b5ce26410a0/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/90ad92d9d7e544d3d7a553e07e526cde/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/90ad92d9d7e544d3d7a553e07e526cde/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/6a8e87f523c55e5b29d9c4a3f69e8c47/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/6a8e87f523c55e5b29d9c4a3f69e8c47/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5fcf58f467c61301f7dd22175ddca6ba/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5fcf58f467c61301f7dd22175ddca6ba/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b154dbc73687587a7ce14e229cc71d1e/transition-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.transition:transition:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b154dbc73687587a7ce14e229cc71d1e/transition-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9d3d448a3878af78f8d5e2175d6f4332/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9d3d448a3878af78f8d5e2175d6f4332/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5f1739a336003917307af1b7a40c6ec/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5f1739a336003917307af1b7a40c6ec/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fcc32fb6a5b1c720640eae2793bf295e/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fcc32fb6a5b1c720640eae2793bf295e/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b319768499df63b1d0933a3c55ff3e7/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b319768499df63b1d0933a3c55ff3e7/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/921fb1c1970f14455564b73ac43ed75b/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/921fb1c1970f14455564b73ac43ed75b/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/19ba019dbf22e650e8e95d7507462ba8/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/19ba019dbf22e650e8e95d7507462ba8/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1c867de8727b52b88cec2ad3aed090ac/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1c867de8727b52b88cec2ad3aed090ac/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/76a75c6502d93031e6f1d463ce4e8940/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/76a75c6502d93031e6f1d463ce4e8940/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4d3225ea5d57f620bf5356e2a6f066d6/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4d3225ea5d57f620bf5356e2a6f066d6/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dbd859d1cd89239b42e7382b4fc40d7/core-1.3.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dbd859d1cd89239b42e7382b4fc40d7/core-1.3.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/46cb1a4d108400fae8aa890994cc503d/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/46cb1a4d108400fae8aa890994cc503d/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4be9d11bba6a5edbd5817409ba34d404/sqlite-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4be9d11bba6a5edbd5817409ba34d404/sqlite-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5e93b9f41c3983a761aa6e19533f24ec/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5e93b9f41c3983a761aa6e19533f24ec/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1435e0b5216c3fd72a2d6579c29d3ee1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1435e0b5216c3fd72a2d6579c29d3ee1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/660b4d74cde65c33eec276f2ecc73906/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/660b4d74cde65c33eec276f2ecc73906/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b49f6b12087442447a2c9046372b97f/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b49f6b12087442447a2c9046372b97f/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/07966c8c4706ffeaf638d555f4c86fb0/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/07966c8c4706ffeaf638d555f4c86fb0/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41c41c2fbc05e9a19fa443c48f799c3d/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41c41c2fbc05e9a19fa443c48f799c3d/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/634f2f03e50a0eb4514a8d791ceb2f13/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/634f2f03e50a0eb4514a8d791ceb2f13/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5508913c832bc0c65ebd72baf7fb6d8/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5508913c832bc0c65ebd72baf7fb6d8/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/384d88a73e203b8300027f46f36e4e61/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/384d88a73e203b8300027f46f36e4e61/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/ac846bd1991b3727d0d9b0a2719ca5c8/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/ac846bd1991b3727d0d9b0a2719ca5c8/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/054d779a91766207571d826869795163/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/054d779a91766207571d826869795163/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/3fd5b4b866d23b43b0e15439a0ee99e7/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/3fd5b4b866d23b43b0e15439a0ee99e7/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cd6f2caba378d66250797e09d6bb24e0/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cd6f2caba378d66250797e09d6bb24e0/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/79bbbde5c555640d929a37e27f6c1763/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/79bbbde5c555640d929a37e27f6c1763/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
+MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/65f4e2c0cf3213d7b67e1c35538334ae/room-rxjava2-2.2.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/65f4e2c0cf3213d7b67e1c35538334ae/room-rxjava2-2.2.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-guava:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/349f6acc5b206951a8640312395efaba/room-guava-2.2.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-guava:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/349f6acc5b206951a8640312395efaba/room-guava-2.2.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cf889bd07421a67e1ec8ca30faafd560/jetified-firebase-analytics-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cf889bd07421a67e1ec8ca30faafd560/jetified-firebase-analytics-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c7f8487a83fb70bc0fe95934361948bc/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c7f8487a83fb70bc0fe95934361948bc/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fcf5af611bc33846b591cd77e4d0a38c/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fcf5af611bc33846b591cd77e4d0a38c/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b8be53bfb5356d30a68ac6072d317881/jetified-play-services-measurement-sdk-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b8be53bfb5356d30a68ac6072d317881/jetified-play-services-measurement-sdk-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d86956f76c508d4b2bdd345449b360c9/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d86956f76c508d4b2bdd345449b360c9/jetified-play-services-ads-identifier-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9edf8b03b53bbb784310b0d48600e68/jetified-play-services-measurement-base-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9edf8b03b53bbb784310b0d48600e68/jetified-play-services-measurement-base-18.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c23353cbb2c333625d6e3c760fff55f0/jetified-play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c23353cbb2c333625d6e3c760fff55f0/jetified-play-services-stats-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a6a6dfc5ddb64f34421d83f6f14bd416/jetified-firebase-installations-interop-16.0.1/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:16.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a6a6dfc5ddb64f34421d83f6f14bd416/jetified-firebase-installations-interop-16.0.1/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7928ebec4ec285586ace04711a60335/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7928ebec4ec285586ace04711a60335/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0d3de3f65111c0a6235469f394c971ec/jetified-firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0d3de3f65111c0a6235469f394c971ec/jetified-firebase-measurement-connector-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5d90597b18bcdcedcc1e0f509d077a2f/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5d90597b18bcdcedcc1e0f509d077a2f/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7b34cee353deadfb156adcfd673b719/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d7b34cee353deadfb156adcfd673b719/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b5b347edaaec9d51dce7fb65634d8751/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b5b347edaaec9d51dce7fb65634d8751/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e15d67cf88966cd070b49db599666628/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e15d67cf88966cd070b49db599666628/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dcd5551e8c8c2631db5646cd07087de/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dcd5551e8c8c2631db5646cd07087de/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/69a36d9bffe1ead383bcaebc78127d3d/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/69a36d9bffe1ead383bcaebc78127d3d/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e4f7094beb6f5370b9fdcf59c66c5fd3/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e4f7094beb6f5370b9fdcf59c66c5fd3/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e9ce49bbb246328ed9fbef97d6aa62b4/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e9ce49bbb246328ed9fbef97d6aa62b4/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5aad1647ae4e889abdeaab4ab07a3603/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/5aad1647ae4e889abdeaab4ab07a3603/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/db889ea64d16a07318448041b39e1285/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/db889ea64d16a07318448041b39e1285/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/860a7cb661f0f6b1bb67f57d27715b94/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/860a7cb661f0f6b1bb67f57d27715b94/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2437bf31fd4f83ffb43a1b8c57cc8058/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2437bf31fd4f83ffb43a1b8c57cc8058/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0c6a2007230dc3432bb5277430ffa586/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0c6a2007230dc3432bb5277430ffa586/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/06bdd8e905652ff2ad1e1ea1ee0aa01a/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/06bdd8e905652ff2ad1e1ea1ee0aa01a/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/024d0659a3246560f1b743f7b8f5313c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/024d0659a3246560f1b743f7b8f5313c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/14367cd2239a2094f32512ae0b5a843c/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/14367cd2239a2094f32512ae0b5a843c/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/31ad2b91b47a4613df6657dc739f2397/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/31ad2b91b47a4613df6657dc739f2397/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7b00001b5c0b4edc93270106914d3cc5/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7b00001b5c0b4edc93270106914d3cc5/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/835595d31abc731d4b50392792845800/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/835595d31abc731d4b50392792845800/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/301e9963fb9b73eff7ba687490009aa7/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/301e9963fb9b73eff7ba687490009aa7/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0cd7e7a97bc09653a5836529c4f1e6db/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0cd7e7a97bc09653a5836529c4f1e6db/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2c57ca5c5cb33722ba8060cd1e094990/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2c57ca5c5cb33722ba8060cd1e094990/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c19316ee24d18218817a41ce7b88a2ac/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c19316ee24d18218817a41ce7b88a2ac/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9547dd9b77552af1c40af7607ce7366/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/d9547dd9b77552af1c40af7607ce7366/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e95dc16298086479223b63f14b2fbb17/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e95dc16298086479223b63f14b2fbb17/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5ff18c5cc9b30774e8a197dc12d7cbf/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a5ff18c5cc9b30774e8a197dc12d7cbf/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/bd68bb064f2db47327311ef87fd77014/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/bd68bb064f2db47327311ef87fd77014/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1f6b045666a31134b82a56c243bf4255/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1f6b045666a31134b82a56c243bf4255/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -256,10 +350,102 @@ ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main
 	android:name
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:35:17-67
 service#androidx.room.MultiInstanceInvalidationService
-ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
+ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
 	android:exported
-		ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:28:13-37
+		ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:28:13-37
 	android:directBootAware
-		ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:27:13-43
+		ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:27:13-43
 	android:name
-		ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:26:13-74
+		ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:26:13-74
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a9fe74ae9672b0421c50b173386824e1/jetified-play-services-measurement-sdk-api-18.0.2/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:24:22-65
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:33:9-46:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:33:9-46:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:29:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:28:13-84
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:31:17-139
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
+meta-data#com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar
+ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c789196c5b5c24687dc9b8901001fd8d/jetified-play-services-measurement-impl-18.0.2/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:40:13-87
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58

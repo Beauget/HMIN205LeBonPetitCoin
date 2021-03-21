@@ -33,85 +33,172 @@
 19        android:required="true" />
 19-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:46:58-81
 20
-21    <application
-21-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:5:5-38:19
-22        android:allowBackup="true"
-22-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:6:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8dbd859d1cd89239b42e7382b4fc40d7/core-1.3.1/AndroidManifest.xml:24:18-86
-24        android:debuggable="true"
-25        android:extractNativeLibs="false"
-26        android:icon="@mipmap/ic_launcher"
-26-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:7:9-43
-27        android:label="@string/app_name"
-27-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:8:9-41
-28        android:roundIcon="@mipmap/ic_launcher_round"
-28-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:9:9-54
-29        android:supportsRtl="true"
-29-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:10:9-35
-30        android:testOnly="true"
-31        android:theme="@style/Theme.LeBonPetitCoin" >
-31-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:11:9-52
-32        <activity android:name="com.example.lebonpetitcoin.MainActivity" >
-32-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:12:9-18:20
-32-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:12:19-47
-33            <intent-filter>
-33-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:13:13-17:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:14:17-69
-34-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:14:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:17-77
-36-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:27-74
-37            </intent-filter>
-38        </activity>
-39        <activity android:name="com.example.lebonpetitcoin.AnnonceRoom$accountActivity" >
-39-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:9-23:20
-39-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:19-62
-40            <intent-filter>
-40-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:20:13-22:29
-41                <action android:name="android.intent.VIEW" />
-41-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:21:17-69
-41-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:21:25-59
-42            </intent-filter>
-43        </activity>
-44        <activity android:name="com.example.lebonpetitcoin.AddAnnonceActivity" >
-44-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:24:9-28:20
-44-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:24:19-53
-45            <intent-filter>
-45-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:25:13-27:29
-46                <action android:name="android.intent.action.VIEW" />
-46-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:17-69
-46-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:25-66
-47            </intent-filter>
-48        </activity>
-49
-50        <provider
-51            android:name="com.example.lebonpetitcoin.MonFileProvider"
-51-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:30:13-44
-52            android:authorities="com.example.lebonpetitcoin.nom.de.mon.package.provider"
-52-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:31:13-79
-53            android:exported="false"
-53-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:32:13-37
-54            android:grantUriPermissions="true" >
-54-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:33:13-47
-55            <meta-data
-55-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:34:13-36:57
-56                android:name="android.support.FILE_PROVIDER_PATHS"
-56-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:35:17-67
-57                android:resource="@xml/provider_paths" />
-57-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:36:17-55
-58        </provider>
-59
-60        <service
-60-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
-61            android:name="androidx.room.MultiInstanceInvalidationService"
-61-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:26:13-74
-62            android:directBootAware="true"
-62-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:27:13-43
-63            android:exported="false" />
-63-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/41d0ef89919f6cf380370bafbc1a6aea/room-runtime-2.2.6/AndroidManifest.xml:28:13-37
-64    </application>
-65
-66</manifest>
+21    <uses-permission android:name="android.permission.WAKE_LOCK" />
+21-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:24:5-68
+21-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:24:22-65
+22    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+22-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:26:5-110
+22-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:26:22-107
+23
+24    <application
+24-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:5:5-38:19
+25        android:allowBackup="true"
+25-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:6:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:24:18-86
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:icon="@mipmap/ic_launcher"
+29-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:7:9-43
+30        android:label="@string/app_name"
+30-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:8:9-41
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:9:9-54
+32        android:supportsRtl="true"
+32-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:10:9-35
+33        android:testOnly="true"
+34        android:theme="@style/Theme.LeBonPetitCoin" >
+34-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:11:9-52
+35        <activity android:name="com.example.lebonpetitcoin.MainActivity" >
+35-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:12:9-18:20
+35-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:12:19-47
+36            <intent-filter>
+36-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:13:13-17:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:14:17-69
+37-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:14:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:17-77
+39-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:27-74
+40            </intent-filter>
+41        </activity>
+42        <activity android:name="com.example.lebonpetitcoin.AnnonceRoom$accountActivity" >
+42-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:9-23:20
+42-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:19-62
+43            <intent-filter>
+43-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:20:13-22:29
+44                <action android:name="android.intent.VIEW" />
+44-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:21:17-69
+44-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:21:25-59
+45            </intent-filter>
+46        </activity>
+47        <activity android:name="com.example.lebonpetitcoin.AddAnnonceActivity" >
+47-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:24:9-28:20
+47-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:24:19-53
+48            <intent-filter>
+48-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:25:13-27:29
+49                <action android:name="android.intent.action.VIEW" />
+49-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:17-69
+49-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:25-66
+50            </intent-filter>
+51        </activity>
+52
+53        <provider
+54            android:name="com.example.lebonpetitcoin.MonFileProvider"
+54-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:30:13-44
+55            android:authorities="com.example.lebonpetitcoin.nom.de.mon.package.provider"
+55-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:31:13-79
+56            android:exported="false"
+56-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:32:13-37
+57            android:grantUriPermissions="true" >
+57-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:33:13-47
+58            <meta-data
+58-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:34:13-36:57
+59                android:name="android.support.FILE_PROVIDER_PATHS"
+59-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:35:17-67
+60                android:resource="@xml/provider_paths" />
+60-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:36:17-55
+61        </provider>
+62
+63        <service
+63-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
+64            android:name="androidx.room.MultiInstanceInvalidationService"
+64-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:26:13-74
+65            android:directBootAware="true"
+65-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:27:13-43
+66            android:exported="false" />
+66-->[androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:28:13-37
+67        <service
+67-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:27:9-33:19
+68            android:name="com.google.firebase.components.ComponentDiscoveryService"
+68-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:28:13-84
+69            android:directBootAware="true"
+69-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
+70            android:exported="false" >
+70-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:29:13-37
+71            <meta-data
+71-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:30:13-32:85
+72                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+72-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:31:17-139
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:32:17-82
+74            <meta-data
+74-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
+75                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+75-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
+77            <!--
+78                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+79                clients to use it as well, by defining this registrar in their own core/common library.
+80            -->
+81            <meta-data
+81-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
+82                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+82-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
+84        </service>
+85
+86        <provider
+86-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
+87            android:name="com.google.firebase.provider.FirebaseInitProvider"
+87-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
+88            android:authorities="com.example.lebonpetitcoin.firebaseinitprovider"
+88-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
+89            android:directBootAware="true"
+89-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
+90            android:exported="false"
+90-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
+91            android:initOrder="100" />
+91-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
+92
+93        <receiver
+93-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:29:9-33:20
+94            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+94-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:30:13-85
+95            android:enabled="true"
+95-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:31:13-35
+96            android:exported="false" >
+96-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:32:13-37
+97        </receiver>
+98
+99        <service
+99-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:35:9-38:40
+100            android:name="com.google.android.gms.measurement.AppMeasurementService"
+100-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:36:13-84
+101            android:enabled="true"
+101-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:37:13-35
+102            android:exported="false" />
+102-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:38:13-37
+103        <service
+103-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:39:9-43:72
+104            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+104-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:40:13-87
+105            android:enabled="true"
+105-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:41:13-35
+106            android:exported="false"
+106-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:42:13-37
+107            android:permission="android.permission.BIND_JOB_SERVICE" />
+107-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:43:13-69
+108
+109        <meta-data
+109-->[com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+110            android:name="com.google.android.gms.version"
+110-->[com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+111            android:value="@integer/google_play_services_version" />
+111-->[com.google.android.gms:play-services-basement:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/830f40744a6b50d3acce285cce8599db/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+112    </application>
+113
+114</manifest>
