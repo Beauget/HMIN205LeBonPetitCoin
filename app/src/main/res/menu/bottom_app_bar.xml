@@ -2,16 +2,10 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/fav"
+        android:id="@+id/bottomAppBar_home"
         android:enabled="true"
-        android:icon="@drawable/favorite_white_24dp"
+        android:icon="@drawable/baseline_home_white_24dp"
         app:showAsAction="ifRoom"
-        android:title="Favorit" />
-    <item
-        android:id="@+id/message"
-        android:enabled="true"
-        android:icon="@drawable/chat_24dp"
-        app:showAsAction="ifRoom"
-        android:title="Message" />
+        android:title="Home" />
 
 </menu>

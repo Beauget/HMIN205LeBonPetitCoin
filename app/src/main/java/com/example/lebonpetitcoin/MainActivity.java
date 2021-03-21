@@ -2,28 +2,36 @@ package com.example.lebonpetitcoin;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.lebonpetitcoin.Fragments.AccountFragment;
+import com.example.lebonpetitcoin.Fragments.AccueilFragment;
+import com.example.lebonpetitcoin.Fragments.FavFragment;
+import com.example.lebonpetitcoin.Fragments.MessageFragment;
+import com.example.lebonpetitcoin.Fragments.StatsFragment;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
     MaterialToolbar topAppBar;
-    MaterialToolbar bottomAppBar;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    FloatingActionButton add;
+    ActionMenuItemView home;
 
     //FRAGMENTS/activité selon ce qui est cliqué
+    private Fragment fragmentAccueil;
     private Fragment fragmentAccount;
     private Fragment fragmentMessage;
     private Fragment fragmentFav;
@@ -46,7 +54,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.configureTopAppBar();
         this.configureDrawerLayout();
         this.configureNavigationView();
+        this.configureBottomAppBar();
 
+        this.showAccueilFragment();
     }
 
 
@@ -65,6 +75,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void configureNavigationView(){
         this.navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+
+    private void configureBottomAppBar(){
+
+        this.add= (FloatingActionButton) findViewById(R.id.activity_main_button_add);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, AddAnnonceActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+        this.home = findViewById(R.id.bottomAppBar_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.this.showAccueilFragment();
+            }
+        });
     }
 
     @Override
@@ -101,23 +132,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showAccountFragment();
                 break;
             case FRAGMENT_MESSAGE:
-                this.showAccountFragment();
+                this.showMessageFragment();
                 break;
             case FRAGMENT_FAV:
-                this.showAccountFragment();
+                this.showFavFragment();
                 break;
             case FRAGMENT_STATS:
-                this.showAccountFragment();
+                this.showStatsFragment();
                 break;
             default:
                 break;
         }
     }
 
-    // Create each fragment page and show it
+    // Création de chaque fragment
+    private void showAccueilFragment(){
+        if (this.fragmentAccount == null) this.fragmentAccueil = AccueilFragment.newInstance();
+        this.startTransactionFragment(this.fragmentAccueil);
+    }
+
     private void showAccountFragment(){
         if (this.fragmentAccount == null) this.fragmentAccount = AccountFragment.newInstance();
         this.startTransactionFragment(this.fragmentAccount);
+    }
+
+    private void showMessageFragment(){
+        if (this.fragmentMessage == null) this.fragmentMessage = MessageFragment.newInstance();
+        this.startTransactionFragment(this.fragmentMessage);
+    }
+
+    private void showFavFragment(){
+        if (this.fragmentFav == null) this.fragmentFav = FavFragment.newInstance();
+        this.startTransactionFragment(this.fragmentFav);
+    }
+
+    private void showStatsFragment(){
+        if (this.fragmentStats == null) this.fragmentStats = StatsFragment.newInstance();
+        this.startTransactionFragment(this.fragmentStats);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout
@@ -127,5 +178,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .replace(R.id.activity_main_frame_layout, fragment).commit();
         }
     }
+
 
 }

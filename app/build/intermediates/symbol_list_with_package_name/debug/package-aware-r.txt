@@ -1629,6 +1629,7 @@ drawable abc_vector_test
 drawable add_24dp
 drawable avd_hide_password
 drawable avd_show_password
+drawable baseline_home_white_24dp
 drawable baseline_manage_accounts_black_24dp
 drawable baseline_menu_black_24dp
 drawable btn_checkbox_checked_mtrl
@@ -1762,6 +1763,7 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_main_button_add
 id activity_main_drawer_account
 id activity_main_drawer_fav
 id activity_main_drawer_layout
@@ -1770,7 +1772,6 @@ id activity_main_drawer_stats
 id activity_main_frame_layout
 id activity_main_nav_view
 id add
-id addAcount
 id alertTitle
 id aligned
 id all
@@ -1790,6 +1791,7 @@ id beginning
 id blocking
 id bottom
 id bottomAppBar
+id bottomAppBar_home
 id bottomLayout
 id bounce
 id buttonPanel
@@ -1864,7 +1866,6 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
-id fav
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1890,6 +1891,7 @@ id homeAsUp
 id honorRequest
 id icon
 id icon_group
+id idAddAcount
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2199,6 +2201,10 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_account
+layout fragment_accueil
+layout fragment_fav
+layout fragment_message
+layout fragment_stats
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
