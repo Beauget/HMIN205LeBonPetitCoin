@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_width="match_parent"
-    android:gravity="center"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    android:padding="20dp" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TEST ZONE UTILISATEUR" />
 
     <Button
-        android:id="@+id/idAddAcount"
-        android:layout_width="wrap_content"
+        android:id="@+id/idAddProduct"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Ajouter une annonce" />
+        android:layout_marginTop="15dp"
+        android:padding="3dp"
+        android:text="Add Account"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

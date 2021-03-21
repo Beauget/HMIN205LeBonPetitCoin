@@ -29,4 +29,20 @@
         </menu>
     </item>
 
+    <item android:title="Connexion">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_signIn"
+                    android:icon="@drawable/chat_24dp"
+                    android:title="Sign in" />
+                <item
+                    android:id="@+id/activity_main_drawer_signUp"
+                    android:icon="@drawable/favorite_white_24dp"
+                    android:title="Sign up" />
+
+            </group>
+        </menu>
+    </item>
+
 </menu>

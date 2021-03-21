@@ -16,7 +16,10 @@ import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 import com.example.lebonpetitcoin.Fragments.FavFragment;
 import com.example.lebonpetitcoin.Fragments.MessageFragment;
+import com.example.lebonpetitcoin.Fragments.SignInFragment;
+import com.example.lebonpetitcoin.Fragments.SignUpFragment;
 import com.example.lebonpetitcoin.Fragments.StatsFragment;
+import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -36,12 +39,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Fragment fragmentMessage;
     private Fragment fragmentFav;
     private Fragment fragmentStats;
+    private Fragment fragmentSignIn;
+    private Fragment fragmentSignUp;
 
     //VALEUR RETOURNE SELON LE CLIQUE
     private static final int FRAGMENT_ACCOUNT = 0;
     private static final int FRAGMENT_MESSAGE = 1;
     private static final int FRAGMENT_FAV = 2;
     private static final int FRAGMENT_STATS = 3;
+    private static final int FRAGMENT_SIGNIN = 4;
+    private static final int FRAGMENT_SIGNUP = 5;
 
 
 
@@ -117,6 +124,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.activity_main_drawer_stats:
                 this.showFragment(FRAGMENT_STATS);
                 break;
+            case R.id.activity_main_drawer_signIn:
+                this.showFragment(FRAGMENT_SIGNIN);
+                break;
+            case R.id.activity_main_drawer_signUp:
+                this.showFragment(FRAGMENT_SIGNUP);
+                break;
             default:
                 break;
         }
@@ -139,6 +152,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case FRAGMENT_STATS:
                 this.showStatsFragment();
+                break;
+            case FRAGMENT_SIGNIN:
+                this.showSignInFragment();
+                break;
+            case FRAGMENT_SIGNUP:
+                this.showSignUpFragment();
                 break;
             default:
                 break;
@@ -169,6 +188,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showStatsFragment(){
         if (this.fragmentStats == null) this.fragmentStats = StatsFragment.newInstance();
         this.startTransactionFragment(this.fragmentStats);
+    }
+
+    private void showSignInFragment(){
+        if (this.fragmentSignIn == null) this.fragmentSignIn= SignInFragment.newInstance();
+        this.startTransactionFragment(this.fragmentSignIn);
+    }
+
+    private void showSignUpFragment(){
+        if (this.fragmentSignUp == null) this.fragmentSignUp = SignUpFragment.newInstance();
+        this.startTransactionFragment(this.fragmentSignUp);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout

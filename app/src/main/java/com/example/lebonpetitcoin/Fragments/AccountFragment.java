@@ -17,17 +17,17 @@ public class AccountFragment extends Fragment {
     public static AccountFragment newInstance() {
         return (new AccountFragment());
     }
-    Button addAccount;
+    Button addProduct;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
-        addAccount =view.findViewById(R.id.idAddAcount);
+        addProduct =view.findViewById(R.id.idAddProduct);
 
         return view;
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
-        addAccount.setOnClickListener(new View.OnClickListener() {
+        addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(getActivity(), AddAnnonceActivity.class);
