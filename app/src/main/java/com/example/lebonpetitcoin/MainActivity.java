@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.startTransactionFragment(this.fragmentStats);
     }
 
-    private void showSignInFragment(){
+    public void showSignInFragment(){
         if (this.fragmentSignIn == null) this.fragmentSignIn= SignInFragment.newInstance();
         this.startTransactionFragment(this.fragmentSignIn);
     }

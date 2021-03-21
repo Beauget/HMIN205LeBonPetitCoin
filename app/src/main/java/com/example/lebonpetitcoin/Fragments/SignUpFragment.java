@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.example.lebonpetitcoin.CustomToast;
+import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
 import com.google.firebase.installations.Utils;
 
@@ -90,7 +91,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
             case R.id.already_user:
 
                 // Replace login fragment
-                //new MainActivity().replaceLoginFragment();
+                //new MainActivity().showSignInFragment();
                 break;
         }
 
