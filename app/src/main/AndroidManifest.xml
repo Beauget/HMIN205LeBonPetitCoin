@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".accountActivity">
+        <activity android:name=".AnnonceRoom$accountActivity">
             <intent-filter>
                 <action android:name="android.intent.VIEW"></action>
             </intent-filter>

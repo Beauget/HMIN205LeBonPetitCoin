@@ -1698,7 +1698,6 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
-id Disconnect
 id FUNCTION
 id META
 id NO_DEBUG
@@ -1744,7 +1743,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id account
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1764,9 +1762,13 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
-id activity_main_drawer_news
-id activity_main_drawer_profile
-id activity_main_drawer_settings
+id activity_main_drawer_account
+id activity_main_drawer_fav
+id activity_main_drawer_layout
+id activity_main_drawer_message
+id activity_main_drawer_stats
+id activity_main_frame_layout
+id activity_main_nav_view
 id add
 id addAcount
 id alertTitle
@@ -1848,7 +1850,6 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
-id drawerLayout
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -1873,18 +1874,11 @@ id fixed
 id flip
 id floating
 id forever
-id fragment_news_rootview
-id fragment_page_news_title
-id fragment_page_param_title
-id fragment_page_profile_title
-id fragment_params_rootview
-id fragment_profile_rootview
 id ghost_view
 id ghost_view_holder
 id gone
 id graph
 id graph_wrap
-id group1
 id group_divider
 id grouping
 id groups
@@ -1906,9 +1900,6 @@ id info
 id invisible
 id inward
 id italic
-id item1
-id item2
-id item3
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -1977,9 +1968,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id navigationView
 id navigation_header_container
-id nestedScrollView
 id never
 id noScroll
 id none
@@ -2190,7 +2179,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout account_activity
 layout activity_add_annonce
 layout activity_main
 layout activity_main_nav_header
@@ -2210,9 +2198,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_news
-layout fragment_params
-layout fragment_profile
+layout fragment_account
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2281,8 +2267,6 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu activity_main_menu_drawer
 menu bottom_app_bar
-menu navigation_drawer
-menu top_appbar_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

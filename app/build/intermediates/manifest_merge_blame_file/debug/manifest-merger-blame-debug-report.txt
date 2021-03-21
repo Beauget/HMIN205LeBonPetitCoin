@@ -66,9 +66,9 @@
 36-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:27-74
 37            </intent-filter>
 38        </activity>
-39        <activity android:name="com.example.lebonpetitcoin.accountActivity" >
+39        <activity android:name="com.example.lebonpetitcoin.AnnonceRoom$accountActivity" >
 39-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:9-23:20
-39-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:19-50
+39-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:19-62
 40            <intent-filter>
 40-->/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:20:13-22:29
 41                <action android:name="android.intent.VIEW" />

@@ -111,10 +111,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:17-77
 	android:name
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:27-74
-activity#com.example.lebonpetitcoin.accountActivity
+activity#com.example.lebonpetitcoin.AnnonceRoom$accountActivity
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:9-23:20
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:19-50
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:19-62
 intent-filter#action:name:android.intent.VIEW
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:20:13-22:29
 action#android.intent.VIEW

@@ -36,7 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.lebonpetitcoin.accountActivity" >
+        <activity android:name="com.example.lebonpetitcoin.AnnonceRoom$accountActivity" >
             <intent-filter>
                 <action android:name="android.intent.VIEW" />
             </intent-filter>
