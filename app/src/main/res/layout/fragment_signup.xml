@@ -5,6 +5,8 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:id="@+id/signup"
+    android:textColor="@color/black"
+    android:textColorHint="@color/hint"
     >
 
 
@@ -30,8 +32,6 @@
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:textSize="16sp"
         android:autofillHints="" />
 
@@ -53,8 +53,6 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:textSize="16sp"
         android:autofillHints="" />
 
@@ -76,8 +74,6 @@
         android:inputType="phone"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <View
@@ -98,8 +94,6 @@
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:textSize="16sp"
         android:autofillHints="" />
 
@@ -116,12 +110,10 @@
         android:background="@android:color/transparent"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
-        android:hint="@string/passowrd"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <View
@@ -140,8 +132,6 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <CheckBox
@@ -150,7 +140,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:text="@string/terms_conditions"
-        android:textColor="@color/white"
         android:textSize="14sp" />
 
     <Button

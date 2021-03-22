@@ -9,7 +9,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="email">Email Id</string>
+    <string name="email">E-mail</string>
     <string name="passowrd">Password</string>
     <string name="login">S\'authentifier</string>
     <string name="show_pwd">Voir mot de passe</string>
@@ -20,11 +20,11 @@
     <string name="fullName">Nom complet</string>
     <string name="mobileNumber">Numéro de téléphone</string>
     <string name="location">Localisation</string>
-    <string name="confirmPassword">Conformez mot de passe</string>
+    <string name="confirmPassword">Confirmez le mot de passe</string>
     <string name="terms_conditions">En cliquant vous acceptez les termes de notre politiques de confidentialités.</string>
     <string name="signUp">S\'inscrire</string>
     <string name="already_user"><u>Vous avez déjà un compte ? Cliquez ici.</u></string>
-    <string name="registered_emailid">Entre votre mail ici : </string>
+    <string name="registered_emailid">Entrez votre mail ici : </string>
     <string name="submit">Envoyez</string>
     <string name="signIn">S\'authentifier</string>
     <string name="mon_compte">Mon compte</string>
@@ -37,5 +37,6 @@
     <string name="title">TitreAnnonce</string>
     <string name="app_label">LeBonPetitCoin</string>
     <string name="search_hint">Recherche...</string>
+    <string name="password">Mot de passe</string>
 
 </resources>

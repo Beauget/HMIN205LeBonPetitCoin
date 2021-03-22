@@ -1082,6 +1082,7 @@ color fui_transparent
 color green_500
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color hint
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -2777,6 +2778,7 @@ string navigation_drawer_close
 string navigation_drawer_open
 string newUser
 string passowrd
+string password
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
