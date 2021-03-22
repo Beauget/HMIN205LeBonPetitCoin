@@ -1,6 +1,7 @@
-com/example/lebonpetitcoin/Fragments/AccountFragment.java
- com.example.lebonpetitcoin.Fragments.AccountFragment
- com.example.lebonpetitcoin.Fragments.AccountFragment$1
+com/example/lebonpetitcoin/MainActivity.java
+ com.example.lebonpetitcoin.MainActivity
+ com.example.lebonpetitcoin.MainActivity$1
+ com.example.lebonpetitcoin.MainActivity$2
 com/example/lebonpetitcoin/SearchableActivity.java
  com.example.lebonpetitcoin.SearchableActivity
 com/example/lebonpetitcoin/accountActivity.java
@@ -26,11 +27,10 @@ com/example/lebonpetitcoin/Fragments/SignUpFragment.java
  com.example.lebonpetitcoin.Fragments.SignUpFragment
 com/example/lebonpetitcoin/BuildConfig.java
  com.example.lebonpetitcoin.BuildConfig
-com/example/lebonpetitcoin/Fragments/AccueilFragment.java
- com.example.lebonpetitcoin.Fragments.AccueilFragment
 com/example/lebonpetitcoin/MonFileProvider.java
  com.example.lebonpetitcoin.MonFileProvider
-com/example/lebonpetitcoin/MainActivity.java
- com.example.lebonpetitcoin.MainActivity
- com.example.lebonpetitcoin.MainActivity$1
- com.example.lebonpetitcoin.MainActivity$2
+com/example/lebonpetitcoin/Fragments/AccueilFragment.java
+ com.example.lebonpetitcoin.Fragments.AccueilFragment
+com/example/lebonpetitcoin/Fragments/AccountFragment.java
+ com.example.lebonpetitcoin.Fragments.AccountFragment
+ com.example.lebonpetitcoin.Fragments.AccountFragment$1
