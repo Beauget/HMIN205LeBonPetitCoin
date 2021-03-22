@@ -7,10 +7,16 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
@@ -27,7 +33,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     MaterialToolbar topAppBar;
@@ -55,8 +61,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_SIGNUP = 5;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.configureBottomAppBar();
 
         this.showAccueilFragment();
-
 
 
     }
@@ -93,29 +96,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
-
-    private void configureTopAppBar(){
-        this.topAppBar =  findViewById(R.id.topAppBar);
+    private void configureTopAppBar() {
+        this.topAppBar = findViewById(R.id.topAppBar);
         setSupportActionBar(topAppBar);
     }
 
-    private void configureDrawerLayout(){
+    private void configureDrawerLayout() {
         this.drawerLayout = findViewById(R.id.activity_main_drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, topAppBar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
     }
-    private void configureNavigationView(){
+
+    private void configureNavigationView() {
         this.navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
 
-    private void configureBottomAppBar(){
+    private void configureBottomAppBar() {
 
-        this.add= (FloatingActionButton) findViewById(R.id.activity_main_button_add);
+        this.add = (FloatingActionButton) findViewById(R.id.activity_main_button_add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,15 +136,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
         int id = item.getItemId();
 
         // Show fragment after user clicked on a menu item
-        switch (id){
-            case R.id.activity_main_drawer_account :
+        switch (id) {
+            case R.id.activity_main_drawer_account:
                 this.showFragment(FRAGMENT_ACCOUNT);
                 break;
             case R.id.activity_main_drawer_message:
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showFragment(FRAGMENT_STATS);
                 break;
             case R.id.activity_main_drawer_signIn:
-               // this.showFragment(FRAGMENT_SIGNIN);
+                // this.showFragment(FRAGMENT_SIGNIN);
                 this.createSignInIntent();
                 break;
             case R.id.activity_main_drawer_signUp:
@@ -171,9 +172,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
-    private void showFragment(int fragmentIdentifier){
-        switch (fragmentIdentifier){
+    private void showFragment(int fragmentIdentifier) {
+        switch (fragmentIdentifier) {
             case FRAGMENT_ACCOUNT:
                 this.showAccountFragment();
                 break;
@@ -198,48 +198,67 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // Création de chaque fragment
-    private void showAccueilFragment(){
+    private void showAccueilFragment() {
         if (this.fragmentAccount == null) this.fragmentAccueil = AccueilFragment.newInstance();
         this.startTransactionFragment(this.fragmentAccueil);
     }
 
-    private void showAccountFragment(){
+    private void showAccountFragment() {
         if (this.fragmentAccount == null) this.fragmentAccount = AccountFragment.newInstance();
         this.startTransactionFragment(this.fragmentAccount);
     }
 
-    private void showMessageFragment(){
+    private void showMessageFragment() {
         if (this.fragmentMessage == null) this.fragmentMessage = MessageFragment.newInstance();
         this.startTransactionFragment(this.fragmentMessage);
     }
 
-    private void showFavFragment(){
+    private void showFavFragment() {
         if (this.fragmentFav == null) this.fragmentFav = FavFragment.newInstance();
         this.startTransactionFragment(this.fragmentFav);
     }
 
-    private void showStatsFragment(){
+    private void showStatsFragment() {
         if (this.fragmentStats == null) this.fragmentStats = StatsFragment.newInstance();
         this.startTransactionFragment(this.fragmentStats);
     }
 
-    public  void showSignInFragment(){
-        if (this.fragmentSignIn == null) this.fragmentSignIn= SignInFragment.newInstance();
+    public void showSignInFragment() {
+        if (this.fragmentSignIn == null) this.fragmentSignIn = SignInFragment.newInstance();
         this.startTransactionFragment(this.fragmentSignIn);
     }
 
-    private void showSignUpFragment(){
+    private void showSignUpFragment() {
         if (this.fragmentSignUp == null) this.fragmentSignUp = SignUpFragment.newInstance();
         this.startTransactionFragment(this.fragmentSignUp);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout
-    private void startTransactionFragment(Fragment fragment){
-        if (!fragment.isVisible()){
+    private void startTransactionFragment(Fragment fragment) {
+        if (!fragment.isVisible()) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.activity_main_frame_layout, fragment).commit();
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the options menu from XML
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_appbar_menu, menu);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.nav_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(true); // Do not iconify the widget; expand it by default
+        searchView.setSubmitButtonEnabled(true);
+        searchView.setQueryHint("Recherche...");
+
+
+
+            return true;
+        }
+
 
 
 }

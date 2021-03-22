@@ -33,5 +33,9 @@
     <string name="statistiques">Statistiques</string>
     <string name="s_identifier">S\'identifier</string>
     <string name="s_inscrire">S\'inscrire</string>
+    <string name="content_description_media">DescriptionAnnonce</string>
+    <string name="title">TitreAnnonce</string>
+    <string name="app_label">LeBonPetitCoin</string>
+    <string name="search_hint">Recherche...</string>
 
 </resources>

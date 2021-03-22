@@ -1,20 +1,21 @@
 -- Merging decision tree log ---
 provider#com.example.lebonpetitcoin.MonFileProvider
-INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:29:9-37:20
+INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:36:9-44:20
 	android:grantUriPermissions
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:33:13-47
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:40:13-47
 	android:authorities
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:31:13-79
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:38:13-79
 	android:exported
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:32:13-37
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:30:13-44
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:37:13-44
 manifest
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:2:1-109:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\1b47bb01ecc6aa52d262badcce0bb4ed\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
@@ -24,7 +25,6 @@ MERGED from [com.android.volley:volley:1.2.0] C:\Users\beaug\.gradle\caches\tran
 MERGED from [androidx.room:room-rxjava2:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\65f4e2c0cf3213d7b67e1c35538334ae\room-rxjava2-2.2.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-guava:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\349f6acc5b206951a8640312395efaba\room-guava-2.2.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\f7dc4a753ee63e3517a6360d392da23b\room-runtime-2.2.6\AndroidManifest.xml:17:1-31:12
-MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\59708e4c89685822c69df7ac6667b1ed\jetified-firebase-auth-20.0.3\AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\093fefaa9b92cc8891649f8a6fb059a9\jetified-play-services-measurement-api-18.0.2\AndroidManifest.xml:17:1-36:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\04b8b6a397cc03a1368142caa90be1c4\jetified-firebase-auth-interop-19.0.0\AndroidManifest.xml:2:1-10:12
@@ -89,25 +89,27 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\beaug\.gradle\ca
 MERGED from [androidx.print:print:1.0.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\c19316ee24d18218817a41ce7b88a2ac\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:16.1.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\c36aa81c7706cd842cc31c762a39c361\jetified-firebase-components-16.1.0\AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\1f6b045666a31134b82a56c243bf4255\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:1-56:12
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:5:5-38:19
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:5:5-45:19
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:7:5-20
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:15:5-107:19
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:15:5-107:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:22:5-20
@@ -116,8 +118,6 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\beaug\.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\1b47bb01ecc6aa52d262badcce0bb4ed\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\f7dc4a753ee63e3517a6360d392da23b\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\f7dc4a753ee63e3517a6360d392da23b\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
-MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\59708e4c89685822c69df7ac6667b1ed\jetified-firebase-auth-20.0.3\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\59708e4c89685822c69df7ac6667b1ed\jetified-firebase-auth-20.0.3\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\093fefaa9b92cc8891649f8a6fb059a9\jetified-play-services-measurement-api-18.0.2\AndroidManifest.xml:26:5-34:19
@@ -208,8 +208,24 @@ action#android.intent.action.VIEW
 ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:26:17-69
 	android:name
 		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:26:25-66
+activity#com.example.lebonpetitcoin.SearchableActivity
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:29:9-35:20
+	android:name
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:29:19-53
+intent-filter#action:name:android.intent.action.SEARCH
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:30:13-32:29
+action#android.intent.action.SEARCH
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:31:17-71
+	android:name
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:31:25-68
+meta-data#android.app.searchable
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:33:13-34:53
+	android:resource
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:34:17-51
+	android:name
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:33:24-61
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:40:5-67
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:47:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:13:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:13:5-67
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\59708e4c89685822c69df7ac6667b1ed\jetified-firebase-auth-20.0.3\AndroidManifest.xml:23:5-67
@@ -225,9 +241,9 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\a9fe74ae9672b0421c50b173386824e1\jetified-play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\a9fe74ae9672b0421c50b173386824e1\jetified-play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:40:22-64
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:47:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:41:5-79
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:48:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:12:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\59708e4c89685822c69df7ac6667b1ed\jetified-firebase-auth-20.0.3\AndroidManifest.xml:24:5-79
@@ -243,29 +259,31 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\a9fe74ae9672b0421c50b173386824e1\jetified-play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\a9fe74ae9672b0421c50b173386824e1\jetified-play-services-measurement-sdk-api-18.0.2\AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:41:22-76
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:48:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:42:5-81
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:49:5-81
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:42:22-78
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:49:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:43:5-80
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:50:5-80
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:43:22-77
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:50:22-77
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:44:5-65
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:51:5-65
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:44:22-62
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:51:22-62
 uses-feature#android.hardware.camera
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:46:5-84
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:53:5-84
 	android:required
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:46:58-81
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:53:58-81
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:46:19-57
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:53:19-57
 uses-sdk
 INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cd6f2caba378d66250797e09d6bb24e0\material-1.3.0\AndroidManifest.xml:20:5-44
@@ -284,8 +302,6 @@ MERGED from [androidx.room:room-guava:2.2.6] C:\Users\beaug\.gradle\caches\trans
 MERGED from [androidx.room:room-guava:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\349f6acc5b206951a8640312395efaba\room-guava-2.2.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\f7dc4a753ee63e3517a6360d392da23b\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\f7dc4a753ee63e3517a6360d392da23b\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-analytics:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\cf889bd07421a67e1ec8ca30faafd560\jetified-firebase-analytics-18.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\59708e4c89685822c69df7ac6667b1ed\jetified-firebase-auth-20.0.3\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\59708e4c89685822c69df7ac6667b1ed\jetified-firebase-auth-20.0.3\AndroidManifest.xml:21:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\093fefaa9b92cc8891649f8a6fb059a9\jetified-play-services-measurement-api-18.0.2\AndroidManifest.xml:20:5-44
@@ -425,11 +441,11 @@ INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidMani
 		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:34:13-36:57
+ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:41:13-43:57
 	android:resource
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:36:17-55
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:43:17-55
 	android:name
-		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:35:17-67
+		ADDED from C:\Users\beaug\Desktop\M1S2\DevMob\Projet\app\src\main\AndroidManifest.xml:42:17-67
 meta-data#com.google.android.gms.version
 ADDED from [com.firebaseui:firebase-ui-auth:6.4.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\dd0d050c7912f8b3178982b03386de61\jetified-firebase-ui-auth-6.4.0\AndroidManifest.xml:16:9-18:69
 MERGED from [com.google.android.gms:play-services-basement:17.1.0] C:\Users\beaug\.gradle\caches\transforms-2\files-2.1\74483de84094d0d661b0d354666c2c5a\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69

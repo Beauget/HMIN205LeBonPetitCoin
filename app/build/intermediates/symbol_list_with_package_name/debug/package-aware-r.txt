@@ -1770,6 +1770,7 @@ drawable fui_idp_button_background_twitter
 drawable fui_idp_button_background_yahoo
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_baseline_search_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1821,7 +1822,6 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
-id Disconnect
 id FUNCTION
 id META
 id NO_DEBUG
@@ -1867,7 +1867,6 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
-id account
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1942,6 +1941,10 @@ id button_sign_in
 id cache_measures
 id cancel_action
 id cancel_button
+id card
+id card2
+id card3
+id card4
 id center
 id center_horizontal
 id center_vertical
@@ -2149,6 +2152,7 @@ id mtrl_view_tag_bottom_padding
 id multiply
 id name
 id name_layout
+id nav_search
 id navigation_header_container
 id never
 id noScroll
@@ -2185,6 +2189,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id relativeLayout
 id resend_barrier
 id resend_code
 id reverseSawtooth
@@ -2279,6 +2284,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2562,6 +2568,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string action_settings
 string already_user
+string app_label
 string app_name
 string appbar_scrolling_view_behavior
 string barTitle
@@ -2592,6 +2599,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string confirmPassword
+string content_description_media
 string d_connexion
 string default_web_client_id
 string email
@@ -2778,6 +2786,7 @@ string project_id
 string registered_emailid
 string s_identifier
 string s_inscrire
+string search_hint
 string search_menu_title
 string show_pwd
 string signIn
@@ -2786,6 +2795,7 @@ string statistiques
 string status_bar_notification_info_overflow
 string submit
 string terms_conditions
+string title
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -3701,6 +3711,7 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 xml provider_paths
+xml searchable
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start
