@@ -415,113 +415,119 @@
 220                android:value="com.google.firebase.components.ComponentRegistrar" />
 220-->[com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:79:17-82
 221            <meta-data
-221-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:30:13-32:85
-222                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-222-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:31:17-139
+221-->[com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:20:13-22:85
+222                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+222-->[com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:21:17-111
 223                android:value="com.google.firebase.components.ComponentRegistrar" />
-223-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:32:17-82
+223-->[com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:22:17-82
 224            <meta-data
-224-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
-225                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-225-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
+224-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:30:13-32:85
+225                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+225-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:31:17-139
 226                android:value="com.google.firebase.components.ComponentRegistrar" />
-226-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
-227            <!--
-228                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-229                clients to use it as well, by defining this registrar in their own core/common library.
-230            -->
-231            <meta-data
-231-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
-232                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-232-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
-233                android:value="com.google.firebase.components.ComponentRegistrar" />
-233-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
-234        </service>
-235
-236        <provider
-236-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
-237            android:name="com.google.firebase.provider.FirebaseInitProvider"
-237-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
-238            android:authorities="com.example.lebonpetitcoin.firebaseinitprovider"
-238-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
-239            android:directBootAware="true"
-239-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
-240            android:exported="false"
-240-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
-241            android:initOrder="100" />
-241-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
-242
-243        <activity
-243-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
-244            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-244-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
-245            android:excludeFromRecents="true"
-245-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
-246            android:exported="false"
-246-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
-247            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-247-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
-248        <!--
-249            Service handling Google Sign-In user revocation. For apps that do not integrate with
-250            Google Sign-In, this service will never be started.
-251        -->
-252        <service
-252-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
-253            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-253-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
-254            android:exported="true"
-254-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
-255            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-255-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
-256
-257        <activity
-257-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-258            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-258-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-259            android:exported="false"
-259-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-260            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-260-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-261
-262        <receiver
-262-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:29:9-33:20
-263            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-263-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:30:13-85
-264            android:enabled="true"
-264-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:31:13-35
-265            android:exported="false" >
-265-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:32:13-37
-266        </receiver>
-267
-268        <service
-268-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:35:9-38:40
-269            android:name="com.google.android.gms.measurement.AppMeasurementService"
-269-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:36:13-84
-270            android:enabled="true"
-270-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:37:13-35
-271            android:exported="false" />
-271-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:38:13-37
-272        <service
-272-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:39:9-43:72
-273            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-273-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:40:13-87
-274            android:enabled="true"
-274-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:41:13-35
-275            android:exported="false"
-275-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:42:13-37
-276            android:permission="android.permission.BIND_JOB_SERVICE" />
-276-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:43:13-69
-277
-278        <provider
-278-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
-279            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-279-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
-280            android:authorities="com.example.lebonpetitcoin.lifecycle-process"
-280-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
-281            android:exported="false"
-281-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
-282            android:multiprocess="true" />
-282-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
-283    </application>
-284
-285</manifest>
+226-->[com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:32:17-82
+227            <meta-data
+227-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:18:13-20:85
+228                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+228-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:19:17-127
+229                android:value="com.google.firebase.components.ComponentRegistrar" />
+229-->[com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:20:17-82
+230            <!--
+231                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+232                clients to use it as well, by defining this registrar in their own core/common library.
+233            -->
+234            <meta-data
+234-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:43:13-45:85
+235                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+235-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:44:17-121
+236                android:value="com.google.firebase.components.ComponentRegistrar" />
+236-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:45:17-82
+237        </service>
+238
+239        <provider
+239-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:26:9-31:39
+240            android:name="com.google.firebase.provider.FirebaseInitProvider"
+240-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:27:13-77
+241            android:authorities="com.example.lebonpetitcoin.firebaseinitprovider"
+241-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:28:13-72
+242            android:directBootAware="true"
+242-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:29:13-43
+243            android:exported="false"
+243-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:30:13-37
+244            android:initOrder="100" />
+244-->[com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
+245
+246        <activity
+246-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
+247            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+247-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
+248            android:excludeFromRecents="true"
+248-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
+249            android:exported="false"
+249-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
+250            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+250-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
+251        <!--
+252            Service handling Google Sign-In user revocation. For apps that do not integrate with
+253            Google Sign-In, this service will never be started.
+254        -->
+255        <service
+255-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
+256            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+256-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
+257            android:exported="true"
+257-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
+258            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+258-->[com.google.android.gms:play-services-auth:17.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9957cda9682227cc28ce04460c4b6aa3/jetified-play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
+259
+260        <activity
+260-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+261            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+261-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+262            android:exported="false"
+262-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+263            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+263-->[com.google.android.gms:play-services-base:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+264
+265        <receiver
+265-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:29:9-33:20
+266            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+266-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:30:13-85
+267            android:enabled="true"
+267-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:31:13-35
+268            android:exported="false" >
+268-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:32:13-37
+269        </receiver>
+270
+271        <service
+271-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:35:9-38:40
+272            android:name="com.google.android.gms.measurement.AppMeasurementService"
+272-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:36:13-84
+273            android:enabled="true"
+273-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:37:13-35
+274            android:exported="false" />
+274-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:38:13-37
+275        <service
+275-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:39:9-43:72
+276            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+276-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:40:13-87
+277            android:enabled="true"
+277-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:41:13-35
+278            android:exported="false"
+278-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:42:13-37
+279            android:permission="android.permission.BIND_JOB_SERVICE" />
+279-->[com.google.android.gms:play-services-measurement:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f847f86ac99b75bbeea0f1d82e51907a/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:43:13-69
+280
+281        <provider
+281-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+282            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+282-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
+283            android:authorities="com.example.lebonpetitcoin.lifecycle-process"
+283-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+284            android:exported="false"
+284-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+285            android:multiprocess="true" />
+285-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+286    </application>
+287
+288</manifest>

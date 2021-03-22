@@ -1970,6 +1970,7 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id collapseActionView
+id collection
 id confirmPassword
 id confirm_button
 id confirmation_code
