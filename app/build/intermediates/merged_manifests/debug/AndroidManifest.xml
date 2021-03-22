@@ -73,9 +73,20 @@
             android:label=""
             android:theme="@style/FirebaseUI.Transparent" />
         <activity
+            android:name="com.firebase.ui.auth.ui.idp.SingleSignInActivity"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/FirebaseUI.Transparent" />
+        <activity
+            android:name="com.firebase.ui.auth.ui.credentials.CredentialSaveActivity"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/FirebaseUI.Transparent" />
+        <activity
             android:name="com.firebase.ui.auth.ui.email.RecoverPasswordActivity"
             android:exported="false"
-            android:label="@string/fui_title_recover_password_activity" />
+            android:label="@string/fui_title_recover_password_activity"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.firebase.ui.auth.ui.email.EmailActivity"
             android:exported="false"
@@ -89,11 +100,28 @@
         <activity
             android:name="com.firebase.ui.auth.ui.idp.WelcomeBackIdpPrompt"
             android:exported="false"
-            android:label="@string/fui_title_welcome_back_idp_prompt" />
+            android:label="@string/fui_title_welcome_back_idp_prompt"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.firebase.ui.auth.ui.email.WelcomeBackPasswordPrompt"
             android:exported="false"
             android:label="@string/fui_title_welcome_back_password_prompt"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.firebase.ui.auth.ui.email.WelcomeBackEmailLinkPrompt"
+            android:exported="false"
+            android:label="@string/fui_title_welcome_back_password_prompt"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.firebase.ui.auth.ui.email.EmailLinkCatcherActivity"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/FirebaseUI.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.firebase.ui.auth.ui.email.EmailLinkErrorRecoveryActivity"
+            android:exported="false"
+            android:label="@string/fui_sign_in_default"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.firebase.ui.auth.ui.idp.AuthMethodPickerActivity"
@@ -115,6 +143,12 @@
                 <data android:scheme="@string/facebook_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="com.firebase.ui.auth.data.client.AuthUiInitProvider"
+            android:authorities="com.example.lebonpetitcoin.authuiinitprovider"
+            android:exported="false"
+            android:initOrder="90" />
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"

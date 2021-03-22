@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 public class SignUpFragment extends Fragment implements OnClickListener {
     private static View view;
@@ -31,8 +32,12 @@ public class SignUpFragment extends Fragment implements OnClickListener {
     private static TextView login;
     private static Button signUpButton;
     private static CheckBox terms_conditions;
+    private static TextView already_user;
+    private static Fragment signin;
 
     public static final String regEx = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
+
+
     public SignUpFragment() {
 
     }
@@ -61,6 +66,8 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         signUpButton = (Button) view.findViewById(R.id.signUpBtn);
         login = (TextView) view.findViewById(R.id.already_user);
         terms_conditions = (CheckBox) view.findViewById(R.id.terms_conditions);
+        already_user = (TextView) view.findViewById(R.id.already_user);
+        signin = SignInFragment.newInstance();
 
         /*Setting text selector over textviews
         XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
@@ -91,7 +98,8 @@ public class SignUpFragment extends Fragment implements OnClickListener {
             case R.id.already_user:
 
                 // Replace login fragment
-                //new MainActivity().showSignInFragment();
+               FragmentManager x = getFragmentManager();
+                x.beginTransaction().replace(R.id.activity_main_frame_layout,signin).commit();
                 break;
         }
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="20dp"
+    android:id="@+id/signup"
     style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
     >
 
@@ -172,6 +173,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/already_user"
+        android:clickable="true"
         android:textSize="15sp" />
 
 </LinearLayout>

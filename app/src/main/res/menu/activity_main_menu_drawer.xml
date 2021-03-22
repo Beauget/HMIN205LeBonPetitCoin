@@ -7,7 +7,7 @@
         <item
             android:id="@+id/activity_main_drawer_account"
             android:icon="@drawable/seal"
-            android:title="Mon compte" />
+            android:title="@string/mon_compte" />
     </group>
 
     <item android:title="Configuration">
@@ -16,15 +16,15 @@
                 <item
                     android:id="@+id/activity_main_drawer_message"
                     android:icon="@drawable/chat_24dp"
-                    android:title="Messages" />
+                    android:title="@string/messages" />
                 <item
                     android:id="@+id/activity_main_drawer_fav"
                     android:icon="@drawable/favorite_white_24dp"
-                    android:title="Mes favoris" />
+                    android:title="@string/mes_favoris" />
                 <item
                     android:id="@+id/activity_main_drawer_stats"
                     android:icon="@drawable/seal"
-                    android:title="Statistiques" />
+                    android:title="@string/statistiques" />
             </group>
         </menu>
     </item>
@@ -35,11 +35,11 @@
                 <item
                     android:id="@+id/activity_main_drawer_signIn"
                     android:icon="@drawable/chat_24dp"
-                    android:title="Sign in" />
+                    android:title="@string/s_identifier" />
                 <item
                     android:id="@+id/activity_main_drawer_signUp"
                     android:icon="@drawable/favorite_white_24dp"
-                    android:title="Sign up" />
+                    android:title="@string/s_inscrire" />
 
             </group>
         </menu>

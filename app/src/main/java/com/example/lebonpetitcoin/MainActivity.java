@@ -19,10 +19,13 @@ import com.example.lebonpetitcoin.Fragments.MessageFragment;
 import com.example.lebonpetitcoin.Fragments.SignInFragment;
 import com.example.lebonpetitcoin.Fragments.SignUpFragment;
 import com.example.lebonpetitcoin.Fragments.StatsFragment;
-import com.google.android.gms.auth.api.signin.SignInAccount;
+import com.firebase.ui.auth.AuthUI;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     FloatingActionButton add;
     ActionMenuItemView home;
+    private static final int RC_SIGN_IN = 123;
 
     //FRAGMENTS/activité selon ce qui est cliqué
     private Fragment fragmentAccueil;
@@ -64,7 +68,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.configureBottomAppBar();
 
         this.showAccueilFragment();
+
+
+
     }
+
+    public void createSignInIntent() {
+        // [START auth_fui_create_intent]
+        // Choose authentication providers
+        List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.EmailBuilder().build(),
+                new AuthUI.IdpConfig.GoogleBuilder().build());
+
+        // Create and launch sign-in intent
+        startActivityForResult(
+                AuthUI.getInstance()
+                        .createSignInIntentBuilder()
+                        .setAvailableProviders(providers)
+                        .setTheme(R.style.Theme_LeBonPetitCoin)
+                        .setLogo(R.drawable.ic_logo)
+                        .build(),
+                RC_SIGN_IN);
+        // [END auth_fui_create_intent]
+    }
+
+
 
 
     private void configureTopAppBar(){
@@ -105,6 +133,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
@@ -125,7 +155,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showFragment(FRAGMENT_STATS);
                 break;
             case R.id.activity_main_drawer_signIn:
-                this.showFragment(FRAGMENT_SIGNIN);
+               // this.showFragment(FRAGMENT_SIGNIN);
+                this.createSignInIntent();
                 break;
             case R.id.activity_main_drawer_signUp:
                 this.showFragment(FRAGMENT_SIGNUP);
@@ -138,6 +169,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return true;
     }
+
+
 
     private void showFragment(int fragmentIdentifier){
         switch (fragmentIdentifier){
@@ -190,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.startTransactionFragment(this.fragmentStats);
     }
 
-    public void showSignInFragment(){
+    public  void showSignInFragment(){
         if (this.fragmentSignIn == null) this.fragmentSignIn= SignInFragment.newInstance();
         this.startTransactionFragment(this.fragmentSignIn);
     }
