@@ -19,13 +19,19 @@
         android:textSize="25sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@color/hint"
+        android:gravity="center_vertical"
+        android:padding="30dp" />
+
     <EditText
         android:id="@+id/fullName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/seal"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:hint="@string/fullName"
@@ -46,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/baseline_menu_black_24dp"
+        android:drawableLeft="@drawable/baseline_mail_black_18dp"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:hint="@string/email"
@@ -67,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/round_add_circle_24dp"
+        android:drawableLeft="@drawable/baseline_local_phone_black_18dp"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:hint="@string/mobileNumber"
@@ -87,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/baseline_home_white_24dp"
+        android:drawableLeft="@drawable/baseline_home_black_18dp"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:hint="@string/location"
