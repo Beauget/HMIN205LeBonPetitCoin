@@ -24,10 +24,12 @@ import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,6 +48,9 @@ public class MessageFragment extends Fragment {
 
     Button buttonSend;
     Button buttonLoad;
+    Button buttonMerge;
+    Button buttonDeleteDescription;
+    Button buttonDeleteNote;
 
     TextView tLoad;
 
@@ -93,6 +98,17 @@ public class MessageFragment extends Fragment {
         buttonLoad.setText("ancien boutton load devenu obselète depuis le onstart() (voir code)");
         //LoadNote(view);
 
+        //met a jour la desciption
+        buttonMerge= view.findViewById(R.id.buttonChangeDescription);
+        updateDescription(view);
+
+        //supprime l'attribue description
+        buttonDeleteDescription = view.findViewById(R.id.buttonDeleteDescription);
+        deleteDescription(view);
+
+        //supprime My first note (et donc la collection note car elle est maintenant vide)
+        buttonDeleteNote = view.findViewById(R.id.buttonDeleteNote);
+        deleteNote(view);
 
         //Champs d'affichage du document
         tLoad= view.findViewById(R.id.Tload);
@@ -182,6 +198,90 @@ public class MessageFragment extends Fragment {
         });
 
     }
+
+    public void updateDescription(View v){
+
+        buttonMerge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String description = eDescription.getText().toString();
+
+                /*Option 1*/
+                Map<String , Object> note = new HashMap<>();
+                note.put(KEY_DESCRIPTION,description);
+
+                noteReference.set(note, SetOptions.merge());
+
+
+                //UPDATE ne remarque pas la disparition du fichier quand on le supprime (et donc n'en crée pas un nouveau)
+
+                /*Option 2
+                Map<String , Object> note = new HashMap<>();
+                note.put(KEY_DESCRIPTION,description);
+
+                noteReference.update(note);
+                */
+
+                /*Option 3
+                noteReference.update(KEY_DESCRIPTION,description);
+                */
+
+            }
+        });
+    }
+
+    public void deleteDescription(View v){
+        buttonDeleteDescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                noteReference.update(KEY_DESCRIPTION, FieldValue.delete())
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getContext(),"description supprimé",Toast.LENGTH_SHORT).show();
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                                Log.d(TAG,e.toString());
+                            }
+                        });
+
+            }
+        });
+
+    }
+
+    public void deleteNote(View v){
+        buttonDeleteNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                noteReference.delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                //ce qui engendre la suppression de la collection car elle est maintenant vide
+                                Toast.makeText(getContext(),"My first Note supprimé",Toast.LENGTH_SHORT).show();
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                                Log.d(TAG,e.toString());
+                            }
+                        });
+
+            }
+        });
+
+    }
+
+
 
     public void LoadNote(View v){
         buttonLoad.setOnClickListener(new View.OnClickListener() {

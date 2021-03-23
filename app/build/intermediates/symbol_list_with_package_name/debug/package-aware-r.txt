@@ -1939,6 +1939,9 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_holder
+id buttonChangeDescription
+id buttonDeleteDescription
+id buttonDeleteNote
 id buttonLoad
 id buttonPanel
 id buttonSend

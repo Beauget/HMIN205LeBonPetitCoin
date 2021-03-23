@@ -40,6 +40,24 @@
         android:layout_height="wrap_content"
         android:text="Regarder le contenu actuelle du document My first note"/>
 
+    <Button
+        android:id="@+id/buttonChangeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Merge and update (mise a jour description)"/>
+
+    <Button
+        android:id="@+id/buttonDeleteDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer la description"/>
+
+    <Button
+        android:id="@+id/buttonDeleteNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer Note"/>
+
     <TextView
         android:id="@+id/Tload"
         android:hint="ici , les donnnées actuelle du document"
