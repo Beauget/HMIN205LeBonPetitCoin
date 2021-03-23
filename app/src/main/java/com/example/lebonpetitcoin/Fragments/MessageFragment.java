@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.lebonpetitcoin.R;
@@ -25,6 +26,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -54,6 +56,8 @@ public class MessageFragment extends Fragment {
     private DocumentReference noteReference = firestoreDB.collection("Note").document("My first note");
     ////firestoreDB.document("Note/My first note"); équivalent de la ligne dessus
 
+    private ListenerRegistration noteListener;
+
 
 
     //NOM DES ATTRIBUTS
@@ -80,7 +84,15 @@ public class MessageFragment extends Fragment {
 
         //boutton de chargement du document
         buttonLoad= view.findViewById(R.id.buttonLoad);
-        LoadNote(view);
+
+        /*
+        * Grace au onstart/onStop plus besoins de buton load
+        * note :  firebase n'a pas vraiment récupérer le nouveau contenu du document.
+        *           Il enregistre temporairement en local et le get le récupère donc en local pour etre rapide
+        * */
+        buttonLoad.setText("ancien boutton load devenu obselète depuis le onstart() (voir code)");
+        //LoadNote(view);
+
 
         //Champs d'affichage du document
         tLoad= view.findViewById(R.id.Tload);
@@ -91,6 +103,43 @@ public class MessageFragment extends Fragment {
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+    }
+
+    //SO when the app isn't on the forground we don't want to consume useless data/updates
+    @Override
+    public void onStart() {
+        super.onStart();
+        noteListener= noteReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                if (error != null){
+                    Toast.makeText(getContext(), "erreur au chagement", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, error.toString());
+                    return;
+                }
+
+                if (documentSnapshot.exists()){
+                    String titre = documentSnapshot.getString(KEY_TITLE);
+                    String description = documentSnapshot.getString(KEY_DESCRIPTION);
+                    //Map<String,Object> note = documentSnapshot.getData(); Si on veux récupérer les deux d'un coup
+
+                    tLoad.setText("Titre : " + titre + "\n" + "Description : " + description);
+                }
+                else {
+                    Toast.makeText(getContext(), "Le document n'existe pas", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+    }
+
+    //il est possible de pas l'utiliser en instanciant dans le onStart :
+    //      noteListener= noteReference.addSnapshotListener(this ,new EventListener<DocumentSnapshot>()   (ajout du this)
+    // Mais comme c'est un fragement et pas une activité je préfère le faire comme ça
+    @Override
+    public void onStop() {
+        super.onStop();
+        noteListener.remove();
     }
 
     public void SendNote(View v){
