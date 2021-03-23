@@ -3,16 +3,34 @@
     android:layout_height="fill_parent"
     android:layout_width="match_parent"
     android:gravity="center"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Page messages !" />
+
     <TextView
         android:id="@+id/collection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
     />
 
+    <EditText
+        android:id="@+id/title"
+        android:hint="title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/description"
+        android:hint="description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Envoyé le document dans la collection Note"/>
 </LinearLayout>
