@@ -11,26 +11,39 @@
         android:text="Page messages !" />
 
     <TextView
-        android:id="@+id/collection"
+        android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
     />
 
     <EditText
-        android:id="@+id/title"
+        android:id="@+id/Etitle"
         android:hint="title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/description"
+        android:id="@+id/Edescription"
         android:hint="description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Envoyé le document dans la collection Note"/>
+
+    <Button
+        android:id="@+id/buttonLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regarder le contenu actuelle du document My first note"/>
+
+    <TextView
+        android:id="@+id/Tload"
+        android:hint="ici , les donnnées actuelle du document"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

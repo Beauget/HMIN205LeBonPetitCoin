@@ -1,7 +1,6 @@
-com/example/lebonpetitcoin/MainActivity.java
- com.example.lebonpetitcoin.MainActivity
- com.example.lebonpetitcoin.MainActivity$1
- com.example.lebonpetitcoin.MainActivity$2
+com/example/lebonpetitcoin/Fragments/AccountFragment.java
+ com.example.lebonpetitcoin.Fragments.AccountFragment
+ com.example.lebonpetitcoin.Fragments.AccountFragment$1
 com/example/lebonpetitcoin/SearchableActivity.java
  com.example.lebonpetitcoin.SearchableActivity
 com/example/lebonpetitcoin/accountActivity.java
@@ -12,11 +11,8 @@ com/example/lebonpetitcoin/Fragments/SignInFragment.java
  com.example.lebonpetitcoin.Fragments.SignInFragment
 com/example/lebonpetitcoin/AnnonceRoom.java
  com.example.lebonpetitcoin.AnnonceRoom
-com/example/lebonpetitcoin/Fragments/MessageFragment.java
- com.example.lebonpetitcoin.Fragments.MessageFragment
- com.example.lebonpetitcoin.Fragments.MessageFragment$1
- com.example.lebonpetitcoin.Fragments.MessageFragment$1$1
- com.example.lebonpetitcoin.Fragments.MessageFragment$1$2
+com/example/lebonpetitcoin/Fragments/AccueilFragment.java
+ com.example.lebonpetitcoin.Fragments.AccueilFragment
 com/example/lebonpetitcoin/AddAnnonceActivity.java
  com.example.lebonpetitcoin.AddAnnonceActivity
  com.example.lebonpetitcoin.AddAnnonceActivity$1
@@ -34,8 +30,15 @@ com/example/lebonpetitcoin/BuildConfig.java
  com.example.lebonpetitcoin.BuildConfig
 com/example/lebonpetitcoin/MonFileProvider.java
  com.example.lebonpetitcoin.MonFileProvider
-com/example/lebonpetitcoin/Fragments/AccueilFragment.java
- com.example.lebonpetitcoin.Fragments.AccueilFragment
-com/example/lebonpetitcoin/Fragments/AccountFragment.java
- com.example.lebonpetitcoin.Fragments.AccountFragment
- com.example.lebonpetitcoin.Fragments.AccountFragment$1
+com/example/lebonpetitcoin/MainActivity.java
+ com.example.lebonpetitcoin.MainActivity
+ com.example.lebonpetitcoin.MainActivity$1
+ com.example.lebonpetitcoin.MainActivity$2
+com/example/lebonpetitcoin/Fragments/MessageFragment.java
+ com.example.lebonpetitcoin.Fragments.MessageFragment
+ com.example.lebonpetitcoin.Fragments.MessageFragment$1
+ com.example.lebonpetitcoin.Fragments.MessageFragment$1$1
+ com.example.lebonpetitcoin.Fragments.MessageFragment$1$2
+ com.example.lebonpetitcoin.Fragments.MessageFragment$2
+ com.example.lebonpetitcoin.Fragments.MessageFragment$2$1
+ com.example.lebonpetitcoin.Fragments.MessageFragment$2$2

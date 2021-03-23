@@ -1827,6 +1827,8 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id Edescription
+id Etitle
 id FUNCTION
 id META
 id NO_DEBUG
@@ -1837,6 +1839,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id Tload
 id UploadBtn
 id accelerate
 id accessibility_action_clickable_span
@@ -1936,8 +1939,9 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_holder
-id button
+id buttonLoad
 id buttonPanel
+id buttonSend
 id button_continue
 id button_create
 id button_done
@@ -1971,7 +1975,6 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id collapseActionView
-id collection
 id confirmPassword
 id confirm_button
 id confirmation_code
@@ -1996,7 +1999,6 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
-id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2281,6 +2283,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id terms_conditions
+id test
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
