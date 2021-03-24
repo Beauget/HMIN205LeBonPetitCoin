@@ -22,7 +22,7 @@ public class Annonce {
     Date datePoste;
     Integer nbDeVisites;
     //Catgorie, pas String dans le doute ou le nom change
-    DocumentReference categorie;
+    List<DocumentReference> categories;
     DocumentReference statistique;
 
     float prix;
@@ -31,7 +31,7 @@ public class Annonce {
     //Des Image
     List<StorageReference> Images;
 
-    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, Date datePoste, Integer nbDeVisites, DocumentReference categorie, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<StorageReference> images) {
+    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<StorageReference> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
         this.telephoneContact = telephoneContact;
@@ -40,7 +40,7 @@ public class Annonce {
         this.description = description;
         this.datePoste = datePoste;
         this.nbDeVisites = nbDeVisites;
-        this.categorie = categorie;
+        this.categories = categories;
         this.statistique = statistique;
         this.prix = prix;
         this.paiement = paiement;
@@ -103,12 +103,12 @@ public class Annonce {
         this.nbDeVisites = nbDeVisites;
     }
 
-    public DocumentReference getCategorie() {
-        return categorie;
+    public DocumentReference getCategories() {
+        return categories;
     }
 
-    public void setCategorie(DocumentReference categorie) {
-        this.categorie = categorie;
+    public void setCategories(List<DocumentReference> categories) {
+        this.categories = categories;
     }
 
     public DocumentReference getStatistique() {
