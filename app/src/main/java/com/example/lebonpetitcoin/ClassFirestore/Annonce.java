@@ -3,6 +3,7 @@ package com.example.lebonpetitcoin.ClassFirestore;
 
 
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.storage.StorageReference;
 import com.google.type.Date;
 
 import java.util.List;
@@ -28,9 +29,9 @@ public class Annonce {
     //Des MoyenDePaiment, pas String dans le doute ou le nom change
     List<DocumentReference>  paiement;
     //Des Image
-    List<DocumentReference> Images;
+    List<StorageReference> Images;
 
-    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, Date datePoste, Integer nbDeVisites, DocumentReference categorie, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<DocumentReference> images) {
+    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, Date datePoste, Integer nbDeVisites, DocumentReference categorie, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<StorageReference> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
         this.telephoneContact = telephoneContact;
@@ -142,11 +143,11 @@ public class Annonce {
         this.estProfessionnel = estProfessionnel;
     }
 
-    public List<DocumentReference> getImages() {
+    public List<StorageReference> getImages() {
         return Images;
     }
 
-    public void setImages(List<DocumentReference> images) {
+    public void setImages(List<StorageReference> images) {
         Images = images;
     }
 }
