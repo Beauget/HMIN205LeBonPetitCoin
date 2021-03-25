@@ -10,7 +10,7 @@
             android:title="@string/mon_compte" />
     </group>
 
-    <item android:title="Configuration">
+    <item android:title="Profile">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -40,6 +40,17 @@
                     android:id="@+id/activity_main_drawer_signUp"
                     android:icon="@drawable/favorite_white_24dp"
                     android:title="@string/s_inscrire" />
+
+            </group>
+        </menu>
+    </item>
+    <item android:title="Configuration">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_parametres"
+                    android:icon="@drawable/chat_24dp"
+                    android:title="@string/parametres" />
 
             </group>
         </menu>

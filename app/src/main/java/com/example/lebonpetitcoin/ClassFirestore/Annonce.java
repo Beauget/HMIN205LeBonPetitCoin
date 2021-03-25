@@ -31,6 +31,10 @@ public class Annonce {
     //Des Image
     List<StorageReference> Images;
 
+    public Annonce(){
+        //public no args contructeur obligatoire sinon firebase crash
+    }
+
     public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<StorageReference> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
@@ -103,7 +107,7 @@ public class Annonce {
         this.nbDeVisites = nbDeVisites;
     }
 
-    public DocumentReference getCategories() {
+    public List<DocumentReference> getCategories() {
         return categories;
     }
 

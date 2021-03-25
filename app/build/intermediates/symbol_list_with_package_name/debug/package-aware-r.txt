@@ -91,6 +91,7 @@ attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
 attr alertDialogTheme
+attr alignmentMode
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
@@ -255,6 +256,8 @@ attr colorSecondary
 attr colorSecondaryVariant
 attr colorSurface
 attr colorSwitchThumbNormal
+attr columnCount
+attr columnOrderPreserved
 attr commitIcon
 attr constraintSet
 attr constraintSetEnd
@@ -511,6 +514,9 @@ attr layout_anchorGravity
 attr layout_behavior
 attr layout_collapseMode
 attr layout_collapseParallaxMultiplier
+attr layout_column
+attr layout_columnSpan
+attr layout_columnWeight
 attr layout_constrainedHeight
 attr layout_constrainedWidth
 attr layout_constraintBaseline_creator
@@ -562,9 +568,13 @@ attr layout_goneMarginLeft
 attr layout_goneMarginRight
 attr layout_goneMarginStart
 attr layout_goneMarginTop
+attr layout_gravity
 attr layout_insetEdge
 attr layout_keyline
 attr layout_optimizationLevel
+attr layout_row
+attr layout_rowSpan
+attr layout_rowWeight
 attr layout_scrollFlags
 attr layout_scrollInterpolator
 attr liftOnScroll
@@ -678,6 +688,7 @@ attr onNegativeCross
 attr onPositiveCross
 attr onShow
 attr onTouchUp
+attr orientation
 attr overlapAnchor
 attr overlay
 attr paddingBottomNoButtons
@@ -734,6 +745,8 @@ attr reverseLayout
 attr rippleColor
 attr round
 attr roundPercent
+attr rowCount
+attr rowOrderPreserved
 attr saturation
 attr scopeUris
 attr scrimAnimationDuration
@@ -929,6 +942,7 @@ attr triggerReceiver
 attr triggerSlack
 attr ttcIndex
 attr useCompatPadding
+attr useDefaultMargins
 attr useMaterialThemeColors
 attr values
 attr verticalOffset
@@ -1296,6 +1310,7 @@ dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
 dimen default_dimension
+dimen default_gap
 dimen default_large_margin
 dimen default_margin
 dimen default_text_size
@@ -1826,10 +1841,16 @@ drawable tooltip_frame_light
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id BtnCategorie
+id BtnMoyenDePaiement
 id CTRL
+id ETCategorie
+id ETMoyenDePaiement
 id Edescription
 id Etitle
 id FUNCTION
+id LCategorie
+id LMoyenDePaiement
 id META
 id NO_DEBUG
 id SHIFT
@@ -1900,6 +1921,7 @@ id activity_main_drawer_account
 id activity_main_drawer_fav
 id activity_main_drawer_layout
 id activity_main_drawer_message
+id activity_main_drawer_parametres
 id activity_main_drawer_signIn
 id activity_main_drawer_signUp
 id activity_main_drawer_stats
@@ -1909,6 +1931,8 @@ id add
 id adjust_height
 id adjust_width
 id alertTitle
+id alignBounds
+id alignMargins
 id aligned
 id all
 id already_user
@@ -2057,9 +2081,12 @@ id fragment_register_email
 id fullName
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
+id gridLayout1
+id gridLayout2
 id group_divider
 id grouping
 id groups
@@ -2339,6 +2366,7 @@ id unlabeled
 id up
 id useLogo
 id userEmailId
+id vertical
 id view_offset_helper
 id visible
 id welcome_back_email_link_body
@@ -2441,6 +2469,7 @@ layout fragment_account
 layout fragment_accueil
 layout fragment_fav
 layout fragment_message
+layout fragment_parametres
 layout fragment_signin
 layout fragment_signup
 layout fragment_stats
@@ -2790,6 +2819,7 @@ string mtrl_picker_toggle_to_year_selection
 string navigation_drawer_close
 string navigation_drawer_open
 string newUser
+string parametres
 string passowrd
 string password
 string password_toggle_content_description
@@ -3641,6 +3671,8 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable GridLayout alignmentMode columnCount columnOrderPreserved orientation rowCount rowOrderPreserved useDefaultMargins
+styleable GridLayout_Layout android_layout_width android_layout_height android_layout_margin android_layout_marginLeft android_layout_marginTop android_layout_marginRight android_layout_marginBottom layout_column layout_columnSpan layout_columnWeight layout_gravity layout_row layout_rowSpan layout_rowWeight
 styleable ImageFilterView altSrc brightness contrast crossfade overlay round roundPercent saturation warmth
 styleable Insets paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets
 styleable KeyAttribute android_alpha android_transformPivotX android_transformPivotY android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_translationZ android_elevation curveFit framePosition motionProgress motionTarget transitionEasing transitionPathRotate

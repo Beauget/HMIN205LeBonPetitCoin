@@ -22,6 +22,7 @@ import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 import com.example.lebonpetitcoin.Fragments.FavFragment;
 import com.example.lebonpetitcoin.Fragments.MessageFragment;
+import com.example.lebonpetitcoin.Fragments.ParametresFragment;
 import com.example.lebonpetitcoin.Fragments.SignInFragment;
 import com.example.lebonpetitcoin.Fragments.SignUpFragment;
 import com.example.lebonpetitcoin.Fragments.StatsFragment;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Fragment fragmentStats;
     private Fragment fragmentSignIn;
     private Fragment fragmentSignUp;
+    private Fragment fragmentParametres;
 
     //VALEUR RETOURNE SELON LE CLIQUE
     private static final int FRAGMENT_ACCOUNT = 0;
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_STATS = 3;
     private static final int FRAGMENT_SIGNIN = 4;
     private static final int FRAGMENT_SIGNUP = 5;
+    private static final int FRAGMENT_PARAMETRES = 6;
 
 
     @Override
@@ -162,6 +165,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.activity_main_drawer_signUp:
                 this.showFragment(FRAGMENT_SIGNUP);
                 break;
+            case R.id.activity_main_drawer_parametres:
+                this.showFragment(FRAGMENT_PARAMETRES);
+                break;
             default:
                 break;
         }
@@ -191,6 +197,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case FRAGMENT_SIGNUP:
                 this.showSignUpFragment();
+                break;
+            case FRAGMENT_PARAMETRES:
+                this.showParametresFragment();
                 break;
             default:
                 break;
@@ -231,6 +240,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showSignUpFragment() {
         if (this.fragmentSignUp == null) this.fragmentSignUp = SignUpFragment.newInstance();
         this.startTransactionFragment(this.fragmentSignUp);
+    }
+
+    private void showParametresFragment() {
+        if (this.fragmentParametres == null) this.fragmentParametres= ParametresFragment.newInstance();
+        this.startTransactionFragment(this.fragmentParametres);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout

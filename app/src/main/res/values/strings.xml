@@ -38,5 +38,6 @@
     <string name="app_label">LeBonPetitCoin</string>
     <string name="search_hint">Recherche...</string>
     <string name="password">Mot de passe</string>
+    <string name="parametres">Parametres</string>
 
 </resources>

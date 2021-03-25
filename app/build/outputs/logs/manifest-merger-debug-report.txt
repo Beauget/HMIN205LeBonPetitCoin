@@ -21,11 +21,14 @@ MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/ca
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4624792535c153efb2d9ef13b187bbc4/jetified-library-1.6.1/AndroidManifest.xml:6:1-15:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/94069db81f5b49cd9468181083449b7e/gridlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:15:1-39:12
 MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/79bbbde5c555640d929a37e27f6c1763/jetified-volley-1.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/65f4e2c0cf3213d7b67e1c35538334ae/room-rxjava2-2.2.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-guava:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/349f6acc5b206951a8640312395efaba/room-guava-2.2.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:17:1-31:12
 MERGED from [com.firebaseui:firebase-ui-firestore:3.1.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fe88ee05964773694e9ff8042b7af70f/jetified-firebase-ui-firestore-3.1.3/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/227476882a3ec8d0c18f2e13253fed65/jetified-glide-4.12.0/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:17:1-36:12
@@ -72,12 +75,15 @@ MERGED from [androidx.activity:activity:1.0.0] /home/hayaat/.gradle/caches/trans
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/06bdd8e905652ff2ad1e1ea1ee0aa01a/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/feef1f828a5e02b388bbcca05d9b3338/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/024d0659a3246560f1b743f7b8f5313c/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media:media:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cbfb4e43f798a1cd04e53763d03adb1a/media-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c83b8dc50a8a93a5905719cf1bf92131/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/ab455e7f73159929447fa088924849d3/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cbfb4e43f798a1cd04e53763d03adb1a/media-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/14367cd2239a2094f32512ae0b5a843c/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/31ad2b91b47a4613df6657dc739f2397/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f650d8a7b38295903d2f45f7fcb0105b/jetified-gifdecoder-4.12.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/58a877c35ee37f46ec01c0c506438a61/exifinterface-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/bd68bb064f2db47327311ef87fd77014/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:17:1-30:12
@@ -91,7 +97,6 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /home/hayaat/.gradle/caches/t
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/2c57ca5c5cb33722ba8060cd1e094990/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0cd7e7a97bc09653a5836529c4f1e6db/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c19316ee24d18218817a41ce7b88a2ac/print-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1f6b045666a31134b82a56c243bf4255/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [io.grpc:grpc-android:1.28.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/10a3513949333938587db48c8411373d/jetified-grpc-android-1.28.0/AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e53fbbcf78ffb18c7cd795b35d4efb56/jetified-protolite-well-known-types-17.1.1/AndroidManifest.xml:2:1-11:12
@@ -122,8 +127,12 @@ MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/ca
 MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cd6f2caba378d66250797e09d6bb24e0/material-1.3.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b47bb01ecc6aa52d262badcce0bb4ed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:29:5-37:19
 MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:24:5-29:19
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/227476882a3ec8d0c18f2e13253fed65/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/227476882a3ec8d0c18f2e13253fed65/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:16:5-24:19
@@ -164,6 +173,8 @@ MERGED from [com.google.android.gms:play-services-basement:17.1.0] /home/hayaat/
 MERGED from [com.google.android.gms:play-services-basement:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/74483de84094d0d661b0d354666c2c5a/jetified-play-services-basement-17.1.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:24:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f650d8a7b38295903d2f45f7fcb0105b/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f650d8a7b38295903d2f45f7fcb0105b/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7f380c3d0d9744cf81d7f42a0eeffd50/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
@@ -236,6 +247,8 @@ uses-permission#android.permission.INTERNET
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:47:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/dd0d050c7912f8b3178982b03386de61/jetified-firebase-ui-auth-6.4.0/AndroidManifest.xml:13:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/dd0d050c7912f8b3178982b03386de61/jetified-firebase-ui-auth-6.4.0/AndroidManifest.xml:13:5-67
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:27:5-67
 MERGED from [com.firebaseui:firebase-ui-firestore:3.1.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fe88ee05964773694e9ff8042b7af70f/jetified-firebase-ui-firestore-3.1.3/AndroidManifest.xml:11:5-67
 MERGED from [com.firebaseui:firebase-ui-firestore:3.1.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fe88ee05964773694e9ff8042b7af70f/jetified-firebase-ui-firestore-3.1.3/AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:23:5-67
@@ -258,6 +271,8 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:48:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/dd0d050c7912f8b3178982b03386de61/jetified-firebase-ui-auth-6.4.0/AndroidManifest.xml:12:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:6.4.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/dd0d050c7912f8b3178982b03386de61/jetified-firebase-ui-auth-6.4.0/AndroidManifest.xml:12:5-79
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:13:5-79
@@ -310,6 +325,10 @@ MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] /home/hayaat
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4624792535c153efb2d9ef13b187bbc4/jetified-library-1.6.1/AndroidManifest.xml:11:5-13:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/94069db81f5b49cd9468181083449b7e/gridlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.gridlayout:gridlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/94069db81f5b49cd9468181083449b7e/gridlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/79bbbde5c555640d929a37e27f6c1763/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
 MERGED from [com.android.volley:volley:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/79bbbde5c555640d929a37e27f6c1763/jetified-volley-1.2.0/AndroidManifest.xml:5:5-43
 MERGED from [androidx.room:room-rxjava2:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/65f4e2c0cf3213d7b67e1c35538334ae/room-rxjava2-2.2.6/AndroidManifest.xml:20:5-22:41
@@ -320,6 +339,8 @@ MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/trans
 MERGED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:20:5-22:41
 MERGED from [com.firebaseui:firebase-ui-firestore:3.1.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fe88ee05964773694e9ff8042b7af70f/jetified-firebase-ui-firestore-3.1.3/AndroidManifest.xml:7:5-9:41
 MERGED from [com.firebaseui:firebase-ui-firestore:3.1.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/fe88ee05964773694e9ff8042b7af70f/jetified-firebase-ui-firestore-3.1.3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/227476882a3ec8d0c18f2e13253fed65/jetified-glide-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/227476882a3ec8d0c18f2e13253fed65/jetified-glide-4.12.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:7:5-9:41
@@ -412,18 +433,24 @@ MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/hayaat/.g
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/feef1f828a5e02b388bbcca05d9b3338/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/024d0659a3246560f1b743f7b8f5313c/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/024d0659a3246560f1b743f7b8f5313c/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cbfb4e43f798a1cd04e53763d03adb1a/media-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cbfb4e43f798a1cd04e53763d03adb1a/media-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c83b8dc50a8a93a5905719cf1bf92131/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c83b8dc50a8a93a5905719cf1bf92131/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/ab455e7f73159929447fa088924849d3/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/ab455e7f73159929447fa088924849d3/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cbfb4e43f798a1cd04e53763d03adb1a/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cbfb4e43f798a1cd04e53763d03adb1a/media-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.3.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f3d364c4591b4da0386e5d8846d9d728/core-1.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/14367cd2239a2094f32512ae0b5a843c/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/14367cd2239a2094f32512ae0b5a843c/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/31ad2b91b47a4613df6657dc739f2397/sqlite-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.0.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/31ad2b91b47a4613df6657dc739f2397/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f650d8a7b38295903d2f45f7fcb0105b/jetified-gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f650d8a7b38295903d2f45f7fcb0105b/jetified-gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/58a877c35ee37f46ec01c0c506438a61/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/58a877c35ee37f46ec01c0c506438a61/exifinterface-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/8bbfa7597f1b8f7b6012b7db2dfae2bd/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/bd68bb064f2db47327311ef87fd77014/interpolator-1.0.0/AndroidManifest.xml:20:5-44
@@ -450,8 +477,6 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/cach
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0cd7e7a97bc09653a5836529c4f1e6db/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c19316ee24d18218817a41ce7b88a2ac/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c19316ee24d18218817a41ce7b88a2ac/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.firebase:firebase-components:16.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/c36aa81c7706cd842cc31c762a39c361/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1f6b045666a31134b82a56c243bf4255/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1f6b045666a31134b82a56c243bf4255/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [io.grpc:grpc-android:1.28.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/10a3513949333938587db48c8411373d/jetified-grpc-android-1.28.0/AndroidManifest.xml:7:5-9:41
@@ -650,6 +675,32 @@ ADDED from [com.firebaseui:firebase-ui-auth:6.4.0] /home/hayaat/.gradle/caches/t
 		ADDED from [com.firebaseui:firebase-ui-auth:6.4.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/dd0d050c7912f8b3178982b03386de61/jetified-firebase-ui-auth-6.4.0/AndroidManifest.xml:106:13-35
 	android:name
 		ADDED from [com.firebaseui:firebase-ui-auth:6.4.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/dd0d050c7912f8b3178982b03386de61/jetified-firebase-ui-auth-6.4.0/AndroidManifest.xml:103:13-79
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:74:9-80:19
+MERGED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:74:9-80:19
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:33:9-46:19
+MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:33:9-46:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:32:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:31:13-84
+meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
+ADDED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:33:13-35:85
+	android:value
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:35:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-storage:19.2.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/4fe024a2b334d8544f8eaa9cab7ed523/jetified-firebase-storage-19.2.1/AndroidManifest.xml:34:17-107
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.2.6] /home/hayaat/.gradle/caches/transforms-2/files-2.1/f7dc4a753ee63e3517a6360d392da23b/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
 	android:exported
@@ -700,24 +751,6 @@ action#com.google.firebase.auth.api.gms.service.START
 ADDED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:69:17-89
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:69:25-86
-service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:74:9-80:19
-MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:17:9-23:19
-MERGED from [com.google.firebase:firebase-firestore:22.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1b5a9ebef469875d1d39c8e5b85769d9/jetified-firebase-firestore-22.1.1/AndroidManifest.xml:17:9-23:19
-MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:27:9-33:19
-MERGED from [com.google.android.gms:play-services-measurement-api:18.0.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/093fefaa9b92cc8891649f8a6fb059a9/jetified-play-services-measurement-api-18.0.2/AndroidManifest.xml:27:9-33:19
-MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:15:9-21:19
-MERGED from [com.google.firebase:firebase-installations:16.3.5] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1369485c689ceb8322c0628522befd57/jetified-firebase-installations-16.3.5/AndroidManifest.xml:15:9-21:19
-MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:33:9-46:19
-MERGED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:33:9-46:19
-	android:exported
-		ADDED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:76:13-37
-	tools:targetApi
-		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:37:13-32
-	android:directBootAware
-		ADDED from [com.google.firebase:firebase-common:19.5.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9b2ec3a49389295e09fe37e42c5e30ad/jetified-firebase-common-19.5.0/AndroidManifest.xml:35:13-43
-	android:name
-		ADDED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:75:13-84
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
 ADDED from [com.google.firebase:firebase-auth:20.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/59708e4c89685822c69df7ac6667b1ed/jetified-firebase-auth-20.0.3/AndroidManifest.xml:77:13-79:85
 	android:value
