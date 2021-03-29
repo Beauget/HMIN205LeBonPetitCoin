@@ -4,9 +4,8 @@ com/example/lebonpetitcoin/MainActivity.java
  com.example.lebonpetitcoin.MainActivity
  com.example.lebonpetitcoin.MainActivity$1
  com.example.lebonpetitcoin.MainActivity$2
-com/example/lebonpetitcoin/AdapterCategorie.java
- com.example.lebonpetitcoin.AdapterCategorie
- com.example.lebonpetitcoin.AdapterCategorie$CategorieHolder
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
 com/example/lebonpetitcoin/accountActivity.java
  com.example.lebonpetitcoin.accountActivity
 com/example/lebonpetitcoin/Fragments/SignInFragment.java
@@ -42,20 +41,8 @@ com/example/lebonpetitcoin/ClassFirestore/Categorie.java
  com.example.lebonpetitcoin.ClassFirestore.Categorie
 com/example/lebonpetitcoin/Fragments/SignUpFragment.java
  com.example.lebonpetitcoin.Fragments.SignUpFragment
-com/example/lebonpetitcoin/Fragments/ParametresFragment.java
- com.example.lebonpetitcoin.Fragments.ParametresFragment
- com.example.lebonpetitcoin.Fragments.ParametresFragment$1
- com.example.lebonpetitcoin.Fragments.ParametresFragment$10
- com.example.lebonpetitcoin.Fragments.ParametresFragment$11
- com.example.lebonpetitcoin.Fragments.ParametresFragment$12
- com.example.lebonpetitcoin.Fragments.ParametresFragment$2
- com.example.lebonpetitcoin.Fragments.ParametresFragment$3
- com.example.lebonpetitcoin.Fragments.ParametresFragment$4
- com.example.lebonpetitcoin.Fragments.ParametresFragment$5
- com.example.lebonpetitcoin.Fragments.ParametresFragment$6
- com.example.lebonpetitcoin.Fragments.ParametresFragment$7
- com.example.lebonpetitcoin.Fragments.ParametresFragment$8
- com.example.lebonpetitcoin.Fragments.ParametresFragment$9
+com/example/lebonpetitcoin/BuildConfig.java
+ com.example.lebonpetitcoin.BuildConfig
 com/example/lebonpetitcoin/ClassFirestore/Annonce.java
  com.example.lebonpetitcoin.ClassFirestore.Annonce
 com/example/lebonpetitcoin/Fragments/AccueilFragment.java
@@ -77,7 +64,20 @@ com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.AnnonceFragment
 com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
  com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
-com/example/lebonpetitcoin/BuildConfig.java
- com.example.lebonpetitcoin.BuildConfig
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
+com/example/lebonpetitcoin/AdapterCategorie.java
+ com.example.lebonpetitcoin.AdapterCategorie
+ com.example.lebonpetitcoin.AdapterCategorie$CategorieHolder
+com/example/lebonpetitcoin/Fragments/ParametresFragment.java
+ com.example.lebonpetitcoin.Fragments.ParametresFragment
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$1
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$10
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$11
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$12
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$2
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$3
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$4
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$5
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$6
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$7
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$8
+ com.example.lebonpetitcoin.Fragments.ParametresFragment$9

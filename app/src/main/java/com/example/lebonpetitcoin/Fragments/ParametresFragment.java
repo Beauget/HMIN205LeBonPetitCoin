@@ -334,7 +334,7 @@ public class ParametresFragment extends Fragment {
 
 
     private void setUpRecyclerView() {
-        Query query = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
+        Query query = cCategorie.orderBy("intitule", Query.Direction.ASCENDING);
         //Query query =cCategorie.whereEqualTo("intitule", true);
 
         //String r = query.toString();
@@ -348,7 +348,7 @@ public class ParametresFragment extends Fragment {
 
 
         //adapter = new AdapterCategorie(options);
-        
+
 
         recyclerView = (RecyclerView) getView().findViewById(R.id.LCategorie);
         recyclerView.setHasFixedSize(true);

@@ -21,8 +21,8 @@ public class AdapterCategorie extends FirestoreRecyclerAdapter<Categorie, Adapte
 
     @Override
     protected void onBindViewHolder(@NonNull CategorieHolder holder, int position, @NonNull Categorie model) {
-        holder.getTextViewTitle().setText(String.valueOf((model.getId())));
-        holder.getTextViewDescription().setText(String.valueOf(model.getIntitule()));
+        holder.getTextViewTitle().setText(String.valueOf((model.getIntitule())));
+        //holder.getTextViewDescription().setText(String.valueOf(model.getIntitule()));
 
     }
 
@@ -40,15 +40,17 @@ public class AdapterCategorie extends FirestoreRecyclerAdapter<Categorie, Adapte
         public CategorieHolder(View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.text_view_title);
-            textViewDescription = itemView.findViewById(R.id.text_view_description);
+            //textViewDescription = itemView.findViewById(R.id.text_view_description);
         }
 
         public TextView getTextViewTitle(){
             return textViewTitle;
         }
-
+        /*
         public TextView getTextViewDescription() {
             return textViewDescription;
         }
+        */
+
     }
 }
