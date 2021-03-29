@@ -1849,6 +1849,7 @@ id ETMoyenDePaiement
 id Edescription
 id Etitle
 id FUNCTION
+id LC2
 id LCategorie
 id LMoyenDePaiement
 id META
@@ -2086,7 +2087,6 @@ id gone
 id graph
 id graph_wrap
 id gridLayout1
-id gridLayout2
 id group_divider
 id grouping
 id groups
@@ -2329,6 +2329,8 @@ id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_view_description
+id text_view_title
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2340,6 +2342,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id titreeeee
 id toast_error
 id toast_root
 id toggle
@@ -2499,6 +2502,7 @@ layout fui_register_email_layout
 layout fui_welcome_back_email_link_prompt_layout
 layout fui_welcome_back_idp_prompt_layout
 layout fui_welcome_back_password_prompt_layout
+layout item_intitule
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

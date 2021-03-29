@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,10 +14,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lebonpetitcoin.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.example.lebonpetitcoin.R;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,8 +34,13 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Ici sera l'ajout des catégories et des moyen de paiement
@@ -51,6 +62,7 @@ public class ParametresFragment extends Fragment {
     //Zone affichage des collections
     TextView tCategorie;
     TextView tMoyenDePaiement;
+    TextView test;
 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
@@ -60,11 +72,15 @@ public class ParametresFragment extends Fragment {
     //Listener afin que la recherce dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration categorieListener;
     private ListenerRegistration moyenDePaiementListener;
+    private FirestoreRecyclerAdapter adapter;
 
+
+    RecyclerView recyclerView ;
 
     public static ParametresFragment newInstance() {
         return (new ParametresFragment());
     }
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_parametres, container, false);
@@ -73,31 +89,61 @@ public class ParametresFragment extends Fragment {
         eCategorie= view.findViewById(R.id.ETCategorie);
         eMoyenDePaiement = view.findViewById(R.id.ETMoyenDePaiement);
 
+        test=view.findViewById(R.id.titreeeee);
+
         //boutton d'envoie des documents
         bCategorie= view.findViewById(R.id.BtnCategorie);
-        confBtnCategorie();
-
         bMoyenDePaiement =view.findViewById(R.id.BtnMoyenDePaiement);
-        confBtnMoyenDePaiement();
-
 
         //Champs d'affichage du des collections
-        tCategorie = view.findViewById(R.id.LCategorie);
+        tCategorie = view.findViewById(R.id.LC2);
         tMoyenDePaiement = view.findViewById(R.id.LMoyenDePaiement);
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.LCategorie);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager
+                (new LinearLayoutManager(view.getContext()));
+
 
 
         return view;
     }
 
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        confBtnCategorie();
+        confBtnMoyenDePaiement();
+        //setUpRecyclerView();
+
+        Query query = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
+
+        FirestoreRecyclerOptions<Categorie> options = new FirestoreRecyclerOptions.Builder<Categorie>()
+                .setQuery(query, Categorie.class)
+                .setLifecycleOwner(this)
+                .build();
+
+        adapter = new AdapterCategorie(options);
+
+        recyclerView.setAdapter(adapter);
+
+        //Adapter adapter1 = null;
+        //recyclerView.setAdapter((RecyclerView.Adapter) adapter1);
+       // test.setText(String.valueOf(adapter.getItemCount()));
+
+
+
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        //adapter.startListening();
 
-        categorieListener = cCategorie.addSnapshotListener(new EventListener<QuerySnapshot>() {
+        categorieListener = cCategorie.orderBy("intitule", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -116,7 +162,7 @@ public class ParametresFragment extends Fragment {
         });
 
 
-        moyenDePaiementListener = cMoyenDePaiement.addSnapshotListener(new EventListener<QuerySnapshot>() {
+        moyenDePaiementListener = cMoyenDePaiement.orderBy("intitule", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {
@@ -260,7 +306,7 @@ public class ParametresFragment extends Fragment {
 
         //solution sans listener
         public void loadCategorie(View v){
-            cCategorie.get()
+            cCategorie.orderBy("intitule", Query.Direction.ASCENDING).get()
                     .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                         @Override
                         public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -285,5 +331,34 @@ public class ParametresFragment extends Fragment {
                         }
                     });
         }
+
+
+    private void setUpRecyclerView() {
+        Query query = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
+        //Query query =cCategorie.whereEqualTo("intitule", true);
+
+        //String r = query.toString();
+        FirestoreRecyclerOptions<Categorie> options = new FirestoreRecyclerOptions.Builder<Categorie>()
+                .setQuery(query, Categorie.class)
+                .build();
+        //test.setText(options.toString());
+
+        //FirestoreRecyclerAdapter adapter = getFirestoreRecyclerAdapter();
+        //test.setText(String.valueOf(options.getSnapshots().size()));
+
+
+        //adapter = new AdapterCategorie(options);
+        
+
+        recyclerView = (RecyclerView) getView().findViewById(R.id.LCategorie);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
+        test.setText(String.valueOf(adapter.getItemCount()));
+    }
+    //apche query parser syntaxe
+    //fts3 lucen
+    //signIn workflow google android api
+    //use case
 }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
@@ -67,58 +68,58 @@
 
     </GridLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Liste actuelle"
-    />
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-    <GridLayout
-        android:id="@+id/gridLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_gravity="fill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="0"
-            android:text="Categorie" />
-
-        <TextView
-            android:id="@+id/LCategorie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_rowWeight="0"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
+            <TextView
+                android:id="@+id/titreeeee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Liste actuelle"
             />
 
 
-    </GridLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="0"
+                android:layout_columnWeight="1"
+                android:text="Categorie" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_rowWeight="0"
-        android:layout_columnWeight="1"
-        android:text="Moyen de Paiement" />
 
-    <TextView
-        android:id="@+id/LMoyenDePaiement"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_rowWeight="0"
-        android:layout_columnWeight="1"
-/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/LCategorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/LC2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moyen de Paiement" />
+
+            <TextView
+                android:id="@+id/LMoyenDePaiement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!-- bla bla bla-->
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
