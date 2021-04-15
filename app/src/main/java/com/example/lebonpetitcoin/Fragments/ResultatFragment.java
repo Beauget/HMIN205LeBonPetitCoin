@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,14 +17,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.lebonpetitcoin.Adapter.AdapterAnnonce;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
+import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -37,6 +41,8 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 /*
  * Ici sera l'ajout des catégories et des moyen de paiement
@@ -56,6 +62,9 @@ public class ResultatFragment extends Fragment {
     private ListenerRegistration annonceListener;
     private FirestoreRecyclerAdapter adapter;
 
+    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("seal.jpg");
+    ImageView image ;
+
 
     RecyclerView recyclerView ;
 
@@ -73,7 +82,19 @@ public class ResultatFragment extends Fragment {
         //recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager
                 (new LinearLayoutManager(view.getContext()));
+
+        image = view.findViewById(R.id.imageView);
+
+        //StorageReference gsReference = FirebaseStorage.getReferenceFromUrl("gs://lebonpetitcoin-6928c.appspot.com/seal.jpg")
+
+        GlideApp.with(this)
+                .load(storageReference)
+                .into(image);
+
         return view;
+
+// Load the image using Glide
+
     }
 
     @Override

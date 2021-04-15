@@ -4,23 +4,6 @@
             "outputFile": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
             "map": [
                 {
-                    "source": "/home/hayaat/.gradle/caches/transforms-2/files-2.1/74483de84094d0d661b0d354666c2c5a/jetified-play-services-basement-17.1.0/res/values-sw/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "204",
-                        "endOffsets": "451"
-                    },
-                    "to": {
-                        "startLines": "45",
-                        "startColumns": "4",
-                        "startOffsets": "4517",
-                        "endColumns": "204",
-                        "endOffsets": "4717"
-                    }
-                },
-                {
                     "source": "/home/hayaat/.gradle/caches/transforms-2/files-2.1/a63935de15513710d98bf227aa324a8b/jetified-play-services-base-17.1.0/res/values-sw/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -71,6 +54,23 @@
                         "endLines": "5,33,34,35,36,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104",
                         "endColumns": "12,72,98,128,82,67,91,72,62,85,62,64,67,62,53,131,56,61,53,73,137,80,79,101,84,86,87,66,65,71,81,89,71,74,70,72,96,73,94,96,73,84,99,52,67,87,89,61,63,62,116,109,110,111,80",
                         "endOffsets": "259,3028,3127,3256,3339,6157,6249,6322,6385,6471,6534,6599,6667,6730,6784,6916,6973,7035,7089,7163,7301,7382,7462,7564,7649,7736,7824,7891,7957,8029,8111,8201,8273,8348,8419,8492,8589,8663,8758,8855,8929,9014,9114,9167,9235,9323,9413,9475,9539,9602,9719,9829,9940,10052,10133"
+                    }
+                },
+                {
+                    "source": "/home/hayaat/.gradle/caches/transforms-2/files-2.1/46c1e523d8f37f57231b4fc01b2fad72/jetified-play-services-basement-17.1.1/res/values-sw/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "204",
+                        "endOffsets": "451"
+                    },
+                    "to": {
+                        "startLines": "45",
+                        "startColumns": "4",
+                        "startOffsets": "4517",
+                        "endColumns": "204",
+                        "endOffsets": "4717"
                     }
                 },
                 {
