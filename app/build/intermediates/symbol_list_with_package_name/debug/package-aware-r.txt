@@ -1852,6 +1852,7 @@ id FUNCTION
 id LC2
 id LCategorie
 id LMoyenDePaiement
+id LResultat
 id META
 id NO_DEBUG
 id SHIFT
@@ -1923,6 +1924,7 @@ id activity_main_drawer_fav
 id activity_main_drawer_layout
 id activity_main_drawer_message
 id activity_main_drawer_parametres
+id activity_main_drawer_resultat
 id activity_main_drawer_signIn
 id activity_main_drawer_signUp
 id activity_main_drawer_stats
@@ -2068,6 +2070,9 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id favBtn
+id favImageView
+id favTextView
 id fill
 id fill_horizontal
 id fill_vertical
@@ -2125,6 +2130,7 @@ id layout
 id left
 id leftToRight
 id light
+id likeCountTextView
 id line1
 id line3
 id linear
@@ -2341,6 +2347,7 @@ id ticker
 id time
 id title
 id titleDividerNoCustom
+id titleTextView
 id title_template
 id titreeeee
 id toast_error
@@ -2468,11 +2475,13 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fav_item
 layout fragment_account
 layout fragment_accueil
 layout fragment_fav
 layout fragment_message
 layout fragment_parametres
+layout fragment_resultat
 layout fragment_signin
 layout fragment_signup
 layout fragment_stats
@@ -2502,6 +2511,8 @@ layout fui_register_email_layout
 layout fui_welcome_back_email_link_prompt_layout
 layout fui_welcome_back_idp_prompt_layout
 layout fui_welcome_back_password_prompt_layout
+layout item
+layout item_annonce
 layout item_intitule
 layout material_chip_input_combo
 layout material_clock_display

@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lebonpetitcoin.AdapterCategorie;
+import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.example.lebonpetitcoin.R;
@@ -29,7 +28,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -37,10 +35,6 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.example.lebonpetitcoin.ClassFirestore.Categorie;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /*
  * Ici sera l'ajout des catégories et des moyen de paiement
@@ -100,7 +94,7 @@ public class ParametresFragment extends Fragment {
         tMoyenDePaiement = view.findViewById(R.id.LMoyenDePaiement);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.LCategorie);
-        recyclerView.setHasFixedSize(true);
+        //recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager
                 (new LinearLayoutManager(view.getContext()));
 
@@ -132,7 +126,6 @@ public class ParametresFragment extends Fragment {
         //Adapter adapter1 = null;
         //recyclerView.setAdapter((RecyclerView.Adapter) adapter1);
        // test.setText(String.valueOf(adapter.getItemCount()));
-
 
 
 

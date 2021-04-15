@@ -51,6 +51,10 @@
                     android:id="@+id/activity_main_drawer_parametres"
                     android:icon="@drawable/chat_24dp"
                     android:title="@string/parametres" />
+                <item
+                    android:id="@+id/activity_main_drawer_resultat"
+                    android:icon="@drawable/chat_24dp"
+                    android:title="Resultat" />
 
             </group>
         </menu>

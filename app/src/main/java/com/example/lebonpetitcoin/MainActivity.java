@@ -23,6 +23,7 @@ import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 import com.example.lebonpetitcoin.Fragments.FavFragment;
 import com.example.lebonpetitcoin.Fragments.MessageFragment;
 import com.example.lebonpetitcoin.Fragments.ParametresFragment;
+import com.example.lebonpetitcoin.Fragments.ResultatFragment;
 import com.example.lebonpetitcoin.Fragments.SignInFragment;
 import com.example.lebonpetitcoin.Fragments.SignUpFragment;
 import com.example.lebonpetitcoin.Fragments.StatsFragment;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Fragment fragmentSignIn;
     private Fragment fragmentSignUp;
     private Fragment fragmentParametres;
+    private Fragment fragmentResultat;
 
     //VALEUR RETOURNE SELON LE CLIQUE
     private static final int FRAGMENT_ACCOUNT = 0;
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_SIGNIN = 4;
     private static final int FRAGMENT_SIGNUP = 5;
     private static final int FRAGMENT_PARAMETRES = 6;
+    private static final int FRAGMENT_RESULTAT = 7;
 
 
     @Override
@@ -168,6 +171,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.activity_main_drawer_parametres:
                 this.showFragment(FRAGMENT_PARAMETRES);
                 break;
+            case R.id.activity_main_drawer_resultat:
+                this.showFragment(FRAGMENT_RESULTAT);
+                break;
             default:
                 break;
         }
@@ -200,6 +206,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case FRAGMENT_PARAMETRES:
                 this.showParametresFragment();
+                break;
+            case FRAGMENT_RESULTAT:
+                this.showResultatfragment();
                 break;
             default:
                 break;
@@ -245,6 +254,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showParametresFragment() {
         if (this.fragmentParametres == null) this.fragmentParametres= ParametresFragment.newInstance();
         this.startTransactionFragment(this.fragmentParametres);
+    }
+
+    private void showResultatfragment() {
+        if (this.fragmentResultat== null) this.fragmentResultat= ResultatFragment.newInstance();
+        this.startTransactionFragment(this.fragmentResultat);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout

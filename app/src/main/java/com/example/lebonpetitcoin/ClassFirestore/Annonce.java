@@ -6,6 +6,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.storage.StorageReference;
 import com.google.type.Date;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class Annonce {
@@ -19,7 +20,7 @@ public class Annonce {
 
     String titre;
     String description;
-    Date datePoste;
+    java.util.Date datePoste;
     Integer nbDeVisites;
     //Catgorie, pas String dans le doute ou le nom change
     List<DocumentReference> categories;
@@ -35,7 +36,21 @@ public class Annonce {
         //public no args contructeur obligatoire sinon firebase crash
     }
 
-    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<StorageReference> images) {
+    public Annonce(String titre) {
+        this.titre = titre;
+        this.auteur = "Jhon";
+        this.estProfessionnel = false;
+        this.telephoneContact = "9999999";
+        this.mailContact = "mailContact@Pouet";
+        this.titre = titre;
+        this.description = "description trop cool";
+        this.datePoste = Calendar.getInstance().getTime();
+        this.nbDeVisites = 0;
+        this.prix = (float) 9.99;
+
+    }
+
+    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<StorageReference> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
         this.telephoneContact = telephoneContact;
@@ -91,11 +106,9 @@ public class Annonce {
         this.description = description;
     }
 
-    public Date getDatePoste() {
-        return datePoste;
-    }
+    public java.util.Date getDatePoste() { return datePoste; }
 
-    public void setDatePoste(Date datePoste) {
+    public void setDatePoste(java.util.Date datePoste) {
         this.datePoste = datePoste;
     }
 
@@ -154,4 +167,6 @@ public class Annonce {
     public void setImages(List<StorageReference> images) {
         Images = images;
     }
+
+    //public StorageReference getFirstImage(){return Images.get(0);}
 }
