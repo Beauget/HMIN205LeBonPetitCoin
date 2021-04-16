@@ -62,8 +62,7 @@ public class ResultatFragment extends Fragment {
     private ListenerRegistration annonceListener;
     private FirestoreRecyclerAdapter adapter;
 
-    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("seal.jpg");
-    ImageView image ;
+    StorageReference storageReference = FirebaseStorage.getInstance().getReference();
 
 
     RecyclerView recyclerView ;
@@ -82,15 +81,6 @@ public class ResultatFragment extends Fragment {
         //recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager
                 (new LinearLayoutManager(view.getContext()));
-
-        image = view.findViewById(R.id.imageView);
-
-        //StorageReference gsReference = FirebaseStorage.getReferenceFromUrl("gs://lebonpetitcoin-6928c.appspot.com/seal.jpg")
-
-        GlideApp.with(this)
-                .load(storageReference)
-                .into(image);
-
         return view;
 
 // Load the image using Glide
@@ -108,7 +98,7 @@ public class ResultatFragment extends Fragment {
                 .setLifecycleOwner(this)
                 .build();
 
-        adapter = new AdapterAnnonce(options);
+        adapter = new AdapterAnnonce(options,getContext());
 
         recyclerView.setAdapter(adapter);
 

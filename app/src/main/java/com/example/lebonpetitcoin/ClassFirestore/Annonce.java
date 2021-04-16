@@ -3,9 +3,11 @@ package com.example.lebonpetitcoin.ClassFirestore;
 
 
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.Exclude;
 import com.google.firebase.storage.StorageReference;
 import com.google.type.Date;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class Annonce {
     //Des MoyenDePaiment, pas String dans le doute ou le nom change
     List<DocumentReference>  paiement;
     //Des Image
-    List<StorageReference> Images;
+    ArrayList<String> images = new ArrayList<>();
 
     public Annonce(){
         //public no args contructeur obligatoire sinon firebase crash
@@ -43,6 +45,7 @@ public class Annonce {
         this.telephoneContact = "9999999";
         this.mailContact = "mailContact@Pouet";
         this.titre = titre;
+        this.images.add("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/seal.jpg?alt=media&token=a0936c24-9211-4400-9d70-ab6b310390da");
         this.description = "description trop cool";
         this.datePoste = Calendar.getInstance().getTime();
         this.nbDeVisites = 0;
@@ -50,7 +53,7 @@ public class Annonce {
 
     }
 
-    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<StorageReference> images) {
+    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, ArrayList<String> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
         this.telephoneContact = telephoneContact;
@@ -63,7 +66,7 @@ public class Annonce {
         this.statistique = statistique;
         this.prix = prix;
         this.paiement = paiement;
-        Images = images;
+        this.images = images;
     }
 
     public String getAuteur() {
@@ -160,13 +163,14 @@ public class Annonce {
         this.estProfessionnel = estProfessionnel;
     }
 
-    public List<StorageReference> getImages() {
-        return Images;
+    public ArrayList<String> getImages() {
+        return images;
     }
 
-    public void setImages(List<StorageReference> images) {
-        Images = images;
+    public void setImages(ArrayList<String> images) {
+        images = images;
     }
 
-    //public StorageReference getFirstImage(){return Images.get(0);}
+    @Exclude
+    public String firstImage(){return this.images.get(0);}
 }
