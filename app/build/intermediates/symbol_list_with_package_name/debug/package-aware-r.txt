@@ -2357,6 +2357,7 @@ id title
 id titleDividerNoCustom
 id titleTextView
 id title_template
+id titre
 id titreeeee
 id toast_error
 id toast_root
@@ -2487,6 +2488,7 @@ layout design_text_input_start_icon
 layout fav_item
 layout fragment_account
 layout fragment_accueil
+layout fragment_annonce
 layout fragment_fav
 layout fragment_message
 layout fragment_parametres

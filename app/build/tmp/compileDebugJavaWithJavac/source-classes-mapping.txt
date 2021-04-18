@@ -75,18 +75,21 @@ com/example/lebonpetitcoin/AnnonceRoom.java
  com.example.lebonpetitcoin.AnnonceRoom
 com/example/lebonpetitcoin/ClassFirestore/Compte.java
  com.example.lebonpetitcoin.ClassFirestore.Compte
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
-com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
- com.example.lebonpetitcoin.Fragments.AnnonceFragment
-com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
- com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
-com/example/lebonpetitcoin/BuildConfig.java
- com.example.lebonpetitcoin.BuildConfig
 com/example/lebonpetitcoin/Fragments/ResultatFragment.java
  com.example.lebonpetitcoin.Fragments.ResultatFragment
  com.example.lebonpetitcoin.Fragments.ResultatFragment$1
  com.example.lebonpetitcoin.Fragments.ResultatFragment$2
+com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$1
+com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
+ com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
+com/example/lebonpetitcoin/BuildConfig.java
+ com.example.lebonpetitcoin.BuildConfig
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
 com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
  com.example.lebonpetitcoin.Adapter.AdapterAnnonce
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
  com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder

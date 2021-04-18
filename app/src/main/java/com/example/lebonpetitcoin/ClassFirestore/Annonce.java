@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class Annonce {
+    //String id;
     //pas besoins de mettre le compte en lui meme, si on suppose qu'on ne peut pas changer de pseudo/il est unique
     String auteur;
     boolean estProfessionnel;
@@ -32,7 +33,7 @@ public class Annonce {
     //Des MoyenDePaiment, pas String dans le doute ou le nom change
     List<DocumentReference>  paiement;
     //Des Image
-    ArrayList<String> images = new ArrayList<>();
+    List<String> images = new ArrayList<String>();
 
     public Annonce(){
         //public no args contructeur obligatoire sinon firebase crash
@@ -53,7 +54,7 @@ public class Annonce {
 
     }
 
-    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, ArrayList<String> images) {
+    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<String> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
         this.telephoneContact = telephoneContact;
@@ -163,14 +164,22 @@ public class Annonce {
         this.estProfessionnel = estProfessionnel;
     }
 
-    public ArrayList<String> getImages() {
+    public List<String> getImages() {
         return images;
     }
 
-    public void setImages(ArrayList<String> images) {
-        images = images;
+    public void setImages(List<String> images) {
+        this.images = images;
     }
 
     @Exclude
-    public String firstImage(){return this.images.get(0);}
+    public String getFirstImage(){return this.images.get(0);}
+
+    /*@Exclude
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }*/
 }
