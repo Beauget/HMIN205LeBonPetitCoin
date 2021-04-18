@@ -62,6 +62,7 @@ com/example/lebonpetitcoin/ClassFirestore/Annonce.java
  com.example.lebonpetitcoin.ClassFirestore.Annonce
 com/example/lebonpetitcoin/Fragments/AccueilFragment.java
  com.example.lebonpetitcoin.Fragments.AccueilFragment
+ com.example.lebonpetitcoin.Fragments.AccueilFragment$1
 com/example/lebonpetitcoin/Fragments/AccountFragment.java
  com.example.lebonpetitcoin.Fragments.AccountFragment
  com.example.lebonpetitcoin.Fragments.AccountFragment$1
@@ -71,8 +72,6 @@ com/example/lebonpetitcoin/ClassFirestore/Image.java
  com.example.lebonpetitcoin.ClassFirestore.Image
 com/example/lebonpetitcoin/Fragments/FavFragment.java
  com.example.lebonpetitcoin.Fragments.FavFragment
-com/example/lebonpetitcoin/AnnonceRoom.java
- com.example.lebonpetitcoin.AnnonceRoom
 com/example/lebonpetitcoin/ClassFirestore/Compte.java
  com.example.lebonpetitcoin.ClassFirestore.Compte
 com/example/lebonpetitcoin/Fragments/ResultatFragment.java

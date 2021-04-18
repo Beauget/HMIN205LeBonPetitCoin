@@ -38,6 +38,7 @@
 
         <!-- Media -->
         <ImageView
+            android:id="@+id/img1"
             android:layout_width="match_parent"
             android:layout_height="194dp"
             android:contentDescription="@string/content_description_media"
@@ -52,6 +53,7 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
+                android:id="@+id/titre1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
@@ -81,6 +83,7 @@
 
         <!-- Media -->
         <ImageView
+            android:id="@+id/img2"
             android:layout_width="match_parent"
             android:layout_height="194dp"
             android:contentDescription="@string/content_description_media"
@@ -95,6 +98,7 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
+                android:id="@+id/titre2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
@@ -125,6 +129,7 @@
 
         <!-- Media -->
         <ImageView
+            android:id="@+id/img3"
             android:layout_width="match_parent"
             android:layout_height="194dp"
             android:contentDescription="@string/content_description_media"
@@ -139,6 +144,7 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
+                android:id="@+id/titre3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
@@ -169,6 +175,7 @@
 
         <!-- Media -->
         <ImageView
+            android:id="@+id/img4"
             android:layout_width="match_parent"
             android:layout_height="194dp"
             android:contentDescription="@string/content_description_media"
@@ -183,6 +190,7 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
+                android:id="@+id/titre4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"

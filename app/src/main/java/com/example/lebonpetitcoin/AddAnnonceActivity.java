@@ -39,6 +39,12 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import org.json.JSONObject;
 
@@ -53,6 +59,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddAnnonceActivity extends AppCompatActivity implements View.OnClickListener{
+
+    //NOM DE LA CLASSE QUI SERA ENVOYÉ EN CAS D'ECHEC D'ENVOIE
+    private static final String TAG = "AddAnnonce";
+
+
+    //RECUPERATION DE LA DB
+    private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
+    private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
+
+
     public static final String KEY_User_Document1 = "doc1";
     ImageView img1;
     Button Upload_Btn;

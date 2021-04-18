@@ -26,12 +26,12 @@ public class Annonce {
     java.util.Date datePoste;
     Integer nbDeVisites;
     //Catgorie, pas String dans le doute ou le nom change
-    List<DocumentReference> categories;
+    List<DocumentReference> categories = new ArrayList<>();
     DocumentReference statistique;
 
     float prix;
     //Des MoyenDePaiment, pas String dans le doute ou le nom change
-    List<DocumentReference>  paiement;
+    List<DocumentReference>  paiement = new ArrayList<>();
     //Des Image
     List<String> images = new ArrayList<String>();
 

@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#com.example.lebonpetitcoin.MonFileProvider
-INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:36:9-44:20
+INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:32:9-40:20
 	android:grantUriPermissions
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:40:13-47
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:36:13-47
 	android:authorities
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:38:13-79
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:34:13-79
 	android:exported
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:39:13-37
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:37:13-44
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:33:13-44
 manifest
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
-INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
-INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
-INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
 MERGED from [com.google.firebase:firebase-analytics:18.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7b9ba1454cb5ac3e64733e9e2c3a90eb/jetified-firebase-analytics-18.0.3/AndroidManifest.xml:2:1-9:12
 MERGED from [com.firebaseui:firebase-ui-auth:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/53ec27a34f59064443ec6078c159d4a8/jetified-firebase-ui-auth-7.1.1/AndroidManifest.xml:2:1-109:12
 MERGED from [com.google.android.material:material:1.3.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/cd6f2caba378d66250797e09d6bb24e0/material-1.3.0/AndroidManifest.xml:17:1-24:12
@@ -113,25 +113,25 @@ MERGED from [com.google.android.datatransport:transport-api:2.2.1] /home/hayaat/
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1f6b045666a31134b82a56c243bf4255/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [io.grpc:grpc-android:1.28.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/10a3513949333938587db48c8411373d/jetified-grpc-android-1.28.0/AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/e53fbbcf78ffb18c7cd795b35d4efb56/jetified-protolite-well-known-types-17.1.1/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
-INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
-INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
 	package
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:3:5-41
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-56:12
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:1-52:12
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:5:5-45:19
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:5:5-41:19
 MERGED from [com.google.firebase:firebase-analytics:18.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7b9ba1454cb5ac3e64733e9e2c3a90eb/jetified-firebase-analytics-18.0.3/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:18.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/7b9ba1454cb5ac3e64733e9e2c3a90eb/jetified-firebase-analytics-18.0.3/AndroidManifest.xml:7:5-20
 MERGED from [com.firebaseui:firebase-ui-auth:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/53ec27a34f59064443ec6078c159d4a8/jetified-firebase-ui-auth-7.1.1/AndroidManifest.xml:15:5-107:19
@@ -234,44 +234,34 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:17-77
 	android:name
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:16:27-74
-activity#com.example.lebonpetitcoin.AnnonceRoom$accountActivity
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:9-23:20
-	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:19:19-62
-intent-filter#action:name:android.intent.VIEW
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:20:13-22:29
-action#android.intent.VIEW
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:21:17-69
-	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:21:25-59
 activity#com.example.lebonpetitcoin.AddAnnonceActivity
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:24:9-28:20
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:20:9-24:20
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:24:19-53
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:20:19-53
 intent-filter#action:name:android.intent.action.VIEW
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:25:13-27:29
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:21:13-23:29
 action#android.intent.action.VIEW
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:17-69
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:25-66
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:22:25-66
 activity#com.example.lebonpetitcoin.SearchableActivity
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:29:9-35:20
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:25:9-31:20
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:29:19-53
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:25:19-53
 intent-filter#action:name:android.intent.action.SEARCH
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:30:13-32:29
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:26:13-28:29
 action#android.intent.action.SEARCH
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:31:17-71
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:27:17-71
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:31:25-68
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:27:25-68
 meta-data#android.app.searchable
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:33:13-34:53
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:29:13-30:53
 	android:resource
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:34:17-51
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:30:17-51
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:33:24-61
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:29:24-61
 uses-permission#android.permission.INTERNET
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:47:5-67
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:43:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/53ec27a34f59064443ec6078c159d4a8/jetified-firebase-ui-auth-7.1.1/AndroidManifest.xml:13:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/53ec27a34f59064443ec6078c159d4a8/jetified-firebase-ui-auth-7.1.1/AndroidManifest.xml:13:5-67
 MERGED from [com.firebaseui:firebase-ui-database:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/9014285b06b5ba12d13868ba5327e3e7/jetified-firebase-ui-database-7.1.1/AndroidManifest.xml:11:5-67
@@ -303,9 +293,9 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.3] /home
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1ece422da7863d7daf37e6729c0a9d8d/jetified-play-services-measurement-sdk-api-18.0.3/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/1ece422da7863d7daf37e6729c0a9d8d/jetified-play-services-measurement-sdk-api-18.0.3/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:47:22-64
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:43:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:48:5-79
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:44:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/53ec27a34f59064443ec6078c159d4a8/jetified-firebase-ui-auth-7.1.1/AndroidManifest.xml:12:5-79
 MERGED from [com.firebaseui:firebase-ui-auth:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/53ec27a34f59064443ec6078c159d4a8/jetified-firebase-ui-auth-7.1.1/AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-storage:19.2.2] /home/hayaat/.gradle/caches/transforms-2/files-2.1/a907c0b5248f633011250abda8f0e1d9/jetified-firebase-storage-19.2.2/AndroidManifest.xml:26:5-79
@@ -339,25 +329,25 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.5] /home/hay
 MERGED from [io.grpc:grpc-android:1.28.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/10a3513949333938587db48c8411373d/jetified-grpc-android-1.28.0/AndroidManifest.xml:11:5-79
 MERGED from [io.grpc:grpc-android:1.28.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/10a3513949333938587db48c8411373d/jetified-grpc-android-1.28.0/AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:48:22-76
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:44:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:49:5-81
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:45:5-81
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:49:22-78
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:45:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:50:5-80
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:46:5-80
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:50:22-77
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:46:22-77
 uses-permission#android.permission.CAMERA
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:51:5-65
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:47:5-65
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:51:22-62
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:47:22-62
 uses-feature#android.hardware.camera
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:53:5-84
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:49:5-84
 	android:required
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:53:58-81
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:49:58-81
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:53:19-57
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:49:19-57
 uses-sdk
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
@@ -569,11 +559,11 @@ INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/m
 		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 		INJECTED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:41:13-43:57
+ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:37:13-39:57
 	android:resource
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:43:17-55
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:39:17-55
 	android:name
-		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:42:17-67
+		ADDED from /home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/AndroidManifest.xml:38:17-67
 meta-data#com.google.android.gms.version
 ADDED from [com.firebaseui:firebase-ui-auth:7.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/53ec27a34f59064443ec6078c159d4a8/jetified-firebase-ui-auth-7.1.1/AndroidManifest.xml:16:9-18:69
 MERGED from [com.google.android.gms:play-services-basement:17.1.1] /home/hayaat/.gradle/caches/transforms-2/files-2.1/46c1e523d8f37f57231b4fc01b2fad72/jetified-play-services-basement-17.1.1/AndroidManifest.xml:23:9-25:69

@@ -2123,6 +2123,9 @@ id ignoreRequest
 id image
 id imageView
 id img1
+id img2
+id img3
+id img4
 id info
 id invisible
 id invisible_frame
@@ -2358,6 +2361,10 @@ id titleDividerNoCustom
 id titleTextView
 id title_template
 id titre
+id titre1
+id titre2
+id titre3
+id titre4
 id titreeeee
 id toast_error
 id toast_root

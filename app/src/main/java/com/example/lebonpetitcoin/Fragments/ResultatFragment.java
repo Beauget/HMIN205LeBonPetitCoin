@@ -62,7 +62,7 @@ public class ResultatFragment extends Fragment {
     private ListenerRegistration annonceListener;
     private FirestoreRecyclerAdapter adapter;
 
-    StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+    //StorageReference storageReference = FirebaseStorage.getInstance().getReference();
 
 
     RecyclerView recyclerView ;
