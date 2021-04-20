@@ -67,8 +67,6 @@ public class ParametresFragment extends Fragment {
     private ListenerRegistration categorieListener;
     private ListenerRegistration moyenDePaiementListener;
     private FirestoreRecyclerAdapter adapter;
-
-
     RecyclerView recyclerView ;
 
     public static ParametresFragment newInstance() {
@@ -119,7 +117,7 @@ public class ParametresFragment extends Fragment {
                 .setLifecycleOwner(this)
                 .build();
 
-        adapter = new AdapterCategorie(options);
+        adapter = new AdapterCategorie(options,getContext());
 
         recyclerView.setAdapter(adapter);
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu_drawer"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
@@ -23,7 +24,7 @@
                     android:title="@string/mes_favoris" />
                 <item
                     android:id="@+id/activity_main_drawer_stats"
-                    android:icon="@drawable/seal"
+                    android:icon="@drawable/ic_baseline_show_chart_24"
                     android:title="@string/statistiques" />
             </group>
         </menu>
@@ -34,11 +35,11 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/activity_main_drawer_signIn"
-                    android:icon="@drawable/chat_24dp"
+                    android:icon="@drawable/ic_baseline_login_24"
                     android:title="@string/s_identifier" />
                 <item
                     android:id="@+id/activity_main_drawer_signUp"
-                    android:icon="@drawable/favorite_white_24dp"
+                    android:icon="@drawable/ic_baseline_person_add_alt_1_24"
                     android:title="@string/s_inscrire" />
 
             </group>
@@ -49,12 +50,16 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/activity_main_drawer_parametres"
-                    android:icon="@drawable/chat_24dp"
+                    android:icon="@drawable/ic_baseline_settings_24"
                     android:title="@string/parametres" />
                 <item
                     android:id="@+id/activity_main_drawer_resultat"
                     android:icon="@drawable/chat_24dp"
                     android:title="Resultat" />
+                <item
+                    android:id="@+id/activity_main_drawer_deconnect"
+                    android:icon="@drawable/ic_baseline_close_24"
+                    android:title="@string/deconnexion" />
 
             </group>
         </menu>

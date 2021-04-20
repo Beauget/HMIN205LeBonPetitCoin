@@ -21,9 +21,12 @@ import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -39,10 +42,16 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
+import com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement;
+import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -55,6 +64,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.Collator;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,7 +76,17 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
-    private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
+   //private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
+    private CollectionReference cCategorie = firestoreDB.collection("Categorie");
+    private CollectionReference cMoyenDePaiement = firestoreDB.collection("MoyenDePaiement");
+
+    //Listener afin que la recherce dans la db se fasse pas quand l'application est en arrière plan
+    private ListenerRegistration categorieListener;
+    private ListenerRegistration moyenDePaiementListener;
+    private FirestoreRecyclerAdapter adapterCategorie;
+    RecyclerView recyclerViewCategorie;
+    private FirestoreRecyclerAdapter adapterMoyenDePaiement;
+    RecyclerView recyclerViewMoyenDePaiement;
 
 
     public static final String KEY_User_Document1 = "doc1";
@@ -83,6 +103,28 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
         img1=(ImageView)findViewById(R.id.img1);
         Upload_Btn=(Button)findViewById(R.id.UploadBtn);
+        recyclerViewCategorie = findViewById(R.id.LCategorie);
+        recyclerViewCategorie.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewMoyenDePaiement = findViewById(R.id.LMoyenDePaiement);
+        recyclerViewMoyenDePaiement.setLayoutManager(new LinearLayoutManager(this));
+
+
+        Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
+        FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
+                .setQuery(queryC, Categorie.class)
+                .setLifecycleOwner(this)
+                .build();
+        adapterCategorie = new AdapterCategorie(optionsC,this);
+        recyclerViewCategorie.setAdapter(adapterCategorie);
+
+        Query queryM = cMoyenDePaiement.orderBy("intitule", Query.Direction.DESCENDING);
+        FirestoreRecyclerOptions<MoyenDePaiement> optionsM = new FirestoreRecyclerOptions.Builder<MoyenDePaiement>()
+                .setQuery(queryM, MoyenDePaiement.class)
+                .setLifecycleOwner(this)
+                .build();
+        adapterMoyenDePaiement = new AdapterMoyenDePaiement(optionsM,this);
+        recyclerViewMoyenDePaiement.setAdapter(adapterMoyenDePaiement);
+
 
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +134,14 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
             }
         });
 
-        Upload_Btn.setOnClickListener(this);
+        Upload_Btn.setOnClickListener(new View.OnClickListener()
+        {   @Override
+        public void onClick(View view) {
+            //I need to have addCheckBoxValue arraylist from adapter here
+            //adapterMoyenDePaiement.getArrayList(); // do whatever you want to do here
+
+        }});
+
     }
 
 

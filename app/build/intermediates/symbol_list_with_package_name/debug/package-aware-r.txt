@@ -1797,7 +1797,13 @@ drawable fui_idp_button_background_twitter
 drawable fui_idp_button_background_yahoo
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_baseline_close_24
+drawable ic_baseline_login_24
+drawable ic_baseline_person_add_alt_1_24
+drawable ic_baseline_power_settings_new_24
 drawable ic_baseline_search_24
+drawable ic_baseline_settings_24
+drawable ic_baseline_show_chart_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1927,6 +1933,7 @@ id actions
 id activity_chooser_view_content
 id activity_main_button_add
 id activity_main_drawer_account
+id activity_main_drawer_deconnect
 id activity_main_drawer_fav
 id activity_main_drawer_layout
 id activity_main_drawer_message
@@ -1936,6 +1943,7 @@ id activity_main_drawer_signIn
 id activity_main_drawer_signUp
 id activity_main_drawer_stats
 id activity_main_frame_layout
+id activity_main_menu_drawer
 id activity_main_nav_view
 id add
 id adjust_height
@@ -1992,11 +2000,13 @@ id card
 id card2
 id card3
 id card4
+id card_view
 id center
 id center_horizontal
 id center_vertical
 id chain
 id chains
+id chbContent
 id checkbox
 id checked
 id chip
@@ -2036,6 +2046,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2241,6 +2252,7 @@ id phone_number
 id pin
 id position
 id postLayout
+id prix
 id progress_circular
 id progress_horizontal
 id radio
@@ -2254,6 +2266,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rlInner
 id root
 id rounded
 id row_index_key
@@ -2386,6 +2399,7 @@ id transition_transform
 id triangle
 id trouble_signing_in
 id trouble_signing_in_possible_fixes
+id tvContentId
 id unchecked
 id uniform
 id unlabeled
@@ -2677,6 +2691,7 @@ string common_signin_button_text_long
 string confirmPassword
 string content_description_media
 string d_connexion
+string deconnexion
 string default_web_client_id
 string email
 string error_icon_content_description

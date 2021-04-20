@@ -1,5 +1,6 @@
 package com.example.lebonpetitcoin;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.ActionMenuItemView;
@@ -7,10 +8,12 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,9 +31,15 @@ import com.example.lebonpetitcoin.Fragments.SignInFragment;
 import com.example.lebonpetitcoin.Fragments.SignUpFragment;
 import com.example.lebonpetitcoin.Fragments.StatsFragment;
 import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.viewmodel.AuthViewModelBase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,6 +47,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
+    private static final String TAG = "Main activity";
     MaterialToolbar topAppBar;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
@@ -66,10 +76,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_PARAMETRES = 6;
     private static final int FRAGMENT_RESULTAT = 7;
 
+    // [START declare_auth]
+    private FirebaseAuth mAuth;
+    // [END declare_auth]
+
+    private String mCustomToken;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // [START initialize_auth]
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        // [END initialize_auth]
         setContentView(R.layout.activity_main);
 
         this.configureTopAppBar();
@@ -79,8 +100,83 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         this.showAccueilFragment();
 
+    }
+
+
+    // [START on_start_check_user]
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+    // [END on_start_check_user]
+
+    private void startSignIn() {
+        // [START sign_in_custom]
+        mAuth.signInWithCustomToken(mCustomToken)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithCustomToken:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithCustomToken:failure", task.getException());
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
+        // [END sign_in_custom]
+    }
+
+
+    private void updateUI(FirebaseUser user) {
+        if(user!=null){
+            //Toast.makeText(this, "connecté", Toast.LENGTH_SHORT).show();
+
+            hideItemConnected();
+        }
+        else {
+            hideItemDisconnected();
+        }
+    }
+
+    private void hideItemDisconnected()
+    {
+
+        navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.activity_main_drawer_account).setVisible(false);
+        nav_Menu.findItem(R.id.activity_main_drawer_message).setVisible(false);
+        nav_Menu.findItem(R.id.activity_main_drawer_fav).setVisible(false);
+        nav_Menu.findItem(R.id.activity_main_drawer_stats).setVisible(false);
+        nav_Menu.findItem(R.id.activity_main_drawer_signIn).setVisible(true);
+        nav_Menu.findItem(R.id.activity_main_drawer_signUp).setVisible(true);
+        nav_Menu.findItem(R.id.activity_main_drawer_deconnect).setVisible(false);
 
     }
+
+    private void hideItemConnected()
+    {
+        navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.activity_main_drawer_signIn).setVisible(false);
+        nav_Menu.findItem(R.id.activity_main_drawer_signUp).setVisible(false);
+        nav_Menu.findItem(R.id.activity_main_drawer_deconnect).setVisible(true);
+
+        nav_Menu.findItem(R.id.activity_main_drawer_account).setVisible(true);
+        nav_Menu.findItem(R.id.activity_main_drawer_message).setVisible(true);
+        nav_Menu.findItem(R.id.activity_main_drawer_fav).setVisible(true);
+        nav_Menu.findItem(R.id.activity_main_drawer_stats).setVisible(true);
+    }
+
 
     public void createSignInIntent() {
         // [START auth_fui_create_intent]
@@ -125,10 +221,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         this.add = (FloatingActionButton) findViewById(R.id.activity_main_button_add);
         add.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, AddAnnonceActivity.class);
-                MainActivity.this.startActivity(myIntent);
+                if(mAuth.getCurrentUser()!=null) {
+                    Intent myIntent = new Intent(MainActivity.this, AddAnnonceActivity.class);
+                    MainActivity.this.startActivity(myIntent);
+                }
+                else{
+                    Toast.makeText(v.getContext(), "Vous devez être connecté", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -161,10 +263,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.activity_main_drawer_stats:
                 this.showFragment(FRAGMENT_STATS);
                 break;
-            case R.id.activity_main_drawer_signIn:
+            case R.id.activity_main_drawer_signIn:{
                 // this.showFragment(FRAGMENT_SIGNIN);
                 this.createSignInIntent();
                 break;
+            }
             case R.id.activity_main_drawer_signUp:
                 this.showFragment(FRAGMENT_SIGNUP);
                 break;
@@ -174,11 +277,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.activity_main_drawer_resultat:
                 this.showFragment(FRAGMENT_RESULTAT);
                 break;
+            case R.id.activity_main_drawer_deconnect:
+                FirebaseAuth.getInstance().signOut();
+                break;
             default:
                 break;
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
 
         return true;
     }

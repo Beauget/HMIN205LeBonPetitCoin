@@ -24,6 +24,91 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/holo_blue_light" />
 
+    <EditText
+        android:id="@+id/titre"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Titre"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Description"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/prix"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="Prix"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Categorie(s)"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/LCategorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        />
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Moyen de paiement(s)"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/LMoyenDePaiement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            />
+
+    </ScrollView>
+
+
+
+
+
 
     <Button
         android:id="@+id/UploadBtn"
@@ -35,7 +120,7 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@color/white"
         android:layout_gravity="center"
-
         />
 
 </LinearLayout>
+
