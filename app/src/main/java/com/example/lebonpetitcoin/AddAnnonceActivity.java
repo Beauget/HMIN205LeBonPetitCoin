@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -72,6 +73,8 @@ import java.text.Collator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AddAnnonceActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -97,6 +100,10 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     public static final String KEY_User_Document1 = "doc1";
     ImageView img1;
     Button Upload_Btn;
+    EditText titre;
+    EditText description;
+    EditText prix;
+
 
     private String Document_img1="";
     private Object ConfiURL = "https://www.google.com" ;
@@ -107,6 +114,9 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_add_annonce);
 
         img1=(ImageView)findViewById(R.id.img1);
+        titre=findViewById(R.id.titre);
+        description=findViewById(R.id.description);
+        prix=findViewById(R.id.prix);
         Upload_Btn=(Button)findViewById(R.id.UploadBtn);
         recyclerViewCategorie = findViewById(R.id.LCategorie);
         recyclerViewCategorie.setLayoutManager(new LinearLayoutManager(this));
@@ -145,8 +155,9 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         Upload_Btn.setOnClickListener(new View.OnClickListener()
         {   @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(), "MDP : \n"+arrayListMoyenDePaiement.toString(), Toast.LENGTH_SHORT).show();
-            Toast.makeText(view.getContext(), "Categorie : \n"+arrayListCategorie.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(view.getContext(), "MDP : \n"+arrayListMoyenDePaiement.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(view.getContext(), "Categorie : \n"+arrayListCategorie.toString(), Toast.LENGTH_SHORT).show();
+            checkValidation(arrayListCategorie,arrayListMoyenDePaiement);
 
         }});
 
@@ -301,9 +312,9 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public void addAnnonce(String titre,float prix, ArrayList<DocumentReference> categories, ArrayList<DocumentReference> moyenDP){
-        Annonce annonce = new Annonce(titre);
-        cMoyenDePaiement.add(annonce)
+    public void addAnnonce(String titre,String description,float prix, ArrayList<String> cat,ArrayList<String> mdp){
+        Annonce annonce = new Annonce(titre,description,prix,cat,mdp);
+        cAnnonces.add(annonce)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -318,6 +329,27 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                         Log.d(TAG,e.toString());
                     }
                 });
+    }
+
+    // Check Validation Method
+    private void checkValidation(ArrayList<String> cat,ArrayList<String> mdp) {
+
+        // Get all edittext texts
+        String getPrix= prix.getText().toString();
+        String getTitre = titre.getText().toString();
+        String getDescription = description.getText().toString();
+
+        // Pattern match for email id
+        //Pattern p = Pattern.compile(regEx);
+        //Matcher m = p.matcher(getEmailId);
+
+        // Check if all strings are null or not
+        if (getPrix.equals("") || getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0 )
+            Toast.makeText(getApplicationContext(),"nop",Toast.LENGTH_SHORT).show();
+        else
+            {
+                addAnnonce(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp);
+            }
     }
 }
 

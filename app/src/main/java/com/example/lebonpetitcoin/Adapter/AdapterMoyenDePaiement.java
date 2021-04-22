@@ -42,9 +42,8 @@ public class AdapterMoyenDePaiement extends FirestoreRecyclerAdapter<MoyenDePaie
 
         DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
         String id = snapshot.getId();
-        id = "/MoyenDePaiement/" + id;
+        String finalId = model.getIntitule();
 
-        String finalId = id;
         holder.getCheckBox().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +54,7 @@ public class AdapterMoyenDePaiement extends FirestoreRecyclerAdapter<MoyenDePaie
                 }
                 else
                     arrayList.add(finalId);
-                //Toast.makeText(mContext, arrayList.toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext, arrayList.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

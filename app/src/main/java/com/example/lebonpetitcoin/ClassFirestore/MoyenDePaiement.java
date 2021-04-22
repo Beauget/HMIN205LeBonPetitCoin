@@ -13,6 +13,11 @@ public class MoyenDePaiement {
         this.intitule = intitule;
     }
 
+    public MoyenDePaiement(String intitule,String id) {
+        this.intitule = intitule;
+        this.id=id;
+    }
+
     //pour pas de redondance
     @Exclude
     public String getId() {

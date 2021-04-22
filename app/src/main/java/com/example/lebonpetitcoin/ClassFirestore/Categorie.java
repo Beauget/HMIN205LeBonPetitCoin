@@ -13,6 +13,10 @@ public class Categorie {
     public Categorie(String intitule) {
         this.intitule = intitule;
     }
+    public Categorie(String intitule,String id) {
+        this.intitule = intitule;
+        this.id=id;
+    }
 
     //pour pas de redondance
     @Exclude

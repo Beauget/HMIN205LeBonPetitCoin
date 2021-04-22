@@ -98,7 +98,7 @@ public class AccueilFragment extends Fragment {
         //adapter.startListening();
 
 
-        annonceListener = cAnnonces.orderBy("datePoste", Query.Direction.ASCENDING).limit(4).addSnapshotListener(new EventListener<QuerySnapshot>() {
+        annonceListener = cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).limit(4).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (error != null) {

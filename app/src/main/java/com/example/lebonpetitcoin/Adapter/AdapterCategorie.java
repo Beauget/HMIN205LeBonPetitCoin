@@ -41,8 +41,7 @@ public class AdapterCategorie extends FirestoreRecyclerAdapter<Categorie, Adapte
 
         DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
         String id = snapshot.getId();
-        id = "/Categorie/" + id;
-        String finalId = id;
+        String finalId = model.getIntitule();
 
         holder.getCheckBox().setOnClickListener(new View.OnClickListener() {
             @Override

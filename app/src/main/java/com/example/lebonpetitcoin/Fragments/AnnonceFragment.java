@@ -6,9 +6,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -43,7 +47,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -57,15 +64,21 @@ public class AnnonceFragment extends Fragment {
     TextView categories;
     TextView nbVisites;
     TextView date;
-
     ImageView image;
+
+    private static final String TAG = "AnnonceFragment";
 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cAnnonce = firestoreDB.collection("Annonce");
+    private CollectionReference cCategorie = firestoreDB.collection("Categorie");
 
     //Listener afin que la recherche dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration annonceListener;
+    private ListenerRegistration categorieListener;
+    private ListenerRegistration moyenDePaiementListener;
+    ListView lv;
+    private ChipGroup chipGroup;
 
     public static Fragment newInstance() {
             return (new AnnonceFragment());
@@ -78,6 +91,8 @@ public class AnnonceFragment extends Fragment {
         titre= view.findViewById(R.id.titre);
         description = view.findViewById(R.id.all);
         image = view.findViewById(R.id.imageView);
+        lv=view.findViewById(R.id.lv);
+        chipGroup = (ChipGroup) view.findViewById(R.id.chipGroup);
         return view;
     }
 
@@ -91,6 +106,7 @@ public class AnnonceFragment extends Fragment {
         super.onStart();
         //adapter.startListening();
         Bundle bundle = this.getArguments();
+        final ArrayList<String>[] idCategorie = new ArrayList[]{new ArrayList<>()};
 
         String id = null;
 
@@ -99,36 +115,104 @@ public class AnnonceFragment extends Fragment {
         }
 
         if (id != null) {
-            Task<DocumentSnapshot> annonce = cAnnonce.document(id).get();
+            String finalId = id;
+            Task<DocumentSnapshot> tAnnonce = cAnnonce.document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+                    Annonce annonce = documentSnapshot.toObject(Annonce.class);
+
+                    assert annonce != null;
+                    Integer nb = (annonce.getNbDeVisites() + 1);
+
+                    Map<String, Object> updates = new HashMap<>();
+                    updates.put("nbDeVisites", nb);
+
+                    cAnnonce.document(finalId).update(updates);
+
+                    titre.setText(annonce.getTitre());
+                    GlideApp.with(getContext())
+                            .load(annonce.getFirstImage())
+                            .into(image);
+                    String text = "Description : " + annonce.getDescription() + "\n" +
+                            "auteur : " + annonce.getAuteur() + "\n" +
+                            "prix : " + String.valueOf(annonce.getPrix()) + "\n" +
+                            "Date : " + dateFormat.format(annonce.getDatePoste()) + "\n" ;
+
+
+                    text+="Moyen de paiement : ";
+                    for(String s : annonce.getPaiement())
+                    {
+                        text+=s+" ";
+                    }
+                    text+="\n";
+
+                    text+="Categorie : ";
+                    for(String s : annonce.getCategories())
+                    {
+                        text+=s+" ";
+                    }
+                    text+="\n";
+
+                    description.setText(text);
+
+                    /*
+                    for(String s : annonce.getCategories())
+                    {
+                        LayoutInflater inflater = LayoutInflater.from(getContext());
+                        Chip newChip = new Chip(getContext(), null, R.style.Widget_MaterialComponents_Chip_Action);
+                        newChip.setText(s);
+                        // Other methods:
+                        //
+                        // newChip.setCloseIconVisible(true);
+                        // newChip.setCloseIconResource(R.drawable.your_icon);
+                        // newChip.setChipIconResource(R.drawable.your_icon);
+                        // newChip.setChipBackgroundColorResource(R.color.red);
+                        // newChip.setTextAppearanceResource(R.style.ChipTextStyle);
+                        // newChip.setElevation(15);
+
+                        chipGroup.addView(newChip);
+                    }*/
+                }
+            });
         }
 
-        String finalId = id;
-        Task<DocumentSnapshot> tAnnonce = cAnnonce.document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-                Annonce annonce = documentSnapshot.toObject(Annonce.class);
+            /*
+            ArrayList<String> rslt = new ArrayList<>();
 
-                assert annonce != null;
-                Integer nb = (annonce.getNbDeVisites() + 1);
+           // Query query = cCategorie.whereIn("id", idCategorie[0]);
+            Query query = cCategorie.whereIn("status", Arrays.asList("Sport", "sent");
+            cCategorie.where(documentId(), 'in', ["123","456","789"])
 
-                Map<String,Object> updates = new HashMap<>();
-                updates.put("nbDeVisites", nb);
+            if (idCategorie[0].size()!=0){
 
-                cAnnonce.document(finalId).update(updates);
-
-                titre.setText(annonce.getTitre());
-                GlideApp.with(getContext())
-                        .load(annonce.getFirstImage())
-                        .into(image);
-                String text = "Description : " + annonce.getDescription() + "\n" +
-                        "auteur : " + annonce.getAuteur() + "\n" +
-                        "prix : " + String.valueOf(annonce.getPrix()) + "\n" +
-                        "Date : " + dateFormat.format(annonce.getDatePoste()) + "\n" +
-                        "Categorie : "+annonce.getCategories().get(0).toString();
-                description.setText(text);
+                for (String x : idCategorie[0]) {
+                    DocumentReference docRef = cCategorie.document(x);
+                    docRef.get()
+                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        DocumentSnapshot document = task.getResult();
+                                        if (document.exists()) {
+                                            rslt.add(document.getString("intitule"));
+                                            description.setText(document.getString("intitule"));
+                                        } else {
+                                            Log.d("TAG", "No such document");
+                                        }
+                                    } else {
+                                        Log.d("TAG", "get failed with ", task.getException());
+                                    }
+                                }
+                            });
+                }
+                //text[0]+= rslt.toString();
             }
-        });
+            //description.setText(rslt.toString());
+        }
+
+             */
 
         /*
         cAnnonce.document(id).get();
@@ -150,4 +234,54 @@ public class AnnonceFragment extends Fragment {
             }
         });*/
     }
+
+    public ArrayList<String> getCategorie(ArrayList<String> categories){
+        ArrayList<String> rslt = new ArrayList<>();
+
+        if (categories.size()==0)
+            return rslt;
+
+        for (String id : categories) {
+            DocumentReference docRef = cCategorie.document(id);
+            docRef.get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document.exists()) {
+                                    rslt.add(document.getString("intitule"));
+                                    //Log.d("TAG", cityName);
+                                } else {
+                                    Log.d("TAG", "No such document");
+                                }
+                            } else {
+                                Log.d("TAG", "get failed with ", task.getException());
+                            }
+                            Toast.makeText(getContext(),rslt.toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+        return rslt;
+    }
+
+    /*
+
+        for (String id : categories){
+            rslt.add("avant");
+            cCategorie.document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {;
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Categorie categorie = documentSnapshot.toObject(Categorie.class);
+
+                if(categorie!=null)
+                {
+                    rslt.add(categorie.getIntitule());
+                    rslt.add("success");
+                }
+                else {rslt.add("null");}
+            }
+        });
+        }
+        return rslt;}*/
 }

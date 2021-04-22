@@ -2013,6 +2013,7 @@ id chip
 id chip1
 id chip2
 id chip3
+id chipGroup
 id chip_group
 id chronometer
 id circle_center
@@ -2160,6 +2161,7 @@ id listMode
 id list_item
 id location
 id logo
+id lv
 id main_tos_and_pp
 id masked
 id material_clock_display
@@ -2359,7 +2361,6 @@ id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_view_description
 id text_view_title
 id textinput_counter
 id textinput_error
@@ -2546,6 +2547,7 @@ layout fui_welcome_back_password_prompt_layout
 layout item
 layout item_annonce
 layout item_intitule
+layout layout_chip_entry
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
