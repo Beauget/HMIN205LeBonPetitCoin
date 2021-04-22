@@ -54,6 +54,22 @@ public class Annonce {
 
     }
 
+    public Annonce(String titre,ArrayList<DocumentReference> mdp,ArrayList<DocumentReference> cat) {
+        this.titre = titre;
+        this.auteur = "Jhon";
+        this.estProfessionnel = false;
+        this.telephoneContact = "9999999";
+        this.categories = cat;
+        this.mailContact = "mailContact@Pouet";
+        this.titre = titre;
+        this.images.add("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/seal.jpg?alt=media&token=a0936c24-9211-4400-9d70-ab6b310390da");
+        this.description = "description trop cool";
+        this.datePoste = Calendar.getInstance().getTime();
+        this.nbDeVisites = 0;
+        this.prix = (float) 9.99;
+
+    }
+
     public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, List<DocumentReference> categories, DocumentReference statistique, float prix, List<DocumentReference> paiement, List<String> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;

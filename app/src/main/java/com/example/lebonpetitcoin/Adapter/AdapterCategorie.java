@@ -23,9 +23,10 @@ public class AdapterCategorie extends FirestoreRecyclerAdapter<Categorie, Adapte
     private Context mContext;
     public static ArrayList<String> arrayList = new ArrayList<>();
 
-    public AdapterCategorie(@NonNull FirestoreRecyclerOptions<Categorie> options,Context c) {
+    public AdapterCategorie(@NonNull FirestoreRecyclerOptions<Categorie> options,Context c,ArrayList<String> a) {
         super(options);
         mContext = c;
+        arrayList = a;
     }
 
     public  ArrayList<String> getArrayList(){
@@ -40,20 +41,20 @@ public class AdapterCategorie extends FirestoreRecyclerAdapter<Categorie, Adapte
 
         DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
         String id = snapshot.getId();
+        id = "/Categorie/" + id;
+        String finalId = id;
 
         holder.getCheckBox().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Integer pos = (Integer) holder.checkBox.getTag();
 
-                if (arrayList.contains(id)){
-                    arrayList.remove(id);
+                if (arrayList.contains(finalId)){
+                    arrayList.remove(finalId);
                 }
                 else
-                    arrayList.add(id);
-                Toast.makeText(mContext,
-                        arrayList.toString(),
-                        Toast.LENGTH_SHORT).show();
+                    arrayList.add(finalId);
+                    //Toast.makeText(mContext, arrayList.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

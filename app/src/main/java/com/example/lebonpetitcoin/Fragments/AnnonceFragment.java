@@ -124,7 +124,8 @@ public class AnnonceFragment extends Fragment {
                 String text = "Description : " + annonce.getDescription() + "\n" +
                         "auteur : " + annonce.getAuteur() + "\n" +
                         "prix : " + String.valueOf(annonce.getPrix()) + "\n" +
-                        "Date : " + dateFormat.format(annonce.getDatePoste()) + "\n";
+                        "Date : " + dateFormat.format(annonce.getDatePoste()) + "\n" +
+                        "Categorie : "+annonce.getCategories().get(0).toString();
                 description.setText(text);
             }
         });

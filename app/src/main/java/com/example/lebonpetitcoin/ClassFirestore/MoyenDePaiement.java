@@ -19,6 +19,7 @@ public class MoyenDePaiement {
         return id;
     }
 
+
     public void setId(String id) {
         this.id = id;
     }
@@ -29,5 +30,13 @@ public class MoyenDePaiement {
 
     public void setIntitule(String intitule) {
         this.intitule = intitule;
+    }
+
+    @Override
+    public String toString() {
+        return "MoyenDePaiement{" +
+                "id='" + id + '\'' +
+                ", intitule='" + intitule + '\'' +
+                '}';
     }
 }

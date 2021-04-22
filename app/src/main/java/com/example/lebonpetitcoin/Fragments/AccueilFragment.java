@@ -84,6 +84,13 @@ public class AccueilFragment extends Fragment {
 
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        annonceListener.remove();
+    }
+
+
 
     @Override
     public void onStart() {

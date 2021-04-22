@@ -24,10 +24,12 @@ public class AdapterMoyenDePaiement extends FirestoreRecyclerAdapter<MoyenDePaie
     public static ArrayList<String> arrayList = new ArrayList<>();
 
 
-    public AdapterMoyenDePaiement(@NonNull FirestoreRecyclerOptions<MoyenDePaiement> options, Context c) {
+    public AdapterMoyenDePaiement(@NonNull FirestoreRecyclerOptions<MoyenDePaiement> options, Context c, ArrayList<String> a) {
         super(options);
         mContext = c;
+        arrayList = a;
     }
+
     public  ArrayList<String> getArrayList(){
         return arrayList;
     }
@@ -40,20 +42,20 @@ public class AdapterMoyenDePaiement extends FirestoreRecyclerAdapter<MoyenDePaie
 
         DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
         String id = snapshot.getId();
+        id = "/MoyenDePaiement/" + id;
 
+        String finalId = id;
         holder.getCheckBox().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Integer pos = (Integer) holder.checkBox.getTag();
 
-                if (arrayList.contains(id)){
-                    arrayList.remove(id);
+                if (arrayList.contains(finalId)){
+                    arrayList.remove(finalId);
                 }
                 else
-                    arrayList.add(id);
-                Toast.makeText(mContext,
-                        arrayList.toString(),
-                        Toast.LENGTH_SHORT).show();
+                    arrayList.add(finalId);
+                //Toast.makeText(mContext, arrayList.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,11 +45,15 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement;
+import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
@@ -76,7 +81,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
-   //private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
+    private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
     private CollectionReference cMoyenDePaiement = firestoreDB.collection("MoyenDePaiement");
 
@@ -114,7 +119,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 .setQuery(queryC, Categorie.class)
                 .setLifecycleOwner(this)
                 .build();
-        adapterCategorie = new AdapterCategorie(optionsC,this);
+        ArrayList<String> arrayListCategorie = new ArrayList<>();
+        adapterCategorie = new AdapterCategorie(optionsC,this,arrayListCategorie);
         recyclerViewCategorie.setAdapter(adapterCategorie);
 
         Query queryM = cMoyenDePaiement.orderBy("intitule", Query.Direction.DESCENDING);
@@ -122,8 +128,10 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 .setQuery(queryM, MoyenDePaiement.class)
                 .setLifecycleOwner(this)
                 .build();
-        adapterMoyenDePaiement = new AdapterMoyenDePaiement(optionsM,this);
+        ArrayList<String> arrayListMoyenDePaiement = new ArrayList<>();
+        adapterMoyenDePaiement = new AdapterMoyenDePaiement(optionsM,this, arrayListMoyenDePaiement);
         recyclerViewMoyenDePaiement.setAdapter(adapterMoyenDePaiement);
+        //recyclerViewMoyenDePaiement.getChild
 
 
         img1.setOnClickListener(new View.OnClickListener() {
@@ -137,8 +145,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         Upload_Btn.setOnClickListener(new View.OnClickListener()
         {   @Override
         public void onClick(View view) {
-            //I need to have addCheckBoxValue arraylist from adapter here
-            //adapterMoyenDePaiement.getArrayList(); // do whatever you want to do here
+            Toast.makeText(view.getContext(), "MDP : \n"+arrayListMoyenDePaiement.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(), "Categorie : \n"+arrayListCategorie.toString(), Toast.LENGTH_SHORT).show();
 
         }});
 
@@ -291,6 +299,25 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
 
         }
+    }
+
+    public void addAnnonce(String titre,float prix, ArrayList<DocumentReference> categories, ArrayList<DocumentReference> moyenDP){
+        Annonce annonce = new Annonce(titre);
+        cMoyenDePaiement.add(annonce)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(getApplicationContext(),"Annonce ajouté",Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(),"erreur",Toast.LENGTH_SHORT).show();
+                        Log.d(TAG,e.toString());
+                    }
+                });
     }
 }
 

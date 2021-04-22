@@ -36,6 +36,8 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 /*
  * Ici sera l'ajout des catégories et des moyen de paiement
  *
@@ -117,7 +119,8 @@ public class ParametresFragment extends Fragment {
                 .setLifecycleOwner(this)
                 .build();
 
-        adapter = new AdapterCategorie(options,getContext());
+
+        adapter = new AdapterCategorie(options,getContext(),new ArrayList<String>());
 
         recyclerView.setAdapter(adapter);
 
