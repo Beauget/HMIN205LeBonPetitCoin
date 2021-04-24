@@ -10,19 +10,76 @@
 
 
 
-    <TextView
-        android:layout_width="match_parent"
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="cliquer sur le carré bleu"/>
+        android:numColumns="auto_fit"
+        android:columnWidth="90dp"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
+        android:gravity="center"
+        android:stretchMode="columnWidth" >
+    </GridView>
 
-
-    <ImageView
-        android:id="@+id/img1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/holo_blue_light" />
+        android:layout_height="400dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:orientation="vertical"
+            >
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:background="@android:color/holo_blue_light"
+            />
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:background="@android:color/holo_blue_light" />
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:background="@android:color/holo_blue_light" />
+            <ImageView
+                android:id="@+id/img4"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:background="@android:color/holo_blue_light" />
+            <ImageView
+                android:id="@+id/img5"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:background="@android:color/holo_blue_light" />
+            <ImageView
+                android:id="@+id/img6"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:background="@android:color/holo_blue_light" />
+
+
+
+
 
     <EditText
         android:id="@+id/titre"
@@ -72,18 +129,13 @@
         android:text="Categorie(s)"
         />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        >
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/LCategorie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
         />
 
-    </ScrollView>
 
     <TextView
         android:layout_width="match_parent"
@@ -92,10 +144,6 @@
         android:text="Moyen de paiement(s)"
         />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        >
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/LMoyenDePaiement"
             android:layout_width="match_parent"
@@ -103,12 +151,9 @@
             android:scrollbars="vertical"
             />
 
+
+        </LinearLayout>
     </ScrollView>
-
-
-
-
-
 
     <Button
         android:id="@+id/UploadBtn"
@@ -121,6 +166,12 @@
         android:textColor="@color/white"
         android:layout_gravity="center"
         />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
 
 </LinearLayout>
 

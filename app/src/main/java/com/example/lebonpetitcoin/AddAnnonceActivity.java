@@ -3,6 +3,7 @@ package com.example.lebonpetitcoin;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,15 +15,19 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,18 +53,28 @@ import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+import com.example.lebonpetitcoin.ClassFirestore.Image;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
@@ -70,6 +85,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.Collator;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,10 +98,18 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     //NOM DE LA CLASSE QUI SERA ENVOYÉ EN CAS D'ECHEC D'ENVOIE
     private static final String TAG = "AddAnnonce";
 
+    private static final int PICK_IMAGE_REQUEST = 1;
+
+    private Button mButtonChooseImage;
+    private Button mButtonUpload;
+    private TextView mTextViewShowUploads;
+    private EditText mEditTextFileName;
+    private ImageView mImageView;
+    private ProgressBar mProgressBar;
 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
-    private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
+    private CollectionReference cAnnonce = firestoreDB.collection("Annonce");
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
     private CollectionReference cMoyenDePaiement = firestoreDB.collection("MoyenDePaiement");
 
@@ -98,7 +123,23 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
 
     public static final String KEY_User_Document1 = "doc1";
+    ArrayList<ImageView> imageViewArrayList = new ArrayList<>();
     ImageView img1;
+    ImageView img2;
+    ImageView img3;
+    ImageView img4;
+    ImageView img5;
+    ImageView img6;
+
+    ArrayList<Uri> imageUriList = new ArrayList<>();
+    private Uri mImageUri;
+    String mUrl;
+    ArrayList<String> mUrlList = new ArrayList<>();
+
+    private StorageReference mStorageRef;
+    private DatabaseReference mDatabaseRef;
+    private StorageTask mUploadTask;
+
     Button Upload_Btn;
     EditText titre;
     EditText description;
@@ -113,7 +154,14 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_annonce);
 
+
         img1=(ImageView)findViewById(R.id.img1);
+        img2=(ImageView)findViewById(R.id.img2);
+        img3=(ImageView)findViewById(R.id.img3);
+        img4=(ImageView)findViewById(R.id.img4);
+        img5=(ImageView)findViewById(R.id.img5);
+        img6=(ImageView)findViewById(R.id.img6);
+
         titre=findViewById(R.id.titre);
         description=findViewById(R.id.description);
         prix=findViewById(R.id.prix);
@@ -123,6 +171,13 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         recyclerViewMoyenDePaiement = findViewById(R.id.LMoyenDePaiement);
         recyclerViewMoyenDePaiement.setLayoutManager(new LinearLayoutManager(this));
 
+        //imageUriList.add(mImageUri);
+        imageViewArrayList.add(img1);
+        imageViewArrayList.add(img2);
+        imageViewArrayList.add(img3);
+        imageViewArrayList.add(img4);
+        imageViewArrayList.add(img5);
+        imageViewArrayList.add(img6);
 
         Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
@@ -157,9 +212,26 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         public void onClick(View view) {
             //Toast.makeText(view.getContext(), "MDP : \n"+arrayListMoyenDePaiement.toString(), Toast.LENGTH_SHORT).show();
             //Toast.makeText(view.getContext(), "Categorie : \n"+arrayListCategorie.toString(), Toast.LENGTH_SHORT).show();
-            checkValidation(arrayListCategorie,arrayListMoyenDePaiement);
+            if (mUploadTask != null && mUploadTask.isInProgress()) {
+                Toast.makeText(AddAnnonceActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
+            } else {
+                checkValidation(arrayListCategorie,arrayListMoyenDePaiement);
+            }
 
         }});
+
+        
+        mProgressBar = findViewById(R.id.progress_bar);
+        mStorageRef = FirebaseStorage.getInstance().getReference("Annonces");
+
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
+
 
     }
 
@@ -197,124 +269,10 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         builder.show();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            Toast.makeText(getApplicationContext(), "RESULT_OK", Toast.LENGTH_LONG).show();
-            if (requestCode == 1) {
-                Toast.makeText(getApplicationContext(), "REQUEST 1", Toast.LENGTH_LONG).show();
-                /*
-                File f = new File(Environment.getExternalStorageDirectory().toString());
-                for (File temp : f.listFiles()) {
-                    if (temp.getName().equals("temp.jpg")) {
-                        f = temp;
-                        break;
-                    }
-                }
-                try {
-                    Bitmap bitmap;
-                    BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
-                    bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(), bitmapOptions);
-                    bitmap=getResizedBitmap(bitmap, 400);
-                    IDProf.setImageBitmap(bitmap);
-                    BitMapToString(bitmap);
-                    String path = android.os.Environment
-                            .getExternalStorageDirectory()
-                            + File.separator
-                            + "Phoenix" + File.separator + "default";
-                    f.delete();
-                    OutputStream outFile = null;
-                    File file = new File(path, String.valueOf(System.currentTimeMillis()) + ".jpg");
-                    try {
-                        outFile = new FileOutputStream(file);
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 85, outFile);
-                        outFile.flush();
-                        outFile.close();
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            */
-            } else if (requestCode == 2) {
-                Toast.makeText(getApplicationContext(), "REQUEST 2", Toast.LENGTH_LONG).show();
-                Uri selectedImage = data.getData();
-                Toast.makeText(getApplicationContext(), selectedImage.toString() , Toast.LENGTH_LONG).show();
 
-                Bitmap bitmap = null;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    try {
-                        bitmap = ImageDecoder.decodeBitmap(ImageDecoder.createSource(this.getContentResolver(), selectedImage));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    try {
-                        bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                bitmap = getResizedBitmap(bitmap, 400);
-                img1.setImageBitmap(bitmap);
-            }
-        }
-    }
-    public String BitMapToString(Bitmap userImage1) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        userImage1.compress(Bitmap.CompressFormat.PNG, 60, baos);
-        byte[] b = baos.toByteArray();
-        Document_img1 = Base64.encodeToString(b, Base64.DEFAULT);
-        return Document_img1;
-    }
-
-    public Bitmap getResizedBitmap(Bitmap image, int maxSize) {
-        int width = image.getWidth();
-        int height = image.getHeight();
-
-        float bitmapRatio = (float)width / (float) height;
-        if (bitmapRatio > 1) {
-            width = maxSize;
-            height = (int) (width / bitmapRatio);
-        } else {
-            height = maxSize;
-            width = (int) (height * bitmapRatio);
-        }
-        return Bitmap.createScaledBitmap(image, width, height, true);
-    }
-
-
-
-    @Override
-    public void onClick(View v) {
-        if (Document_img1.equals("") || Document_img1.equals(null)) {
-            ContextThemeWrapper ctw = new ContextThemeWrapper();
-            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctw);
-            alertDialogBuilder.setTitle("Pas d'image");
-            alertDialogBuilder.setMessage("img1 est vide");
-            alertDialogBuilder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-
-                }
-            });
-            alertDialogBuilder.show();
-            return;
-        }
-        else{
-
-
-        }
-    }
-
-    public void addAnnonce(String titre,String description,float prix, ArrayList<String> cat,ArrayList<String> mdp){
-        Annonce annonce = new Annonce(titre,description,prix,cat,mdp);
-        cAnnonces.add(annonce)
+    public void addAnnonce(String titre,String description,float prix, ArrayList<String> cat,ArrayList<String> mdp,ArrayList<String> uri){
+        Annonce annonce = new Annonce(titre,description,prix,cat,mdp, uri);
+        cAnnonce.add(annonce)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -344,12 +302,163 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         //Matcher m = p.matcher(getEmailId);
 
         // Check if all strings are null or not
-        if (getPrix.equals("") || getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0 )
+        if (getPrix.equals("") || getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0||imageUriList.size() ==0 )
             Toast.makeText(getApplicationContext(),"nop",Toast.LENGTH_SHORT).show();
         else
             {
-                addAnnonce(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp);
+                //uploadFile(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp);
+                uploadImageToFirebaseStorage(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp,imageUriList.size());
             }
+    }
+
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        if(imageUriList.size()>=6) {
+            Toast.makeText(getApplicationContext(), "nbMax d'images atteind", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            startActivityForResult(intent, PICK_IMAGE_REQUEST);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            if(imageUriList.size()==6) {
+                Toast.makeText(getApplicationContext(), "nbMax d'images atteind", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                mImageUri = data.getData();
+                imageUriList.add(mImageUri);
+                Toast.makeText(getApplicationContext(), "image : " + String.valueOf(imageUriList.size() - 1), Toast.LENGTH_SHORT).show();
+                Picasso.get().load(mImageUri).into(imageViewArrayList.get(imageUriList.size() - 1));
+            }
+        }
+    }
+
+    private String getFileExtension(Uri uri) {
+        ContentResolver cR = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
+
+    private void uploadImageToFirebaseStorage(String titre, String description , float prix, ArrayList<String> cat,  ArrayList<String> mdp, int nbImages) {
+        Toast.makeText(getApplicationContext(),"nbImages : "+ String.valueOf(nbImages),Toast.LENGTH_SHORT).show();
+        for (int i=0; i < imageUriList.size() ; i++) {
+            Toast.makeText(getApplicationContext(),String.valueOf(i)+ "/" + String.valueOf(imageUriList.size()),Toast.LENGTH_SHORT).show();
+
+            Uri imageUri = imageUriList.get(i);
+            StorageReference filereference = mStorageRef.child(System.currentTimeMillis()
+                    + "." + getFileExtension(imageUri));
+            //imageUriList.remove(0);
+
+            final UploadTask mUploadTask = filereference.putFile(imageUri);
+            Task<Uri> uriTask = mUploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>(){
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
+                {
+                    if(!task.isSuccessful()){
+                        throw task.getException();
+                    }
+
+                    String downloadImageUrl = filereference.getDownloadUrl().toString();
+                    return filereference.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri getUri = task.getResult();
+                        mUrl = getUri.toString();
+                        mUrlList.add(mUrl);
+                        Toast.makeText(getApplicationContext(),"uploaded",Toast.LENGTH_SHORT).show();
+
+                        if(mUrlList.size()==nbImages) {
+                            Toast.makeText(getApplicationContext(), "ajout annonce", Toast.LENGTH_SHORT).show();
+                            addAnnonce(titre, description, prix, cat, mdp, mUrlList);
+                        }
+                        //updateAnnonce(id,mUrl);
+                        //uploadImageToFirebaseStorageRecursive() //Call when completes
+                    }
+                }
+            });
+        }
+    }
+
+    private void updateAnnonce(String id, String uri){
+        Task<DocumentSnapshot> tAnnonce = cAnnonce.document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Annonce annonce = documentSnapshot.toObject(Annonce.class);
+                assert annonce != null;
+                ArrayList <String> images = annonce.getImages();
+                images.add(uri);
+                Map<String, Object> updates = new HashMap<>();
+                updates.put("images", images);
+                cAnnonce.document(id).update(updates);
+            }
+        });
+
+    }
+
+
+    private void uploadFile(String titre, String description , float prix, ArrayList<String> cat,  ArrayList<String> mdp,ArrayList<String> uri) {
+        if (mImageUri != null) {
+            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
+                    + "." + getFileExtension(mImageUri));
+
+            mUploadTask = fileReference.putFile(mImageUri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mProgressBar.setProgress(0);
+                                }
+                            }, 500);
+
+                            taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    //addAnnonce(titre,description,prix,cat,mdp,uri);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception exception) {
+                                    // Handle any errors
+                                }
+                            });
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(AddAnnonceActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                            mProgressBar.setProgress((int) progress);
+                        }
+                    });
+        } else {
+            Toast.makeText(this,"pas d'image boloss", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
 

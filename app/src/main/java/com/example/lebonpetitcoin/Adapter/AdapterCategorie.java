@@ -84,11 +84,6 @@ public class AdapterCategorie extends FirestoreRecyclerAdapter<Categorie, Adapte
         }
 
         public CheckBox getCheckBox(){return  checkBox;}
-        /*
-        public TextView getTextViewDescription() {
-            return textViewDescription;
-        }
-        */
 
     }
 }

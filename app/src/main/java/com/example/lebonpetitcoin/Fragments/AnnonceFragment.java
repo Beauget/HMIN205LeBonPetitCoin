@@ -64,7 +64,15 @@ public class AnnonceFragment extends Fragment {
     TextView categories;
     TextView nbVisites;
     TextView date;
-    ImageView image;
+    ImageView image1;
+    ImageView image2;
+    ImageView image3;
+    ImageView image4;
+    ImageView image5;
+    ImageView image6;
+
+    ArrayList<ImageView> images = new ArrayList<>();
+
 
     private static final String TAG = "AnnonceFragment";
 
@@ -90,7 +98,13 @@ public class AnnonceFragment extends Fragment {
         //Champs d'écritures
         titre= view.findViewById(R.id.titre);
         description = view.findViewById(R.id.all);
-        image = view.findViewById(R.id.imageView);
+        image1 = view.findViewById(R.id.image1);
+        image2 = view.findViewById(R.id.image2);
+        image3 = view.findViewById(R.id.image3);
+        image4 = view.findViewById(R.id.image4);
+        image5 = view.findViewById(R.id.image5);
+        image6 = view.findViewById(R.id.image6);
+
         lv=view.findViewById(R.id.lv);
         chipGroup = (ChipGroup) view.findViewById(R.id.chipGroup);
         return view;
@@ -107,6 +121,12 @@ public class AnnonceFragment extends Fragment {
         //adapter.startListening();
         Bundle bundle = this.getArguments();
         final ArrayList<String>[] idCategorie = new ArrayList[]{new ArrayList<>()};
+        images.add(image1);
+        images.add(image2);
+        images.add(image3);
+        images.add(image4);
+        images.add(image5);
+        images.add(image6);
 
         String id = null;
 
@@ -132,9 +152,11 @@ public class AnnonceFragment extends Fragment {
                     cAnnonce.document(finalId).update(updates);
 
                     titre.setText(annonce.getTitre());
-                    GlideApp.with(getContext())
-                            .load(annonce.getFirstImage())
-                            .into(image);
+                    for(int i = 0 ; i<annonce.getImages().size(); i++) {
+                        GlideApp.with(getContext())
+                                .load(annonce.getImages().get(i))
+                                .into(images.get(i));
+                    }
                     String text = "Description : " + annonce.getDescription() + "\n" +
                             "auteur : " + annonce.getAuteur() + "\n" +
                             "prix : " + String.valueOf(annonce.getPrix()) + "\n" +

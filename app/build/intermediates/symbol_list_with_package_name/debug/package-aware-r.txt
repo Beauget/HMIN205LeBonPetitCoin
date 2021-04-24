@@ -1987,12 +1987,14 @@ id buttonDeleteNote
 id buttonLoad
 id buttonPanel
 id buttonSend
+id button_choose_image
 id button_continue
 id button_create
 id button_done
 id button_next
 id button_resend_email
 id button_sign_in
+id button_upload
 id cache_measures
 id cancel_action
 id cancel_button
@@ -2060,6 +2062,7 @@ id disableHome
 id disablePostScroll
 id disableScroll
 id disjoint
+id download
 id dragDown
 id dragEnd
 id dragLeft
@@ -2073,6 +2076,7 @@ id easeInOut
 id easeOut
 id edit_phone_number
 id edit_query
+id edit_text_file_name
 id elastic
 id email
 id email_button
@@ -2112,6 +2116,7 @@ id gone
 id graph
 id graph_wrap
 id gridLayout1
+id grid_view
 id group_divider
 id grouping
 id groups
@@ -2133,11 +2138,20 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id image1
+id image2
+id image3
+id image4
+id image5
+id image6
 id imageView
+id image_view
 id img1
 id img2
 id img3
 id img4
+id img5
+id img6
 id info
 id invisible
 id invisible_frame
@@ -2255,6 +2269,7 @@ id pin
 id position
 id postLayout
 id prix
+id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2361,6 +2376,7 @@ id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_view_show_uploads
 id text_view_title
 id textinput_counter
 id textinput_error
@@ -2486,6 +2502,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout account_activity
 layout activity_add_annonce
+layout activity_add_annonce2
 layout activity_main
 layout activity_main_nav_header
 layout browser_actions_context_menu_page

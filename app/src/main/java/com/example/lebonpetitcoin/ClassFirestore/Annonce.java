@@ -29,7 +29,7 @@ public class Annonce {
     //Des MoyenDePaiment, pas String dans le doute ou le nom change
     ArrayList<String>  paiement = new ArrayList<>();
     //Des Image
-    List<String> images = new ArrayList<String>();
+    ArrayList<String> images = new ArrayList<String>();
 
     public Annonce(){
         //public no args contructeur obligatoire sinon firebase crash
@@ -52,24 +52,38 @@ public class Annonce {
 
     }
 
-    public Annonce(String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat) {
+    public Annonce(String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, String uri) {
         this.titre = titre;
         this.auteur = "Jhon";
         this.estProfessionnel = false;
         this.telephoneContact = "9999999";
         this.mailContact = "mailContact@Pouet";
         this.titre = titre;
-        this.images.add("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/seal.jpg?alt=media&token=a0936c24-9211-4400-9d70-ab6b310390da");
+        this.images.add(uri);
         this.description = description;
         this.datePoste = Calendar.getInstance().getTime();
         this.nbDeVisites = 0;
         this.prix = prix;
         this.categories = cat;
         this.paiement= mdp;
-
+    }
+    public Annonce(String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri) {
+        this.titre = titre;
+        this.auteur = "Jhon";
+        this.estProfessionnel = false;
+        this.telephoneContact = "9999999";
+        this.mailContact = "mailContact@Pouet";
+        this.titre = titre;
+        this.images= uri;
+        this.description = description;
+        this.datePoste = Calendar.getInstance().getTime();
+        this.nbDeVisites = 0;
+        this.prix = prix;
+        this.categories = cat;
+        this.paiement= mdp;
     }
 
-    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, ArrayList<String> categories, String statistique, float prix, ArrayList<String> paiement, List<String> images) {
+    public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, ArrayList<String> categories, String statistique, float prix, ArrayList<String> paiement, ArrayList<String> images) {
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
         this.telephoneContact = telephoneContact;
@@ -179,11 +193,11 @@ public class Annonce {
         this.estProfessionnel = estProfessionnel;
     }
 
-    public List<String> getImages() {
+    public ArrayList<String> getImages() {
         return images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(ArrayList<String> images) {
         this.images = images;
     }
 

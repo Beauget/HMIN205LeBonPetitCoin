@@ -1,10 +1,23 @@
+com/example/lebonpetitcoin/AddImageActivity.java
+ com.example.lebonpetitcoin.AddImageActivity
+ com.example.lebonpetitcoin.AddImageActivity$1
+ com.example.lebonpetitcoin.AddImageActivity$2
+ com.example.lebonpetitcoin.AddImageActivity$3
+ com.example.lebonpetitcoin.AddImageActivity$4
+ com.example.lebonpetitcoin.AddImageActivity$5
+ com.example.lebonpetitcoin.AddImageActivity$6
+ com.example.lebonpetitcoin.AddImageActivity$6$1
+ com.example.lebonpetitcoin.AddImageActivity$6$2
+ com.example.lebonpetitcoin.AddImageActivity$6$3
+ com.example.lebonpetitcoin.AddImageActivity$6$3$1
+ com.example.lebonpetitcoin.AddImageActivity$6$3$2
 com/example/lebonpetitcoin/ClassFirestore/Statistique.java
  com.example.lebonpetitcoin.ClassFirestore.Statistique
-com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
+com/example/lebonpetitcoin/MainActivity.java
+ com.example.lebonpetitcoin.MainActivity
+ com.example.lebonpetitcoin.MainActivity$1
+ com.example.lebonpetitcoin.MainActivity$2
+ com.example.lebonpetitcoin.MainActivity$3
 com/example/lebonpetitcoin/Adapter/AdapterMoyenDePaiement.java
  com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement
  com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement$1
@@ -36,11 +49,25 @@ com/example/lebonpetitcoin/Adapter/AdapterCategorie.java
 com/example/lebonpetitcoin/AddAnnonceActivity.java
  com.example.lebonpetitcoin.AddAnnonceActivity
  com.example.lebonpetitcoin.AddAnnonceActivity$1
+ com.example.lebonpetitcoin.AddAnnonceActivity$10
+ com.example.lebonpetitcoin.AddAnnonceActivity$11
+ com.example.lebonpetitcoin.AddAnnonceActivity$12
+ com.example.lebonpetitcoin.AddAnnonceActivity$12$1
+ com.example.lebonpetitcoin.AddAnnonceActivity$12$2
+ com.example.lebonpetitcoin.AddAnnonceActivity$12$3
  com.example.lebonpetitcoin.AddAnnonceActivity$2
  com.example.lebonpetitcoin.AddAnnonceActivity$3
  com.example.lebonpetitcoin.AddAnnonceActivity$4
  com.example.lebonpetitcoin.AddAnnonceActivity$5
  com.example.lebonpetitcoin.AddAnnonceActivity$6
+ com.example.lebonpetitcoin.AddAnnonceActivity$7
+ com.example.lebonpetitcoin.AddAnnonceActivity$8
+ com.example.lebonpetitcoin.AddAnnonceActivity$9
+com/example/lebonpetitcoin/Adapter/AdapterImage.java
+ com.example.lebonpetitcoin.Adapter.AdapterImage
+ com.example.lebonpetitcoin.Adapter.AdapterImage$1
+ com.example.lebonpetitcoin.Adapter.AdapterImage$2
+ com.example.lebonpetitcoin.Adapter.AdapterImage$viewHolder
 com/example/lebonpetitcoin/DataCategorie.java
  com.example.lebonpetitcoin.DataCategorie
 com/example/lebonpetitcoin/Fragments/StatsFragment.java
@@ -69,8 +96,9 @@ com/example/lebonpetitcoin/Fragments/ParametresFragment.java
  com.example.lebonpetitcoin.Fragments.ParametresFragment$9
 com/example/lebonpetitcoin/ClassFirestore/Annonce.java
  com.example.lebonpetitcoin.ClassFirestore.Annonce
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
+com/example/lebonpetitcoin/Fragments/AccueilFragment.java
+ com.example.lebonpetitcoin.Fragments.AccueilFragment
+ com.example.lebonpetitcoin.Fragments.AccueilFragment$1
 com/example/lebonpetitcoin/Fragments/AccountFragment.java
  com.example.lebonpetitcoin.Fragments.AccountFragment
  com.example.lebonpetitcoin.Fragments.AccountFragment$1
@@ -96,11 +124,12 @@ com/example/lebonpetitcoin/Adapter/AdapterChip.java
  com.example.lebonpetitcoin.Adapter.AdapterChip
 com/example/lebonpetitcoin/BuildConfig.java
  com.example.lebonpetitcoin.BuildConfig
-com/example/lebonpetitcoin/MainActivity.java
- com.example.lebonpetitcoin.MainActivity
- com.example.lebonpetitcoin.MainActivity$1
- com.example.lebonpetitcoin.MainActivity$2
- com.example.lebonpetitcoin.MainActivity$3
-com/example/lebonpetitcoin/Fragments/AccueilFragment.java
- com.example.lebonpetitcoin.Fragments.AccueilFragment
- com.example.lebonpetitcoin.Fragments.AccueilFragment$1
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
+com/example/lebonpetitcoin/Item/ItemImage.java
+ com.example.lebonpetitcoin.Item.ItemImage
+com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
