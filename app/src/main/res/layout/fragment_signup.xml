@@ -20,11 +20,12 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:background="@color/hint"
         android:gravity="center_vertical"
-        android:padding="30dp" />
+        />
 
     <EditText
         android:id="@+id/fullName"
@@ -34,12 +35,35 @@
         android:background="@android:color/transparent"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
-        android:hint="@string/fullName"
+        android:hint="@string/identifiant"
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
         android:textSize="16sp"
         android:autofillHints="" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        />
+
+    <EditText
+        android:id="@+id/pro"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="SIRET (si pro)"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:autofillHints=""
+        android:visibility="visible"
+
+        />
 
     <View
         android:layout_width="fill_parent"

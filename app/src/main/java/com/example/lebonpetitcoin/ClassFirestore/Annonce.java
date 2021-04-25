@@ -99,6 +99,10 @@ public class Annonce {
         this.images = images;
     }
 
+    public Annonce(String uid, String imageProfile, boolean estProfessionnel, String telephoneContact, String mailContact, String siret, String localisation) {
+
+    }
+
     public String getAuteur() {
         return auteur;
     }

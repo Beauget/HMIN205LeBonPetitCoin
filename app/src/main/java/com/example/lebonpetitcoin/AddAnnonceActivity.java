@@ -268,7 +268,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     private void deleteImage(){
         if (imageUriList.size()>0) {
             imageUriList.remove(imageUriList.size() - 1);
-            imageViewArrayList.get(imageUriList.size()).setVisibility(View.INVISIBLE);
+            imageViewArrayList.get(imageUriList.size()).setVisibility(View.GONE);
         }
 
     }

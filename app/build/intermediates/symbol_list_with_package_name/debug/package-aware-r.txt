@@ -2272,6 +2272,7 @@ id pin
 id position
 id postLayout
 id prix
+id pro
 id progress_bar
 id progress_circular
 id progress_horizontal
@@ -2830,6 +2831,7 @@ string hello_world
 string hide_bottom_view_on_scroll_behavior
 string hide_pwd
 string icon_content_description
+string identifiant
 string item_view_role_description
 string location
 string login

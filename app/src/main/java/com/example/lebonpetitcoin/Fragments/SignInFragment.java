@@ -41,10 +41,6 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
 
     public static final String regEx = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
 
-    public SignInFragment() {
-
-    }
-
     public static SignInFragment newInstance() {
         return (new SignInFragment());
     }

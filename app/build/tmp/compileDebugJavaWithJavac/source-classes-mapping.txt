@@ -78,6 +78,10 @@ com/example/lebonpetitcoin/ClassFirestore/Categorie.java
  com.example.lebonpetitcoin.ClassFirestore.Categorie
 com/example/lebonpetitcoin/Fragments/SignUpFragment.java
  com.example.lebonpetitcoin.Fragments.SignUpFragment
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$1
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$2
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$3
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$4
 com/example/lebonpetitcoin/Fragments/MyAppGlideModule.java
  com.example.lebonpetitcoin.MyAppGlideModule
 com/example/lebonpetitcoin/Fragments/ParametresFragment.java

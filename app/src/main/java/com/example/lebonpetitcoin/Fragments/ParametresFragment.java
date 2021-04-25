@@ -93,10 +93,8 @@ public class ParametresFragment extends Fragment {
         tCategorie = view.findViewById(R.id.LC2);
         tMoyenDePaiement = view.findViewById(R.id.LMoyenDePaiement);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.LCategorie);
-        //recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager
-                (new LinearLayoutManager(view.getContext()));
+        //recyclerView = (RecyclerView) view.findViewById(R.id.LCategorie);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
 
 
@@ -120,13 +118,8 @@ public class ParametresFragment extends Fragment {
                 .build();
 
 
-        adapter = new AdapterCategorie(options,getContext(),new ArrayList<String>());
-
-        recyclerView.setAdapter(adapter);
-
-        //Adapter adapter1 = null;
-        //recyclerView.setAdapter((RecyclerView.Adapter) adapter1);
-       // test.setText(String.valueOf(adapter.getItemCount()));
+        //adapter = new AdapterCategorie(options,getContext(),new ArrayList<String>());
+        //recyclerView.setAdapter(adapter);
 
 
 
