@@ -52,9 +52,9 @@ public class Annonce {
 
     }
 
-    public Annonce(String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, String uri) {
+    public Annonce(String auteur,String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, String uri) {
         this.titre = titre;
-        this.auteur = "Jhon";
+        this.auteur = auteur;
         this.estProfessionnel = false;
         this.telephoneContact = "9999999";
         this.mailContact = "mailContact@Pouet";
@@ -67,9 +67,9 @@ public class Annonce {
         this.categories = cat;
         this.paiement= mdp;
     }
-    public Annonce(String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri) {
+    public Annonce(String auteur,String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri) {
         this.titre = titre;
-        this.auteur = "Jhon";
+        this.auteur = auteur;
         this.estProfessionnel = false;
         this.telephoneContact = "9999999";
         this.mailContact = "mailContact@Pouet";

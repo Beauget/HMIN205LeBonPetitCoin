@@ -1862,6 +1862,7 @@ id ETMoyenDePaiement
 id Edescription
 id Etitle
 id FUNCTION
+id GridLayout
 id LC2
 id LCategorie
 id LMoyenDePaiement
@@ -1944,6 +1945,7 @@ id activity_main_drawer_signUp
 id activity_main_drawer_stats
 id activity_main_frame_layout
 id activity_main_menu_drawer
+id activity_main_nav_header
 id activity_main_nav_view
 id add
 id adjust_height
@@ -2047,6 +2049,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete
 id deltaRelative
 id dependency_ordering
 id description

@@ -106,6 +106,12 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     private EditText mEditTextFileName;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
+    private Button mButtonAdd;
+    private Button mButtondelete;
+    private Intent intent = getIntent();
+    private Bundle extras ;
+    private String name;
+
 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
@@ -154,6 +160,14 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_annonce);
 
+        extras = getIntent().getExtras();
+
+        if (extras != null) {
+            name = extras.getString("name");
+        }
+        else{
+            Toast.makeText(AddAnnonceActivity.this, "null", Toast.LENGTH_SHORT).show();
+        }
 
         img1=(ImageView)findViewById(R.id.img1);
         img2=(ImageView)findViewById(R.id.img2);
@@ -166,6 +180,12 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         description=findViewById(R.id.description);
         prix=findViewById(R.id.prix);
         Upload_Btn=(Button)findViewById(R.id.UploadBtn);
+        mButtonAdd=(Button)findViewById(R.id.add);
+        mButtondelete=(Button)findViewById(R.id.delete);
+
+
+
+
         recyclerViewCategorie = findViewById(R.id.LCategorie);
         recyclerViewCategorie.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewMoyenDePaiement = findViewById(R.id.LMoyenDePaiement);
@@ -199,10 +219,25 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         //recyclerViewMoyenDePaiement.getChild
 
 
-        img1.setOnClickListener(new View.OnClickListener() {
+       /* mButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectImage();
+
+            }
+        });*/
+
+        mButtonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
+
+        mButtondelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteImage();
 
             }
         });
@@ -215,7 +250,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
             if (mUploadTask != null && mUploadTask.isInProgress()) {
                 Toast.makeText(AddAnnonceActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
             } else {
-                checkValidation(arrayListCategorie,arrayListMoyenDePaiement);
+                checkValidation(arrayListMoyenDePaiement,arrayListCategorie);
             }
 
         }});
@@ -225,16 +260,18 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         mStorageRef = FirebaseStorage.getInstance().getReference("Annonces");
 
 
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFileChooser();
-            }
-        });
+
 
 
     }
 
+    private void deleteImage(){
+        if (imageUriList.size()>0) {
+            imageUriList.remove(imageUriList.size() - 1);
+            imageViewArrayList.get(imageUriList.size()).setVisibility(View.INVISIBLE);
+        }
+
+    }
 
     private void selectImage() {
         final CharSequence[] options = { "Prendre une photo", "Choisir depuis la gallerie","Annuler" };
@@ -270,8 +307,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     }
 
 
-    public void addAnnonce(String titre,String description,float prix, ArrayList<String> cat,ArrayList<String> mdp,ArrayList<String> uri){
-        Annonce annonce = new Annonce(titre,description,prix,cat,mdp, uri);
+    public void addAnnonce(String titre,String description,float prix, ArrayList<String> mdp,ArrayList<String> cat,ArrayList<String> uri){
+        Annonce annonce = new Annonce(name,titre,description,prix,mdp,cat, uri);
         cAnnonce.add(annonce)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -290,7 +327,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     }
 
     // Check Validation Method
-    private void checkValidation(ArrayList<String> cat,ArrayList<String> mdp) {
+    private void checkValidation(ArrayList<String> mdp,ArrayList<String> cat) {
 
         // Get all edittext texts
         String getPrix= prix.getText().toString();
@@ -307,7 +344,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         else
             {
                 //uploadFile(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp);
-                uploadImageToFirebaseStorage(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp,imageUriList.size());
+                uploadImageToFirebaseStorage(getTitre,getDescription,Float.valueOf(getPrix),mdp,cat,imageUriList.size());
             }
     }
 
@@ -329,15 +366,12 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
-            if(imageUriList.size()==6) {
-                Toast.makeText(getApplicationContext(), "nbMax d'images atteind", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                mImageUri = data.getData();
-                imageUriList.add(mImageUri);
-                Toast.makeText(getApplicationContext(), "image : " + String.valueOf(imageUriList.size() - 1), Toast.LENGTH_SHORT).show();
-                Picasso.get().load(mImageUri).into(imageViewArrayList.get(imageUriList.size() - 1));
-            }
+            mImageUri = data.getData();
+            imageUriList.add(mImageUri);
+            Toast.makeText(getApplicationContext(), "image : " + String.valueOf(imageUriList.size() - 1), Toast.LENGTH_SHORT).show();
+            imageViewArrayList.get(imageUriList.size() - 1).setVisibility(View.VISIBLE);
+            Picasso.get().load(mImageUri).into(imageViewArrayList.get(imageUriList.size() - 1));
+
         }
     }
 
@@ -347,7 +381,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadImageToFirebaseStorage(String titre, String description , float prix, ArrayList<String> cat,  ArrayList<String> mdp, int nbImages) {
+    private void uploadImageToFirebaseStorage(String titre, String description , float prix, ArrayList<String> mdp,  ArrayList<String> cat, int nbImages) {
         Toast.makeText(getApplicationContext(),"nbImages : "+ String.valueOf(nbImages),Toast.LENGTH_SHORT).show();
         for (int i=0; i < imageUriList.size() ; i++) {
             Toast.makeText(getApplicationContext(),String.valueOf(i)+ "/" + String.valueOf(imageUriList.size()),Toast.LENGTH_SHORT).show();
@@ -380,7 +414,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
                         if(mUrlList.size()==nbImages) {
                             Toast.makeText(getApplicationContext(), "ajout annonce", Toast.LENGTH_SHORT).show();
-                            addAnnonce(titre, description, prix, cat, mdp, mUrlList);
+                            addAnnonce(titre, description, prix, mdp, cat, mUrlList);
                         }
                         //updateAnnonce(id,mUrl);
                         //uploadImageToFirebaseStorageRecursive() //Call when completes

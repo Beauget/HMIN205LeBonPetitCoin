@@ -39,12 +39,14 @@
 
             <ImageView
                 android:id="@+id/image2"
+                android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/seal"/>
             <ImageView
                 android:id="@+id/image3"
+                android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -52,12 +54,14 @@
 
             <ImageView
                 android:id="@+id/image4"
+                android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/seal"/>
             <ImageView
                 android:id="@+id/image5"
+                android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -65,6 +69,7 @@
 
             <ImageView
                 android:id="@+id/image6"
+                android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"

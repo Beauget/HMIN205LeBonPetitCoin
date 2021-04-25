@@ -12,15 +12,18 @@ import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.lebonpetitcoin.ClassFirestore.Image;
 import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 import com.example.lebonpetitcoin.Fragments.FavFragment;
@@ -50,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String TAG = "Main activity";
     MaterialToolbar topAppBar;
     NavigationView navigationView;
+    Menu nav_Menu;
+    View headerLayout;
+    ImageView header_Menu ;
     DrawerLayout drawerLayout;
     FloatingActionButton add;
     ActionMenuItemView home;
@@ -92,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
         setContentView(R.layout.activity_main);
+        navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
+        nav_Menu = navigationView.getMenu();
+        headerLayout = navigationView.getHeaderView(0);
+        header_Menu = headerLayout.findViewById(R.id.imageView);
 
         this.configureTopAppBar();
         this.configureDrawerLayout();
@@ -151,8 +161,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void hideItemDisconnected()
     {
 
-        navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
-        Menu nav_Menu = navigationView.getMenu();
+        //navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
+
+        if (header_Menu.getDrawable() != null) {
+            header_Menu.setImageDrawable(null);
+        }
         nav_Menu.findItem(R.id.activity_main_drawer_account).setVisible(false);
         nav_Menu.findItem(R.id.activity_main_drawer_message).setVisible(false);
         nav_Menu.findItem(R.id.activity_main_drawer_fav).setVisible(false);
@@ -165,8 +178,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void hideItemConnected()
     {
-        navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
-        Menu nav_Menu = navigationView.getMenu();
+        //navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
+        //NavigationView header = findViewById(R.id.activity_main_nav_header);
+        Uri imgProfile = mAuth.getCurrentUser().getPhotoUrl();
+
+
+        if (header_Menu.getDrawable() == null) {
+            GlideApp.with(this)
+                    .load(imgProfile)
+                    .centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
+                    .into(header_Menu);
+        }
+
         nav_Menu.findItem(R.id.activity_main_drawer_signIn).setVisible(false);
         nav_Menu.findItem(R.id.activity_main_drawer_signUp).setVisible(false);
         nav_Menu.findItem(R.id.activity_main_drawer_deconnect).setVisible(true);
@@ -225,7 +248,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 if(mAuth.getCurrentUser()!=null) {
+
                     Intent myIntent = new Intent(MainActivity.this, AddAnnonceActivity.class);
+                    myIntent.putExtra("name",mAuth.getCurrentUser().getDisplayName());
                     MainActivity.this.startActivity(myIntent);
                 }
                 else{

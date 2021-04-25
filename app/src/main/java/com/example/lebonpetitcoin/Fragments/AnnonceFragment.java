@@ -153,6 +153,7 @@ public class AnnonceFragment extends Fragment {
 
                     titre.setText(annonce.getTitre());
                     for(int i = 0 ; i<annonce.getImages().size(); i++) {
+                        images.get(i).setVisibility(View.VISIBLE);
                         GlideApp.with(getContext())
                                 .load(annonce.getImages().get(i))
                                 .into(images.get(i));
