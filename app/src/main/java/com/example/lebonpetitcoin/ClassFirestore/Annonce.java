@@ -52,12 +52,12 @@ public class Annonce {
 
     }
 
-    public Annonce(String auteur,String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, String uri) {
+    public Annonce(String auteur,String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix,ArrayList<String> mdp,ArrayList<String> cat, String uri) {
         this.titre = titre;
         this.auteur = auteur;
-        this.estProfessionnel = false;
-        this.telephoneContact = "9999999";
-        this.mailContact = "mailContact@Pouet";
+        this.estProfessionnel = estProfessionnel;
+        this.telephoneContact = telephoneContact;
+        this.mailContact = mailContact;
         this.titre = titre;
         this.images.add(uri);
         this.description = description;
@@ -67,12 +67,12 @@ public class Annonce {
         this.categories = cat;
         this.paiement= mdp;
     }
-    public Annonce(String auteur,String titre,String description,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri) {
+    public Annonce(String auteur,String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri) {
         this.titre = titre;
         this.auteur = auteur;
-        this.estProfessionnel = false;
-        this.telephoneContact = "9999999";
-        this.mailContact = "mailContact@Pouet";
+        this.estProfessionnel = estProfessionnel;
+        this.telephoneContact = telephoneContact;
+        this.mailContact = mailContact;
         this.titre = titre;
         this.images= uri;
         this.description = description;
@@ -189,7 +189,7 @@ public class Annonce {
         this.paiement = paiement;
     }
 
-    public boolean isEstProfessionnel() {
+    public boolean getEstProfessionnel() {
         return estProfessionnel;
     }
 

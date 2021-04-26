@@ -50,7 +50,7 @@ public class Compte {
         this.imageProfile = imageProfile;
     }
 
-    public boolean isEstProfessionnel() {
+    public boolean getEstProfessionnel() {
         return estProfessionnel;
     }
 

@@ -13,11 +13,11 @@ com/example/lebonpetitcoin/AddImageActivity.java
  com.example.lebonpetitcoin.AddImageActivity$6$3$2
 com/example/lebonpetitcoin/ClassFirestore/Statistique.java
  com.example.lebonpetitcoin.ClassFirestore.Statistique
-com/example/lebonpetitcoin/MainActivity.java
- com.example.lebonpetitcoin.MainActivity
- com.example.lebonpetitcoin.MainActivity$1
- com.example.lebonpetitcoin.MainActivity$2
- com.example.lebonpetitcoin.MainActivity$3
+com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
 com/example/lebonpetitcoin/Adapter/AdapterMoyenDePaiement.java
  com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement
  com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement$1
@@ -52,9 +52,10 @@ com/example/lebonpetitcoin/AddAnnonceActivity.java
  com.example.lebonpetitcoin.AddAnnonceActivity$10
  com.example.lebonpetitcoin.AddAnnonceActivity$11
  com.example.lebonpetitcoin.AddAnnonceActivity$12
- com.example.lebonpetitcoin.AddAnnonceActivity$12$1
- com.example.lebonpetitcoin.AddAnnonceActivity$12$2
- com.example.lebonpetitcoin.AddAnnonceActivity$12$3
+ com.example.lebonpetitcoin.AddAnnonceActivity$13
+ com.example.lebonpetitcoin.AddAnnonceActivity$13$1
+ com.example.lebonpetitcoin.AddAnnonceActivity$13$2
+ com.example.lebonpetitcoin.AddAnnonceActivity$13$3
  com.example.lebonpetitcoin.AddAnnonceActivity$2
  com.example.lebonpetitcoin.AddAnnonceActivity$3
  com.example.lebonpetitcoin.AddAnnonceActivity$4
@@ -76,12 +77,8 @@ com/example/lebonpetitcoin/CustomToast.java
  com.example.lebonpetitcoin.CustomToast
 com/example/lebonpetitcoin/ClassFirestore/Categorie.java
  com.example.lebonpetitcoin.ClassFirestore.Categorie
-com/example/lebonpetitcoin/Fragments/SignUpFragment.java
- com.example.lebonpetitcoin.Fragments.SignUpFragment
- com.example.lebonpetitcoin.Fragments.SignUpFragment$1
- com.example.lebonpetitcoin.Fragments.SignUpFragment$2
- com.example.lebonpetitcoin.Fragments.SignUpFragment$3
- com.example.lebonpetitcoin.Fragments.SignUpFragment$4
+com/example/lebonpetitcoin/Item/ItemImage.java
+ com.example.lebonpetitcoin.Item.ItemImage
 com/example/lebonpetitcoin/Fragments/MyAppGlideModule.java
  com.example.lebonpetitcoin.MyAppGlideModule
 com/example/lebonpetitcoin/Fragments/ParametresFragment.java
@@ -122,6 +119,8 @@ com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.AnnonceFragment
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$1
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$2
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$3
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$4
 com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
  com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
 com/example/lebonpetitcoin/Adapter/AdapterChip.java
@@ -130,10 +129,15 @@ com/example/lebonpetitcoin/BuildConfig.java
  com.example.lebonpetitcoin.BuildConfig
 com/example/lebonpetitcoin/MonFileProvider.java
  com.example.lebonpetitcoin.MonFileProvider
-com/example/lebonpetitcoin/Item/ItemImage.java
- com.example.lebonpetitcoin.Item.ItemImage
-com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
+com/example/lebonpetitcoin/MainActivity.java
+ com.example.lebonpetitcoin.MainActivity
+ com.example.lebonpetitcoin.MainActivity$1
+ com.example.lebonpetitcoin.MainActivity$2
+ com.example.lebonpetitcoin.MainActivity$3
+ com.example.lebonpetitcoin.MainActivity$4
+com/example/lebonpetitcoin/Fragments/SignUpFragment.java
+ com.example.lebonpetitcoin.Fragments.SignUpFragment
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$1
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$2
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$3
+ com.example.lebonpetitcoin.Fragments.SignUpFragment$4

@@ -8,7 +8,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.lebonpetitcoin.ClassFirestore.Image;
+import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 import com.example.lebonpetitcoin.Fragments.FavFragment;
@@ -34,7 +33,6 @@ import com.example.lebonpetitcoin.Fragments.SignInFragment;
 import com.example.lebonpetitcoin.Fragments.SignUpFragment;
 import com.example.lebonpetitcoin.Fragments.StatsFragment;
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.viewmodel.AuthViewModelBase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -43,6 +41,10 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     private static final String TAG = "Main activity";
+    //RECUPERATION DE LA DB
+    private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
+    private CollectionReference cAnnonce = firestoreDB.collection("Annonce");
+    private CollectionReference cCategorie = firestoreDB.collection("Categorie");
+    private CollectionReference cCompte= firestoreDB.collection("Compte");
+
+
+
     MaterialToolbar topAppBar;
     NavigationView navigationView;
     Menu nav_Menu;
@@ -147,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    private void updateUI(FirebaseUser user) {
+    public void updateUI(FirebaseUser user) {
         if(user!=null){
             //Toast.makeText(this, "connecté", Toast.LENGTH_SHORT).show();
 
@@ -234,6 +244,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
     }
 
+
     private void configureNavigationView() {
         this.navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -250,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if(mAuth.getCurrentUser()!=null) {
 
                     Intent myIntent = new Intent(MainActivity.this, AddAnnonceActivity.class);
-                    myIntent.putExtra("name",mAuth.getCurrentUser().getDisplayName());
+                    myIntent.putExtra("name",mAuth.getCurrentUser().getUid());
                     MainActivity.this.startActivity(myIntent);
                 }
                 else{
@@ -289,8 +300,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showFragment(FRAGMENT_STATS);
                 break;
             case R.id.activity_main_drawer_signIn:{
-                // this.showFragment(FRAGMENT_SIGNIN);
-                this.createSignInIntent();
+                this.showFragment(FRAGMENT_SIGNIN);
+                //this.createSignInIntent();
                 break;
             }
             case R.id.activity_main_drawer_signUp:
@@ -420,6 +431,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             return true;
         }
+
+    public void getCompte(String uid){
+        Task<QuerySnapshot> query = cCompte.whereEqualTo("uid", uid).get();
+        // future.get() blocks on response
+        query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Compte compte = document.toObject(Compte.class);
+                    }
+                }
+            }
+        });
+    }
 
 
 

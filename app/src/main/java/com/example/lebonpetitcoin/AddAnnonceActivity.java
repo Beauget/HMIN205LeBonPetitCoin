@@ -53,6 +53,7 @@ import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Image;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -69,6 +70,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -110,7 +113,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     private Button mButtondelete;
     private Intent intent = getIntent();
     private Bundle extras ;
-    private String name;
+    private String name,telephoneContact, mailContact;
+    private  boolean estProfessionnel;
 
 
     //RECUPERATION DE LA DB
@@ -118,6 +122,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     private CollectionReference cAnnonce = firestoreDB.collection("Annonce");
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
     private CollectionReference cMoyenDePaiement = firestoreDB.collection("MoyenDePaiement");
+    private CollectionReference cCompte= firestoreDB.collection("Compte");
 
     //Listener afin que la recherce dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration categorieListener;
@@ -164,6 +169,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
         if (extras != null) {
             name = extras.getString("name");
+            getCompte(name);
         }
         else{
             Toast.makeText(AddAnnonceActivity.this, "null", Toast.LENGTH_SHORT).show();
@@ -273,6 +279,25 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
     }
 
+    public void getCompte(String uid){
+        Task<QuerySnapshot> query = cCompte.whereEqualTo("uid", uid).get();
+        // future.get() blocks on response
+        query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Compte compte = document.toObject(Compte.class);
+                        name = compte.getPseudo();
+                        estProfessionnel = compte.getEstProfessionnel();
+                        mailContact = compte.getMailContact();
+                        telephoneContact=compte.getTelephoneContact();
+                    }
+                }
+            }
+        });
+    }
+
     private void selectImage() {
         final CharSequence[] options = { "Prendre une photo", "Choisir depuis la gallerie","Annuler" };
         AlertDialog.Builder builder = new AlertDialog.Builder(AddAnnonceActivity.this);
@@ -307,8 +332,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     }
 
 
-    public void addAnnonce(String titre,String description,float prix, ArrayList<String> mdp,ArrayList<String> cat,ArrayList<String> uri){
-        Annonce annonce = new Annonce(name,titre,description,prix,mdp,cat, uri);
+    public void addAnnonce(String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix, ArrayList<String> mdp,ArrayList<String> cat,ArrayList<String> uri){
+        Annonce annonce = new Annonce(name,titre,description,estProfessionnel,telephoneContact,mailContact,prix,mdp,cat, uri);
         cAnnonce.add(annonce)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -414,7 +439,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
                         if(mUrlList.size()==nbImages) {
                             Toast.makeText(getApplicationContext(), "ajout annonce", Toast.LENGTH_SHORT).show();
-                            addAnnonce(titre, description, prix, mdp, cat, mUrlList);
+                            addAnnonce(titre, description,estProfessionnel,telephoneContact, mailContact, prix, mdp, cat, mUrlList);
                         }
                         //updateAnnonce(id,mUrl);
                         //uploadImageToFirebaseStorageRecursive() //Call when completes

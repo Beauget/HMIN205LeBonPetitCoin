@@ -75,7 +75,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
     private ListenerRegistration compteListener;
 
     public static final String regEx = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
-    public static final String mdp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+    public static final String mdp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,30}$";
 
 
     public static SignUpFragment newInstance() {
@@ -152,7 +152,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "Inscrit !");
+                            Log.d(TAG, "Inscription en cours...");
                             FirebaseUser user = mAuth.getCurrentUser();
                             /*
                             UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
@@ -172,19 +172,30 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Mail déja utilisé ou mot de passe pas assez fort", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
     private void addCompte(String uid,String pseudo, String imageProfile, boolean estProfessionnel, String telephoneContact, String mailContact, String siret, String localisation){
-        Compte compte = new Compte(uid,pseudo,imageProfile,estProfessionnel,telephoneContact,mailContact,siret,localisation);
-        cCompte.add(compte)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        //Compte compte = new Compte(uid,pseudo,imageProfile,estProfessionnel,telephoneContact,mailContact,siret,localisation);
+        Map<String, Object> compte = new HashMap<>();
+        compte.put("uid", uid);
+        compte.put("pseudo", pseudo);
+        compte.put("localisation", localisation);
+        compte.put("imageProfile", imageProfile);
+        compte.put("estProfessionnel", estProfessionnel);
+        compte.put("siret", siret);
+        compte.put("telephoneContact", telephoneContact);
+        compte.put("mailContact", mailContact);
+
+        cCompte.document(pseudo).set(compte)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getContext(),"Compte ajouté",Toast.LENGTH_SHORT).show();
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getContext(),"Compte ajouté !",Toast.LENGTH_SHORT).show();
+                        ((MainActivity)getActivity()).updateUI( mAuth.getCurrentUser());
 
                     }
                 })
@@ -237,9 +248,11 @@ public class SignUpFragment extends Fragment implements OnClickListener {
             new CustomToast().Show_Toast(getActivity(), view,
                     "Les  deux mots de passes ne matchent pas");
 
-        else if (!mMdp.find())
+       /* else if (!mMdp.find())
             new CustomToast().Show_Toast(getActivity(), view,
                     "8 caracteres/majuscule/digit/Special");
+
+        */
 
             // Make sure user should check Terms and Conditions checkbox
         else if (!terms_conditions.isChecked())

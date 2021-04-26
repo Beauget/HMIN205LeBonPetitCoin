@@ -24,6 +24,7 @@ import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
+import com.example.lebonpetitcoin.ClassFirestore.Statistique;
 import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -44,11 +45,14 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import java.util.Calendar;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,6 +84,7 @@ public class AnnonceFragment extends Fragment {
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cAnnonce = firestoreDB.collection("Annonce");
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
+    private CollectionReference cStatistique = firestoreDB.collection("Statistique");
 
     //Listener afin que la recherche dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration annonceListener;
@@ -148,6 +153,9 @@ public class AnnonceFragment extends Fragment {
 
                     Map<String, Object> updates = new HashMap<>();
                     updates.put("nbDeVisites", nb);
+                    if (annonce.getEstProfessionnel()==true){
+                        addStat(annonce.getAuteur(),documentSnapshot.getId());
+                    }
 
                     cAnnonce.document(finalId).update(updates);
 
@@ -288,6 +296,22 @@ public class AnnonceFragment extends Fragment {
         return rslt;
     }
 
+    public void addStat(String idAuteur,String idAnnonce){
+        Statistique statistique= new Statistique(idAuteur,idAnnonce);
+        cStatistique.add(statistique)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                        Log.d(TAG,e.toString());
+                    }
+                });
+    }
     /*
 
         for (String id : categories){
