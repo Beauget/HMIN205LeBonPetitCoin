@@ -5,16 +5,27 @@
     android:orientation="vertical"
     android:padding="20dp" >
 
+    <ImageView
+        android:id="@+id/imageProfile"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/seal"
+    />
 
-    <Button
-        android:id="@+id/idAddProduct"
+    <TextView
+        android:id="@+id/compteTv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:padding="3dp"
-        android:text="Add Account"
         android:textSize="17sp"
         android:textStyle="bold" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Changer d'image de profile (to do)"
+        />
 
 
 </LinearLayout>

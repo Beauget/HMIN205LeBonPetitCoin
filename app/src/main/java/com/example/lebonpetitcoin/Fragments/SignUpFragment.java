@@ -168,7 +168,12 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                                             }
                                         }
                                     });*/
-                            addCompte(user.getUid(),pseudo," ",estProfessionnel,telephoneContact,email,siret,localisation);
+                            if (mUri==null) {
+                                addCompte(user.getUid(), pseudo, "", estProfessionnel, telephoneContact, email, siret, localisation);
+                            }
+                            else {
+                                addCompte(user.getUid(), pseudo, mUri.toString(), estProfessionnel, telephoneContact, email, siret, localisation);
+                            }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());

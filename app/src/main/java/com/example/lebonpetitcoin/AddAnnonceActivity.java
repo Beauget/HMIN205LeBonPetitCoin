@@ -115,6 +115,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     private Bundle extras ;
     private String name,telephoneContact, mailContact;
     private  boolean estProfessionnel;
+    private int maxImage = 4;
 
 
     //RECUPERATION DE LA DB
@@ -290,6 +291,10 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                         Compte compte = document.toObject(Compte.class);
                         name = compte.getPseudo();
                         estProfessionnel = compte.getEstProfessionnel();
+                        if (estProfessionnel==true)
+                            maxImage = 6;
+                        else
+                            maxImage = 4;
                         mailContact = compte.getMailContact();
                         telephoneContact=compte.getTelephoneContact();
                     }
@@ -377,7 +382,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        if(imageUriList.size()>=6) {
+        if(imageUriList.size()>=maxImage) {
             Toast.makeText(getApplicationContext(), "nbMax d'images atteind", Toast.LENGTH_SHORT).show();
         }
         else {

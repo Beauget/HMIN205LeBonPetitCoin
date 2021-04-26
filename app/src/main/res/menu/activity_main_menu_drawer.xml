@@ -55,7 +55,7 @@
                 <item
                     android:id="@+id/activity_main_drawer_resultat"
                     android:icon="@drawable/chat_24dp"
-                    android:title="Resultat" />
+                    android:title="Voir toute les annonces" />
                 <item
                     android:id="@+id/activity_main_drawer_deconnect"
                     android:icon="@drawable/ic_baseline_close_24"

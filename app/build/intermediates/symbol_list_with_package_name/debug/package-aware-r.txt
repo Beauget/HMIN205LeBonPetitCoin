@@ -2027,6 +2027,7 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id collapseActionView
+id compteTv
 id confirmPassword
 id confirm_button
 id confirmation_code
@@ -2136,7 +2137,6 @@ id horizontal
 id icon
 id icon_group
 id icon_only
-id idAddProduct
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2147,6 +2147,7 @@ id image3
 id image4
 id image5
 id image6
+id imageProfile
 id imageView
 id image_view
 id img1

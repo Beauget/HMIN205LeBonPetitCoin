@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     FloatingActionButton add;
     ActionMenuItemView home;
+    String imgProfile ;
+    boolean estProfessionnel;
     private static final int RC_SIGN_IN = 123;
 
     //FRAGMENTS/activité selon ce qui est cliqué
@@ -188,17 +190,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void hideItemConnected()
     {
-        //navigationView = (NavigationView) findViewById(R.id.activity_main_nav_view);
-        //NavigationView header = findViewById(R.id.activity_main_nav_header);
-        Uri imgProfile = mAuth.getCurrentUser().getPhotoUrl();
 
-
-        if (header_Menu.getDrawable() == null) {
-            GlideApp.with(this)
-                    .load(imgProfile)
-                    .centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
-                    .into(header_Menu);
-        }
+        //Uri imgProfile = mAuth.getCurrentUser().getPhotoUrl();
+        getCompte(mAuth.getCurrentUser().getUid());
 
         nav_Menu.findItem(R.id.activity_main_drawer_signIn).setVisible(false);
         nav_Menu.findItem(R.id.activity_main_drawer_signUp).setVisible(false);
@@ -207,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_Menu.findItem(R.id.activity_main_drawer_account).setVisible(true);
         nav_Menu.findItem(R.id.activity_main_drawer_message).setVisible(true);
         nav_Menu.findItem(R.id.activity_main_drawer_fav).setVisible(true);
-        nav_Menu.findItem(R.id.activity_main_drawer_stats).setVisible(true);
     }
 
 
@@ -441,6 +434,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Compte compte = document.toObject(Compte.class);
+                        imgProfile = compte.getImageProfile();
+                        estProfessionnel = compte.getEstProfessionnel();
+
+                        if(imgProfile.length()>0){
+                            GlideApp.with(MainActivity.this)
+                                    .load(imgProfile)
+                                    .centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
+                                    .into(header_Menu);
+                        }
+                        if(estProfessionnel==true){
+                            nav_Menu.findItem(R.id.activity_main_drawer_stats).setVisible(true);
+                        }
+
                     }
                 }
             }
