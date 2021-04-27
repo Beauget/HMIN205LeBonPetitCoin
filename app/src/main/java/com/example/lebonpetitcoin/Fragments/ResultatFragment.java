@@ -1,5 +1,6 @@
 package com.example.lebonpetitcoin.Fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +27,7 @@ import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.example.lebonpetitcoin.GlideApp;
+import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -35,6 +37,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
@@ -70,6 +73,7 @@ public class ResultatFragment extends Fragment {
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView mRecyclerView ;
+    private String uid = "";
 
     //StorageReference storageReference = FirebaseStorage.getInstance().getReference();
 
@@ -111,6 +115,7 @@ public class ResultatFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
@@ -122,10 +127,11 @@ public class ResultatFragment extends Fragment {
                 mCategorie = new ArrayList<>();
             }
 
-            String[] recherche = mRecherche.split(" ");
+            String recherche = mRecherche;
             ArrayList<String> categories = mCategorie;
             ArrayList<Annonce> mAnnonces =new ArrayList<>();
             ArrayList<String> mIds =new ArrayList<>();
+
 
             cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
                 @Override
@@ -147,7 +153,7 @@ public class ResultatFragment extends Fragment {
 
                         }
                     }
-                    mAdapter = new RecycleViewAnnonce(getContext(),mAnnonces,mIds);
+                    mAdapter = new RecycleViewAnnonce(getContext(),mAnnonces,mIds,uid);
                     mRecyclerView.setAdapter(mAdapter);
                     if (mRecyclerView.getAdapter().getItemCount() > 0) {
                         mRecyclerView.smoothScrollToPosition(0);
@@ -171,7 +177,7 @@ public class ResultatFragment extends Fragment {
                         mAnnonces.add(annonce);
                         mIds.add(documentSnapshot.getId());
                     }
-                    mAdapter = new RecycleViewAnnonce(getContext(),mAnnonces,mIds);
+                    mAdapter = new RecycleViewAnnonce(getContext(),mAnnonces,mIds,uid);
                     mRecyclerView.setAdapter(mAdapter);
                     if (mRecyclerView.getAdapter().getItemCount() > 0) {
                         mRecyclerView.smoothScrollToPosition(0);
@@ -198,7 +204,9 @@ public class ResultatFragment extends Fragment {
         }
     }
 
-    public boolean research(Annonce annonce,String[] text,ArrayList<String> categories){
+    public boolean research(Annonce annonce,String recherche,ArrayList<String> categories){
+        boolean vide = recherche.length()==0;
+        String[] text = recherche.split(" ");
         String[] annonceT = annonce.getTitre().split(" ");
         ArrayList<String> annonceC =annonce.getCategories();
 
@@ -206,7 +214,7 @@ public class ResultatFragment extends Fragment {
         for (String sAnnonce : annonceT){
             for (String sText : text )
             {
-                if(sAnnonce.toLowerCase().equals(sText.toLowerCase()))
+                if(sAnnonce.toLowerCase().equals(sText.toLowerCase()) || vide )
                 {
                     if (categories.size()==0){
                         return true;
