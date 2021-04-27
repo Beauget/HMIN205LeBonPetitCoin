@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -420,8 +421,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         searchView.setSubmitButtonEnabled(true);
         searchView.setQueryHint("Recherche...");
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //Toast.makeText(MainActivity.this, query, Toast.LENGTH_SHORT).show();
+                Fragment fragment = ResultatFragment.newInstance();
+                Bundle bundle = new Bundle();
+                bundle.putString("recherche", query);
+                fragment.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.activity_main_frame_layout, fragment).commit();
+                return false;
+            }
 
-
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //search(newText);
+                return false;
+            }
+        });
             return true;
         }
 

@@ -22,11 +22,13 @@ import com.example.lebonpetitcoin.Adapter.AdapterAnnonce;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.firebase.ui.firestore.ObservableSnapshotArray;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -43,6 +45,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Ici sera l'ajout des catégories et des moyen de paiement
@@ -91,7 +96,7 @@ public class ResultatFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Query query = cAnnonces.orderBy("titre", Query.Direction.DESCENDING);
+        Query query = cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<Annonce> options = new FirestoreRecyclerOptions.Builder<Annonce>()
                 .setQuery(query, Annonce.class)
@@ -111,8 +116,75 @@ public class ResultatFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        adapter.startListening();
+
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            String mRecherche = bundle.getString("recherche","");
+            Toast.makeText(getContext(),mRecherche,Toast.LENGTH_SHORT).show();
+            String[] recherche = mRecherche.split(" ");
+            Query query = cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).whereEqualTo("titre",mRecherche);
+            FirestoreRecyclerOptions<Annonce> options = new FirestoreRecyclerOptions.Builder<Annonce>()
+                    .setQuery(query, Annonce.class)
+                    .setLifecycleOwner(this)
+                    .build();
+
+            adapter = new AdapterAnnonce(options,getContext());
+
+            recyclerView.setAdapter(adapter);
+
+            if (recyclerView.getAdapter().getItemCount() > 0) {
+                recyclerView.smoothScrollToPosition(0);
+            }
+
+            /*
+            query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
+                    }
+                }
+            });
+
+            ArrayList<QueryDocumentSnapshot> dS =new ArrayList<>();
+
+            FirestoreRecyclerOptions<Annonce> options = new FirestoreRecyclerOptions.Builder<Annonce>()
+                    .setSnapshotArray(dS)
+                    .setLifecycleOwner(this)
+                    .build();
+
+            annonceListener = cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).limit(4).addSnapshotListener(new EventListener<QuerySnapshot>() {
+                @Override
+                public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (error != null) {
+                        return;
+                    }
+                    for (QueryDocumentSnapshot documentSnapshot : value) {
+                        Annonce annonce = documentSnapshot.toObject(Annonce.class);
+                        if(research(annonce.getTitre(),recherche))
+                        {
+                            dS.add(documentSnapshot);
+                        }
+                    }
+                }
+            });*/
+        }
     }
+
+    public boolean research(String annonce,String[] text){
+        String[] annonceT = annonce.split(" ");
+
+        for (String sAnnonce : annonceT){
+            for (String sText : text )
+            {
+                if(sAnnonce.equals(sText))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     @Override
     public void onStop() {
