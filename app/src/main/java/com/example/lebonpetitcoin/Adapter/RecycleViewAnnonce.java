@@ -29,36 +29,44 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
 
-public class AdapterAnnonce extends FirestoreRecyclerAdapter<Annonce, AdapterAnnonce.AnnonceHolder> {
+public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.ViewHolder>  {
     private Context mContext;
     private AdapterView.OnItemClickListener mListener;
+    private ArrayList<Annonce> annonces;
+    private ArrayList<String> ids;
 
-    public AdapterAnnonce(@NonNull FirestoreRecyclerOptions<Annonce> options,Context c) {
-        super(options);
-        mContext = c;
+    public RecycleViewAnnonce(Context context, ArrayList<Annonce> annonces,ArrayList<String> ids) {
+        this.mContext = context;
+        this.annonces = annonces;
+        this.ids= ids;
     }
 
-
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_annonce, parent, false);
+        ViewHolder viewHolder = new ViewHolder(v);
+        return viewHolder;
+    }
 
     @Override
-    protected void onBindViewHolder(@NonNull AnnonceHolder holder, int position, @NonNull Annonce model) {
-        holder.getTextViewTitle().setText(String.valueOf((model.getTitre())));
-        holder.getVues().setText(String.valueOf((model.getNbDeVisites())+" vue(s)"));
-        //holder.getImageViewAnnonce();
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.itemView.setTag(annonces.get(position));
+
+        Annonce annonce = annonces.get(position);
+        String id = ids.get(position);
+        holder.getTextViewTitle().setText(annonce.getTitre());
+        holder.getVues().setText(String.valueOf((annonce.getNbDeVisites())+" vue(s)"));
 
         String s;
 
-        if( model.getImages().size()==0)
+        if( annonce.getImages().size()==0)
             s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/seal2.jpg?alt=media&token=41553fe0-e1b7-4712-8eb1-043f2fd07d16";
         else
-            s = model.getFirstImage();
+            s = annonce.getFirstImage();
 
         GlideApp.with(mContext)
                 .load(s)
                 .into(holder.getImageViewAnnonce());
-
-        DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
-        String id = snapshot.getId();
 
         holder.getLike().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,38 +88,30 @@ public class AdapterAnnonce extends FirestoreRecyclerAdapter<Annonce, AdapterAnn
                 ((AppCompatActivity) mContext).getSupportFragmentManager()
                         .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
 
-                Toast.makeText(mContext,
-                        id,
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
-
-    @NonNull
     @Override
-    public AnnonceHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_annonce,
-                parent, false);
-        return new AnnonceHolder(v);
+    public int getItemCount() {
+        return annonces.size();
     }
 
-    public void setOnItemClickListener(AdapterView.OnItemClickListener listener) {
-        mListener = listener;
-    }
-
-    class AnnonceHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textViewTitle;
         TextView vues;
         Button like;
         ImageView imageViewAnnonce;
-        public AnnonceHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.titleTextView);
             imageViewAnnonce = itemView.findViewById(R.id.imageView);
             vues = itemView.findViewById(R.id.likeCountTextView);
             like = itemView.findViewById(R.id.favBtn);
         }
+
 
         public TextView getTextViewTitle(){
             return textViewTitle;
@@ -125,9 +125,6 @@ public class AdapterAnnonce extends FirestoreRecyclerAdapter<Annonce, AdapterAnn
         public TextView getVues(){return vues; }
 
         public Button getLike(){return like;}
-
     }
 
-    public class ViewHolder {
-    }
 }
