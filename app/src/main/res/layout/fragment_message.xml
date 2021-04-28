@@ -1,67 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="fill_parent"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Page messages !" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reyclerview_conversation_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </androidx.recyclerview.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-    />
-
-    <EditText
-        android:id="@+id/Etitle"
-        android:hint="title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/Edescription"
-        android:hint="description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/buttonSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Envoyé le document dans la collection Note"/>
-
-    <Button
-        android:id="@+id/buttonLoad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Regarder le contenu actuelle du document My first note"/>
-
-    <Button
-        android:id="@+id/buttonChangeDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Merge and update (mise a jour description)"/>
-
-    <Button
-        android:id="@+id/buttonDeleteDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Supprimer la description"/>
-
-    <Button
-        android:id="@+id/buttonDeleteNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Supprimer Note"/>
-
-    <TextView
-        android:id="@+id/Tload"
-        android:hint="ici , les donnnées actuelle du document"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

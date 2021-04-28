@@ -136,7 +136,7 @@ public class AnnonceFragment extends Fragment {
         String id = null;
 
         if (bundle != null) {
-            id = bundle.getString("idAnnonce");
+            id = bundle.getString("idAnnonce","");
         }
 
         if (id != null) {

@@ -24,8 +24,10 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
+import com.example.lebonpetitcoin.ClassFirestore.Message;
 import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
+import com.example.lebonpetitcoin.Fragments.ConversationFragment;
 import com.example.lebonpetitcoin.Fragments.FavFragment;
 import com.example.lebonpetitcoin.Fragments.MessageFragment;
 import com.example.lebonpetitcoin.Fragments.ParametresFragment;
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FloatingActionButton add;
     ActionMenuItemView home;
     String imgProfile ;
+    String lecteur;
     boolean estProfessionnel;
     private static final int RC_SIGN_IN = 123;
 
@@ -366,8 +369,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showMessageFragment() {
-        if (this.fragmentMessage == null) this.fragmentMessage = MessageFragment.newInstance();
-        this.startTransactionFragment(this.fragmentMessage);
+        if (this.fragmentMessage== null) this.fragmentMessage= MessageFragment.newInstance();
+        Bundle arguments = new Bundle();
+        arguments.putString( "lecteur", lecteur);
+        fragmentMessage.setArguments(arguments);
+        this.getSupportFragmentManager()
+                .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentMessage).commit();
     }
 
     private void showFavFragment() {
@@ -454,6 +461,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Compte compte = document.toObject(Compte.class);
                         imgProfile = compte.getImageProfile();
                         estProfessionnel = compte.getEstProfessionnel();
+                        lecteur = compte.getPseudo();
 
                         if(imgProfile.length()>0){
                             GlideApp.with(MainActivity.this)

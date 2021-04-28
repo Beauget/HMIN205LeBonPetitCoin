@@ -1797,6 +1797,7 @@ drawable fui_idp_button_background_twitter
 drawable fui_idp_button_background_yahoo
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_baseline_circle_24
 drawable ic_baseline_close_24
 drawable ic_baseline_login_24
 drawable ic_baseline_person_add_alt_1_24
@@ -1847,6 +1848,9 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable round_add_circle_24dp
+drawable rounded_rectangle_green
+drawable rounded_rectangle_orange
+drawable rounded_rectangle_teal
 drawable seal
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1859,8 +1863,6 @@ id BtnMoyenDePaiement
 id CTRL
 id ETCategorie
 id ETMoyenDePaiement
-id Edescription
-id Etitle
 id FUNCTION
 id GridLayout
 id LC2
@@ -1877,7 +1879,6 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
-id Tload
 id UploadBtn
 id accelerate
 id accessibility_action_clickable_span
@@ -1964,6 +1965,7 @@ id anonymous_button
 id apple_signin_button
 id asConfigured
 id async
+id auteurTextView
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -1984,16 +1986,12 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_holder
-id buttonChangeDescription
-id buttonDeleteDescription
-id buttonDeleteNote
-id buttonLoad
 id buttonPanel
-id buttonSend
 id button_choose_image
 id button_continue
 id button_create
 id button_done
+id button_message
 id button_next
 id button_resend_email
 id button_sign_in
@@ -2082,6 +2080,7 @@ id easeOut
 id edit_phone_number
 id edit_query
 id edit_text_file_name
+id edittext_message
 id elastic
 id email
 id email_button
@@ -2150,6 +2149,8 @@ id image5
 id image6
 id imageProfile
 id imageView
+id image_message_body
+id image_message_profile
 id image_view
 id img1
 id img2
@@ -2169,6 +2170,7 @@ id labelGroup
 id labeled
 id largeLabel
 id layout
+id layout_message
 id left
 id leftToRight
 id light
@@ -2204,6 +2206,7 @@ id material_timepicker_view
 id material_value_index
 id media_actions
 id message
+id messageTextView
 id microsoft_signin_button
 id middle
 id mini
@@ -2285,6 +2288,8 @@ id relativeLayout
 id resend_barrier
 id resend_code
 id reverseSawtooth
+id reyclerview_conversation_list
+id reyclerview_message_list
 id right
 id rightToLeft
 id right_icon
@@ -2366,7 +2371,6 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id terms_conditions
-id test
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -2382,6 +2386,9 @@ id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_message_body
+id text_message_name
+id text_message_time
 id text_view_show_uploads
 id text_view_title
 id textinput_counter
@@ -2534,6 +2541,7 @@ layout fav_item
 layout fragment_account
 layout fragment_accueil
 layout fragment_annonce
+layout fragment_conversation
 layout fragment_fav
 layout fragment_message
 layout fragment_parametres
@@ -2570,6 +2578,9 @@ layout fui_welcome_back_password_prompt_layout
 layout item
 layout item_annonce
 layout item_intitule
+layout item_message_envoye
+layout item_message_recus
+layout item_messages
 layout layout_chip_entry
 layout material_chip_input_combo
 layout material_clock_display
