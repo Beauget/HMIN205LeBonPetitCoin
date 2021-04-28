@@ -92,16 +92,21 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
                 .load(s)
                 .into(holder.getImageViewAnnonce());
 
-        holder.getLike().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (uid.length()>0){
-                    inFavoris(uid,id);
-                    inFavoris(uid,id);
-                }
+        if(uid.length()==0) {
+            holder.getLike().setVisibility(View.GONE);
+        }
 
-            }
-        });
+        else{
+            holder.getLike().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (uid.length()>0){
+                        inFavoris(uid,id);
+                    }
+
+                }
+            });
+        }
 
         holder.getImageViewAnnonce().setOnClickListener(new View.OnClickListener() {
             private Fragment fragmentAnnonce;
@@ -154,6 +159,7 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
     }
 
     public void addFavoris(String uid,String idAnnonce){
+        if (uid.length() > 0) {
         Favoris favoris= new Favoris(uid, idAnnonce);
         cFavoris.add(favoris)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -169,26 +175,30 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
                         Log.d(TAG,e.toString());
                     }
                 });
+
+        }
     }
 
     public void inFavoris(String uid, String idAnnonce){
         final int[] cmpt = {0};
-        cFavoris.whereEqualTo("idAnnonce",idAnnonce).whereEqualTo("uid",uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    return;
-                }
-                for (QueryDocumentSnapshot documentSnapshot : value) {
-                    Annonce annonce = documentSnapshot.toObject(Annonce.class);
-                    cmpt[0]++;
-                }
-                if (cmpt[0] == 0) {
-                    addFavoris(uid, idAnnonce);
-                }
+            if(uid.length()>0){
+            cFavoris.whereEqualTo("idAnnonce",idAnnonce).whereEqualTo("uid",uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
+                @Override
+                public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (error != null) {
+                        return;
+                    }
+                    for (QueryDocumentSnapshot documentSnapshot : value) {
+                        Annonce annonce = documentSnapshot.toObject(Annonce.class);
+                        cmpt[0]++;
+                    }
+                    if (cmpt[0] == 0) {
+                        addFavoris(uid, idAnnonce);
+                    }
 
-            }
-        });
+                }
+            });
+        }
     }
 
 

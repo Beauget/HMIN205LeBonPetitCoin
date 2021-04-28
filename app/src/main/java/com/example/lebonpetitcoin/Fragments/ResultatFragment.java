@@ -115,7 +115,8 @@ public class ResultatFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
+        if (((MainActivity)getActivity()).mAuth.getCurrentUser() != null)
+            uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
