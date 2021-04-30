@@ -10,6 +10,13 @@
 
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:id="@+id/activity_main_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="?attr/actionBarSize"/>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,15 +31,7 @@
             android:layout_width="match_parent"
             style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
             />
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <FrameLayout
-        android:id="@+id/activity_main_frame_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:layout_marginBottom="?attr/actionBarSize"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -46,16 +45,15 @@
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_app_bar"
             app:navigationIcon="@drawable/seal"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            app:fabCradleMargin="0dp"
+            app:fabCradleRoundedCornerRadius="0mm"
+            style="@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface"
             />
-
-
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/activity_main_button_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/teal_200"
+            style="@style/Theme.LeBonPetitCoin"
             app:srcCompat="@drawable/add_24dp"
             app:layout_anchor="@id/bottomAppBar"
             />
@@ -63,16 +61,14 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/activity_main_nav_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/activity_main_nav_header"
-            app:menu="@menu/activity_main_menu_drawer" />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/activity_main_nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/activity_main_nav_header"
+        app:menu="@menu/activity_main_menu_drawer" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
 

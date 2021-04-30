@@ -54,7 +54,6 @@
             android:id="@+id/button_message"
             android:text="Envoyer"
             android:textSize="14dp"
-            android:background="@color/teal_5OO"
             android:clickable="true"
             android:layout_width="64dp"
             android:layout_height="48dp"

@@ -63,7 +63,7 @@ public class AccountFragment extends Fragment {
                                 "tel : " +compte.getTelephoneContact()+ "\n"+
                                 "e-mail: " +compte.getMailContact() +"\n"+
                                 "Localisation : " +compte.getLocalisation()+ "\n";
-                        if (compte.getSiret().length()>0)
+                        if (compte.getSiret()!=null)
                                 text += "Siret: " +compte.getSiret()+ "\n";
 
                         compteTv.setText(text);
