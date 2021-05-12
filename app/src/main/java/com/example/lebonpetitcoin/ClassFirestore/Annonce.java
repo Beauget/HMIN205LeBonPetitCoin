@@ -1,5 +1,6 @@
 package com.example.lebonpetitcoin.ClassFirestore;
 import com.google.firebase.firestore.Exclude;
+import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.storage.StorageReference;
 import com.google.type.Date;
 
@@ -30,6 +31,8 @@ public class Annonce {
     ArrayList<String>  paiement = new ArrayList<>();
     //Des Image
     ArrayList<String> images = new ArrayList<String>();
+
+    GeoPoint position ;
 
     public Annonce(){
         //public no args contructeur obligatoire sinon firebase crash
@@ -81,6 +84,23 @@ public class Annonce {
         this.prix = prix;
         this.categories = cat;
         this.paiement= mdp;
+    }
+
+    public Annonce(String auteur,String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri,double lat,double lng) {
+        this.titre = titre;
+        this.auteur = auteur;
+        this.estProfessionnel = estProfessionnel;
+        this.telephoneContact = telephoneContact;
+        this.mailContact = mailContact;
+        this.titre = titre;
+        this.images= uri;
+        this.description = description;
+        this.datePoste = Calendar.getInstance().getTime();
+        this.nbDeVisites = 0;
+        this.prix = prix;
+        this.categories = cat;
+        this.paiement= mdp;
+        this.position = new GeoPoint(lat,lng);
     }
 
     public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, ArrayList<String> categories, String statistique, float prix, ArrayList<String> paiement, ArrayList<String> images) {

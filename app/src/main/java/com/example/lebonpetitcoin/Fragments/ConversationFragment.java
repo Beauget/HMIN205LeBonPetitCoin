@@ -149,7 +149,7 @@ public class ConversationFragment extends Fragment {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Toast.makeText(getContext(),"msg envoyé",Toast.LENGTH_SHORT).show();
-                            
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
