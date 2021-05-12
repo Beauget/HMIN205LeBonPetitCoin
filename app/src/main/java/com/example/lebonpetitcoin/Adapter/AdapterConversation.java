@@ -50,11 +50,11 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
 
         if(model.getCompte1().equals(lecteur)){
             holder.getAuteur().setText(String.valueOf((model.getCompte2())));
-            Toast.makeText(mContext,model.getCompte1(),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mContext,model.getCompte1(),Toast.LENGTH_SHORT).show();
         }
         else{
             holder.getAuteur().setText(String.valueOf((model.getCompte1())));
-            Toast.makeText(mContext,model.getCompte2(),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mContext,model.getCompte2(),Toast.LENGTH_SHORT).show();
         }
 
         holder.getMessage().setText(String.valueOf((model.getAnnonce())));

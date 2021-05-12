@@ -89,7 +89,7 @@ public class MessageFragment extends Fragment {
 
         if (bundle != null) {
             lecteur = bundle.getString("lecteur","");
-            Toast.makeText(getContext(),lecteur,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(),lecteur,Toast.LENGTH_SHORT).show();
         }
 
         Query query = cConversation.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("compte2",lecteur);
