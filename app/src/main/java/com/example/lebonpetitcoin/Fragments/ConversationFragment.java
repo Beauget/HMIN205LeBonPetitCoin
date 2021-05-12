@@ -24,10 +24,14 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 
 public class ConversationFragment extends Fragment {
@@ -75,6 +79,28 @@ public class ConversationFragment extends Fragment {
             lecteur = bundle.getString("lecteur","");
         }
 
+        /*
+        conversationListener = cMessage.orderBy("date", Query.Direction.ASCENDING).whereEqualTo("idConversation",id).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot snapshots,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w("TAG", "listen:error", e);
+                    return;
+                }
+                for (DocumentChange dc : snapshots.getDocumentChanges()) {
+                    switch (dc.getType()) {
+                        case ADDED:
+                            Log.d("TAG", "New Msg: " + dc.getDocument().toObject(Message.class));
+                            break;
+                        case MODIFIED:
+                            Log.d("TAG", "Modified Msg: " + dc.getDocument().toObject(Message.class));
+                            break;
+                        case REMOVED:
+                            Log.d("TAG", "Removed Msg: " + dc.getDocument().toObject(Message.class));
+                            break;
+                    } } }
+        });*/
         Query query = cMessage.orderBy("date", Query.Direction.ASCENDING).whereEqualTo("idConversation",id);
         FirestoreRecyclerOptions<Message> options = new FirestoreRecyclerOptions.Builder<Message>()
                 .setQuery(query, Message.class)
@@ -93,6 +119,16 @@ public class ConversationFragment extends Fragment {
     public void onStart() {
         super.onStart();
         adapter.startListening();
+        conversationListener = cMessage.orderBy("date", Query.Direction.ASCENDING).whereEqualTo("idConversation",id).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot snapshots,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w("TAG", "listen:error", e);
+                    return;
+                }
+            }
+        });
 
     }
 
@@ -100,6 +136,7 @@ public class ConversationFragment extends Fragment {
     public void onStop() {
         super.onStop();
         adapter.stopListening();
+        conversationListener.remove();
     }
 
     void envoyerMessage(String idConversation, String auteur){
@@ -112,7 +149,7 @@ public class ConversationFragment extends Fragment {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Toast.makeText(getContext(),"msg envoyé",Toast.LENGTH_SHORT).show();
-
+                            
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -122,6 +159,7 @@ public class ConversationFragment extends Fragment {
                             Log.d(TAG,e.toString());
                         }
                     });
+            adapter.startListening();
 
         }
         messageAEnvoyer.setText("");
