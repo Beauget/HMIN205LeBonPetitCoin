@@ -23,9 +23,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+import com.example.lebonpetitcoin.ClassFirestore.Compte;
+import com.example.lebonpetitcoin.ClassFirestore.Conversation;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
 import com.example.lebonpetitcoin.ClassFirestore.Statistique;
+import com.example.lebonpetitcoin.CustomToast;
 import com.example.lebonpetitcoin.GlideApp;
+import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -62,8 +66,6 @@ public class AnnonceFragment extends Fragment {
 
     TextView titre;
     TextView description;
-    TextView auteur;
-    TextView prix;
     TextView moyenDePaiements;
     TextView categories;
     TextView nbVisites;
@@ -75,7 +77,15 @@ public class AnnonceFragment extends Fragment {
     ImageView image5;
     ImageView image6;
 
+    String auteur;
+    String lecteur = "";
+    String titreAnnonce;
+    String idAnnonce;
+
     ArrayList<ImageView> images = new ArrayList<>();
+
+    Button contacter;
+    Button signaler;
 
 
     private static final String TAG = "AnnonceFragment";
@@ -85,6 +95,7 @@ public class AnnonceFragment extends Fragment {
     private CollectionReference cAnnonce = firestoreDB.collection("Annonce");
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
     private CollectionReference cStatistique = firestoreDB.collection("Statistique");
+    private CollectionReference cConversation = firestoreDB.collection("Conversation");
 
     //Listener afin que la recherche dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration annonceListener;
@@ -112,6 +123,9 @@ public class AnnonceFragment extends Fragment {
 
         lv=view.findViewById(R.id.lv);
         chipGroup = (ChipGroup) view.findViewById(R.id.chipGroup);
+
+        contacter = view.findViewById(R.id.contacter);
+        signaler = view.findViewById(R.id.signaler);
         return view;
     }
 
@@ -171,6 +185,9 @@ public class AnnonceFragment extends Fragment {
                             "prix : " + String.valueOf(annonce.getPrix()) + "\n" +
                             "Date : " + dateFormat.format(annonce.getDatePoste()) + "\n" ;
 
+                    auteur = annonce.getAuteur();
+                    titreAnnonce = annonce.getTitre();
+                    idAnnonce = documentSnapshot.getId();
 
                     text+="Moyen de paiement : ";
                     for(String s : annonce.getPaiement())
@@ -264,6 +281,19 @@ public class AnnonceFragment extends Fragment {
                 description.setText(text);
             }
         });*/
+        lecteur =  ((MainActivity)getActivity()).lecteur ;
+        Toast.makeText(getContext(), lecteur,Toast.LENGTH_SHORT).show();
+        contacter.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                contacterAuteur(auteur,lecteur,titreAnnonce,idAnnonce,"");
+            }
+        });
+
+        signaler.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //contacterAuteur(auteur,"Admin",titreAnnonce,idAnnonce,"");
+            }
+        });
     }
 
     public ArrayList<String> getCategorie(ArrayList<String> categories){
@@ -312,8 +342,64 @@ public class AnnonceFragment extends Fragment {
                     }
                 });
     }
-    /*
 
+    void contacterAuteur(String vendeur , String lecteur,String titre, String idAnnonce ,String image){
+        //On verifie que l'auteur essaye pas de se contacter lui meme
+        if (vendeur.equals((lecteur))==false) {
+            Task<DocumentSnapshot> tConversation = cConversation.document(lecteur + idAnnonce).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    Compte compte = documentSnapshot.toObject(Compte.class);
+
+                    if (compte != null) {
+                        //rediriger vers la conversation
+                    } else {
+                        addConversation(auteur, lecteur, titre, idAnnonce, "");
+                        //rediriger vers la conversation
+                    }
+                }
+            });
+        }
+    }
+
+    void contacterAdmin(String vendeur , String lecteur,String titre, String idAnnonce ,String image){
+        //On verifie que l'auteur essaye pas de se contacter lui meme
+        if (vendeur.equals((lecteur))==false) {
+            Task<DocumentSnapshot> tConversation = cConversation.document(lecteur +"Admin"+ idAnnonce).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    Compte compte = documentSnapshot.toObject(Compte.class);
+
+                    if (compte != null) {
+                        //rediriger vers la conversation
+                    } else {
+                        addConversation(auteur, lecteur, titre, idAnnonce, "");
+                        //rediriger vers la conversation
+                    }
+                }
+            });
+        }
+    }
+
+    void addConversation(String auteur, String lecteur, String titre , String idAnnonce, String image){
+        Conversation conversation = new Conversation(auteur,lecteur,titre,idAnnonce,image);
+
+        cConversation.document(lecteur+idAnnonce).set(conversation)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getContext(),"Conversation crée",Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                        Log.d(TAG,e.toString());
+                    }
+                });
+    }
+    /*
         for (String id : categories){
             rslt.add("avant");
             cCategorie.document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {;

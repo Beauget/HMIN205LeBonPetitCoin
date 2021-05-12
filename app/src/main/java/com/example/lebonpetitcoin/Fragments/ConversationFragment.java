@@ -1,11 +1,13 @@
 package com.example.lebonpetitcoin.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,8 +21,12 @@ import com.example.lebonpetitcoin.ClassFirestore.Conversation;
 import com.example.lebonpetitcoin.ClassFirestore.Message;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 
 
@@ -31,6 +37,9 @@ public class ConversationFragment extends Fragment {
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cMessage = firestoreDB.collection("Message");
+
+    private ListenerRegistration conversationListener;
+
 
 
     private String id;
@@ -73,6 +82,12 @@ public class ConversationFragment extends Fragment {
         adapter = new AdapterMessage(options,getContext(),lecteur,"");
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+
+        envoyerMessage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                envoyerMessage(id,lecteur);
+            }
+        });
     }
 
     public void onStart() {
@@ -85,5 +100,30 @@ public class ConversationFragment extends Fragment {
     public void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    void envoyerMessage(String idConversation, String auteur){
+        if (messageAEnvoyer.getText().toString().length()>0)
+        {
+            Message message = new Message(idConversation,auteur, messageAEnvoyer.getText().toString(), "");
+
+            cMessage.add(message)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(getContext(),"msg envoyé",Toast.LENGTH_SHORT).show();
+
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                            Log.d(TAG,e.toString());
+                        }
+                    });
+
+        }
+        messageAEnvoyer.setText("");
     }
 }

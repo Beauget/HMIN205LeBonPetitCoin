@@ -206,7 +206,12 @@ public class Annonce {
     }
 
     @Exclude
-    public String getFirstImage(){return this.images.get(0);}
+    public String getFirstImage(){
+        if (images.size()>0)
+            return this.images.get(0);
+        else
+            return "";
+    }
 
     @Exclude
     public String getId() {

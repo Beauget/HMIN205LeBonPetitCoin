@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/title"
                 android:singleLine="true"
+                android:background="@color/teal_transparent"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
         </LinearLayout>
 
@@ -102,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
+                android:background="@color/teal_transparent"
                 android:singleLine="true"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
@@ -148,6 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
+                android:background="@color/teal_transparent"
                 android:singleLine="true"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
@@ -194,6 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
+                android:background="@color/teal_transparent"
                 android:singleLine="true"
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 

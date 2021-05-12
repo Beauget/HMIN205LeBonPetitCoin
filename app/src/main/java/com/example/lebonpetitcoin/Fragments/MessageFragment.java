@@ -59,10 +59,12 @@ public class MessageFragment extends Fragment {
     private CollectionReference cConversation = firestoreDB.collection("Conversation");
     private CollectionReference cCompte= firestoreDB.collection("Compte");
 
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerViewMesAnnonces;
+    private RecyclerView recyclerViewAnnonces;
     public FirebaseAuth mAuth;
     private Listener conversationListener;
-    private AdapterConversation adapter;
+    private AdapterConversation adapterMesAnnonce;
+    private AdapterConversation adapterAnnonce;
     private String lecteur;
 
     public static MessageFragment newInstance() {
@@ -71,7 +73,8 @@ public class MessageFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_message, container, false);
-        recyclerView = view.findViewById(R.id.reyclerview_conversation_list);
+        recyclerViewAnnonces = view.findViewById(R.id.reyclerview_annonces);
+        recyclerViewMesAnnonces = view.findViewById(R.id.reyclerview_mes_annonces);
         mAuth = FirebaseAuth.getInstance();
         return view;
     }
@@ -86,28 +89,41 @@ public class MessageFragment extends Fragment {
 
         if (bundle != null) {
             lecteur = bundle.getString("lecteur","");
+            Toast.makeText(getContext(),lecteur,Toast.LENGTH_SHORT).show();
         }
 
-        Query query = cConversation.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("compte1",lecteur);
+        Query query = cConversation.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("compte2",lecteur);
         FirestoreRecyclerOptions<Conversation> options = new FirestoreRecyclerOptions.Builder<Conversation>()
                 .setQuery(query, Conversation.class)
                 .build();
-        adapter = new AdapterConversation(options,getContext(),lecteur);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(adapter);
+        adapterAnnonce = new AdapterConversation(options,getContext(),lecteur);
+        recyclerViewAnnonces.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewAnnonces.setAdapter(adapterAnnonce);
+
+
+        Query query2 = cConversation.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("compte1",lecteur);
+        FirestoreRecyclerOptions<Conversation> options2 = new FirestoreRecyclerOptions.Builder<Conversation>()
+                .setQuery(query2, Conversation.class)
+                .build();
+        adapterMesAnnonce = new AdapterConversation(options2,getContext(),lecteur);
+        recyclerViewMesAnnonces.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewMesAnnonces.setAdapter(adapterMesAnnonce);
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        adapter.startListening();
+        adapterMesAnnonce.startListening();
+        adapterAnnonce.startListening();
     }
 
 
     @Override
     public void onStop() {
         super.onStop();
-        adapter.stopListening();
+        adapterMesAnnonce.stopListening();
+        adapterAnnonce.stopListening();
     }
 
     public void getConversationAuteur(String uid){
@@ -124,36 +140,15 @@ public class MessageFragment extends Fragment {
                         FirestoreRecyclerOptions<Conversation> options = new FirestoreRecyclerOptions.Builder<Conversation>()
                                 .setQuery(query, Conversation.class)
                                 .build();
-                        adapter = new AdapterConversation(options,getContext(),lecteur);
+                        //adapterMesAnnonce = new AdapterConversation(options,getContext(),lecteur);
                         //recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                        recyclerView.setAdapter(adapter);
+                        //recyclerViewMesAnnonces.setAdapter(adapterMesAnnonce);
                     }
                 }
             }
         });
     }
 
-    public void getConversationNonAuteur(String uid){
-        Task<QuerySnapshot> query = cCompte.whereEqualTo("uid", uid).get();
-        query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        Compte compte = document.toObject(Compte.class);
-                        lecteur = compte.getPseudo();
-                        Query query = cConversation.orderBy("date", Query.Direction.DESCENDING).whereEqualTo("compte2",lecteur);
-                        FirestoreRecyclerOptions<Conversation> options = new FirestoreRecyclerOptions.Builder<Conversation>()
-                                .setQuery(query, Conversation.class)
-                                .build();
-                        adapter = new AdapterConversation(options,getContext(),lecteur);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                        recyclerView.setAdapter(adapter);
-                    }
-                }
-            }
-        });
-    }
 }
 
 //https://www.zoftino.com/firebase-cloud-firestore-databse-tutorial-android-example

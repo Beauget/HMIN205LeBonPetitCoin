@@ -6,7 +6,9 @@ import java.util.Date;
 public class Conversation {
     String compte1;
     String compte2;
-    String message;
+    String annonce;
+    String idAnnonce;
+    String image;
     Date date;
 
     public Conversation(){
@@ -19,13 +21,39 @@ public class Conversation {
         this.date = Calendar.getInstance().getTime();
     }
 
-    public String getMessage() {
-        return message;
+    public Conversation(String compte1, String compte2, String annonce,String idAnnonce, String image) {
+        this.compte1 = compte1;
+        this.compte2 = compte2;
+        this.annonce = annonce;
+        this.idAnnonce = idAnnonce;
+        this.image = image;
+        this.date = Calendar.getInstance().getTime();
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public String getAnnonce() {
+        return annonce;
     }
+
+    public void setAnnonce(String annonce) {
+        this.annonce = annonce;
+    }
+
+    public String getIdAnnonce() {
+        return idAnnonce;
+    }
+
+    public void setIdAnnonce(String idAnnonce) {
+        this.idAnnonce = idAnnonce;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
 
     public String getCompte1() {
         return compte1;

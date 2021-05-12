@@ -1219,6 +1219,7 @@ color teal_200
 color teal_500
 color teal_700
 color teal_900
+color teal_transparent
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
@@ -2032,6 +2033,7 @@ id confirmPassword
 id confirm_button
 id confirmation_code
 id confirmation_code_layout
+id contacter
 id container
 id content
 id contentPanel
@@ -2101,6 +2103,7 @@ id fade
 id favBtn
 id favImageView
 id favTextView
+id fav_item_layout
 id fill
 id fill_horizontal
 id fill_vertical
@@ -2289,7 +2292,9 @@ id relativeLayout
 id resend_barrier
 id resend_code
 id reverseSawtooth
-id reyclerview_conversation_list
+id reyclerview_annonces
+id reyclerview_fav_list
+id reyclerview_mes_annonces
 id reyclerview_message_list
 id right
 id rightToLeft
@@ -2332,6 +2337,7 @@ id signInBtn
 id signUpBtn
 id sign_in_email_sent_header_text
 id sign_in_email_sent_text
+id signaler
 id signup
 id sin
 id skipCollapsed
@@ -2578,6 +2584,7 @@ layout fui_welcome_back_idp_prompt_layout
 layout fui_welcome_back_password_prompt_layout
 layout item
 layout item_annonce
+layout item_fav
 layout item_intitule
 layout item_message_envoye
 layout item_message_recus

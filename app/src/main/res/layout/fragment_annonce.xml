@@ -107,5 +107,23 @@
 
     </com.google.android.material.chip.ChipGroup>
 
+    <Button
+        android:id="@+id/contacter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle_orange"
+        android:text="Contacter le vendeur"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="10px"
+        />
+
+    <Button
+        android:id="@+id/signaler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle_orange"
+        android:text="Signaler l'annonce"/>
 
 </LinearLayout>

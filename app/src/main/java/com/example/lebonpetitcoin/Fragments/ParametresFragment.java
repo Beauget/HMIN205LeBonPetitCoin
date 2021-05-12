@@ -251,6 +251,8 @@ public class ParametresFragment extends Fragment {
     }
 
     public void inMoyenDePaiement(String intitule ){
+        intitule = intitule.toLowerCase();
+        String finalIntitule = intitule;
         Task<QuerySnapshot> querySnapshotTask = cMoyenDePaiement.whereEqualTo("intitule",intitule).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -266,7 +268,7 @@ public class ParametresFragment extends Fragment {
                                 Toast.makeText(getContext(), "Cet intitulé existe déja", Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                addMoyenDePaiement(intitule);
+                                addMoyenDePaiement(finalIntitule);
                             }
                         } else{//erreur a la lecture
                             Toast.makeText(getContext(), task.getException().toString(), Toast.LENGTH_SHORT).show();

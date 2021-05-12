@@ -27,7 +27,7 @@ import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Message;
 import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
-import com.example.lebonpetitcoin.Fragments.ConversationFragment;
+
 import com.example.lebonpetitcoin.Fragments.FavFragment;
 import com.example.lebonpetitcoin.Fragments.MessageFragment;
 import com.example.lebonpetitcoin.Fragments.ParametresFragment;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FloatingActionButton add;
     ActionMenuItemView home;
     String imgProfile ;
-    String lecteur;
+    public String lecteur;
     boolean estProfessionnel;
     private static final int RC_SIGN_IN = 123;
 
@@ -103,8 +103,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // [END declare_auth]
 
     private String mCustomToken;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +134,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+
+        if (mAuth.getCurrentUser()!=null){
+            getCompte(mAuth.getCurrentUser().getUid());
+        }
+        else {
+            lecteur = "";
+            Toast.makeText(MainActivity.this, "Pas connecté", Toast.LENGTH_SHORT).show();
+        }
     }
     // [END on_start_check_user]
 
@@ -159,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         }
                     }
                 });
+
         // [END sign_in_custom]
     }
 

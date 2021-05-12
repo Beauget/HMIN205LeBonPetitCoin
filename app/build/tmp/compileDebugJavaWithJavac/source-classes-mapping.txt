@@ -32,7 +32,6 @@ com/example/lebonpetitcoin/Fragments/SignInFragment.java
 com/example/lebonpetitcoin/Fragments/MessageFragment.java
  com.example.lebonpetitcoin.Fragments.MessageFragment
  com.example.lebonpetitcoin.Fragments.MessageFragment$1
- com.example.lebonpetitcoin.Fragments.MessageFragment$2
 com/example/lebonpetitcoin/Adapter/AdapterCategorie.java
  com.example.lebonpetitcoin.Adapter.AdapterCategorie
  com.example.lebonpetitcoin.Adapter.AdapterCategorie$1
@@ -59,6 +58,10 @@ com/example/lebonpetitcoin/Adapter/AdapterMessage.java
  com.example.lebonpetitcoin.Adapter.AdapterMessage
  com.example.lebonpetitcoin.Adapter.AdapterMessage$MessageHolder
  com.example.lebonpetitcoin.Adapter.AdapterMessage$MessageHolderRecus
+com/example/lebonpetitcoin/Adapter/AdapterFavoris.java
+ com.example.lebonpetitcoin.Adapter.AdapterFavoris
+ com.example.lebonpetitcoin.Adapter.AdapterFavoris$1
+ com.example.lebonpetitcoin.Adapter.AdapterFavoris$FavorisHolder
 com/example/lebonpetitcoin/Adapter/AdapterImage.java
  com.example.lebonpetitcoin.Adapter.AdapterImage
  com.example.lebonpetitcoin.Adapter.AdapterImage$1
@@ -112,6 +115,9 @@ com/example/lebonpetitcoin/Fragments/AccountFragment.java
  com.example.lebonpetitcoin.Fragments.AccountFragment$1
 com/example/lebonpetitcoin/Fragments/ConversationFragment.java
  com.example.lebonpetitcoin.Fragments.ConversationFragment
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$1
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$2
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$3
 com/example/lebonpetitcoin/SearchableActivity.java
  com.example.lebonpetitcoin.SearchableActivity
 com/example/lebonpetitcoin/ClassFirestore/Image.java
@@ -141,9 +147,15 @@ com/example/lebonpetitcoin/Fragments/ResultatFragment.java
 com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.AnnonceFragment
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$1
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$10
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$2
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$3
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$4
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$5
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$6
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$7
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$8
+ com.example.lebonpetitcoin.Fragments.AnnonceFragment$9
 com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
  com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
 com/example/lebonpetitcoin/Adapter/AdapterChip.java

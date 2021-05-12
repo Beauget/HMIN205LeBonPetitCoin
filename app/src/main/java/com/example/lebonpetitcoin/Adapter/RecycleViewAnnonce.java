@@ -101,7 +101,7 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
                 @Override
                 public void onClick(View v) {
                     if (uid.length()>0){
-                        inFavoris(uid,id);
+                        inFavoris(uid,id,annonce.getTitre(),annonce.getFirstImage());
                     }
 
                 }
@@ -158,9 +158,9 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
         public Button getLike(){return like;}
     }
 
-    public void addFavoris(String uid,String idAnnonce){
+    public void addFavoris(String uid,String idAnnonce,String titreAnnonce, String image){
         if (uid.length() > 0) {
-        Favoris favoris= new Favoris(uid, idAnnonce);
+        Favoris favoris= new Favoris(uid, idAnnonce,titreAnnonce,image);
         cFavoris.add(favoris)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -179,7 +179,7 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
         }
     }
 
-    public void inFavoris(String uid, String idAnnonce){
+    public void inFavoris(String uid, String idAnnonce, String titreAnnonce,String image){
         final int[] cmpt = {0};
             if(uid.length()>0){
             cFavoris.whereEqualTo("idAnnonce",idAnnonce).whereEqualTo("uid",uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -193,7 +193,7 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
                         cmpt[0]++;
                     }
                     if (cmpt[0] == 0) {
-                        addFavoris(uid, idAnnonce);
+                        addFavoris(uid, idAnnonce,titreAnnonce,image);
                     }
 
                 }

@@ -39,7 +39,7 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
         super(options);
         mContext = c;
         this.lecteur = lecteur;
-        Toast.makeText(mContext,"created",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(mContext,"created",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -57,7 +57,9 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
             Toast.makeText(mContext,model.getCompte2(),Toast.LENGTH_SHORT).show();
         }
 
-        holder.getMessage().setText(String.valueOf((model.getMessage())));
+        holder.getMessage().setText(String.valueOf((model.getAnnonce())));
+
+        //Toast.makeText(mContext,model.getAnnonce(),Toast.LENGTH_SHORT).show();
 
         DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
         String id = snapshot.getId();
@@ -75,7 +77,6 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
                         .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentConversation).commit();
             }
         });
-
     }
 
 
