@@ -33,12 +33,14 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.LeBonPetitCoin" >
-        <activity android:name="com.example.lebonpetitcoin.MainActivity" >
+        <activity android:name="com.example.lebonpetitcoin.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.lebonpetitcoin.MainActivity" >
         </activity>
         <activity android:name="com.example.lebonpetitcoin.AddAnnonceActivity" >
             <intent-filter>

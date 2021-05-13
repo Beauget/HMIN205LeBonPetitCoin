@@ -2348,6 +2348,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id splashImage
 id spline
 id split_action_bar
 id spread
@@ -2525,6 +2526,7 @@ layout activity_add_annonce
 layout activity_add_annonce2
 layout activity_main
 layout activity_main_nav_header
+layout activity_splash_screen
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -2854,6 +2856,7 @@ string hide_pwd
 string icon_content_description
 string identifiant
 string item_view_role_description
+string lebonpetitcoin
 string location
 string login
 string material_clock_display_divider
