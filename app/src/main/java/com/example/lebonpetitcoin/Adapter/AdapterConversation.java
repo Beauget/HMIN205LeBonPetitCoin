@@ -64,6 +64,16 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
         DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
         String id = snapshot.getId();
 
+        if (model.getImage()==null) {
+            model.setImage("");
+        }
+
+        if (model.getImage().length()>0){
+            GlideApp.with(mContext)
+                    .load(model.getImage())
+                    .into(holder.getImageView());
+        }
+
         holder.getImageView().setOnClickListener(new View.OnClickListener() {
             private Fragment fragmentConversation;
             @Override

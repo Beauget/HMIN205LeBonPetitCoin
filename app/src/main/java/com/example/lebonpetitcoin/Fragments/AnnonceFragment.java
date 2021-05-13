@@ -291,7 +291,7 @@ public class AnnonceFragment extends Fragment {
 
         signaler.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //contacterAuteur(auteur,"Admin",titreAnnonce,idAnnonce,"");
+                contacterAdmin(auteur,lecteur,titreAnnonce,idAnnonce);
             }
         });
     }
@@ -354,7 +354,7 @@ public class AnnonceFragment extends Fragment {
                     if (compte != null) {
                         //rediriger vers la conversation
                     } else {
-                        addConversation(auteur, lecteur, titre, idAnnonce, "");
+                        addConversation(auteur, lecteur, titre, idAnnonce, image);
                         //rediriger vers la conversation
                     }
                 }
@@ -362,7 +362,7 @@ public class AnnonceFragment extends Fragment {
         }
     }
 
-    void contacterAdmin(String vendeur , String lecteur,String titre, String idAnnonce ,String image){
+    void contacterAdmin(String vendeur , String lecteur,String titre, String idAnnonce){
         //On verifie que l'auteur essaye pas de se contacter lui meme
         if (vendeur.equals((lecteur))==false) {
             Task<DocumentSnapshot> tConversation = cConversation.document(lecteur +"Admin"+ idAnnonce).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -373,7 +373,7 @@ public class AnnonceFragment extends Fragment {
                     if (compte != null) {
                         //rediriger vers la conversation
                     } else {
-                        addConversation(auteur, lecteur, titre, idAnnonce, "");
+                        addConversation("Admin", lecteur, titre, idAnnonce, "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/red.jpg?alt=media&token=409d794c-13eb-4cad-95e4-08b8a7492a9a");
                         //rediriger vers la conversation
                     }
                 }
@@ -384,7 +384,12 @@ public class AnnonceFragment extends Fragment {
     void addConversation(String auteur, String lecteur, String titre , String idAnnonce, String image){
         Conversation conversation = new Conversation(auteur,lecteur,titre,idAnnonce,image);
 
-        cConversation.document(lecteur+idAnnonce).set(conversation)
+        String id = lecteur+idAnnonce;
+        if (auteur.equals("Admin")){
+            id = lecteur +"Admin"+ idAnnonce;
+        }
+
+        cConversation.document(id).set(conversation)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
