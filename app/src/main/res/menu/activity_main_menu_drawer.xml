@@ -10,8 +10,22 @@
             android:icon="@drawable/seal"
             android:title="@string/mon_compte" />
     </group>
+    <item android:title="@string/recherche">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/activity_main_drawer_recherche_avancee"
+                    android:icon="@drawable/chat_24dp"
+                    android:title="@string/recherche_avanc_e" />
+                <item
+                    android:id="@+id/activity_main_drawer_resultat"
+                    android:icon="@drawable/chat_24dp"
+                    android:title="@string/voir_toute_les_annonces" />
+            </group>
+        </menu>
+    </item>
 
-    <item android:title="Profile">
+    <item android:title="@string/profile">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -26,11 +40,15 @@
                     android:id="@+id/activity_main_drawer_stats"
                     android:icon="@drawable/ic_baseline_show_chart_24"
                     android:title="@string/statistiques" />
+                <item
+                    android:id="@+id/activity_main_drawer_modifier_annonce"
+                    android:icon="@drawable/ic_baseline_settings_24"
+                    android:title="@string/modifier_mes_annonces" />
             </group>
         </menu>
     </item>
 
-    <item android:title="Connexion">
+    <item android:title="@string/connexion">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -45,17 +63,13 @@
             </group>
         </menu>
     </item>
-    <item android:title="Configuration">
+    <item android:title="@string/configuration">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/activity_main_drawer_parametres"
                     android:icon="@drawable/ic_baseline_settings_24"
                     android:title="@string/parametres" />
-                <item
-                    android:id="@+id/activity_main_drawer_resultat"
-                    android:icon="@drawable/chat_24dp"
-                    android:title="Voir toute les annonces" />
                 <item
                     android:id="@+id/activity_main_drawer_deconnect"
                     android:icon="@drawable/ic_baseline_close_24"

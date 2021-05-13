@@ -1869,6 +1869,7 @@ id FUNCTION
 id GridLayout
 id LC2
 id LCategorie
+id LDepartement
 id LMoyenDePaiement
 id LResultat
 id META
@@ -1942,7 +1943,9 @@ id activity_main_drawer_deconnect
 id activity_main_drawer_fav
 id activity_main_drawer_layout
 id activity_main_drawer_message
+id activity_main_drawer_modifier_annonce
 id activity_main_drawer_parametres
+id activity_main_drawer_recherche_avancee
 id activity_main_drawer_resultat
 id activity_main_drawer_signIn
 id activity_main_drawer_signUp
@@ -2287,6 +2290,8 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id rechercheButton
+id rechercheEditText
 id rectangles
 id relativeLayout
 id resend_barrier
@@ -2554,6 +2559,7 @@ layout fragment_conversation
 layout fragment_fav
 layout fragment_message
 layout fragment_parametres
+layout fragment_recherche_avancee
 layout fragment_resultat
 layout fragment_signin
 layout fragment_signup
@@ -2734,7 +2740,9 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string configuration
 string confirmPassword
+string connexion
 string content_description_media
 string d_connexion
 string deconnexion
@@ -2877,6 +2885,7 @@ string material_timepicker_text_input_mode_description
 string mes_favoris
 string messages
 string mobileNumber
+string modifier_mes_annonces
 string mon_compte
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
@@ -2924,7 +2933,11 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string profile
 string project_id
+string recherche
+string recherche_avanc_e
+string rechercher
 string registered_emailid
 string s_identifier
 string s_inscrire
@@ -2938,6 +2951,7 @@ string status_bar_notification_info_overflow
 string submit
 string terms_conditions
 string title
+string voir_toute_les_annonces
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

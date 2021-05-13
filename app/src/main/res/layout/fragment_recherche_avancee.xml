@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recherche Texte"
+        />
+    <EditText
+        android:id="@+id/rechercheEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="ECRIRE ICI" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/LCategorie"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scrollbars="vertical"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/LDepartement"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scrollbars="vertical"
+        />
+    <Button
+        android:id="@+id/rechercheButton"
+        android:text="@string/rechercher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

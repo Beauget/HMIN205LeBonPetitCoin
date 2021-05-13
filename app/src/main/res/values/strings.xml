@@ -42,5 +42,13 @@
     <string name="deconnexion">Deconnexion</string>
     <string name="identifiant">Identifiant</string>
     <string name="lebonpetitcoin">LeBonPetitCoin</string>
+    <string name="recherche_avanc_e">Recherche Avancée</string>
+    <string name="modifier_mes_annonces">Modifier mes annonces</string>
+    <string name="recherche">Recherche</string>
+    <string name="profile">Profile</string>
+    <string name="connexion">Connexion</string>
+    <string name="configuration">Configuration</string>
+    <string name="voir_toute_les_annonces">Voir toute les annonces</string>
+    <string name="rechercher">Rechercher</string>
 
 </resources>

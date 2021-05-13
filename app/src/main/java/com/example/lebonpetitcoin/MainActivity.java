@@ -31,6 +31,7 @@ import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 import com.example.lebonpetitcoin.Fragments.FavFragment;
 import com.example.lebonpetitcoin.Fragments.MessageFragment;
 import com.example.lebonpetitcoin.Fragments.ParametresFragment;
+import com.example.lebonpetitcoin.Fragments.RechercheAvanceeFragment;
 import com.example.lebonpetitcoin.Fragments.ResultatFragment;
 import com.example.lebonpetitcoin.Fragments.SignInFragment;
 import com.example.lebonpetitcoin.Fragments.SignUpFragment;
@@ -87,6 +88,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Fragment fragmentSignUp;
     private Fragment fragmentParametres;
     private Fragment fragmentResultat;
+    private Fragment fragmentRechercheAvancee;
+    private Fragment fragmentModifierAnnonces;
 
     //VALEUR RETOURNE SELON LE CLIQUE
     private static final int FRAGMENT_ACCOUNT = 0;
@@ -97,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_SIGNUP = 5;
     private static final int FRAGMENT_PARAMETRES = 6;
     private static final int FRAGMENT_RESULTAT = 7;
+    private static final int FRAGMENT_RECHERCHE_AVANCE = 8;
+    private static final int FRAGMENT_MODIFIER_ANNONCES= 9;
 
     // [START declare_auth]
     public FirebaseAuth mAuth;
@@ -196,6 +201,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_Menu.findItem(R.id.activity_main_drawer_signIn).setVisible(true);
         nav_Menu.findItem(R.id.activity_main_drawer_signUp).setVisible(true);
         nav_Menu.findItem(R.id.activity_main_drawer_deconnect).setVisible(false);
+        nav_Menu.findItem(R.id.activity_main_drawer_modifier_annonce).setVisible(false);
 
     }
 
@@ -212,6 +218,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_Menu.findItem(R.id.activity_main_drawer_account).setVisible(true);
         nav_Menu.findItem(R.id.activity_main_drawer_message).setVisible(true);
         nav_Menu.findItem(R.id.activity_main_drawer_fav).setVisible(true);
+        nav_Menu.findItem(R.id.activity_main_drawer_modifier_annonce).setVisible(true);
+
     }
 
 
@@ -320,6 +328,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.activity_main_drawer_deconnect:
                 FirebaseAuth.getInstance().signOut();
                 break;
+            case R.id.activity_main_drawer_recherche_avancee:
+                this.showFragment(FRAGMENT_RECHERCHE_AVANCE);
+                break;
+            case R.id.activity_main_drawer_modifier_annonce:
+                this.showFragment(FRAGMENT_MODIFIER_ANNONCES);
+                break;
             default:
                 break;
         }
@@ -357,7 +371,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showParametresFragment();
                 break;
             case FRAGMENT_RESULTAT:
-                this.showResultatfragment();
+                this.showResultatFragment();
+                break;
+            case FRAGMENT_RECHERCHE_AVANCE:
+                this.showRechercheAvanceeFragment();
+                break;
+            case FRAGMENT_MODIFIER_ANNONCES:
+                //this.showResultatfragment();
                 break;
             default:
                 break;
@@ -409,9 +429,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.startTransactionFragment(this.fragmentParametres);
     }
 
-    private void showResultatfragment() {
+    private void showResultatFragment() {
         if (this.fragmentResultat== null) this.fragmentResultat= ResultatFragment.newInstance();
         this.startTransactionFragment(this.fragmentResultat);
+    }
+
+    private void showRechercheAvanceeFragment() {
+        if (this.fragmentRechercheAvancee== null) this.fragmentRechercheAvancee= RechercheAvanceeFragment.newInstance();
+        this.startTransactionFragment(this.fragmentRechercheAvancee);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout
