@@ -30,6 +30,8 @@ import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 
 import com.example.lebonpetitcoin.Fragments.FavFragment;
 import com.example.lebonpetitcoin.Fragments.MessageFragment;
+import com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment;
+import com.example.lebonpetitcoin.Fragments.ModifierAnnoncesFragment;
 import com.example.lebonpetitcoin.Fragments.ParametresFragment;
 import com.example.lebonpetitcoin.Fragments.RechercheAvanceeFragment;
 import com.example.lebonpetitcoin.Fragments.ResultatFragment;
@@ -377,7 +379,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showRechercheAvanceeFragment();
                 break;
             case FRAGMENT_MODIFIER_ANNONCES:
-                //this.showResultatfragment();
+                this.showModifierAnnonce();
                 break;
             default:
                 break;
@@ -437,6 +439,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showRechercheAvanceeFragment() {
         if (this.fragmentRechercheAvancee== null) this.fragmentRechercheAvancee= RechercheAvanceeFragment.newInstance();
         this.startTransactionFragment(this.fragmentRechercheAvancee);
+    }
+
+    private void showModifierAnnonce() {
+        if (this.fragmentModifierAnnonces== null) this.fragmentModifierAnnonces= ModifierAnnoncesFragment.newInstance();
+        this.startTransactionFragment(this.fragmentModifierAnnonces);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout

@@ -1867,6 +1867,7 @@ id ETCategorie
 id ETMoyenDePaiement
 id FUNCTION
 id GridLayout
+id LAnnonces
 id LC2
 id LCategorie
 id LDepartement
@@ -2558,6 +2559,8 @@ layout fragment_annonce
 layout fragment_conversation
 layout fragment_fav
 layout fragment_message
+layout fragment_modifier_annonce
+layout fragment_modifier_annonces
 layout fragment_parametres
 layout fragment_recherche_avancee
 layout fragment_resultat
