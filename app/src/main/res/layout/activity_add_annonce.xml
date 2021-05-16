@@ -111,7 +111,7 @@
         android:background="@android:color/transparent"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
-        android:hint="Titre"
+        android:hint="@string/titre"
         android:padding="10dp"
         android:singleLine="true"
         android:textSize="16sp" />
@@ -124,7 +124,7 @@
         android:background="@android:color/transparent"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
-        android:hint="Description"
+        android:hint="@string/description"
         android:padding="10dp"
         android:singleLine="true"
         android:textSize="16sp" />
@@ -137,7 +137,7 @@
         android:background="@android:color/transparent"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
-        android:hint="Prix"
+        android:hint="@string/prix_entre_0_et_9999"
         android:inputType="numberDecimal"
         android:padding="10dp"
         android:singleLine="true"
@@ -148,7 +148,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Categorie(s)"
+        android:text="@string/cat_gorie_s"
         />
 
 
@@ -164,7 +164,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Moyen de paiement(s)"
+        android:text="@string/moyen_de_paiement_s"
         />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -178,7 +178,7 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Upload"
+                android:text="@string/valider"
                 android:textStyle="bold"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/white"

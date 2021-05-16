@@ -50,5 +50,18 @@
     <string name="configuration">Configuration</string>
     <string name="voir_toute_les_annonces">Voir toute les annonces</string>
     <string name="rechercher">Rechercher</string>
+    <string name="modifier_la_description">Modifier la description</string>
+    <string name="modifier_le_prix">Modifier le prix</string>
+    <string name="prix">Prix</string>
+    <string name="moyen_de_paiement">Moyen de paiement</string>
+    <string name="cat_gorie">Catégorie</string>
+    <string name="description">Description</string>
+    <string name="valider">Valider</string>
+    <string name="modifier_le_titre">Modifier le titre</string>
+    <string name="titre">Titre</string>
+    <string name="prix_entre_0_01_et_9999">Prix : entre 0.01 et 9999</string>
+    <string name="cat_gorie_s">Catégorie(s)</string>
+    <string name="moyen_de_paiement_s">Moyen de paiement(s)</string>
+    <string name="prix_entre_0_et_9999">Prix entre 0 et 9999</string>
 
 </resources>

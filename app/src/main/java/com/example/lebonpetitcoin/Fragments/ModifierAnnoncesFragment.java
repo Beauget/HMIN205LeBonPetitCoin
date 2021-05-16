@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces;
 import com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.MainActivity;
@@ -74,7 +75,7 @@ public class ModifierAnnoncesFragment extends Fragment {
                         mIds.add(documentSnapshot.getId());
                     }
                 }
-                mAdapter = new RecycleViewAnnonce(getContext(),mAnnonces,mIds,uid);
+                mAdapter = new AdapterMesAnnonces(getContext(),mAnnonces,mIds,uid);
                 mRecyclerView.setAdapter(mAdapter);
                 if (mRecyclerView.getAdapter().getItemCount() > 0) {
                     mRecyclerView.smoothScrollToPosition(0);

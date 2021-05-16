@@ -110,13 +110,13 @@ public class ParametresFragment extends Fragment {
         confBtnMoyenDePaiement();
         //setUpRecyclerView();
 
-        Query query = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
+        //Query query = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
 
-        FirestoreRecyclerOptions<Categorie> options = new FirestoreRecyclerOptions.Builder<Categorie>()
+       /* FirestoreRecyclerOptions<Categorie> options = new FirestoreRecyclerOptions.Builder<Categorie>()
                 .setQuery(query, Categorie.class)
                 .setLifecycleOwner(this)
                 .build();
-
+        */
 
         //adapter = new AdapterCategorie(options,getContext(),new ArrayList<String>());
         //recyclerView.setAdapter(adapter);

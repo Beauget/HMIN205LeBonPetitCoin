@@ -148,6 +148,9 @@ com/example/lebonpetitcoin/ClassFirestore/Favoris.java
  com.example.lebonpetitcoin.ClassFirestore.Favoris
 com/example/lebonpetitcoin/Fragments/ModifierAnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$1
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$2
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$3
 com/example/lebonpetitcoin/ClassFirestore/Message.java
  com.example.lebonpetitcoin.ClassFirestore.Message
 com/example/lebonpetitcoin/Adapter/RecycleViewAnnonce.java

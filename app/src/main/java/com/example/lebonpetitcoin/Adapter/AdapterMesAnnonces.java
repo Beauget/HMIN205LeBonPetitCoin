@@ -98,15 +98,15 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
 
 
         holder.getImageViewAnnonce().setOnClickListener(new View.OnClickListener() {
-            private Fragment fragmentMonAnnonce;
+            private Fragment fragmentModifierAnnonce;
             @Override
             public void onClick(View v) {
-                if (this.fragmentMonAnnonce == null) this.fragmentMonAnnonce= ModifierAnnonceFragment.newInstance();
+                if (this.fragmentModifierAnnonce == null) this.fragmentModifierAnnonce= ModifierAnnonceFragment.newInstance();
                 Bundle arguments = new Bundle();
                 arguments.putString( "idAnnonce", id);
-                fragmentMonAnnonce.setArguments(arguments);
+                fragmentModifierAnnonce.setArguments(arguments);
                 ((AppCompatActivity) mContext).getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentMonAnnonce).commit();
+                        .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentModifierAnnonce).commit();
 
                 Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
             }

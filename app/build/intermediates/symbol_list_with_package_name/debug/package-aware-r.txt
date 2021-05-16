@@ -1863,6 +1863,7 @@ id BOTTOM_START
 id BtnCategorie
 id BtnMoyenDePaiement
 id CTRL
+id CategorieTextView
 id ETCategorie
 id ETMoyenDePaiement
 id FUNCTION
@@ -2060,6 +2061,8 @@ id delete
 id deltaRelative
 id dependency_ordering
 id description
+id descriptionEditText
+id descriptionTextView
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2226,6 +2229,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id moyenDePaiementTextView
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -2285,6 +2289,8 @@ id pin
 id position
 id postLayout
 id prix
+id prixEditText
+id prixTextView
 id pro
 id progress_bar
 id progress_circular
@@ -2422,6 +2428,7 @@ id titre1
 id titre2
 id titre3
 id titre4
+id titreEditText
 id titreeeee
 id toast_error
 id toast_root
@@ -2450,6 +2457,7 @@ id unlabeled
 id up
 id useLogo
 id userEmailId
+id valider
 id vertical
 id view_offset_helper
 id visible
@@ -2719,6 +2727,8 @@ string appbar_scrolling_view_behavior
 string barTitle
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string cat_gorie
+string cat_gorie_s
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2750,6 +2760,7 @@ string content_description_media
 string d_connexion
 string deconnexion
 string default_web_client_id
+string description
 string email
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -2888,8 +2899,13 @@ string material_timepicker_text_input_mode_description
 string mes_favoris
 string messages
 string mobileNumber
+string modifier_la_description
+string modifier_le_prix
+string modifier_le_titre
 string modifier_mes_annonces
 string mon_compte
+string moyen_de_paiement
+string moyen_de_paiement_s
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -2936,6 +2952,9 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string prix
+string prix_entre_0_01_et_9999
+string prix_entre_0_et_9999
 string profile
 string project_id
 string recherche
@@ -2954,6 +2973,8 @@ string status_bar_notification_info_overflow
 string submit
 string terms_conditions
 string title
+string titre
+string valider
 string voir_toute_les_annonces
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

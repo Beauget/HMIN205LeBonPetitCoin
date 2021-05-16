@@ -360,7 +360,14 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     private void checkValidation(ArrayList<String> mdp,ArrayList<String> cat) {
 
         // Get all edittext texts
-        String getPrix= prix.getText().toString();
+        float prixBase = 0;
+        float getPrix = 0;
+        if(prix.getText().toString().length()>0) {
+            prixBase = Float.parseFloat(prix.getText().toString());
+            int prixInteger = (int) (prixBase * 100);
+            getPrix = prixInteger / 100;
+        }
+
         String getTitre = titre.getText().toString();
         String getDescription = description.getText().toString();
 
@@ -369,12 +376,12 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         //Matcher m = p.matcher(getEmailId);
 
         // Check if all strings are null or not
-        if (getPrix.equals("") || getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0||imageUriList.size() ==0 )
-            Toast.makeText(getApplicationContext(),"nop",Toast.LENGTH_SHORT).show();
+        if (getPrix>9999||prixBase>getPrix|| getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0||imageUriList.size() ==0 )
+            Toast.makeText(getApplicationContext(),"echec",Toast.LENGTH_SHORT).show();
         else
             {
                 //uploadFile(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp);
-                uploadImageToFirebaseStorage(getTitre,getDescription,Float.valueOf(getPrix),mdp,cat,imageUriList.size());
+                uploadImageToFirebaseStorage(getTitre,getDescription,getPrix,mdp,cat,imageUriList.size());
             }
     }
 
