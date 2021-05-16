@@ -35,6 +35,7 @@ MERGED from [com.google.firebase:firebase-storage:19.2.2] /home/hayaat/.gradle/c
 MERGED from [com.github.bumptech.glide:glide:4.12.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/227476882a3ec8d0c18f2e13253fed65/jetified-glide-4.12.0/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.firebase:firebase-messaging:21.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/182300206770475f1dc109de00117671/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:17:1-58:12
 MERGED from [com.squareup.picasso:picasso:2.71828] /home/hayaat/.gradle/caches/transforms-2/files-2.1/12a0b3566cb3f627bc6fc0d7e317b24f/jetified-picasso-2.71828/AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b12d51ed5cc66fcc1d3cc3acac9f7480/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.firebase:firebase-datatransport:17.0.10] /home/hayaat/.gradle/caches/transforms-2/files-2.1/603babbc46d876dc2b2797c077f4c56c/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:15:1-34:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/05fc7cd6728c298b7927d252382ef60b/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/0be5d66f0464287b1e54a5fe5f5d0af0/jetified-firebase-encoders-json-17.1.0/AndroidManifest.xml:15:1-23:12
@@ -403,6 +404,8 @@ MERGED from [com.google.firebase:firebase-messaging:21.1.0] /home/hayaat/.gradle
 MERGED from [com.google.firebase:firebase-messaging:21.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/182300206770475f1dc109de00117671/jetified-firebase-messaging-21.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.squareup.picasso:picasso:2.71828] /home/hayaat/.gradle/caches/transforms-2/files-2.1/12a0b3566cb3f627bc6fc0d7e317b24f/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
 MERGED from [com.squareup.picasso:picasso:2.71828] /home/hayaat/.gradle/caches/transforms-2/files-2.1/12a0b3566cb3f627bc6fc0d7e317b24f/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b12d51ed5cc66fcc1d3cc3acac9f7480/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /home/hayaat/.gradle/caches/transforms-2/files-2.1/b12d51ed5cc66fcc1d3cc3acac9f7480/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
 MERGED from [com.google.firebase:firebase-datatransport:17.0.10] /home/hayaat/.gradle/caches/transforms-2/files-2.1/603babbc46d876dc2b2797c077f4c56c/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-datatransport:17.0.10] /home/hayaat/.gradle/caches/transforms-2/files-2.1/603babbc46d876dc2b2797c077f4c56c/jetified-firebase-datatransport-17.0.10/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /home/hayaat/.gradle/caches/transforms-2/files-2.1/05fc7cd6728c298b7927d252382ef60b/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
