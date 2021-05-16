@@ -1,6 +1,7 @@
 package com.example.lebonpetitcoin.ClassFirestore;
 
 import java.util.ArrayList;
+//https://www.sigtv.fr/L-IGN-edite-la-nouvelle-carte-de-la-France-administrative-et-calcule-les-centres-geographiques-de-chaque-departement_a334.html
 
 public class Position {
     private ArrayList<departement> liste;
@@ -43,10 +44,10 @@ public class Position {
         liste.add(new departement("34","Herault",3.2202,43.3447));
         liste.add(new departement("35","Ile-et-Vilaine",1.3819,48.0916));
         liste.add(new departement("36","Indre",1.3433,46.4640));
-        liste.add(new departement("37","",9.9999,99.9999));
-        liste.add(new departement("38","",9.9999,99.9999));
-        liste.add(new departement("39","",9.9999,99.9999));
-        liste.add(new departement("40","",9.9999,99.9999));
+        liste.add(new departement("37","Indre-et-Loire",0.4129,47.1529));
+        liste.add(new departement("38","",5.3434,45.1548));
+        liste.add(new departement("39","Jura",5.4152,46.4342));
+        liste.add(new departement("40","Landes",0.4702,43.5756));
 
         liste.add(new departement("41","",9.9999,99.9999));
         liste.add(new departement("42","",9.9999,99.9999));
