@@ -406,7 +406,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentMessage).commit();
     }
 
-    private void showFavFragment() {
+    public void showFavFragment() {
         if (this.fragmentFav == null) this.fragmentFav = FavFragment.newInstance();
         this.startTransactionFragment(this.fragmentFav);
     }
@@ -421,27 +421,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.startTransactionFragment(this.fragmentSignIn);
     }
 
-    private void showSignUpFragment() {
+    public void showSignUpFragment() {
         if (this.fragmentSignUp == null) this.fragmentSignUp = SignUpFragment.newInstance();
         this.startTransactionFragment(this.fragmentSignUp);
     }
 
-    private void showParametresFragment() {
+    public void showParametresFragment() {
         if (this.fragmentParametres == null) this.fragmentParametres= ParametresFragment.newInstance();
         this.startTransactionFragment(this.fragmentParametres);
     }
 
-    private void showResultatFragment() {
+    public void showResultatFragment() {
         if (this.fragmentResultat== null) this.fragmentResultat= ResultatFragment.newInstance();
         this.startTransactionFragment(this.fragmentResultat);
     }
 
-    private void showRechercheAvanceeFragment() {
+    public void showRechercheAvanceeFragment() {
         if (this.fragmentRechercheAvancee== null) this.fragmentRechercheAvancee= RechercheAvanceeFragment.newInstance();
         this.startTransactionFragment(this.fragmentRechercheAvancee);
     }
 
-    private void showModifierAnnonce() {
+    public void showModifierAnnonce() {
         if (this.fragmentModifierAnnonces== null) this.fragmentModifierAnnonces= ModifierAnnoncesFragment.newInstance();
         this.startTransactionFragment(this.fragmentModifierAnnonces);
     }

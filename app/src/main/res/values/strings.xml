@@ -63,5 +63,6 @@
     <string name="cat_gorie_s">Catégorie(s)</string>
     <string name="moyen_de_paiement_s">Moyen de paiement(s)</string>
     <string name="prix_entre_0_et_9999">Prix entre 0 et 9999</string>
+    <string name="supprimer">Supprimer</string>
 
 </resources>

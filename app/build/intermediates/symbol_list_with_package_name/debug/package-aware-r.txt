@@ -2381,6 +2381,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id supprimer
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2971,6 +2972,7 @@ string signUp
 string statistiques
 string status_bar_notification_info_overflow
 string submit
+string supprimer
 string terms_conditions
 string title
 string titre

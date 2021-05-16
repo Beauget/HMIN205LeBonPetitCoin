@@ -344,6 +344,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(getApplicationContext(),"Annonce ajouté",Toast.LENGTH_SHORT).show();
+                        Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
+                        AddAnnonceActivity.this.startActivity(myIntent);
 
                     }
                 })

@@ -82,6 +82,7 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
                 Bundle arguments = new Bundle();
                 arguments.putString( "idConversation", id);
                 arguments.putString( "lecteur", lecteur);
+                //arguments.putString( "idAnnonce", lecteur);
                 fragmentConversation.setArguments(arguments);
                 ((AppCompatActivity) mContext).getSupportFragmentManager()
                         .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentConversation).commit();

@@ -226,12 +226,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/valider"
-            android:background="@drawable/rounded_rectangle_teal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/valider"/>
+            <Button
+                android:id="@+id/valider"
+                android:background="@drawable/rounded_rectangle_teal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/valider"/>
+            <Button
+                android:id="@+id/supprimer"
+                android:background="@drawable/rounded_rectangle_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/supprimer"/>
+
         </LinearLayout>
     </ScrollView>
 
