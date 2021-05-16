@@ -1,6 +1,8 @@
 package com.example.lebonpetitcoin.Fragments;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,16 +13,31 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces;
+import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Statistique;
 import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.MPPointF;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import android.graphics.Typeface;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 public class StatsFragment extends Fragment {
 
@@ -29,9 +46,12 @@ public class StatsFragment extends Fragment {
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cStatistique = firestoreDB.collection("Statistique");
     private CollectionReference cCompte = firestoreDB.collection("Compte");
+    private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
 
     TextView textView;
     int nbVisualisation = 0;
+    ArrayList<PieEntry> entries = new ArrayList<>();
+    PieChart pieChart;
 
 
     public static StatsFragment newInstance() {
@@ -41,6 +61,7 @@ public class StatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
         textView = view.findViewById(R.id.textView);
+        pieChart = view.findViewById(R.id.piechart);
 
         return view;
     }
@@ -49,6 +70,73 @@ public class StatsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getCompte(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
+    }
+
+    public void getStatistiquePie(String pseudo){
+
+        Task<QuerySnapshot> query = cAnnonces.whereEqualTo("auteur", pseudo).get();
+        query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Annonce annonce = document.toObject(Annonce.class);
+                        entries.add(new PieEntry(annonce.getNbDeVisites(),annonce.getTitre()));
+                    }
+                    setPieChart(entries);
+
+                }
+            }
+        });
+
+
+
+    }
+
+    public void setPieChart(ArrayList<PieEntry> entries){
+        PieDataSet dataSet = new PieDataSet(entries,"");
+
+        dataSet.setDrawIcons(false);
+
+        dataSet.setSliceSpace(3f);
+        dataSet.setIconsOffset(new MPPointF(0, 40));
+        dataSet.setSelectionShift(5f);
+
+        // add a lot of colors
+
+        ArrayList<Integer> colors = new ArrayList<>();
+
+        for (int c : ColorTemplate.VORDIPLOM_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.JOYFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.COLORFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.LIBERTY_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.PASTEL_COLORS)
+            colors.add(c);
+
+        colors.add(ColorTemplate.getHoloBlue());
+
+        dataSet.setColors(colors);
+        //dataSet.setSelectionShift(0f);
+
+        PieData data = new PieData(dataSet);
+        data.setValueFormatter(new PercentFormatter());
+        data.setValueTextSize(11f);
+        data.setValueTextColor(Color.WHITE);
+        //data.setValueTypeface(tfLight);
+        pieChart.setData(data);
+
+        // undo all highlights
+        pieChart.highlightValues(null);
+
+        pieChart.invalidate();
     }
 
     public void getStatistique(String pseudo){
@@ -80,6 +168,7 @@ public class StatsFragment extends Fragment {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Compte compte = document.toObject(Compte.class);
                         getStatistique(compte.getPseudo());
+                        getStatistiquePie(compte.getPseudo());
 
                     }
                 }

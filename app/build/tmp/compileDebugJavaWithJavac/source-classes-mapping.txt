@@ -88,6 +88,7 @@ com/example/lebonpetitcoin/Fragments/StatsFragment.java
  com.example.lebonpetitcoin.Fragments.StatsFragment
  com.example.lebonpetitcoin.Fragments.StatsFragment$1
  com.example.lebonpetitcoin.Fragments.StatsFragment$2
+ com.example.lebonpetitcoin.Fragments.StatsFragment$3
 com/example/lebonpetitcoin/CustomToast.java
  com.example.lebonpetitcoin.CustomToast
 com/example/lebonpetitcoin/ClassFirestore/Categorie.java
