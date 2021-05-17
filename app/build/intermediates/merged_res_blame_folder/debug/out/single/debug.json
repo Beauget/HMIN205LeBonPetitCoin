@@ -200,6 +200,10 @@
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/add_24dp.png"
     },
     {
+        "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/layout_fragment_stats_annonce.xml.flat",
+        "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/layout/fragment_stats_annonce.xml"
+    },
+    {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/layout_fragment_resultat.xml.flat",
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/layout/fragment_resultat.xml"
     },

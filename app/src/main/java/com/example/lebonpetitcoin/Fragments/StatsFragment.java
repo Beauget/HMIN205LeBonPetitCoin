@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
@@ -61,10 +63,11 @@ public class StatsFragment extends Fragment {
     int nbVisualisation = 0;
     ArrayList<PieEntry> pieEntries;
     PieChart pieChart;
-    ArrayList<BarEntry> barEntries;
-    BarChart barChart;
-
-    int MAXJOUR = 30;
+    RecyclerView.Adapter mAdapter;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerView mRecyclerView ;
+    private String uid = "";
+    String lecteur = "";
 
 
     public static StatsFragment newInstance() {
@@ -75,7 +78,10 @@ public class StatsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
         textView = view.findViewById(R.id.textView);
         pieChart = view.findViewById(R.id.piechart);
-        barChart = view.findViewById(R.id.barchart);
+        mRecyclerView = view.findViewById(R.id.LAnnonces);
+        mRecyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(view.getContext());
+        mRecyclerView.setLayoutManager(layoutManager);
 
         return view;
     }
@@ -84,6 +90,34 @@ public class StatsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getCompte(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
+
+
+        lecteur =  ((MainActivity)getActivity()).lecteur ;
+
+
+        ArrayList<Annonce> mAnnonces =new ArrayList<>();
+        ArrayList<String> mIds =new ArrayList<>();
+        cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (error != null) {
+                    return;
+                }
+                for (QueryDocumentSnapshot documentSnapshot : value) {
+                    Annonce annonce = documentSnapshot.toObject(Annonce.class);
+                    if(annonce.getAuteur().equals(lecteur)){
+                        mAnnonces.add(annonce);
+                        mIds.add(documentSnapshot.getId());
+                    }
+                }
+                mAdapter = new AdapterMesAnnonces(getContext(),mAnnonces,mIds,uid,"statistique");
+                mRecyclerView.setAdapter(mAdapter);
+                if (mRecyclerView.getAdapter().getItemCount() > 0) {
+                    mRecyclerView.smoothScrollToPosition(0);
+                }
+
+            }
+        });
     }
 
     public void getStatistiquePie(String pseudo){
@@ -150,54 +184,6 @@ public class StatsFragment extends Fragment {
         pieChart.invalidate();
     }
 
-    public void getStatistiqueBar(String annonce){
-        Date now = Calendar.getInstance().getTime();
-        int [] array =new int[MAXJOUR];
-        Task<QuerySnapshot> query = cStatistique.whereEqualTo("idAnnonce", annonce).get();
-        query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        Statistique statistique= document.toObject(Statistique.class);
-                        Date date =statistique.getDate();
-
-                        int difference = (int) ((now.getTime()-date.getTime())/ (1000 * 3600 * 24));
-                        
-                        if(difference<MAXJOUR){
-                            array[difference]= array[difference] + 1;
-
-                        }
-                    }
-                    setBar(array);
-                }
-            }
-        });
-    }
-
-    public void setBar(int [] array ){
-
-        BarDataSet set;
-        int x = MAXJOUR -1;
-        barEntries = new ArrayList<>();
-        for (int i=0; i<MAXJOUR; i++)
-        {
-            //BarEntryLabels.add("J-"+i)
-            barEntries.add(new BarEntry(x,array[i]));
-            x--;
-
-        }
-        ArrayList<IBarDataSet> dataSets = new ArrayList<>();
-        set = new BarDataSet(barEntries, " ");
-        //set.setColors(ColorTemplate.VORDIPLOM_COLORS);
-        set.setDrawValues(false);
-        dataSets.add(set);
-        BarData data = new BarData(dataSets);
-        barChart.setData(data);
-        barChart.setFitBars(false);
-        barChart.invalidate();
-
-    }
 
     public void getStatistique(String pseudo){
         nbVisualisation = 0;
@@ -227,9 +213,9 @@ public class StatsFragment extends Fragment {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Compte compte = document.toObject(Compte.class);
-                        getStatistique(compte.getPseudo());
+                        //getStatistique(compte.getPseudo());
                         getStatistiquePie(compte.getPseudo());
-                        getStatistiqueBar("HdsvtjGULUKrIATwGqk8");
+                        //getStatistiqueBar("HdsvtjGULUKrIATwGqk8");
                     }
                 }
             }

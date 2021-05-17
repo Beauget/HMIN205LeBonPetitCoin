@@ -1978,7 +1978,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id barchart
+id barchartMois
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2582,6 +2582,7 @@ layout fragment_resultat
 layout fragment_signin
 layout fragment_signup
 layout fragment_stats
+layout fragment_stats_annonce
 layout fui_activity_invisible
 layout fui_activity_register_email
 layout fui_activity_register_phone
@@ -2741,6 +2742,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string cliquer_sur_une_de_vos_annonces_pour_avoir_des_d_tails
 string closebutton
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -2953,6 +2955,7 @@ string mtrl_picker_toggle_to_year_selection
 string navigation_drawer_close
 string navigation_drawer_open
 string newUser
+string nombre_de_vues_par_annonce
 string parametres
 string passowrd
 string password
@@ -2987,6 +2990,7 @@ string terms_conditions
 string title
 string titre
 string valider
+string visualisation_les_30_dernier_jours
 string voir_toute_les_annonces
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

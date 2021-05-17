@@ -47,19 +47,7 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
     protected void onBindViewHolder(@NonNull FavorisHolder holder, int position, @NonNull Favoris model) {
         holder.getTextViewTitle().setText(String.valueOf((model.getTitreAnnonce())));
 
-        cAnnonce.document(model.getIdAnnonce()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Annonce annonce = documentSnapshot.toObject(Annonce.class);
-
-                if (annonce != null) {
-                    holder.getTextViewTitle().setText(String.valueOf((annonce.getTitre())));
-                }
-            }
-        });
-
         String s;
-
         if( model.getImage().length()==0)
             s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846";
         else
@@ -68,6 +56,21 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
         GlideApp.with(mContext)
                 .load(s)
                 .into(holder.getImageView());
+
+        cAnnonce.document(model.getIdAnnonce()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Annonce annonce = documentSnapshot.toObject(Annonce.class);
+
+                if (annonce != null) {
+                    holder.getTextViewTitle().setText(String.valueOf((annonce.getTitre())));
+                    GlideApp.with(mContext)
+                            .load(annonce.getFirstImage())
+                            .into(holder.getImageView());
+                }
+            }
+        });
+
 
 
         String id = model.getIdAnnonce();

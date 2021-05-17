@@ -68,5 +68,9 @@
     <string name="contacter_le_vendeur_via_messagerie">Contacter le vendeur via messagerie</string>
     <string name="signaler_l_annonce">Signaler l\'annonce</string>
     <string name="mettre_jour">Mettre à jour</string>
+    <string name="cliquer_sur_une_de_vos_annonces_pour_avoir_des_d_tails">Cliquer sur une de vos annonces pour avoir des détails</string>
+    <string name="nombre_de_vues_par_annonce">Nombre de vues par annonce</string>
+    <string name="visualisation_les_30_dernier_jours">Visualisation les 30 dernier jours</string>
+    <string name="visualisation_les_7_dernier_jours">visualisation les 7 dernier jours</string>
 
 </resources>

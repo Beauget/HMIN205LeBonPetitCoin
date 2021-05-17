@@ -19,17 +19,22 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Page statistiques!" />
+                android:text="@string/nombre_de_vues_par_annonce" />
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/piechart"
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
 
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/barchart"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cliquer_sur_une_de_vos_annonces_pour_avoir_des_d_tails" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/LAnnonces"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
     </ScrollView>

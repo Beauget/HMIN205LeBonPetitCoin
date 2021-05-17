@@ -25,6 +25,7 @@ import com.example.lebonpetitcoin.ClassFirestore.Favoris;
 import com.example.lebonpetitcoin.Fragments.AnnonceFragment;
 import com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment;
 import com.example.lebonpetitcoin.Fragments.ParametresFragment;
+import com.example.lebonpetitcoin.Fragments.StatsAnnonceFragment;
 import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
@@ -55,8 +56,9 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
     private ArrayList<Annonce> annonces;
     private ArrayList<String> ids;
     private String uid;
+    private String click;
 
-    public AdapterMesAnnonces(Context context, ArrayList<Annonce> annonces,ArrayList<String> ids, String uid) {
+    public AdapterMesAnnonces(Context context, ArrayList<Annonce> annonces,ArrayList<String> ids, String uid,String click) {
         this.mContext = context;
         this.annonces = annonces;
         this.ids= ids;
@@ -64,6 +66,7 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
             this.uid=uid;
         else
             this.uid="";
+        this.click= click;
     }
 
     @Override
@@ -97,20 +100,46 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
             holder.getLike().setVisibility(View.GONE);
 
 
-        holder.getImageViewAnnonce().setOnClickListener(new View.OnClickListener() {
-            private Fragment fragmentModifierAnnonce;
-            @Override
-            public void onClick(View v) {
-                if (this.fragmentModifierAnnonce == null) this.fragmentModifierAnnonce= ModifierAnnonceFragment.newInstance();
-                Bundle arguments = new Bundle();
-                arguments.putString( "idAnnonce", id);
-                fragmentModifierAnnonce.setArguments(arguments);
-                ((AppCompatActivity) mContext).getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentModifierAnnonce).commit();
 
-                Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
+            if(click.equals("modifierAnonce")) {
+                holder.getImageViewAnnonce().setOnClickListener(new View.OnClickListener() {
+                    private Fragment fragmentModifierAnnonce;
+
+                    @Override
+                    public void onClick(View v) {
+                        if (this.fragmentModifierAnnonce == null)
+                            this.fragmentModifierAnnonce = ModifierAnnonceFragment.newInstance();
+                        Bundle arguments = new Bundle();
+                        arguments.putString("idAnnonce", id);
+                        fragmentModifierAnnonce.setArguments(arguments);
+                        ((AppCompatActivity) mContext).getSupportFragmentManager()
+                                .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentModifierAnnonce).commit();
+
+                        Toast.makeText(mContext, id, Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
-        });
+
+            if (click.equals("statistique")){
+                holder.getImageViewAnnonce().setOnClickListener(new View.OnClickListener() {
+                    private Fragment fragmentStatistiqueAnnonce;
+
+                    @Override
+                    public void onClick(View v) {
+                        if (this.fragmentStatistiqueAnnonce== null)
+                            this.fragmentStatistiqueAnnonce = StatsAnnonceFragment.newInstance();
+                        Bundle arguments = new Bundle();
+                        arguments.putString("idAnnonce", id);
+                        fragmentStatistiqueAnnonce.setArguments(arguments);
+                        ((AppCompatActivity) mContext).getSupportFragmentManager()
+                                .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentStatistiqueAnnonce).commit();
+
+                        Toast.makeText(mContext, id, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+
 
     }
 
@@ -145,49 +174,6 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
         public TextView getVues(){return vues; }
 
         public Button getLike(){return like;}
-    }
-
-    public void addFavoris(String uid,String idAnnonce,String titreAnnonce, String image){
-        if (uid.length() > 0) {
-            Favoris favoris= new Favoris(uid, idAnnonce,titreAnnonce,image);
-            cFavoris.add(favoris)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(mContext,"Ajouté aux favoris !",Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(mContext,"erreur",Toast.LENGTH_SHORT).show();
-                            Log.d(TAG,e.toString());
-                        }
-                    });
-
-        }
-    }
-
-    public void inFavoris(String uid, String idAnnonce, String titreAnnonce,String image){
-        final int[] cmpt = {0};
-        if(uid.length()>0){
-            cFavoris.whereEqualTo("idAnnonce",idAnnonce).whereEqualTo("uid",uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
-                @Override
-                public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                    if (error != null) {
-                        return;
-                    }
-                    for (QueryDocumentSnapshot documentSnapshot : value) {
-                        Annonce annonce = documentSnapshot.toObject(Annonce.class);
-                        cmpt[0]++;
-                    }
-                    if (cmpt[0] == 0) {
-                        addFavoris(uid, idAnnonce,titreAnnonce,image);
-                    }
-
-                }
-            });
-        }
     }
 
 

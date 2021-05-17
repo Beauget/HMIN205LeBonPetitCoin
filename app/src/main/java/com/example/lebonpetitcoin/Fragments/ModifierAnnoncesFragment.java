@@ -75,7 +75,7 @@ public class ModifierAnnoncesFragment extends Fragment {
                         mIds.add(documentSnapshot.getId());
                     }
                 }
-                mAdapter = new AdapterMesAnnonces(getContext(),mAnnonces,mIds,uid);
+                mAdapter = new AdapterMesAnnonces(getContext(),mAnnonces,mIds,uid,"modifierAnonce");
                 mRecyclerView.setAdapter(mAdapter);
                 if (mRecyclerView.getAdapter().getItemCount() > 0) {
                     mRecyclerView.smoothScrollToPosition(0);

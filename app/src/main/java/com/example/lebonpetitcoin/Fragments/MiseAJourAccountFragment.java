@@ -25,7 +25,7 @@ import com.google.firebase.firestore.Query;
 import java.util.ArrayList;
 
 public class MiseAJourAccountFragment extends Fragment {
-
+    private static final String TAG = "MiseAJourAccountFragment";
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cContacte = firestoreDB.collection("Contacte");
