@@ -12,9 +12,14 @@ import androidx.fragment.app.Fragment;
 import com.example.lebonpetitcoin.ClassFirestore.Statistique;
 import com.example.lebonpetitcoin.R;
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.DataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,6 +42,7 @@ public class StatsAnnonceFragment extends Fragment {
 
     ArrayList<BarEntry> barEntries;
     BarChart barChartMois;
+    BarChart barChartSemaine;
     int MAXJOUR = 30;
 
 
@@ -49,6 +55,7 @@ public class StatsAnnonceFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stats_annonce, container, false);
         barChartMois = view.findViewById(R.id.barchartMois);
+        barChartSemaine = view.findViewById(R.id.barchartSemaine);
         return view;
     }
 
@@ -87,17 +94,27 @@ public class StatsAnnonceFragment extends Fragment {
         BarDataSet set;
         int x = nbJour -1;
         barEntries = new ArrayList<>();
-        for (int i=0; i<nbJour; i++)
+
+
+        String[] labels = new String[nbJour];
+        for (int i = 0; i<nbJour; i++)
         {
-            //BarEntryLabels.add("J-"+i)
             barEntries.add(new BarEntry(x,array[i]));
+            labels[i]= "J-"+x;
             x--;
 
         }
+        barChart.getXAxis().setDrawGridLines(false);
+        barChart.getAxisLeft().setDrawGridLines(false);
+        barChart.getAxisRight().setDrawGridLines(false);
+        barChart.setPinchZoom(false);
+        barChart.getXAxis().setValueFormatter(new com.github.mikephil.charting.formatter.IndexAxisValueFormatter(labels));
+
         ArrayList<IBarDataSet> dataSets = new ArrayList<>();
-        set = new BarDataSet(barEntries, " ");
+        set = new BarDataSet(barEntries, "Nb vues");
         //set.setColors(ColorTemplate.VORDIPLOM_COLORS);
         set.setDrawValues(false);
+        set.setStackLabels(labels);
         dataSets.add(set);
         BarData data = new BarData(dataSets);
         barChart.setData(data);
@@ -107,6 +124,7 @@ public class StatsAnnonceFragment extends Fragment {
     }
 
 
+
     @Override
     public void onStart() {
         super.onStart();
@@ -114,6 +132,7 @@ public class StatsAnnonceFragment extends Fragment {
         if (bundle != null) {
             String idAnnonce = bundle.getString("idAnnonce","");
             getStatistiqueBar(idAnnonce,barChartMois,30);
+            getStatistiqueBar(idAnnonce,barChartSemaine,7);
         }
     }
 
@@ -122,3 +141,4 @@ public class StatsAnnonceFragment extends Fragment {
         super.onStop();
     }
 }
+

@@ -1979,6 +1979,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id barchartMois
+id barchartSemaine
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2991,6 +2992,7 @@ string title
 string titre
 string valider
 string visualisation_les_30_dernier_jours
+string visualisation_les_7_dernier_jours
 string voir_toute_les_annonces
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
