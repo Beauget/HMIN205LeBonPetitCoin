@@ -26,8 +26,11 @@ com/example/lebonpetitcoin/Fragments/SignInFragment.java
 com/example/lebonpetitcoin/Fragments/MessageFragment.java
  com.example.lebonpetitcoin.Fragments.MessageFragment
  com.example.lebonpetitcoin.Fragments.MessageFragment$1
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
+com/example/lebonpetitcoin/Adapter/AdapterMesAnnonces.java
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$1
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$2
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$ViewHolder
 com/example/lebonpetitcoin/Adapter/AdapterFavoris.java
  com.example.lebonpetitcoin.Adapter.AdapterFavoris
  com.example.lebonpetitcoin.Adapter.AdapterFavoris$1
@@ -125,12 +128,9 @@ com/example/lebonpetitcoin/Fragments/SignUpFragment.java
  com.example.lebonpetitcoin.Fragments.SignUpFragment$2
  com.example.lebonpetitcoin.Fragments.SignUpFragment$3
  com.example.lebonpetitcoin.Fragments.SignUpFragment$4
-com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder
+com/example/lebonpetitcoin/Fragments/StatsAnnonceFragment.java
+ com.example.lebonpetitcoin.Fragments.StatsAnnonceFragment
+ com.example.lebonpetitcoin.Fragments.StatsAnnonceFragment$1
 com/example/lebonpetitcoin/Fragments/MyAppGlideModule.java
  com.example.lebonpetitcoin.MyAppGlideModule
 com/example/lebonpetitcoin/Fragments/ParametresFragment.java
@@ -150,6 +150,7 @@ com/example/lebonpetitcoin/Fragments/ParametresFragment.java
 com/example/lebonpetitcoin/Fragments/AccueilFragment.java
  com.example.lebonpetitcoin.Fragments.AccueilFragment
  com.example.lebonpetitcoin.Fragments.AccueilFragment$1
+ com.example.lebonpetitcoin.Fragments.AccueilFragment$1$1
 com/example/lebonpetitcoin/Adapter/AdapterConversation.java
  com.example.lebonpetitcoin.Adapter.AdapterConversation
  com.example.lebonpetitcoin.Adapter.AdapterConversation$1
@@ -167,6 +168,9 @@ com/example/lebonpetitcoin/ClassFirestore/Favoris.java
  com.example.lebonpetitcoin.ClassFirestore.Favoris
 com/example/lebonpetitcoin/Fragments/MiseAJourAccountFragment.java
  com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment
+ com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$1
+ com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$2
+ com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$2$1
 com/example/lebonpetitcoin/Fragments/ModifierAnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$1
@@ -221,11 +225,11 @@ com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
  com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
 com/example/lebonpetitcoin/Adapter/AdapterChip.java
  com.example.lebonpetitcoin.Adapter.AdapterChip
-com/example/lebonpetitcoin/Fragments/StatsAnnonceFragment.java
- com.example.lebonpetitcoin.Fragments.StatsAnnonceFragment
- com.example.lebonpetitcoin.Fragments.StatsAnnonceFragment$1
-com/example/lebonpetitcoin/Adapter/AdapterMesAnnonces.java
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$1
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$2
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$ViewHolder
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
+com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder

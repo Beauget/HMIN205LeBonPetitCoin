@@ -131,6 +131,17 @@ public class AccueilFragment extends Fragment {
                     GlideApp.with(getContext())
                             .load(s)
                             .into(listImages.get(i));
+                    listImages.get(i).setOnClickListener(new View.OnClickListener() {
+                        private Fragment fragmentAnnonce;
+                        @Override
+                        public void onClick(View v) {
+                            if (this.fragmentAnnonce == null) this.fragmentAnnonce= AnnonceFragment.newInstance();
+                            Bundle arguments = new Bundle();
+                            arguments.putString( "idAnnonce", id);
+                            fragmentAnnonce.setArguments(arguments);
+                            ((AppCompatActivity) getContext()).getSupportFragmentManager()
+                                    .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
+                    }});
 
 
                     /*

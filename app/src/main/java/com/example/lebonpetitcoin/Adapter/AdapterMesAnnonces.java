@@ -115,7 +115,7 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
                         ((AppCompatActivity) mContext).getSupportFragmentManager()
                                 .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentModifierAnnonce).commit();
 
-                        Toast.makeText(mContext, id, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext, id, Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -134,7 +134,7 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
                         ((AppCompatActivity) mContext).getSupportFragmentManager()
                                 .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentStatistiqueAnnonce).commit();
 
-                        Toast.makeText(mContext, id, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext, id, Toast.LENGTH_SHORT).show();
                     }
                 });
 

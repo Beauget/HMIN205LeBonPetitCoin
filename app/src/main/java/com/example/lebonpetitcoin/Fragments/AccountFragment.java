@@ -72,6 +72,9 @@ public class AccountFragment extends Fragment {
                                 "Localisation : " +compte.getLocalisation()+ "\n";
                         if (compte.getSiret()!=null)
                                 text += "Siret: " +compte.getSiret()+ "\n";
+                        if(compte.getContacte()!=null &&compte.getContacte().size()>0){
+                            text += "Moyen de contacte à privilégier: " +compte.getContacte()+ "\n";
+                        }
 
                         compteTv.setText(text);
 
