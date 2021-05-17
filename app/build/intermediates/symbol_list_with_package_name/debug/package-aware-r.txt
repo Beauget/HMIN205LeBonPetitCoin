@@ -1871,6 +1871,7 @@ id GridLayout
 id LAnnonces
 id LC2
 id LCategorie
+id LContacte
 id LDepartement
 id LMoyenDePaiement
 id LResultat
@@ -2222,6 +2223,7 @@ id messageTextView
 id microsoft_signin_button
 id middle
 id mini
+id miseAjourButton
 id mobileNumber
 id month_grid
 id month_navigation_bar
@@ -2294,6 +2296,7 @@ id prix
 id prixEditText
 id prixTextView
 id pro
+id profile
 id progress_bar
 id progress_circular
 id progress_horizontal
@@ -2569,6 +2572,7 @@ layout fragment_accueil
 layout fragment_annonce
 layout fragment_conversation
 layout fragment_fav
+layout fragment_maj_account
 layout fragment_message
 layout fragment_modifier_annonce
 layout fragment_modifier_annonces
@@ -2759,6 +2763,7 @@ string common_signin_button_text_long
 string configuration
 string confirmPassword
 string connexion
+string contacter_le_vendeur_via_messagerie
 string content_description_media
 string d_connexion
 string deconnexion
@@ -2901,6 +2906,7 @@ string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string mes_favoris
 string messages
+string mettre_jour
 string mobileNumber
 string modifier_la_description
 string modifier_le_prix
@@ -2959,6 +2965,7 @@ string prix
 string prix_entre_0_01_et_9999
 string prix_entre_0_et_9999
 string profile
+string profile_de_l_auteur
 string project_id
 string recherche
 string recherche_avanc_e
@@ -2971,6 +2978,7 @@ string search_menu_title
 string show_pwd
 string signIn
 string signUp
+string signaler_l_annonce
 string statistiques
 string status_bar_notification_info_overflow
 string submit

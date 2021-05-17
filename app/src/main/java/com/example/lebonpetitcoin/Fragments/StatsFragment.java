@@ -59,9 +59,9 @@ public class StatsFragment extends Fragment {
 
     TextView textView;
     int nbVisualisation = 0;
-    ArrayList<PieEntry> pieEntries = new ArrayList<>();
+    ArrayList<PieEntry> pieEntries;
     PieChart pieChart;
-    ArrayList<BarEntry> barEntries = new ArrayList<>();
+    ArrayList<BarEntry> barEntries;
     BarChart barChart;
 
     int MAXJOUR = 30;
@@ -87,6 +87,7 @@ public class StatsFragment extends Fragment {
     }
 
     public void getStatistiquePie(String pseudo){
+        pieEntries = new ArrayList<>();
         Task<QuerySnapshot> query = cAnnonces.whereEqualTo("auteur", pseudo).get();
         query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -178,6 +179,7 @@ public class StatsFragment extends Fragment {
 
         BarDataSet set;
         int x = MAXJOUR -1;
+        barEntries = new ArrayList<>();
         for (int i=0; i<MAXJOUR; i++)
         {
             //BarEntryLabels.add("J-"+i)

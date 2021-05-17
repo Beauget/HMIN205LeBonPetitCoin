@@ -64,5 +64,9 @@
     <string name="moyen_de_paiement_s">Moyen de paiement(s)</string>
     <string name="prix_entre_0_et_9999">Prix entre 0 et 9999</string>
     <string name="supprimer">Supprimer</string>
+    <string name="profile_de_l_auteur">Profile de l\'auteur</string>
+    <string name="contacter_le_vendeur_via_messagerie">Contacter le vendeur via messagerie</string>
+    <string name="signaler_l_annonce">Signaler l\'annonce</string>
+    <string name="mettre_jour">Mettre à jour</string>
 
 </resources>

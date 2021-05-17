@@ -378,12 +378,16 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         //Matcher m = p.matcher(getEmailId);
 
         // Check if all strings are null or not
-        if (getPrix>9999||prixBase>getPrix|| getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0||imageUriList.size() ==0 )
+        if (getPrix>9999||prixBase>getPrix|| getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0 )
             Toast.makeText(getApplicationContext(),"echec",Toast.LENGTH_SHORT).show();
         else
             {
-                //uploadFile(getTitre,getDescription,Float.valueOf(getPrix),cat,mdp);
-                uploadImageToFirebaseStorage(getTitre,getDescription,getPrix,mdp,cat,imageUriList.size());
+                if(imageUriList.size() > 0 ) {
+                    uploadImageToFirebaseStorage(getTitre, getDescription, getPrix, mdp, cat, imageUriList.size());
+                }
+                else{
+                    addAnnonce(getTitre, getDescription,estProfessionnel,telephoneContact, mailContact,getPrix, mdp, cat,new ArrayList<String>());
+                }
             }
     }
 

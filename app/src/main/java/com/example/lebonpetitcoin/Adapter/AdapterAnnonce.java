@@ -49,7 +49,7 @@ public class AdapterAnnonce extends FirestoreRecyclerAdapter<Annonce, AdapterAnn
         String s;
 
         if( model.getImages().size()==0)
-            s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/seal2.jpg?alt=media&token=41553fe0-e1b7-4712-8eb1-043f2fd07d16";
+            s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846";
         else
             s = model.getFirstImage();
 
@@ -63,9 +63,7 @@ public class AdapterAnnonce extends FirestoreRecyclerAdapter<Annonce, AdapterAnn
         holder.getLike().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext,
-                        "Ajouté aux favoris! (pas du tout)",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,"Ajouté aux favoris!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -80,9 +78,7 @@ public class AdapterAnnonce extends FirestoreRecyclerAdapter<Annonce, AdapterAnn
                 ((AppCompatActivity) mContext).getSupportFragmentManager()
                         .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
 
-                Toast.makeText(mContext,
-                        id,
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
             }
         });
     }

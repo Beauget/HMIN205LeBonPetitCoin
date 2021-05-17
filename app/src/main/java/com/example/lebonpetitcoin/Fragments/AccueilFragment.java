@@ -124,7 +124,7 @@ public class AccueilFragment extends Fragment {
 
                     //si pas d'image, une générique
                     if( annonce.getImages().size()==0)
-                        s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/seal2.jpg?alt=media&token=41553fe0-e1b7-4712-8eb1-043f2fd07d16";
+                        s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846";
                     else
                         s = annonce.getFirstImage();
                     //On ajoute l'image

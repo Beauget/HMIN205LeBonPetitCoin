@@ -1,5 +1,7 @@
 package com.example.lebonpetitcoin.ClassFirestore;
 
+import java.util.ArrayList;
+
 //A voir
 public class Compte {
     String uid; //firebase.auth().currentUser.uid
@@ -10,6 +12,7 @@ public class Compte {
     String mailContact;
     String siret;
     String localisation;
+    ArrayList<String> contacte = new ArrayList<>();
 
     public Compte(){
         //public no args contructeur obligatoire sinon firebase crash
@@ -88,5 +91,13 @@ public class Compte {
 
     public void setLocalisation(String localisation) {
         this.localisation = localisation;
+    }
+
+    public ArrayList<String> getContacte() {
+        return contacte;
+    }
+
+    public void setContacte(ArrayList<String> contacte) {
+        this.contacte = contacte;
     }
 }

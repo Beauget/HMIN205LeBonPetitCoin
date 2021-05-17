@@ -16,18 +16,27 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lebonpetitcoin.ClassFirestore.Annonce;
+import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Favoris;
 import com.example.lebonpetitcoin.Fragments.AnnonceFragment;
 import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
 public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFavoris.FavorisHolder> {
     private Context mContext;
+    //RECUPERATION DE LA DB
+    private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
+    private CollectionReference cAnnonce= firestoreDB.collection("Annonce");
 
     public AdapterFavoris(@NonNull FirestoreRecyclerOptions<Favoris> options,Context c) {
         super(options);
@@ -38,10 +47,21 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
     protected void onBindViewHolder(@NonNull FavorisHolder holder, int position, @NonNull Favoris model) {
         holder.getTextViewTitle().setText(String.valueOf((model.getTitreAnnonce())));
 
+        cAnnonce.document(model.getIdAnnonce()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Annonce annonce = documentSnapshot.toObject(Annonce.class);
+
+                if (annonce != null) {
+                    holder.getTextViewTitle().setText(String.valueOf((annonce.getTitre())));
+                }
+            }
+        });
+
         String s;
 
         if( model.getImage().length()==0)
-            s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/seal2.jpg?alt=media&token=41553fe0-e1b7-4712-8eb1-043f2fd07d16";
+            s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846";
         else
             s = model.getImage();
 
@@ -65,6 +85,7 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
                 Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
             }
         });
+
 
     }
 

@@ -230,7 +230,7 @@ public class Annonce {
         if (images.size()>0)
             return this.images.get(0);
         else
-            return "";
+            return "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846";
     }
 
     @Exclude

@@ -107,12 +107,29 @@
 
     </com.google.android.material.chip.ChipGroup>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="10px"
+        />
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle_orange"
+        android:text="@string/profile_de_l_auteur"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="10px"
+        />
+
     <Button
         android:id="@+id/contacter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_rectangle_orange"
-        android:text="Contacter le vendeur"/>
+        android:text="@string/contacter_le_vendeur_via_messagerie"/>
 
     <View
         android:layout_width="fill_parent"
@@ -124,6 +141,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_rectangle_orange"
-        android:text="Signaler l'annonce"/>
+        android:text="@string/signaler_l_annonce"/>
 
 </LinearLayout>

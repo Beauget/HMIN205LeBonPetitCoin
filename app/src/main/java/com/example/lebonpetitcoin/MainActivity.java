@@ -508,6 +508,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     .centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
                                     .into(header_Menu);
                         }
+                        else{
+                            GlideApp.with(MainActivity.this)
+                                    .load("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/noPP.jpg?alt=media&token=a8e9f70c-85e6-48ad-9f00-433c726f9da2")
+                                    .centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
+                                    .into(header_Menu);
+                        }
                         if(estProfessionnel==true){
                             nav_Menu.findItem(R.id.activity_main_drawer_stats).setVisible(true);
                         }

@@ -1,5 +1,6 @@
 package com.example.lebonpetitcoin.Fragments;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -86,6 +87,7 @@ public class AnnonceFragment extends Fragment {
 
     Button contacter;
     Button signaler;
+    Button profile;
 
 
     private static final String TAG = "AnnonceFragment";
@@ -103,6 +105,7 @@ public class AnnonceFragment extends Fragment {
     private ListenerRegistration moyenDePaiementListener;
     ListView lv;
     private ChipGroup chipGroup;
+
 
     public static Fragment newInstance() {
             return (new AnnonceFragment());
@@ -126,12 +129,15 @@ public class AnnonceFragment extends Fragment {
 
         contacter = view.findViewById(R.id.contacter);
         signaler = view.findViewById(R.id.signaler);
+        profile = view.findViewById(R.id.profile);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        initButtons();
 
     }
 
@@ -179,6 +185,12 @@ public class AnnonceFragment extends Fragment {
                         GlideApp.with(getContext())
                                 .load(annonce.getImages().get(i))
                                 .into(images.get(i));
+                    }
+                    if (annonce.getImages().size()==0){
+                        images.get(0).setVisibility(View.VISIBLE);
+                        GlideApp.with(getContext())
+                                .load("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846")
+                                .into(images.get(0));
                     }
                     String text = "Description : " + annonce.getDescription() + "\n" +
                             "auteur : " + annonce.getAuteur() + "\n" +
@@ -281,19 +293,7 @@ public class AnnonceFragment extends Fragment {
                 description.setText(text);
             }
         });*/
-        lecteur =  ((MainActivity)getActivity()).lecteur ;
-        Toast.makeText(getContext(), lecteur,Toast.LENGTH_SHORT).show();
-        contacter.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                contacterAuteur(auteur,lecteur,titreAnnonce,idAnnonce,"");
-            }
-        });
 
-        signaler.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                contacterAdmin(auteur,lecteur,titreAnnonce,idAnnonce);
-            }
-        });
     }
 
     public ArrayList<String> getCategorie(ArrayList<String> categories){
@@ -319,7 +319,7 @@ public class AnnonceFragment extends Fragment {
                             } else {
                                 Log.d("TAG", "get failed with ", task.getException());
                             }
-                            Toast.makeText(getContext(),rslt.toString(),Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getContext(),rslt.toString(),Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -337,7 +337,7 @@ public class AnnonceFragment extends Fragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
                         Log.d(TAG,e.toString());
                     }
                 });
@@ -393,33 +393,46 @@ public class AnnonceFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(getContext(),"Conversation crée",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(),"Conversation crée",Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
                         Log.d(TAG,e.toString());
                     }
                 });
     }
-    /*
-        for (String id : categories){
-            rslt.add("avant");
-            cCategorie.document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {;
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Categorie categorie = documentSnapshot.toObject(Categorie.class);
 
-                if(categorie!=null)
-                {
-                    rslt.add(categorie.getIntitule());
-                    rslt.add("success");
-                }
-                else {rslt.add("null");}
+    void initButtons(){
+        lecteur =  ((MainActivity)getActivity()).lecteur ;
+        //Toast.makeText(getContext(), lecteur,Toast.LENGTH_SHORT).show();
+        contacter.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                contacterAuteur(auteur,lecteur,titreAnnonce,idAnnonce,"");
             }
         });
-        }
-        return rslt;}*/
+
+        signaler.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                contacterAdmin(auteur,lecteur,titreAnnonce,idAnnonce);
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            private Fragment fragmentAccount;
+            @Override
+            public void onClick(View v) {
+                if (this.fragmentAccount == null) this.fragmentAccount=AccountFragment.newInstance();
+                Bundle arguments = new Bundle();
+                arguments.putString( "pseudo", auteur);
+                fragmentAccount.setArguments(arguments);
+                ((AppCompatActivity)getContext()).getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAccount).commit();
+            }
+        });
+    }
+
+
 }

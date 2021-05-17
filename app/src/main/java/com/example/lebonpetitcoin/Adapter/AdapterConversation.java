@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Conversation;
 import com.example.lebonpetitcoin.Fragments.AnnonceFragment;
 import com.example.lebonpetitcoin.Fragments.ConversationFragment;
@@ -26,7 +27,10 @@ import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -34,6 +38,9 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
     private Context mContext;
     private String lecteur;
     private AdapterView.OnItemClickListener mListener;
+    //RECUPERATION DE LA DB
+    private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
+    private CollectionReference cAnnonce= firestoreDB.collection("Annonce");
 
     public AdapterConversation(@NonNull FirestoreRecyclerOptions<Conversation> options,Context c,String lecteur) {
         super(options);
@@ -68,11 +75,28 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
             model.setImage("");
         }
 
-        if (model.getImage().length()>0){
+        if (model.getIdAnnonce()!=null) {
+
+            cAnnonce.document(model.getIdAnnonce()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    Annonce annonce = documentSnapshot.toObject(Annonce.class);
+
+                    if (annonce != null) {
+                        GlideApp.with(mContext)
+                                .load(annonce.getFirstImage())
+                                .into(holder.getImageView());
+                    }
+                }
+            });
+        }
+
+
+       /* if (model.getImage().length()>0){
             GlideApp.with(mContext)
                     .load(model.getImage())
                     .into(holder.getImageView());
-        }
+        }*/
 
         holder.getImageView().setOnClickListener(new View.OnClickListener() {
             private Fragment fragmentConversation;

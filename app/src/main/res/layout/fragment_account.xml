@@ -9,7 +9,7 @@
         android:id="@+id/imageProfile"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/seal"
+
     />
 
     <TextView
@@ -22,9 +22,11 @@
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/miseAjourButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Changer d'image de profile (to do)"
+        android:visibility="gone"
+        android:text="@string/mettre_jour"
         />
 
 
