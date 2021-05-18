@@ -173,7 +173,10 @@ com/example/lebonpetitcoin/Fragments/MiseAJourAccountFragment.java
  com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment
  com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$1
  com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$2
- com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$2$1
+ com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$3
+ com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$3$1
+ com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$4
+ com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$5
 com/example/lebonpetitcoin/Fragments/ModifierAnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$1

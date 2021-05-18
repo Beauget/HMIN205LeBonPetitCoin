@@ -132,8 +132,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
             mImageUri = data.getData();
             Picasso.get().load(mImageUri).into(mImageView);
         }
-
-        }
+    }
 
     // Initialize all views
     private void initViews() {
@@ -349,7 +348,6 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                         Uri getUri = task.getResult();
                         String mUrl = getUri.toString();
 
-                        String downloadImageUrl = fileReference.getDownloadUrl().toString();
                         String siretString = siret.getText().toString();
                         if (siretString.length() == 0) {
                             inscription(email, password, pseudo, mUrl,false, telephoneContact, null, localisation);

@@ -392,7 +392,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.startTransactionFragment(this.fragmentAccueil);
     }
 
-    private void showAccountFragment() {
+    public void showAccountFragment() {
         if (this.fragmentAccount == null) this.fragmentAccount = AccountFragment.newInstance();
         this.startTransactionFragment(this.fragmentAccount);
     }
