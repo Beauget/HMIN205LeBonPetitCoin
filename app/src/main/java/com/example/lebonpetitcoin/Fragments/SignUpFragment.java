@@ -8,12 +8,15 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.example.lebonpetitcoin.AddImageActivity;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
+import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.CustomToast;
 import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,39 +31,55 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.installations.Utils;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 public class SignUpFragment extends Fragment implements OnClickListener {
-    private static View view;
-    private static EditText fullName, emailId, mobileNumber, location,
+    private View view;
+    private EditText fullName, emailId, mobileNumber, location,
             password, confirmPassword,siret;
     private ImageView mImageView;
     private  Uri mUri;
-    private static TextView login;
-    private static Button signUpButton;
-    private static CheckBox terms_conditions;
-    private static TextView already_user;
-    private static Fragment signin;
+    private TextView login;
+    private Button signUpButton;
+    private CheckBox terms_conditions;
+    private TextView already_user;
+    private  Fragment signin;
+    private Uri mImageUri;
+    private StorageReference mStorageRef;
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private StorageTask mUploadTask;
 
     //NOM DE LA CLASSE QUI SERA ENVOYÉ EN CAS D'ECHEC D'ENVOIE
     private static final String TAG = "SignUpFragment";
@@ -91,6 +110,30 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         setListeners();
         return view;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mStorageRef = FirebaseStorage.getInstance().getReference("ImageProfile");
+        mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK
+                && data != null && data.getData() != null) {
+            mImageUri = data.getData();
+            Picasso.get().load(mImageUri).into(mImageView);
+        }
+
+        }
 
     // Initialize all views
     private void initViews() {
@@ -145,35 +188,17 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 
     }
 
-    private void inscription(String email,String password,String pseudo, boolean estProfessionnel, String telephoneContact, String siret, String localisation){
+    private void inscription(String email,String password,String pseudo,String img, boolean estProfessionnel, String telephoneContact, String siret, String localisation){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener((Activity)getContext(),new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "Inscription en cours...");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            /*
-                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                                    .setPhotoUri(uri)
-                                    .build();
 
-                            user.updateProfile(profileChangeRequest)
-                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()) {
-                                                addCompte(user.getUid()," ",estProfessionnel,telephoneContact,mailContact,siret,localisation);
-                                            }
-                                        }
-                                    });*/
-                            if (mUri==null) {
-                                addCompte(user.getUid(), pseudo, "", estProfessionnel, telephoneContact, email, siret, localisation);
-                            }
-                            else {
-                                addCompte(user.getUid(), pseudo, mUri.toString(), estProfessionnel, telephoneContact, email, siret, localisation);
-                            }
+                            addCompte(user.getUid(), pseudo, img, estProfessionnel, telephoneContact, email, siret, localisation);
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -274,23 +299,77 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                         new CustomToast().Show_Toast(getActivity(), view,"Pseudo déja pris.");
                     }
                     else{
-                        String siretString = siret.getText().toString();
-                        if(siretString.length()==0) {
-                            inscription(getEmailId, getPassword,getFullName, false, getMobileNumber, null, getLocation);
+                        if (mUploadTask != null && mUploadTask.isInProgress()) {
+                            Toast.makeText(getContext(), "Envoie en cours", Toast.LENGTH_SHORT).show();
                         }
+                        else {
+                            uploadFile(getEmailId, getPassword, getFullName, getMobileNumber, getLocation);
 
-                        else{
-                            inscription(getEmailId,getPassword,getFullName,true,getMobileNumber,siretString,getLocation);
                         }
                     }
                 }
             });
         }
+    }
 
-            // Else do signup or do your stuff
-        else {
-            Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT).show();
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    private String getFileExtension(Uri uri) {
+        ContentResolver cR = getActivity().getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
+
+    private void uploadFile(String email,String password,String pseudo, String telephoneContact, String localisation) {
+        if (mImageUri != null) {
+            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
+                    + "." + getFileExtension(mImageUri));
+
+            final UploadTask mUploadTask = fileReference.putFile(mImageUri);
+            Task<Uri> uriTask = mUploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>(){
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
+                {
+                    if(!task.isSuccessful()){
+                        throw task.getException();
+                    }
+
+                    String downloadImageUrl = fileReference.getDownloadUrl().toString();
+                    return fileReference.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri getUri = task.getResult();
+                        String mUrl = getUri.toString();
+
+                        String downloadImageUrl = fileReference.getDownloadUrl().toString();
+                        String siretString = siret.getText().toString();
+                        if (siretString.length() == 0) {
+                            inscription(email, password, pseudo, mUrl,false, telephoneContact, null, localisation);
+                        }
+                        else {
+                            inscription(email, password, pseudo, mUrl,true, telephoneContact, siretString, localisation);
+                        }
+
+                    }
+                }
+            });
         }
-
+        else {
+            String siretString = siret.getText().toString();
+            if (siretString.length() == 0) {
+                inscription(email, password, pseudo, "",false, telephoneContact, null, localisation);
+            }
+            else {
+                inscription(email, password, pseudo, "",true, telephoneContact, siretString, localisation);
+            }
+        }
     }
 }

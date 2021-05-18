@@ -84,7 +84,8 @@ public class AddImageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mUploadTask != null && mUploadTask.isInProgress()) {
                     Toast.makeText(AddImageActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                else {
                     uploadFile();
                 }
             }

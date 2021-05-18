@@ -13,13 +13,13 @@
         />
 
     <TextView
-        android:id="@+id/compteTv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:padding="3dp"
         android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="@string/selectionner_votre_moyen_de_communication_privil_gi_si_tout_est_s_l_ctionn_cela_signifie_qu_il_y_en_a_aucun"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/LContacte"

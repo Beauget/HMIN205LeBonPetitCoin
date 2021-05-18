@@ -72,5 +72,6 @@
     <string name="nombre_de_vues_par_annonce">Nombre de vues par annonce</string>
     <string name="visualisation_les_30_dernier_jours">Visualisation les 30 dernier jours</string>
     <string name="visualisation_les_7_dernier_jours">visualisation les 7 dernier jours</string>
+    <string name="selectionner_votre_moyen_de_communication_privil_gi_si_tout_est_s_l_ctionn_cela_signifie_qu_il_y_en_a_aucun">Selectionner votre moyen de communication à privilégié, si tout est séléctionné cela signifie qu\'il y en a aucun.</string>
 
 </resources>

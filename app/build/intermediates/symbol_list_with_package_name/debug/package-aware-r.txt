@@ -2979,6 +2979,7 @@ string s_identifier
 string s_inscrire
 string search_hint
 string search_menu_title
+string selectionner_votre_moyen_de_communication_privil_gi_si_tout_est_s_l_ctionn_cela_signifie_qu_il_y_en_a_aucun
 string show_pwd
 string signIn
 string signUp
