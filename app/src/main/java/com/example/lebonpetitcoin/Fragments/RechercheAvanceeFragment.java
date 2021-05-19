@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+import com.example.lebonpetitcoin.ClassFirestore.Position;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -59,6 +61,9 @@ public class RechercheAvanceeFragment extends Fragment {
     Button rechercheButton;
     EditText rechercheText;
     TextView tv;
+    EditText km;
+    EditText departement;
+    CheckBox position;
 
     //GEOLOCALISATION
     LocationManager locationManager;
@@ -66,7 +71,8 @@ public class RechercheAvanceeFragment extends Fragment {
     LocationListener ecouteurGPS;
     double Latitude ;
     double Longitude;
-
+    Position positionP = new Position();
+    ArrayList<String> arrayListCategorie = new ArrayList<>();
 
     public static Fragment newInstance() {
         return (new RechercheAvanceeFragment());
@@ -79,6 +85,9 @@ public class RechercheAvanceeFragment extends Fragment {
         rechercheButton = view.findViewById(R.id.rechercheButton);
         rechercheText = view.findViewById(R.id.rechercheEditText);
         tv = view.findViewById(R.id.Tv);
+        position = view.findViewById(R.id.position);
+        km = view.findViewById(R.id.km);
+        departement = view.findViewById(R.id.departement);
         return view;
     }
 
@@ -90,22 +99,72 @@ public class RechercheAvanceeFragment extends Fragment {
                 .setQuery(queryC, Categorie.class)
                 .setLifecycleOwner(this)
                 .build();
-        ArrayList<String> arrayListCategorie = new ArrayList<>();
-        adapterCategorie = new AdapterCategorie(optionsC, getContext(), arrayListCategorie);
+        adapterCategorie = new AdapterCategorie(optionsC,getContext(),arrayListCategorie);
         recyclerViewCategorie.setAdapter(adapterCategorie);
-
         rechercheButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Fragment fragment = ResultatFragment.newInstance();
-                Bundle bundle = new Bundle();
-                bundle.putString("recherche", rechercheText.getText().toString());
-                bundle.putStringArrayList("categories", arrayListCategorie);
+                checkValidation();
+            }
+        });
+        //Toast.makeText(getContext(), ecouteurGPS.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    public void checkValidation(){
+        if (position.isChecked()&& departement.getText().toString().length()>0) {
+            Toast.makeText(getContext(), getString(R.string.badTooManyPosition), Toast.LENGTH_SHORT).show();
+        }
+        else if ((position.isChecked() || departement.getText().toString().length()>0)&& km.getText().toString().length()==0){
+            Toast.makeText(getContext(), getString(R.string.badNoKM), Toast.LENGTH_SHORT).show();
+        }
+        else if ((position.isChecked() || departement.getText().toString().length()>0)&& (Integer.valueOf(km.getText().toString())==0 ||Integer.valueOf(km.getText().toString())>200)){
+            Toast.makeText(getContext(), getString(R.string.badKM), Toast.LENGTH_SHORT).show();
+        }
+
+        else{
+            int kmInt=0;
+            if(km.getText().toString().length()>0)
+                kmInt = Integer.valueOf(km.getText().toString());
+
+            Fragment fragment = ResultatFragment.newInstance();
+            Bundle bundle = new Bundle();
+            bundle.putString("recherche", rechercheText.getText().toString());
+            bundle.putStringArrayList("categories", arrayListCategorie);
+
+            if (position.isChecked() && Latitude== 0 && Longitude == 0){
+                Toast.makeText(getContext(), getString(R.string.badPosition), Toast.LENGTH_SHORT).show();
+            }
+
+            else if (position.isChecked() && (Latitude!= 0 || Longitude != 0)){
+                bundle.putInt("km", kmInt);
+                bundle.putDouble("latitude", Latitude);
+                bundle.putDouble("longitude", Longitude);
                 fragment.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.activity_main_frame_layout, fragment).commit();
             }
-        });
-        //Toast.makeText(getContext(), ecouteurGPS.toString(), Toast.LENGTH_SHORT).show();
+
+            else if (departement.getText().toString().length()>0){
+                String d = departement.getText().toString();
+                if (positionP.isDepartement(d)){
+                    double latitude = positionP.getDepartement(d).getLatitude();
+                    double longitude = positionP.getDepartement(d).getLongitude();
+                    bundle.putInt("km", kmInt);
+                    bundle.putDouble("latitude", latitude);
+                    bundle.putDouble("longitude", longitude);
+                    fragment.setArguments(bundle);
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.activity_main_frame_layout, fragment).commit();
+                }
+                else {
+                    Toast.makeText(getContext(), getString(R.string.badDepartement), Toast.LENGTH_SHORT).show();
+                }
+            }
+            else{
+            fragment.setArguments(bundle);
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.activity_main_frame_layout, fragment).commit();}
+        }
+
     }
 
     private void initialiserLocalisation()
@@ -239,13 +298,13 @@ public class RechercheAvanceeFragment extends Fragment {
             @Override
             public void onProviderDisabled(String fournisseur)
             {
-                Toast.makeText(getContext(), fournisseur + " désactivé !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), fournisseur + getString(R.string.desactive), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onProviderEnabled(String fournisseur)
             {
-                Toast.makeText(getContext(), fournisseur + " activé !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), fournisseur + getString(R.string.active), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -254,16 +313,16 @@ public class RechercheAvanceeFragment extends Fragment {
                 switch(status)
                 {
                     case LocationProvider.AVAILABLE:
-                        Toast.makeText(getActivity().getApplicationContext(), fournisseur + " état disponible", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), fournisseur + " "+ getString(R.string.etat_disponible), Toast.LENGTH_SHORT).show();
                         break;
                     case LocationProvider.OUT_OF_SERVICE:
-                        Toast.makeText(getActivity().getApplicationContext(), fournisseur + " état indisponible", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), fournisseur +" "+ getString(R.string.etat_indisponible), Toast.LENGTH_SHORT).show();
                         break;
                     case LocationProvider.TEMPORARILY_UNAVAILABLE:
-                        Toast.makeText(getActivity().getApplicationContext(), fournisseur + " état temporairement indisponible", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), fournisseur +" "+ getString(R.string.etat_temporairement_indisponible), Toast.LENGTH_SHORT).show();
                         break;
                     default:
-                        Toast.makeText(getActivity().getApplicationContext(), fournisseur + " état : " + status, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), fournisseur +" "+ getString(R.string.etat)+" : "+ status, Toast.LENGTH_SHORT).show();
                 }
             }
         };

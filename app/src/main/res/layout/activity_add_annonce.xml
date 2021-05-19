@@ -166,7 +166,7 @@
                 android:id="@+id/departement"
                 android:hint="@string/d_partement_ex_01_20_34"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:inputType="number"/>
             <Button
                 android:id="@+id/UploadBtn"

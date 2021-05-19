@@ -244,7 +244,8 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         String getFullName = fullName.getText().toString();
         String getEmailId = emailId.getText().toString();
         String getMobileNumber = mobileNumber.getText().toString();
-        String getLocation = location.getText().toString();
+        //String getLocation = location.getText().toString();
+        String getLocation = "";
         String getPassword = password.getText().toString();
         String getConfirmPassword = confirmPassword.getText().toString();
 
@@ -259,10 +260,10 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         if (getFullName.equals("") || getFullName.length() == 0
                 || getEmailId.equals("") || getEmailId.length() == 0
                 || getMobileNumber.equals("") || getMobileNumber.length() == 0
-                || getLocation.equals("") || getLocation.length() == 0
                 || getPassword.equals("") || getPassword.length() == 0
                 || getConfirmPassword.equals("")
                 || getConfirmPassword.length() == 0)
+            // || getLocation.equals("") || getLocation.length() == 0
 
             new CustomToast().Show_Toast(getActivity(), view,
                     "Remplir les champs obligatoires");

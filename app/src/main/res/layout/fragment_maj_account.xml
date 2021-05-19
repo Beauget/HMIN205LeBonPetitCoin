@@ -5,11 +5,16 @@
     android:orientation="vertical"
     android:padding="20dp" >
 
+    <TextView
+        android:text="@string/cliquez_sur_la_zone_grise_si_vous_souhaitez_changer_d_image_de_profile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
     <ImageView
         android:id="@+id/imageProfile"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-
+        android:background="@color/hint"
         />
 
     <TextView

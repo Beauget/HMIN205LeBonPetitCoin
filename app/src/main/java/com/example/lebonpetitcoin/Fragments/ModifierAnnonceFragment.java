@@ -1,5 +1,7 @@
 package com.example.lebonpetitcoin.Fragments;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +33,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -144,7 +147,22 @@ public class ModifierAnnonceFragment extends Fragment {
         supprimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                supprimer();
+                new MaterialAlertDialogBuilder(getContext())
+                        .setTitle(R.string.attention)
+                        .setMessage(R.string.confirmation)
+                        .setNegativeButton(R.string.annuler, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                        .setPositiveButton(R.string.supprimer, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                supprimer();
+                            }
+                        })
+                        .show();
             }
         });
     }

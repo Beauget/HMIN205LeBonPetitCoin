@@ -14,9 +14,9 @@
         />
     <EditText
         android:id="@+id/rechercheEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ECRIRE ICI" />
+        android:hint="Mots clées" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/LCategorie"
@@ -31,9 +31,34 @@
         android:layout_height="100dp"
         android:scrollbars="vertical"
         />
+    <EditText
+        android:id="@+id/km"
+        android:hint="Distance maximum en km (entre 1 et 200)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+    <CheckBox
+        android:id="@+id/position"
+        android:text="@string/position_exacte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="@string/vous_ne_voulez_pas_donner_votre_position_exacte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <EditText
+        android:id="@+id/departement"
+        android:hint="@string/d_partement_ex_01_20_34"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
     <Button
         android:id="@+id/rechercheButton"
         android:text="@string/rechercher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

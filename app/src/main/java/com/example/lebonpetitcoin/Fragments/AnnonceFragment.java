@@ -1,8 +1,15 @@
 package com.example.lebonpetitcoin.Fragments;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import android.content.DialogInterface;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +34,7 @@ import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Conversation;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
+import com.example.lebonpetitcoin.ClassFirestore.Position;
 import com.example.lebonpetitcoin.ClassFirestore.Statistique;
 import com.example.lebonpetitcoin.CustomToast;
 import com.example.lebonpetitcoin.GlideApp;
@@ -46,10 +54,13 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.io.IOException;
 import java.util.Calendar;
 
 import java.text.DateFormat;
@@ -60,6 +71,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -185,6 +197,23 @@ public class AnnonceFragment extends Fragment {
                         GlideApp.with(getContext())
                                 .load(annonce.getImages().get(i))
                                 .into(images.get(i));
+
+                        /*images.get(i).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                AlertDialog.Builder alertadd = new AlertDialog.Builder(getContext());
+                                LayoutInflater factory = LayoutInflater.from(getContext());
+                                final View viewImage = factory.inflate(R.layout.dialog_custom_layout, null);
+                                alertadd.setView(view);
+                                alertadd.setNeutralButton("Here!", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dlg, int sumthin) {
+
+                                    }
+                                });
+                                alertadd.show();
+                            }
+                        });*/
+
                     }
                     if (annonce.getImages().size()==0){
                         images.get(0).setVisibility(View.VISIBLE);
@@ -192,23 +221,41 @@ public class AnnonceFragment extends Fragment {
                                 .load("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846")
                                 .into(images.get(0));
                     }
-                    String text = "Description : " + annonce.getDescription() + "\n" +
-                            "auteur : " + annonce.getAuteur() + "\n" +
-                            "prix : " + String.valueOf(annonce.getPrix()) + "\n" +
-                            "Date : " + dateFormat.format(annonce.getDatePoste()) + "\n" ;
+                    String text = getString(R.string.description)+" : " + annonce.getDescription() + "\n" +
+                            getString(R.string.auteur)+ " : " + annonce.getAuteur() + "\n" +
+                            getString(R.string.prix)+" : " + String.valueOf(annonce.getPrix()) +"€" +"\n" +
+                            getString(R.string.date)+" : " + dateFormat.format(annonce.getDatePoste()) + "\n" ;
+                    if (annonce.getDepartement()!=null && annonce.getPosition()!=null){
+                        if (annonce.getDepartement().length()>0)
+                        text+= getString(R.string.departement)+" : " + annonce.getDepartement()+"\n";
+
+                        else{
+                            Location location = new Location("Position Annonce");
+                            location.setLatitude(annonce.getPosition().getLatitude());
+                            location.setLongitude(annonce.getPosition().getLongitude());
+                            String adresse = setAdresse(location);
+
+                            if(adresse!=null){
+                                text+= getString(R.string.adresse)+" : " + adresse+"\n";
+                            }
+
+
+                        }
+                    }
+
 
                     auteur = annonce.getAuteur();
                     titreAnnonce = annonce.getTitre();
                     idAnnonce = documentSnapshot.getId();
 
-                    text+="Moyen de paiement : ";
+                    text+=getString(R.string.moyen_de_paiement_s)+" : ";
                     for(String s : annonce.getPaiement())
                     {
                         text+=s+" ";
                     }
                     text+="\n";
 
-                    text+="Categorie : ";
+                    text+=getString(R.string.cat_gorie_s)+" : ";
                     for(String s : annonce.getCategories())
                     {
                         text+=s+" ";
@@ -433,6 +480,46 @@ public class AnnonceFragment extends Fragment {
             }
         });
     }
+
+    private String setAdresse(Location localisation){
+        Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+
+        List<Address> adresses = null;
+        try
+        {
+            adresses = geocoder.getFromLocation(localisation.getLatitude(), localisation.getLongitude(), 1);
+        }
+        catch (IOException ioException)
+        {
+            Log.e("GPS", "erreur", ioException);
+        }
+        catch (IllegalArgumentException illegalArgumentException)
+        {
+            Log.e("GPS", "erreur ", illegalArgumentException);
+        }
+
+        if (adresses == null || adresses.size()  == 0)
+        {
+            Log.e("GPS", "erreur aucune adresse !");
+        }
+        else
+        {
+            Address adresse = adresses.get(0);
+            ArrayList<String> addressFragments = new ArrayList<String>();
+
+            String strAdresse = adresse.getAddressLine(0) + ", " + adresse.getLocality();
+            Log.d("GPS", "adresse : " + strAdresse);
+
+            for(int i = 0; i <= adresse.getMaxAddressLineIndex(); i++)
+            {
+                addressFragments.add(adresse.getAddressLine(i));
+            }
+            Log.d("GPS", TextUtils.join(System.getProperty("line.separator"), addressFragments));
+            return TextUtils.join(System.getProperty("line.separator"), addressFragments);
+        }
+        return  null;
+    }
+
 
 
 }

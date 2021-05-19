@@ -1,12 +1,18 @@
 package com.example.lebonpetitcoin.Fragments;
 
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,8 +27,11 @@ import com.example.lebonpetitcoin.ClassFirestore.Conversation;
 import com.example.lebonpetitcoin.ClassFirestore.Message;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
@@ -32,6 +41,10 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 
 public class ConversationFragment extends Fragment {
@@ -51,6 +64,12 @@ public class ConversationFragment extends Fragment {
     private RecyclerView recyclerView;
     private EditText messageAEnvoyer;
     private Button envoyerMessage;
+    private Button ajouterImage;
+    private Button supprimerImage;
+    private ImageView imageView;
+    private Uri uri;
+    private StorageReference mStorageRef;
+    private static final int PICK_IMAGE_REQUEST = 1;
     private AdapterMessage adapter;
 
 
@@ -64,7 +83,9 @@ public class ConversationFragment extends Fragment {
         recyclerView =  view.findViewById(R.id.reyclerview_message_list);
         messageAEnvoyer =  view.findViewById(R.id.edittext_message);
         envoyerMessage = view.findViewById(R.id.button_message);
-
+        ajouterImage = view.findViewById(R.id.button_image_add);
+        supprimerImage = view.findViewById(R.id.button_image_delete);
+        imageView = view.findViewById(R.id.imageView_image);
         return view;
 
     }
@@ -77,43 +98,50 @@ public class ConversationFragment extends Fragment {
         if (bundle != null) {
             id = bundle.getString("idConversation","");
             lecteur = bundle.getString("lecteur","");
-        }
 
-        /*
-        conversationListener = cMessage.orderBy("date", Query.Direction.ASCENDING).whereEqualTo("idConversation",id).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot snapshots,
-                                @Nullable FirebaseFirestoreException e) {
-                if (e != null) {
-                    Log.w("TAG", "listen:error", e);
-                    return;
+            mStorageRef = FirebaseStorage.getInstance().getReference("ImageMessagerie");
+
+            Query query = cMessage.orderBy("date", Query.Direction.ASCENDING).whereEqualTo("idConversation",id);
+            FirestoreRecyclerOptions<Message> options = new FirestoreRecyclerOptions.Builder<Message>()
+                    .setQuery(query, Message.class)
+                    .build();
+            adapter = new AdapterMessage(options,getContext(),lecteur,"");
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recyclerView.setAdapter(adapter);
+
+            envoyerMessage.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    uploadFile(id,lecteur);
                 }
-                for (DocumentChange dc : snapshots.getDocumentChanges()) {
-                    switch (dc.getType()) {
-                        case ADDED:
-                            Log.d("TAG", "New Msg: " + dc.getDocument().toObject(Message.class));
-                            break;
-                        case MODIFIED:
-                            Log.d("TAG", "Modified Msg: " + dc.getDocument().toObject(Message.class));
-                            break;
-                        case REMOVED:
-                            Log.d("TAG", "Removed Msg: " + dc.getDocument().toObject(Message.class));
-                            break;
-                    } } }
-        });*/
-        Query query = cMessage.orderBy("date", Query.Direction.ASCENDING).whereEqualTo("idConversation",id);
-        FirestoreRecyclerOptions<Message> options = new FirestoreRecyclerOptions.Builder<Message>()
-                .setQuery(query, Message.class)
-                .build();
-        adapter = new AdapterMessage(options,getContext(),lecteur,"");
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(adapter);
+            });
 
-        envoyerMessage.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                envoyerMessage(id,lecteur);
-            }
-        });
+            ajouterImage.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    ajouterImage();
+                }
+            });
+
+            supprimerImage.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    supprimerImage();
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK
+                && data != null && data.getData() != null) {
+            uri = data.getData();
+            imageView.setVisibility(View.VISIBLE);
+            Picasso.get().load(uri).into(imageView);
+            ajouterImage.setVisibility(View.GONE);
+            imageView.setVisibility(View.VISIBLE);
+            supprimerImage.setVisibility(View.VISIBLE);
+        }
     }
 
     public void onStart() {
@@ -139,10 +167,10 @@ public class ConversationFragment extends Fragment {
         conversationListener.remove();
     }
 
-    void envoyerMessage(String idConversation, String auteur){
+    void envoyerMessage(String idConversation, String auteur,String image){
         if (messageAEnvoyer.getText().toString().length()>0)
         {
-            Message message = new Message(idConversation,auteur, messageAEnvoyer.getText().toString(), "");
+            Message message = new Message(idConversation,auteur, messageAEnvoyer.getText().toString(), image);
 
             cMessage.add(message)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -163,5 +191,65 @@ public class ConversationFragment extends Fragment {
 
         }
         messageAEnvoyer.setText("");
+        supprimerImage();
+    }
+
+    void ajouterImage(){
+        openFileChooser();
+    }
+
+    void supprimerImage(){
+        imageView.setVisibility(View.GONE);
+        ajouterImage.setVisibility(View.VISIBLE);
+        supprimerImage.setVisibility(View.GONE);
+        uri = null;
+    }
+
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    private String getFileExtension(Uri uri) {
+        ContentResolver cR = getActivity().getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+    }
+
+    private void uploadFile(String idConversation, String auteur) {
+        if (uri != null) {
+            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
+                    + "." + getFileExtension(uri));
+
+            final UploadTask mUploadTask = fileReference.putFile(uri);
+            Task<Uri> uriTask = mUploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>(){
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
+                {
+                    if(!task.isSuccessful()){
+                        throw task.getException();
+                    }
+
+                    String downloadImageUrl = fileReference.getDownloadUrl().toString();
+                    return fileReference.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri getUri = task.getResult();
+                        String mUrl = getUri.toString();
+                        envoyerMessage(idConversation, auteur,mUrl);
+
+
+                    }
+                }
+            });
+        }
+        else {
+            envoyerMessage(idConversation, auteur,"");
+        }
     }
 }

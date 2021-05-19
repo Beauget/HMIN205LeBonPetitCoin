@@ -66,14 +66,19 @@ public class AccountFragment extends Fragment {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Compte compte = document.toObject(Compte.class);
-                        String text = "Pseudo : " +compte.getPseudo()+ "\n"+
-                                "tel : " +compte.getTelephoneContact()+ "\n"+
-                                "e-mail: " +compte.getMailContact() +"\n"+
-                                "Localisation : " +compte.getLocalisation()+ "\n";
+                        String text = getString(R.string.fullName)+" : " +compte.getPseudo()+ "\n"+
+                                getString(R.string.mobileNumber)+ " : " +compte.getTelephoneContact()+ "\n"+
+                                        getString(R.string.email)+" : " +compte.getMailContact() +"\n";
+                                //+"Localisation : " +compte.getLocalisation()+ "\n";
                         if (compte.getSiret()!=null)
-                                text += "Siret: " +compte.getSiret()+ "\n";
+                                text += getString(R.string.siret)+ " : " +compte.getSiret()+ "\n";
                         if(compte.getContacte()!=null &&compte.getContacte().size()>0 &&compte.getContacte().size()<3){
-                            text += "Moyen de contacte à privilégier: " +compte.getContacte()+ "\n";
+                            text +=getString(R.string.moyen_de_contacte_a_privilegier)+ " : " ;
+                            for(String s : compte.getContacte())
+                            {
+                                text+=s+" ";
+                            }
+                            text+="\n";
                         }
 
                         compteTv.setText(text);
@@ -104,12 +109,15 @@ public class AccountFragment extends Fragment {
                 Compte compte = documentSnapshot.toObject(Compte.class);
 
                 if (compte != null) {
-                    String text = "Pseudo : " + compte.getPseudo() + "\n" +
-                            "tel : " + compte.getTelephoneContact() + "\n" +
-                            "e-mail: " + compte.getMailContact() + "\n" +
-                            "Localisation : " + compte.getLocalisation() + "\n";
+                    String text = getString(R.string.fullName)+" : " +compte.getPseudo()+ "\n"+
+                            getString(R.string.mobileNumber)+ " : " +compte.getTelephoneContact()+ "\n"+
+                                    getString(R.string.email)+" : " +compte.getMailContact() +"\n";
+                    //+"Localisation : " +compte.getLocalisation()+ "\n";
                     if (compte.getSiret() != null)
-                        text += "Siret: " + compte.getSiret() + "\n";
+                        text += getString(R.string.siret)+ " : " +compte.getSiret()+ "\n";
+                    if(compte.getContacte()!=null &&compte.getContacte().size()>0 &&compte.getContacte().size()<3){
+                        text +=getString(R.string.moyen_de_contacte_a_privilegier)+ " : " +compte.getContacte()+ "\n";
+                    }
 
                     compteTv.setText(text);
 

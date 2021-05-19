@@ -39,7 +39,8 @@
                 <item
                     android:id="@+id/activity_main_drawer_stats"
                     android:icon="@drawable/ic_baseline_show_chart_24"
-                    android:title="@string/statistiques" />
+                    android:title="@string/statistiques"
+                    android:visible="false"/>
                 <item
                     android:id="@+id/activity_main_drawer_modifier_annonce"
                     android:icon="@drawable/ic_baseline_settings_24"

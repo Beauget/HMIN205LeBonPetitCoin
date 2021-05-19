@@ -3,78 +3,130 @@
     <string name="barTitle">LeBonPetitCoin</string>
     <string name="d_connexion">Déconnexion</string>
 
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="closebutton">Close Button for Activity</string>
+
+
     <!-- Used in NavigationDrawer -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="email">E-mail</string>
-    <string name="passowrd">Password</string>
-    <string name="login">S\'authentifier</string>
-    <string name="show_pwd">Voir mot de passe</string>
-    <string name="hide_pwd">Cacher mot de passe</string>
-    <string name="forgot">Mot de passe oublié ?</string>
-    <string name="closebutton">Close Button for Activity</string>
-    <string name="newUser">Pas encore membre ? Inscrivez-vous ici.</string>
-    <string name="fullName">Nom complet</string>
-    <string name="mobileNumber">Numéro de téléphone</string>
-    <string name="location">Localisation</string>
-    <string name="confirmPassword">Confirmez le mot de passe</string>
-    <string name="terms_conditions">En cliquant vous acceptez les termes de notre politiques de confidentialités.</string>
-    <string name="signUp">S\'inscrire</string>
-    <string name="already_user"><u>Vous avez déjà un compte ? Cliquez ici.</u></string>
-    <string name="registered_emailid">Entrez votre mail ici : </string>
-    <string name="submit">Envoyez</string>
     <string name="signIn">S\'authentifier</string>
     <string name="mon_compte">Mon compte</string>
     <string name="messages">Messages</string>
     <string name="mes_favoris">Mes favoris</string>
     <string name="statistiques">Statistiques</string>
     <string name="s_identifier">S\'identifier</string>
-    <string name="s_inscrire">S\'inscrire</string>
-    <string name="content_description_media">DescriptionAnnonce</string>
-    <string name="title">TitreAnnonce</string>
-    <string name="app_label">LeBonPetitCoin</string>
-    <string name="search_hint">Recherche...</string>
-    <string name="password">Mot de passe</string>
     <string name="parametres">Parametres</string>
     <string name="deconnexion">Deconnexion</string>
-    <string name="identifiant">Identifiant</string>
+    <string name="app_label">LeBonPetitCoin</string>
+    <string name="search_hint">Recherche...</string>
     <string name="lebonpetitcoin">LeBonPetitCoin</string>
     <string name="recherche_avanc_e">Recherche Avancée</string>
     <string name="modifier_mes_annonces">Modifier mes annonces</string>
-    <string name="recherche">Recherche</string>
     <string name="profile">Profile</string>
     <string name="connexion">Connexion</string>
     <string name="configuration">Configuration</string>
+    <string name="recherche">Recherche</string>
     <string name="voir_toute_les_annonces">Voir toute les annonces</string>
     <string name="rechercher">Rechercher</string>
+
+    <!-- Used in SignUp/SignIn -->
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="signUp">S\'inscrire</string>
+    <string name="registered_emailid">Entrez votre mail ici : </string>
+    <string name="email">E-mail</string>
+    <string name="passowrd">Password</string>
+    <string name="login">S\'authentifier</string>
+    <string name="show_pwd">Voir mot de passe</string>
+    <string name="hide_pwd">Cacher mot de passe</string>
+    <string name="forgot">Mot de passe oublié ?</string>
+    <string name="newUser">Pas encore membre ? Inscrivez-vous ici.</string>
+    <string name="fullName">Pseudonyme</string>
+    <string name="mobileNumber">Numéro de téléphone</string>
+    <string name="location">Localisation</string>
+    <string name="confirmPassword">Confirmez le mot de passe</string>
+    <string name="already_user"><u>Vous avez déjà un compte ? Cliquez ici.</u></string>
+    <string name="terms_conditions">En cliquant vous acceptez les termes de notre politiques de confidentialités.</string>
+    <string name="password">Mot de passe</string>
+    <string name="identifiant">Identifiant</string>
+    <string name="siret">Siret</string>
+
+    <!-- Used in addAnnonce/ModifierAnnonce -->
     <string name="modifier_la_description">Modifier la description</string>
     <string name="modifier_le_prix">Modifier le prix</string>
     <string name="prix">Prix</string>
     <string name="moyen_de_paiement">Moyen de paiement</string>
     <string name="cat_gorie">Catégorie</string>
     <string name="description">Description</string>
-    <string name="valider">Valider</string>
     <string name="modifier_le_titre">Modifier le titre</string>
     <string name="titre">Titre</string>
     <string name="prix_entre_0_01_et_9999">Prix : entre 0.01 et 9999</string>
     <string name="cat_gorie_s">Catégorie(s)</string>
     <string name="moyen_de_paiement_s">Moyen de paiement(s)</string>
     <string name="prix_entre_0_et_9999">Prix entre 0 et 9999</string>
-    <string name="supprimer">Supprimer</string>
+
+
+
+
+    <!-- Used in Annonce -->
+    <string name="auteur">Auteur</string>
+    <string name="date">Date</string>
+    <string name="title">TitreAnnonce</string>
+    <string name="departement">Département</string>
+    <string name="adresse">Adresse</string>
+    <string name="content_description_media">DescriptionAnnonce</string>
     <string name="profile_de_l_auteur">Profile de l\'auteur</string>
     <string name="contacter_le_vendeur_via_messagerie">Contacter le vendeur via messagerie</string>
     <string name="signaler_l_annonce">Signaler l\'annonce</string>
-    <string name="mettre_jour">Mettre à jour</string>
+
+    <!-- Used in Profile -->
+    <string name="selectionner_votre_moyen_de_communication_privil_gi_si_tout_est_s_l_ctionn_cela_signifie_qu_il_y_en_a_aucun">Selectionner votre moyen de communication à privilégié, si tout est séléctionné cela signifie qu\'il y en a aucun.</string>
+    <string name="cliquez_sur_la_zone_grise_si_vous_souhaitez_changer_d_image_de_profile">Cliquez sur la zone grise si vous souhaitez changer d\'image de profile</string>
+    <string name="cliquez_sur_la_zone_grise_vous_souhaitez_ajouter_une_image_de_profile">Cliquez sur la zone grise vous souhaitez ajouter une image de profile</string>
+    <string name="moyen_de_contacte_a_privilegier">Moyen de contacte à privilégier</string>
+
+
+
+    <!-- Used in Statistique -->
     <string name="cliquer_sur_une_de_vos_annonces_pour_avoir_des_d_tails">Cliquer sur une de vos annonces pour avoir des détails</string>
     <string name="nombre_de_vues_par_annonce">Nombre de vues par annonce</string>
     <string name="visualisation_les_30_dernier_jours">Visualisation les 30 dernier jours</string>
     <string name="visualisation_les_7_dernier_jours">visualisation les 7 dernier jours</string>
-    <string name="selectionner_votre_moyen_de_communication_privil_gi_si_tout_est_s_l_ctionn_cela_signifie_qu_il_y_en_a_aucun">Selectionner votre moyen de communication à privilégié, si tout est séléctionné cela signifie qu\'il y en a aucun.</string>
+
+    <!-- Used in Recherche -->
     <string name="position_exacte">Position exacte</string>
     <string name="d_partement_ex_01_20_34">Département. Ex : 01, 20, 34</string>
     <string name="vous_ne_voulez_pas_donner_votre_position_exacte">Vous ne voulez pas donner votre position exacte ?</string>
+
+    <!-- Used in Conversation -->
+    <string name="ecrire_un_message">Ecrire un message</string>
+    <string name="attention">Attention !</string>
+    <string name="confirmation">Êtes-vous sûre de vouloir supprimer votre annonces ?</string>
+
+    <!-- Used in Everywhere -->
+    <string name="annuler">Annuler</string>
+    <string name="valider">Valider</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="mettre_jour">Mettre à jour</string>
+    <string name="submit">Envoyer</string>
+
+    <!-- Used in RechercheAvancee-->
+    <string name="badDepartement">Mauvais format de département</string>
+    <string name="badPosition">Échec de la récupération de la position</string>
+    <string name="badTooManyPosition">Choisir un seul moyen de recherche avec localisation</string>
+    <string name="badNoKM">Pour une recherche avec localisation mettre un nombre de km maximum</string>
+    <string name="badKM">Le nombre de km doit se trouver entre 1 et 200 km </string>
+
+    <!-- Used in Localisation-->
+    <string name="etat_disponible">État disponible</string>
+    <string name="etat_indisponible">État indisponible"</string>
+    <string name="etat_temporairement_indisponible">État temporairement indisponible</string>
+    <string name="etat">État</string>
+    <string name="active"> activé !</string>
+    <string name="desactive"> désactivé !</string>
+
+
+
 
 </resources>

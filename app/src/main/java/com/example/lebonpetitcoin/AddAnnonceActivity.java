@@ -390,7 +390,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         if (prix.getText().toString().length() > 0) {
             prixBase = Float.parseFloat(prix.getText().toString());
             int prixInteger = (int) (prixBase * 100);
-            getPrix = prixInteger / 100;
+            getPrix = (float)prixInteger / 100;
         }
 
         String getTitre = titre.getText().toString();
@@ -402,8 +402,10 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         //Matcher m = p.matcher(getEmailId);
 
         // Check if all strings are null or not
-        if (getPrix > 9999 || prixBase > getPrix || getTitre.length() == 0 || getDescription.equals("") || cat.size() == 0 || mdp.size() == 0 || (getDepartement.length() > 0 && position.isChecked()))
+        if (getPrix > 9999 || prixBase > getPrix || getTitre.length() == 0 || getDescription.equals("") || cat.size() == 0 || mdp.size() == 0 || (getDepartement.length() > 0 && position.isChecked())){
             Toast.makeText(getApplicationContext(), "echec", Toast.LENGTH_SHORT).show();
+        }
+
 
         else {
             if (position.isChecked()) {
@@ -423,9 +425,9 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 if (position.isDepartement(getDepartement)) {
                     Position.Departement departement = position.getDepartement(getDepartement);
                     if (imageUriList.size() > 0) {
-                        uploadImageToFirebaseStorage(getTitre, getDescription, getPrix, mdp, cat, imageUriList.size(), departement.getLatitude(), departement.getLongitude(), getDepartement);
+                        uploadImageToFirebaseStorage(getTitre, getDescription, getPrix, mdp, cat, imageUriList.size(), departement.getLatitude(), departement.getLongitude(), getDepartement+"000, "+departement.getNom()+", France");
                     } else {
-                        addAnnonce(getTitre, getDescription, estProfessionnel, telephoneContact, mailContact, getPrix, mdp, cat, new ArrayList<String>(), departement.getLatitude(), departement.getLongitude(), getDepartement);
+                        addAnnonce(getTitre, getDescription, estProfessionnel, telephoneContact, mailContact, getPrix, mdp, cat, new ArrayList<String>(), departement.getLatitude(), departement.getLongitude(), getDepartement+"000, "+departement.getNom()+", France");
                     }
                 } else
                     Toast.makeText(getApplicationContext(), "Mauvais format pour le département", Toast.LENGTH_SHORT).show();
