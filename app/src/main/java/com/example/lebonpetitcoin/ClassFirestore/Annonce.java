@@ -240,4 +240,13 @@ public class Annonce {
     public void setId(String id) {
         this.id = id;
     }
+
+
+    public GeoPoint getPosition() {
+        return position;
+    }
+
+    public void setPosition(GeoPoint position) {
+        this.position = position;
+    }
 }

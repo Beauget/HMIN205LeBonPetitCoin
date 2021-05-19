@@ -1885,6 +1885,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id Tv
 id UploadBtn
 id accelerate
 id accessibility_action_clickable_span

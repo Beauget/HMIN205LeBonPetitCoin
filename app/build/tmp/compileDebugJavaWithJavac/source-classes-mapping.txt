@@ -76,6 +76,7 @@ com/example/lebonpetitcoin/Item/ItemImage.java
 com/example/lebonpetitcoin/Fragments/RechercheAvanceeFragment.java
  com.example.lebonpetitcoin.Fragments.RechercheAvanceeFragment
  com.example.lebonpetitcoin.Fragments.RechercheAvanceeFragment$1
+ com.example.lebonpetitcoin.Fragments.RechercheAvanceeFragment$2
 com/example/lebonpetitcoin/ClassFirestore/Statistique.java
  com.example.lebonpetitcoin.ClassFirestore.Statistique
 com/example/lebonpetitcoin/MainActivity.java
@@ -99,6 +100,7 @@ com/example/lebonpetitcoin/AddAnnonceActivity.java
  com.example.lebonpetitcoin.AddAnnonceActivity$13$1
  com.example.lebonpetitcoin.AddAnnonceActivity$13$2
  com.example.lebonpetitcoin.AddAnnonceActivity$13$3
+ com.example.lebonpetitcoin.AddAnnonceActivity$14
  com.example.lebonpetitcoin.AddAnnonceActivity$2
  com.example.lebonpetitcoin.AddAnnonceActivity$3
  com.example.lebonpetitcoin.AddAnnonceActivity$4

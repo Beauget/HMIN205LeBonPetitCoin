@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,8 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private CollectionReference cAnnonce = firestoreDB.collection("Annonce");
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
     private CollectionReference cCompte= firestoreDB.collection("Compte");
-
-
 
     MaterialToolbar topAppBar;
     NavigationView navigationView;
