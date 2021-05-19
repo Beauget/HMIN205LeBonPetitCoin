@@ -30,6 +30,7 @@ import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -64,6 +65,7 @@ import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Image;
 import com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement;
+import com.example.lebonpetitcoin.ClassFirestore.Position;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.Continuation;
@@ -127,11 +129,11 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     private int maxImage = 4;
 
     //GEOLOCALISATION
-    LocationManager locationManager;
+    private LocationManager locationManager;
     private String fournisseur;
-    LocationListener ecouteurGPS;
-    double Latitude ;
-    double Longitude;
+    private LocationListener ecouteurGPS;
+    private double Latitude ;
+    private double Longitude;
 
 
 
@@ -173,6 +175,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     EditText titre;
     EditText description;
     EditText prix;
+    EditText departement;
+    CheckBox position;
 
 
     private String Document_img1="";
@@ -203,6 +207,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         titre=findViewById(R.id.titre);
         description=findViewById(R.id.description);
         prix=findViewById(R.id.prix);
+        departement=findViewById(R.id.departement);
+        position=findViewById(R.id.position);
         Upload_Btn=(Button)findViewById(R.id.UploadBtn);
         mButtonAdd=(Button)findViewById(R.id.add);
         mButtondelete=(Button)findViewById(R.id.delete);
@@ -354,8 +360,8 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     }
 
 
-    public void addAnnonce(String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix, ArrayList<String> mdp,ArrayList<String> cat,ArrayList<String> uri){
-        Annonce annonce = new Annonce(name,titre,description,estProfessionnel,telephoneContact,mailContact,prix,mdp,cat, uri);
+    public void addAnnonce(String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix, ArrayList<String> mdp,ArrayList<String> cat,ArrayList<String> uri,double latitude, double longitude, String departement){
+        Annonce annonce = new Annonce(name,titre,description,estProfessionnel,telephoneContact,mailContact,prix,mdp,cat, uri, latitude,longitude,departement);
         cAnnonce.add(annonce)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -381,7 +387,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         // Get all edittext texts
         float prixBase = 0;
         float getPrix = 0;
-        if(prix.getText().toString().length()>0) {
+        if (prix.getText().toString().length() > 0) {
             prixBase = Float.parseFloat(prix.getText().toString());
             int prixInteger = (int) (prixBase * 100);
             getPrix = prixInteger / 100;
@@ -389,23 +395,44 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
         String getTitre = titre.getText().toString();
         String getDescription = description.getText().toString();
+        String getDepartement = departement.getText().toString();
 
         // Pattern match for email id
         //Pattern p = Pattern.compile(regEx);
         //Matcher m = p.matcher(getEmailId);
 
         // Check if all strings are null or not
-        if (getPrix>9999||prixBase>getPrix|| getTitre.length() == 0 || getDescription.equals("")|| cat.size()==0 || mdp.size()==0 )
-            Toast.makeText(getApplicationContext(),"echec",Toast.LENGTH_SHORT).show();
-        else
-            {
-                if(imageUriList.size() > 0 ) {
-                    uploadImageToFirebaseStorage(getTitre, getDescription, getPrix, mdp, cat, imageUriList.size());
+        if (getPrix > 9999 || prixBase > getPrix || getTitre.length() == 0 || getDescription.equals("") || cat.size() == 0 || mdp.size() == 0 || (getDepartement.length() > 0 && position.isChecked()))
+            Toast.makeText(getApplicationContext(), "echec", Toast.LENGTH_SHORT).show();
+
+        else {
+            if (position.isChecked()) {
+                if (Latitude == 0 && Longitude == 0) {
+                    Toast.makeText(getApplicationContext(), "La position n'est pas initialisé", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Latitude :" + String.valueOf(Latitude) + " Longitude : " + String.valueOf(Longitude), Toast.LENGTH_SHORT).show();
+
+                    if (imageUriList.size() > 0) {
+                        uploadImageToFirebaseStorage(getTitre, getDescription, getPrix, mdp, cat, imageUriList.size(), Latitude, Longitude, "");
+                    } else {
+                        addAnnonce(getTitre, getDescription, estProfessionnel, telephoneContact, mailContact, getPrix, mdp, cat, new ArrayList<String>(), Latitude, Longitude, "");
+                    }
                 }
-                else{
-                    addAnnonce(getTitre, getDescription,estProfessionnel,telephoneContact, mailContact,getPrix, mdp, cat,new ArrayList<String>());
-                }
+            } else if (getDepartement.length() > 0) {
+                Position position = new Position();
+                if (position.isDepartement(getDepartement)) {
+                    Position.Departement departement = position.getDepartement(getDepartement);
+                    if (imageUriList.size() > 0) {
+                        uploadImageToFirebaseStorage(getTitre, getDescription, getPrix, mdp, cat, imageUriList.size(), departement.getLatitude(), departement.getLongitude(), getDepartement);
+                    } else {
+                        addAnnonce(getTitre, getDescription, estProfessionnel, telephoneContact, mailContact, getPrix, mdp, cat, new ArrayList<String>(), departement.getLatitude(), departement.getLongitude(), getDepartement);
+                    }
+                } else
+                    Toast.makeText(getApplicationContext(), "Mauvais format pour le département", Toast.LENGTH_SHORT).show();
             }
+            else
+                Toast.makeText(getApplicationContext(), "Choisir un moyen de localisation", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void openFileChooser() {
@@ -441,7 +468,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadImageToFirebaseStorage(String titre, String description , float prix, ArrayList<String> mdp,  ArrayList<String> cat, int nbImages) {
+    private void uploadImageToFirebaseStorage(String titre, String description , float prix, ArrayList<String> mdp,  ArrayList<String> cat, int nbImages,double latitude,double longitude,String departement) {
         Toast.makeText(getApplicationContext(),"nbImages : "+ String.valueOf(nbImages),Toast.LENGTH_SHORT).show();
         for (int i=0; i < imageUriList.size() ; i++) {
             Toast.makeText(getApplicationContext(),String.valueOf(i)+ "/" + String.valueOf(imageUriList.size()),Toast.LENGTH_SHORT).show();
@@ -474,7 +501,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
                         if(mUrlList.size()==nbImages) {
                             Toast.makeText(getApplicationContext(), "ajout annonce", Toast.LENGTH_SHORT).show();
-                            addAnnonce(titre, description,estProfessionnel,telephoneContact, mailContact, prix, mdp, cat, mUrlList);
+                            addAnnonce(titre, description,estProfessionnel,telephoneContact, mailContact, prix, mdp, cat, mUrlList,latitude,longitude,departement);
                         }
                         //updateAnnonce(id,mUrl);
                         //uploadImageToFirebaseStorageRecursive() //Call when completes

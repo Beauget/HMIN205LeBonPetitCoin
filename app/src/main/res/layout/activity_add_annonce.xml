@@ -19,7 +19,8 @@
         android:horizontalSpacing="10dp"
         android:verticalSpacing="10dp"
         android:gravity="center"
-        android:stretchMode="columnWidth" >
+        android:stretchMode="columnWidth"
+        android:visibility="gone">
     </GridView>
 
     <ScrollView
@@ -99,80 +100,74 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <EditText
+                android:id="@+id/titre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/titre" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/description" />
+
+            <EditText
+                android:id="@+id/prix"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/prix_entre_0_et_9999"
+                android:inputType="numberDecimal"/>
 
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/cat_gorie_s"
+                />
 
 
-    <EditText
-        android:id="@+id/titre"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:hint="@string/titre"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:hint="@string/description"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/prix"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:hint="@string/prix_entre_0_et_9999"
-        android:inputType="numberDecimal"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textSize="16sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/LCategorie"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scrollbars="vertical"
+                />
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/cat_gorie_s"
-        />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/moyen_de_paiement_s"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/LMoyenDePaiement"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scrollbars="vertical"
+                />
+
+            <CheckBox
+                android:id="@+id/position"
+                android:text="@string/position_exacte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@string/vous_ne_voulez_pas_donner_votre_position_exacte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/LCategorie"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scrollbars="vertical"
-        />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/moyen_de_paiement_s"
-        />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/LMoyenDePaiement"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scrollbars="vertical"
-            />
+            <EditText
+                android:id="@+id/departement"
+                android:hint="@string/d_partement_ex_01_20_34"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"/>
             <Button
                 android:id="@+id/UploadBtn"
                 android:layout_width="180dp"

@@ -90,25 +90,12 @@ com/example/lebonpetitcoin/Adapter/AdapterCategorie.java
  com.example.lebonpetitcoin.Adapter.AdapterCategorie
  com.example.lebonpetitcoin.Adapter.AdapterCategorie$1
  com.example.lebonpetitcoin.Adapter.AdapterCategorie$CategorieHolder
-com/example/lebonpetitcoin/AddAnnonceActivity.java
- com.example.lebonpetitcoin.AddAnnonceActivity
- com.example.lebonpetitcoin.AddAnnonceActivity$1
- com.example.lebonpetitcoin.AddAnnonceActivity$10
- com.example.lebonpetitcoin.AddAnnonceActivity$11
- com.example.lebonpetitcoin.AddAnnonceActivity$12
- com.example.lebonpetitcoin.AddAnnonceActivity$13
- com.example.lebonpetitcoin.AddAnnonceActivity$13$1
- com.example.lebonpetitcoin.AddAnnonceActivity$13$2
- com.example.lebonpetitcoin.AddAnnonceActivity$13$3
- com.example.lebonpetitcoin.AddAnnonceActivity$14
- com.example.lebonpetitcoin.AddAnnonceActivity$2
- com.example.lebonpetitcoin.AddAnnonceActivity$3
- com.example.lebonpetitcoin.AddAnnonceActivity$4
- com.example.lebonpetitcoin.AddAnnonceActivity$5
- com.example.lebonpetitcoin.AddAnnonceActivity$6
- com.example.lebonpetitcoin.AddAnnonceActivity$7
- com.example.lebonpetitcoin.AddAnnonceActivity$8
- com.example.lebonpetitcoin.AddAnnonceActivity$9
+com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder
 com/example/lebonpetitcoin/Adapter/AdapterMessage.java
  com.example.lebonpetitcoin.Adapter.AdapterMessage
  com.example.lebonpetitcoin.Adapter.AdapterMessage$MessageHolder
@@ -164,9 +151,8 @@ com/example/lebonpetitcoin/Adapter/AdapterConversation.java
 com/example/lebonpetitcoin/Fragments/ModifierAnnoncesFragment.java
  com.example.lebonpetitcoin.Fragments.ModifierAnnoncesFragment
  com.example.lebonpetitcoin.Fragments.ModifierAnnoncesFragment$1
-com/example/lebonpetitcoin/ClassFirestore/Position.java
- com.example.lebonpetitcoin.ClassFirestore.Position
- com.example.lebonpetitcoin.ClassFirestore.Position$departement
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
 com/example/lebonpetitcoin/Fragments/FavFragment.java
  com.example.lebonpetitcoin.Fragments.FavFragment
 com/example/lebonpetitcoin/ClassFirestore/Favoris.java
@@ -233,11 +219,25 @@ com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
  com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
 com/example/lebonpetitcoin/Adapter/AdapterChip.java
  com.example.lebonpetitcoin.Adapter.AdapterChip
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
-com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder
+com/example/lebonpetitcoin/AddAnnonceActivity.java
+ com.example.lebonpetitcoin.AddAnnonceActivity
+ com.example.lebonpetitcoin.AddAnnonceActivity$1
+ com.example.lebonpetitcoin.AddAnnonceActivity$10
+ com.example.lebonpetitcoin.AddAnnonceActivity$11
+ com.example.lebonpetitcoin.AddAnnonceActivity$12
+ com.example.lebonpetitcoin.AddAnnonceActivity$13
+ com.example.lebonpetitcoin.AddAnnonceActivity$13$1
+ com.example.lebonpetitcoin.AddAnnonceActivity$13$2
+ com.example.lebonpetitcoin.AddAnnonceActivity$13$3
+ com.example.lebonpetitcoin.AddAnnonceActivity$14
+ com.example.lebonpetitcoin.AddAnnonceActivity$2
+ com.example.lebonpetitcoin.AddAnnonceActivity$3
+ com.example.lebonpetitcoin.AddAnnonceActivity$4
+ com.example.lebonpetitcoin.AddAnnonceActivity$5
+ com.example.lebonpetitcoin.AddAnnonceActivity$6
+ com.example.lebonpetitcoin.AddAnnonceActivity$7
+ com.example.lebonpetitcoin.AddAnnonceActivity$8
+ com.example.lebonpetitcoin.AddAnnonceActivity$9
+com/example/lebonpetitcoin/ClassFirestore/Position.java
+ com.example.lebonpetitcoin.ClassFirestore.Position
+ com.example.lebonpetitcoin.ClassFirestore.Position$Departement

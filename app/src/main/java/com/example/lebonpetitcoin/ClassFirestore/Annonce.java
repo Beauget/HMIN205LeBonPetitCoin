@@ -33,6 +33,7 @@ public class Annonce {
     ArrayList<String> images = new ArrayList<String>();
 
     GeoPoint position ;
+    String departement;
 
     public Annonce(){
         //public no args contructeur obligatoire sinon firebase crash
@@ -86,7 +87,7 @@ public class Annonce {
         this.paiement= mdp;
     }
 
-    public Annonce(String auteur,String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri,double lat,double lng) {
+    public Annonce(String auteur,String titre,String description,boolean estProfessionnel,String telephoneContact,String mailContact,float prix,ArrayList<String> mdp,ArrayList<String> cat, ArrayList<String> uri,double lat,double lng,String departement) {
         this.titre = titre;
         this.auteur = auteur;
         this.estProfessionnel = estProfessionnel;
@@ -101,6 +102,7 @@ public class Annonce {
         this.categories = cat;
         this.paiement= mdp;
         this.position = new GeoPoint(lat,lng);
+        this.departement = departement;
     }
 
     public Annonce(String auteur, boolean estProfessionnel, String telephoneContact, String mailContact, String titre, String description, java.util.Date datePoste, Integer nbDeVisites, ArrayList<String> categories, String statistique, float prix, ArrayList<String> paiement, ArrayList<String> images) {
@@ -248,5 +250,13 @@ public class Annonce {
 
     public void setPosition(GeoPoint position) {
         this.position = position;
+    }
+
+    public String getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(String departement) {
+        this.departement = departement;
     }
 }
