@@ -116,7 +116,7 @@
         android:id="@+id/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_rectangle_orange"
+        android:background="@drawable/rounded_rectangle_teal"
         android:text="@string/profile_de_l_auteur"/>
 
     <View
@@ -128,7 +128,7 @@
         android:id="@+id/contacter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_rectangle_orange"
+        android:background="@drawable/rounded_rectangle_teal"
         android:text="@string/contacter_le_vendeur_via_messagerie"/>
 
     <View

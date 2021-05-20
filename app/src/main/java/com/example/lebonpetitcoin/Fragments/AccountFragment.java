@@ -24,6 +24,7 @@ import com.example.lebonpetitcoin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -42,12 +43,19 @@ public class AccountFragment extends Fragment {
     ImageView imageProfile;
     TextView compteTv;
     Button miseAjourButton;
+    Chip chipEmail;
+    Chip chipTel;
+    Chip chipMsg;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
         compteTv=view.findViewById(R.id.compteTv);
         imageProfile=view.findViewById(R.id.imageProfile);
         miseAjourButton= view.findViewById(R.id.miseAjourButton);
+        chipEmail= view.findViewById(R.id.chipEmail);
+        chipTel = view.findViewById(R.id.chipTelephone);
+        chipMsg = view.findViewById(R.id.chipMessagerie);
+
 
         return view;
     }
@@ -76,9 +84,10 @@ public class AccountFragment extends Fragment {
                             text +=getString(R.string.moyen_de_contacte_a_privilegier)+ " : " ;
                             for(String s : compte.getContacte())
                             {
-                                text+=s+" ";
+                                if(s.equals("E-mail")){chipEmail.setVisibility(View.VISIBLE);}
+                                if(s.equals("Messagerie")){chipMsg.setVisibility(View.VISIBLE);}
+                                if(s.equals("Téléphone")){chipTel.setVisibility(View.VISIBLE);}
                             }
-                            text+="\n";
                         }
 
                         compteTv.setText(text);
@@ -116,7 +125,12 @@ public class AccountFragment extends Fragment {
                     if (compte.getSiret() != null)
                         text += getString(R.string.siret)+ " : " +compte.getSiret()+ "\n";
                     if(compte.getContacte()!=null &&compte.getContacte().size()>0 &&compte.getContacte().size()<3){
-                        text +=getString(R.string.moyen_de_contacte_a_privilegier)+ " : " +compte.getContacte()+ "\n";
+                        for(String s : compte.getContacte())
+                        {
+                            if(s.equals("E-mail")){chipEmail.setVisibility(View.VISIBLE);}
+                            if(s.equals("Messagerie")){chipMsg.setVisibility(View.VISIBLE);}
+                            if(s.equals("Téléphone")){chipTel.setVisibility(View.VISIBLE);}
+                        }
                     }
 
                     compteTv.setText(text);
@@ -167,5 +181,9 @@ public class AccountFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
+        chipEmail.setVisibility(View.INVISIBLE);
+        chipMsg.setVisibility(View.INVISIBLE);
+        chipTel.setVisibility(View.INVISIBLE);
+
     }
 }

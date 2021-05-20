@@ -266,17 +266,17 @@ public class SignUpFragment extends Fragment implements OnClickListener {
             // || getLocation.equals("") || getLocation.length() == 0
 
             new CustomToast().Show_Toast(getActivity(), view,
-                    "Remplir les champs obligatoires");
+                    getString(R.string.remplir_les_champs_obligatoires));
 
             // Check if email id valid or not
         else if (!m.find())
             new CustomToast().Show_Toast(getActivity(), view,
-                    "Email invalide.");
+                    getString(R.string.email_invalide));
 
             // Check if both password should be equal
         else if (!getConfirmPassword.equals(getPassword))
             new CustomToast().Show_Toast(getActivity(), view,
-                    "Les  deux mots de passes ne matchent pas");
+                    getString(R.string.password_not_same));
 
        /* else if (!mMdp.find())
             new CustomToast().Show_Toast(getActivity(), view,
@@ -287,7 +287,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
             // Make sure user should check Terms and Conditions checkbox
         else if (!terms_conditions.isChecked())
             new CustomToast().Show_Toast(getActivity(), view,
-                    "acceptez les conditions.");
+                    getString(R.string.acceptez_les_conditions));
 
         else if(getFullName.length() >0) {
             Task<DocumentSnapshot> tCompte = cCompte.document(getFullName).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -296,11 +296,11 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                     Compte compte = documentSnapshot.toObject(Compte.class);
 
                     if (compte != null) {
-                        new CustomToast().Show_Toast(getActivity(), view,"Pseudo déja pris.");
+                        new CustomToast().Show_Toast(getActivity(), view,getString(R.string.pseudoPris));
                     }
                     else{
                         if (mUploadTask != null && mUploadTask.isInProgress()) {
-                            Toast.makeText(getContext(), "Envoie en cours", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), getString(R.string.envoie_en_cours), Toast.LENGTH_SHORT).show();
                         }
                         else {
                             uploadFile(getEmailId, getPassword, getFullName, getMobileNumber, getLocation);

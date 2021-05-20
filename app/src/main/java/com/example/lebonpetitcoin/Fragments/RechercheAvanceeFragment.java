@@ -32,6 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Position;
+import com.example.lebonpetitcoin.CustomToast;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -72,7 +73,7 @@ public class RechercheAvanceeFragment extends Fragment {
     double Latitude ;
     double Longitude;
     Position positionP = new Position();
-    ArrayList<String> arrayListCategorie = new ArrayList<>();
+    ArrayList<String> arrayListCategorie ;
 
     public static Fragment newInstance() {
         return (new RechercheAvanceeFragment());
@@ -94,6 +95,7 @@ public class RechercheAvanceeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        arrayListCategorie = new ArrayList<>();
         Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
                 .setQuery(queryC, Categorie.class)
@@ -111,13 +113,13 @@ public class RechercheAvanceeFragment extends Fragment {
 
     public void checkValidation(){
         if (position.isChecked()&& departement.getText().toString().length()>0) {
-            Toast.makeText(getContext(), getString(R.string.badTooManyPosition), Toast.LENGTH_SHORT).show();
+            new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.badTooManyPosition));
         }
         else if ((position.isChecked() || departement.getText().toString().length()>0)&& km.getText().toString().length()==0){
-            Toast.makeText(getContext(), getString(R.string.badNoKM), Toast.LENGTH_SHORT).show();
+            new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.badNoKM));
         }
         else if ((position.isChecked() || departement.getText().toString().length()>0)&& (Integer.valueOf(km.getText().toString())==0 ||Integer.valueOf(km.getText().toString())>200)){
-            Toast.makeText(getContext(), getString(R.string.badKM), Toast.LENGTH_SHORT).show();
+            new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.badKM));
         }
 
         else{
@@ -131,7 +133,7 @@ public class RechercheAvanceeFragment extends Fragment {
             bundle.putStringArrayList("categories", arrayListCategorie);
 
             if (position.isChecked() && Latitude== 0 && Longitude == 0){
-                Toast.makeText(getContext(), getString(R.string.badPosition), Toast.LENGTH_SHORT).show();
+                new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.badPosition));
             }
 
             else if (position.isChecked() && (Latitude!= 0 || Longitude != 0)){
@@ -156,7 +158,7 @@ public class RechercheAvanceeFragment extends Fragment {
                             .replace(R.id.activity_main_frame_layout, fragment).commit();
                 }
                 else {
-                    Toast.makeText(getContext(), getString(R.string.badDepartement), Toast.LENGTH_SHORT).show();
+                    new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.badDepartement));
                 }
             }
             else{
@@ -298,13 +300,13 @@ public class RechercheAvanceeFragment extends Fragment {
             @Override
             public void onProviderDisabled(String fournisseur)
             {
-                Toast.makeText(getContext(), fournisseur + getString(R.string.desactive), Toast.LENGTH_SHORT).show();
+                new CustomToast().Show_Toast(getActivity(), getView(),fournisseur +" "+getString(R.string.desactive));
             }
 
             @Override
             public void onProviderEnabled(String fournisseur)
             {
-                Toast.makeText(getContext(), fournisseur + getString(R.string.active), Toast.LENGTH_SHORT).show();
+                new CustomToast().Show_Toast(getActivity(), getView(),fournisseur+" " + getString(R.string.active));
             }
 
             @Override
@@ -313,16 +315,16 @@ public class RechercheAvanceeFragment extends Fragment {
                 switch(status)
                 {
                     case LocationProvider.AVAILABLE:
-                        Toast.makeText(getContext(), fournisseur + " "+ getString(R.string.etat_disponible), Toast.LENGTH_SHORT).show();
+                        new CustomToast().Show_Toast(getActivity(), getView(), fournisseur + " "+ getString(R.string.etat_disponible));
                         break;
                     case LocationProvider.OUT_OF_SERVICE:
-                        Toast.makeText(getContext(), fournisseur +" "+ getString(R.string.etat_indisponible), Toast.LENGTH_SHORT).show();
+                        new CustomToast().Show_Toast(getActivity(), getView(), fournisseur +" "+ getString(R.string.etat_indisponible));
                         break;
                     case LocationProvider.TEMPORARILY_UNAVAILABLE:
-                        Toast.makeText(getContext(), fournisseur +" "+ getString(R.string.etat_temporairement_indisponible), Toast.LENGTH_SHORT).show();
+                        new CustomToast().Show_Toast(getActivity(), getView(),fournisseur +" "+ getString(R.string.etat_temporairement_indisponible));
                         break;
                     default:
-                        Toast.makeText(getContext(), fournisseur +" "+ getString(R.string.etat)+" : "+ status, Toast.LENGTH_SHORT).show();
+                        new CustomToast().Show_Toast(getActivity(), getView(), fournisseur +" "+ getString(R.string.etat)+" : "+ status);
                 }
             }
         };

@@ -3,7 +3,8 @@
     android:layout_height="fill_parent"
     android:layout_width="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradient_color">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reyclerview_fav_list"

@@ -25,6 +25,12 @@
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_gravity="center|start"
         android:layout_marginStart="120dp"/>
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/ic_baseline_delete_forever_24"
+        />
 
 
 </androidx.cardview.widget.CardView>

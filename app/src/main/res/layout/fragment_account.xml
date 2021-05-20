@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="20dp" >
+    android:padding="20dp">
 
     <ImageView
         android:id="@+id/imageProfile"
@@ -20,6 +21,38 @@
         android:padding="3dp"
         android:textSize="17sp"
         android:textStyle="bold" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleLine="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipTelephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipIcon="@drawable/baseline_local_phone_black_18dp"
+            android:text="Téléphone"
+            android:visibility="gone"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMessagerie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipIcon="@drawable/ic_baseline_message_24"
+            android:text="Messagerie"
+            android:visibility="gone"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipIcon="@drawable/baseline_mail_black_18dp"
+            android:text="@string/email"
+            android:visibility="gone"/>
+
+    </com.google.android.material.chip.ChipGroup>
 
     <Button
         android:id="@+id/miseAjourButton"

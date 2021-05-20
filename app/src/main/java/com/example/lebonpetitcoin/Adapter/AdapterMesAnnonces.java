@@ -152,6 +152,7 @@ public class AdapterMesAnnonces extends RecyclerView.Adapter<AdapterMesAnnonces 
         TextView textViewTitle;
         TextView vues;
         Button like;
+        TextView prix;
         ImageView imageViewAnnonce;
         public ViewHolder(View itemView) {
             super(itemView);

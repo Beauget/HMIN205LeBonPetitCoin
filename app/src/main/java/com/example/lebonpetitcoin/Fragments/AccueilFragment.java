@@ -11,14 +11,23 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lebonpetitcoin.Adapter.AdapterArticle;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
+import com.example.lebonpetitcoin.Adapter.AdapterFavoris;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
+import com.example.lebonpetitcoin.ClassFirestore.Favoris;
 import com.example.lebonpetitcoin.GlideApp;
+import com.example.lebonpetitcoin.MainActivity;
+import com.example.lebonpetitcoin.ProductGridItemDecoration;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -56,22 +65,20 @@ public class AccueilFragment extends Fragment {
     TextView titre3;
     TextView titre4;
 
+    private RecyclerView recyclerView;
+    private AdapterArticle adapter;
+    public FirebaseAuth mAuth;
+    public String uid = "";
+
+
     public static AccueilFragment newInstance() {
         return (new AccueilFragment());
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_accueil, container, false);
+        recyclerView = view.findViewById(R.id.recycler_view);
 
-        img1 = view.findViewById(R.id.img1);
-        img2 = view.findViewById(R.id.img2);
-        img3 = view.findViewById(R.id.img3);
-        img4 = view.findViewById(R.id.img4);
-
-        titre1 = view.findViewById(R.id.titre1);
-        titre2 = view.findViewById(R.id.titre2);
-        titre3 = view.findViewById(R.id.titre3);
-        titre4 = view.findViewById(R.id.titre4);
 
         return view;
     }
@@ -80,6 +87,20 @@ public class AccueilFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
+            uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
+
+        Query query = cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).limit(4);
+        FirestoreRecyclerOptions<Annonce> options = new FirestoreRecyclerOptions.Builder<Annonce>()
+                .setQuery(query, Annonce.class)
+                .build();
+        int largePadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing);
+        int smallPadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small);
+
+        adapter = new AdapterArticle(options,getContext(),uid);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
+        recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
+        recyclerView.setAdapter(adapter);
 
 
     }
@@ -87,7 +108,7 @@ public class AccueilFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        annonceListener.remove();
+        adapter.stopListening();
     }
 
 
@@ -95,77 +116,6 @@ public class AccueilFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        //adapter.startListening();
-
-
-        annonceListener = cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).limit(4).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    return;
-                }
-
-                int i = 0;
-                List<ImageView> listImages = new ArrayList<>();
-                listImages.add(img1);
-                listImages.add(img2);
-                listImages.add(img3);
-                listImages.add(img4);
-
-                List<TextView> listTitres = new ArrayList<>();
-                listTitres.add(titre1);
-                listTitres.add(titre2);
-                listTitres.add(titre3);
-                listTitres.add(titre4);
-                for (QueryDocumentSnapshot documentSnapshot : value) {
-                    Annonce annonce = documentSnapshot.toObject(Annonce.class);
-                    String s;
-                    String id = documentSnapshot.getId();
-
-                    //si pas d'image, une générique
-                    if( annonce.getImages().size()==0)
-                        s = "https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846";
-                    else
-                        s = annonce.getFirstImage();
-                    //On ajoute l'image
-                    GlideApp.with(getContext())
-                            .load(s)
-                            .into(listImages.get(i));
-                    listImages.get(i).setOnClickListener(new View.OnClickListener() {
-                        private Fragment fragmentAnnonce;
-                        @Override
-                        public void onClick(View v) {
-                            if (this.fragmentAnnonce == null) this.fragmentAnnonce= AnnonceFragment.newInstance();
-                            Bundle arguments = new Bundle();
-                            arguments.putString( "idAnnonce", id);
-                            fragmentAnnonce.setArguments(arguments);
-                            ((AppCompatActivity) getContext()).getSupportFragmentManager()
-                                    .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
-                    }});
-
-
-                    /*
-                    listImages.get(i).setOnClickListener(new View.OnClickListener() {
-                        private Fragment fragmentAnnonce;
-                        @Override
-                        public void onClick(View v) {
-                            if (this.fragmentAnnonce == null) this.fragmentAnnonce= AnnonceFragment.newInstance();
-                            Bundle arguments = new Bundle();
-                            arguments.putString( "idAnnonce", id);
-                            fragmentAnnonce.setArguments(arguments);
-                            ((AppCompatActivity) getContext()).getSupportFragmentManager()
-                                    .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
-                        }
-                    });*/
-
-                    //Recupération et ajout du titre
-                    if (annonce.getTitre()!=null)
-                    {
-                        listTitres.get(i).setText(annonce.getTitre());
-                    }
-                    i++;
-                }
-            }
-        });
+        adapter.startListening();
     }
 }

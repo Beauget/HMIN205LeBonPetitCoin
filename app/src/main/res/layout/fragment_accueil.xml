@@ -1,208 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:background="@drawable/gradient_color"
+>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:paddingStart="@dimen/shr_product_grid_spacing"
+        android:paddingEnd="@dimen/shr_product_grid_spacing"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Voici les dernières annonces ajoutés"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
-        android:layout_width="150dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/teal_700"
-        app:cardElevation="0dp"
-        android:layout_height="156dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="150dp"
-        android:clickable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent" />
 
-        <!-- Media -->
-        <ImageView
-            android:id="@+id/img1"
-            android:layout_width="match_parent"
-            android:layout_height="194dp"
-            android:contentDescription="@string/content_description_media"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_logo" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+    </androidx.core.widget.NestedScrollView>
 
-            <!-- Title, secondary and supporting text -->
-            <TextView
-                android:id="@+id/titre1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:singleLine="true"
-                android:background="@color/teal_transparent"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card2"
-        android:layout_width="150dp"
-        android:layout_height="156dp"
-        android:clickable="true"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/teal_700"
-        app:cardElevation="0dp"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="150dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        <!-- Media -->
-        <ImageView
-            android:id="@+id/img2"
-            android:layout_width="match_parent"
-            android:layout_height="194dp"
-            android:contentDescription="@string/content_description_media"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_logo" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Title, secondary and supporting text -->
-            <TextView
-                android:id="@+id/titre2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:background="@color/teal_transparent"
-                android:singleLine="true"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card3"
-        android:layout_width="150dp"
-        android:clickable="true"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/teal_700"
-        app:cardElevation="0dp"
-        android:layout_height="156dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="350dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        <!-- Media -->
-        <ImageView
-            android:id="@+id/img3"
-            android:layout_width="match_parent"
-            android:layout_height="194dp"
-            android:contentDescription="@string/content_description_media"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_logo" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Title, secondary and supporting text -->
-            <TextView
-                android:id="@+id/titre3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:background="@color/teal_transparent"
-                android:singleLine="true"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card4"
-        android:layout_width="150dp"
-        android:clickable="true"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/teal_700"
-        app:cardElevation="0dp"
-        android:layout_height="156dp"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="350dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        <!-- Media -->
-        <ImageView
-            android:id="@+id/img4"
-            android:layout_width="match_parent"
-            android:layout_height="194dp"
-            android:contentDescription="@string/content_description_media"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_logo" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Title, secondary and supporting text -->
-            <TextView
-                android:id="@+id/titre4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:background="@color/teal_transparent"
-                android:singleLine="true"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

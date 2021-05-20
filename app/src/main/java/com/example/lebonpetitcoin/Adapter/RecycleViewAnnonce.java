@@ -67,7 +67,7 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_annonce, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_article, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
@@ -97,16 +97,19 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
         }
 
         else{
+            isInFavoris(uid,id,annonce.getTitre(),annonce.getFirstImage(),holder.getLike(),holder.getLiked());
+
             holder.getLike().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (uid.length()>0){
-                        inFavoris(uid,id,annonce.getTitre(),annonce.getFirstImage());
+                        inFavoris(uid,id,annonce.getTitre(),annonce.getFirstImage(),holder.getLike(),holder.getLiked());
                     }
 
                 }
             });
         }
+        holder.getPrix().setText(String.valueOf(annonce.getPrix())+" €");
 
         holder.getImageViewAnnonce().setOnClickListener(new View.OnClickListener() {
             private Fragment fragmentAnnonce;
@@ -134,6 +137,8 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
         TextView textViewTitle;
         TextView vues;
         Button like;
+        Button liked;
+        TextView prix;
         ImageView imageViewAnnonce;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -141,6 +146,8 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
             imageViewAnnonce = itemView.findViewById(R.id.imageView);
             vues = itemView.findViewById(R.id.likeCountTextView);
             like = itemView.findViewById(R.id.favBtn);
+            liked = itemView.findViewById(R.id.favBtnfilled);
+            prix = itemView.findViewById(R.id.prix);
         }
 
 
@@ -156,6 +163,10 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
         public TextView getVues(){return vues; }
 
         public Button getLike(){return like;}
+
+        public Button getLiked() { return liked; }
+
+        public TextView getPrix() { return prix; }
     }
 
     public void addFavoris(String uid,String idAnnonce,String titreAnnonce, String image){
@@ -179,9 +190,9 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
         }
     }
 
-    public void inFavoris(String uid, String idAnnonce, String titreAnnonce,String image){
+    public void inFavoris(String uid, String idAnnonce, String titreAnnonce,String image,Button like , Button liked){
         final int[] cmpt = {0};
-            if(uid.length()>0){
+        if(uid.length()>0){
             cFavoris.whereEqualTo("idAnnonce",idAnnonce).whereEqualTo("uid",uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -193,7 +204,51 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
                         cmpt[0]++;
                     }
                     if (cmpt[0] == 0) {
-                        addFavoris(uid, idAnnonce,titreAnnonce,image);
+                        addFavoris(uid, idAnnonce,titreAnnonce,image,like,liked);
+                    }
+
+                }
+            });
+        }
+    }
+
+    public void addFavoris(String uid,String idAnnonce,String titreAnnonce, String image,Button like , Button liked){
+        if (uid.length() > 0) {
+            Favoris favoris= new Favoris(uid, idAnnonce,titreAnnonce,image);
+            cFavoris.add(favoris)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(mContext,"Ajouté aux favoris !",Toast.LENGTH_SHORT).show();
+                            like.setVisibility(View.GONE);
+                            liked.setVisibility(View.VISIBLE);
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(mContext,"erreur",Toast.LENGTH_SHORT).show();
+                            Log.d(TAG,e.toString());
+                        }
+                    });
+        }
+    }
+    public void isInFavoris(String uid, String idAnnonce, String titreAnnonce,String image,Button like , Button liked){
+        final int[] cmpt = {0};
+        if(uid.length()>0){
+            cFavoris.whereEqualTo("idAnnonce",idAnnonce).whereEqualTo("uid",uid).addSnapshotListener(new EventListener<QuerySnapshot>() {
+                @Override
+                public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (error != null) {
+                        return;
+                    }
+                    for (QueryDocumentSnapshot documentSnapshot : value) {
+                        Annonce annonce = documentSnapshot.toObject(Annonce.class);
+                        cmpt[0]++;
+                    }
+                    if (cmpt[0] != 0) {
+                        like.setVisibility(View.GONE);
+                        liked.setVisibility(View.VISIBLE);
                     }
 
                 }

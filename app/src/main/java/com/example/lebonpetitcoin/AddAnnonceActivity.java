@@ -1,5 +1,5 @@
 package com.example.lebonpetitcoin;
-//http://www.codeplayon.com/2018/11/android-image-upload-to-server-from-camera-and-gallery/
+
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -44,20 +44,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.NetworkError;
-import com.android.volley.NoConnectionError;
-import com.android.volley.ParseError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
-import com.android.volley.ServerError;
-import com.android.volley.TimeoutError;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
@@ -186,112 +172,106 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_annonce);
+        mProgressBar = findViewById(R.id.progress_bar);
+        mStorageRef = FirebaseStorage.getInstance().getReference("Annonces");
 
         extras = getIntent().getExtras();
 
         if (extras != null) {
             name = extras.getString("name");
             getCompte(name);
+
+            img1 = (ImageView) findViewById(R.id.img1);
+            img2 = (ImageView) findViewById(R.id.img2);
+            img3 = (ImageView) findViewById(R.id.img3);
+            img4 = (ImageView) findViewById(R.id.img4);
+            img5 = (ImageView) findViewById(R.id.img5);
+            img6 = (ImageView) findViewById(R.id.img6);
+
+            titre = findViewById(R.id.titre);
+            description = findViewById(R.id.description);
+            prix = findViewById(R.id.prix);
+            departement = findViewById(R.id.departement);
+            position = findViewById(R.id.position);
+            Upload_Btn = (Button) findViewById(R.id.UploadBtn);
+            mButtonAdd = (Button) findViewById(R.id.add);
+            mButtondelete = (Button) findViewById(R.id.delete);
+
+
+            recyclerViewCategorie = findViewById(R.id.LCategorie);
+            recyclerViewCategorie.setLayoutManager(new LinearLayoutManager(this));
+            recyclerViewMoyenDePaiement = findViewById(R.id.LMoyenDePaiement);
+            recyclerViewMoyenDePaiement.setLayoutManager(new LinearLayoutManager(this));
+
+            //imageUriList.add(mImageUri);
+            imageViewArrayList.add(img1);
+            imageViewArrayList.add(img2);
+            imageViewArrayList.add(img3);
+            imageViewArrayList.add(img4);
+            imageViewArrayList.add(img5);
+            imageViewArrayList.add(img6);
+
+            Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
+            FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
+                    .setQuery(queryC, Categorie.class)
+                    .setLifecycleOwner(this)
+                    .build();
+            ArrayList<String> arrayListCategorie = new ArrayList<>();
+            adapterCategorie = new AdapterCategorie(optionsC, this, arrayListCategorie);
+            recyclerViewCategorie.setAdapter(adapterCategorie);
+
+            Query queryM = cMoyenDePaiement.orderBy("intitule", Query.Direction.DESCENDING);
+            FirestoreRecyclerOptions<MoyenDePaiement> optionsM = new FirestoreRecyclerOptions.Builder<MoyenDePaiement>()
+                    .setQuery(queryM, MoyenDePaiement.class)
+                    .setLifecycleOwner(this)
+                    .build();
+            ArrayList<String> arrayListMoyenDePaiement = new ArrayList<>();
+            adapterMoyenDePaiement = new AdapterMoyenDePaiement(optionsM, this, arrayListMoyenDePaiement);
+            recyclerViewMoyenDePaiement.setAdapter(adapterMoyenDePaiement);
+            //recyclerViewMoyenDePaiement.getChild
+
+
+           /* mButtonAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectImage();
+
+                }
+            });*/
+
+            mButtonAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openFileChooser();
+                }
+            });
+
+            mButtondelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    deleteImage();
+
+                }
+            });
+
+            Upload_Btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mUploadTask != null && mUploadTask.isInProgress()) {
+                        Toast.makeText(AddAnnonceActivity.this, getString(R.string.creation_de_l_annonce_en_cours), Toast.LENGTH_SHORT).show();
+                    } else {
+                        checkValidation(arrayListMoyenDePaiement, arrayListCategorie);
+                    }
+                }
+            });
         }
-        else{
-            Toast.makeText(AddAnnonceActivity.this, "null", Toast.LENGTH_SHORT).show();
+
+        else {
+            Toast.makeText(AddAnnonceActivity.this, getString(R.string.null_auteur), Toast.LENGTH_SHORT).show();
+            Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
+            AddAnnonceActivity.this.startActivity(myIntent);
+
         }
-
-        img1=(ImageView)findViewById(R.id.img1);
-        img2=(ImageView)findViewById(R.id.img2);
-        img3=(ImageView)findViewById(R.id.img3);
-        img4=(ImageView)findViewById(R.id.img4);
-        img5=(ImageView)findViewById(R.id.img5);
-        img6=(ImageView)findViewById(R.id.img6);
-
-        titre=findViewById(R.id.titre);
-        description=findViewById(R.id.description);
-        prix=findViewById(R.id.prix);
-        departement=findViewById(R.id.departement);
-        position=findViewById(R.id.position);
-        Upload_Btn=(Button)findViewById(R.id.UploadBtn);
-        mButtonAdd=(Button)findViewById(R.id.add);
-        mButtondelete=(Button)findViewById(R.id.delete);
-
-
-
-
-        recyclerViewCategorie = findViewById(R.id.LCategorie);
-        recyclerViewCategorie.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewMoyenDePaiement = findViewById(R.id.LMoyenDePaiement);
-        recyclerViewMoyenDePaiement.setLayoutManager(new LinearLayoutManager(this));
-
-        //imageUriList.add(mImageUri);
-        imageViewArrayList.add(img1);
-        imageViewArrayList.add(img2);
-        imageViewArrayList.add(img3);
-        imageViewArrayList.add(img4);
-        imageViewArrayList.add(img5);
-        imageViewArrayList.add(img6);
-
-        Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
-        FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
-                .setQuery(queryC, Categorie.class)
-                .setLifecycleOwner(this)
-                .build();
-        ArrayList<String> arrayListCategorie = new ArrayList<>();
-        adapterCategorie = new AdapterCategorie(optionsC,this,arrayListCategorie);
-        recyclerViewCategorie.setAdapter(adapterCategorie);
-
-        Query queryM = cMoyenDePaiement.orderBy("intitule", Query.Direction.DESCENDING);
-        FirestoreRecyclerOptions<MoyenDePaiement> optionsM = new FirestoreRecyclerOptions.Builder<MoyenDePaiement>()
-                .setQuery(queryM, MoyenDePaiement.class)
-                .setLifecycleOwner(this)
-                .build();
-        ArrayList<String> arrayListMoyenDePaiement = new ArrayList<>();
-        adapterMoyenDePaiement = new AdapterMoyenDePaiement(optionsM,this, arrayListMoyenDePaiement);
-        recyclerViewMoyenDePaiement.setAdapter(adapterMoyenDePaiement);
-        //recyclerViewMoyenDePaiement.getChild
-
-
-       /* mButtonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectImage();
-
-            }
-        });*/
-
-        mButtonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFileChooser();
-            }
-        });
-
-        mButtondelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteImage();
-
-            }
-        });
-
-        Upload_Btn.setOnClickListener(new View.OnClickListener()
-        {   @Override
-        public void onClick(View view) {
-            //Toast.makeText(view.getContext(), "MDP : \n"+arrayListMoyenDePaiement.toString(), Toast.LENGTH_SHORT).show();
-            //Toast.makeText(view.getContext(), "Categorie : \n"+arrayListCategorie.toString(), Toast.LENGTH_SHORT).show();
-            if (mUploadTask != null && mUploadTask.isInProgress()) {
-                Toast.makeText(AddAnnonceActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
-            } else {
-                checkValidation(arrayListMoyenDePaiement,arrayListCategorie);
-            }
-
-        }});
-
-        
-        mProgressBar = findViewById(R.id.progress_bar);
-        mStorageRef = FirebaseStorage.getInstance().getReference("Annonces");
-
-
-
-
 
     }
 
@@ -366,7 +346,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(getApplicationContext(),"Annonce ajouté",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getString(R.string.annonce_ajoute),Toast.LENGTH_SHORT).show();
                         Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
                         AddAnnonceActivity.this.startActivity(myIntent);
 
@@ -375,7 +355,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(),"erreur",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getString(R.string.echec),Toast.LENGTH_SHORT).show();
                         Log.d(TAG,e.toString());
                     }
                 });
@@ -403,16 +383,17 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
         // Check if all strings are null or not
         if (getPrix > 9999 || prixBase > getPrix || getTitre.length() == 0 || getDescription.equals("") || cat.size() == 0 || mdp.size() == 0 || (getDepartement.length() > 0 && position.isChecked())){
-            Toast.makeText(getApplicationContext(), "echec", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.echec, Toast.LENGTH_SHORT).show();
         }
 
 
         else {
             if (position.isChecked()) {
                 if (Latitude == 0 && Longitude == 0) {
-                    Toast.makeText(getApplicationContext(), "La position n'est pas initialisé", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Latitude :" + String.valueOf(Latitude) + " Longitude : " + String.valueOf(Longitude), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.badPosition), Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    //Toast.makeText(getApplicationContext(), "Latitude :" + String.valueOf(Latitude) + " Longitude : " + String.valueOf(Longitude), Toast.LENGTH_SHORT).show();
 
                     if (imageUriList.size() > 0) {
                         uploadImageToFirebaseStorage(getTitre, getDescription, getPrix, mdp, cat, imageUriList.size(), Latitude, Longitude, "");
@@ -430,10 +411,10 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                         addAnnonce(getTitre, getDescription, estProfessionnel, telephoneContact, mailContact, getPrix, mdp, cat, new ArrayList<String>(), departement.getLatitude(), departement.getLongitude(), getDepartement+"000, "+departement.getNom()+", France");
                     }
                 } else
-                    Toast.makeText(getApplicationContext(), "Mauvais format pour le département", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.badDepartement), Toast.LENGTH_SHORT).show();
             }
             else
-                Toast.makeText(getApplicationContext(), "Choisir un moyen de localisation", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.badTooManyPosition), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -442,7 +423,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         if(imageUriList.size()>=maxImage) {
-            Toast.makeText(getApplicationContext(), "nbMax d'images atteind", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.maxImage), Toast.LENGTH_SHORT).show();
         }
         else {
             startActivityForResult(intent, PICK_IMAGE_REQUEST);
@@ -457,7 +438,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
             imageUriList.add(mImageUri);
-            Toast.makeText(getApplicationContext(), "image : " + String.valueOf(imageUriList.size() - 1), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "image : " + String.valueOf(imageUriList.size() - 1), Toast.LENGTH_SHORT).show();
             imageViewArrayList.get(imageUriList.size() - 1).setVisibility(View.VISIBLE);
             Picasso.get().load(mImageUri).into(imageViewArrayList.get(imageUriList.size() - 1));
 
@@ -471,7 +452,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void uploadImageToFirebaseStorage(String titre, String description , float prix, ArrayList<String> mdp,  ArrayList<String> cat, int nbImages,double latitude,double longitude,String departement) {
-        Toast.makeText(getApplicationContext(),"nbImages : "+ String.valueOf(nbImages),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"nbImages : "+ String.valueOf(nbImages),Toast.LENGTH_SHORT).show();
         for (int i=0; i < imageUriList.size() ; i++) {
             Toast.makeText(getApplicationContext(),String.valueOf(i)+ "/" + String.valueOf(imageUriList.size()),Toast.LENGTH_SHORT).show();
 
@@ -499,14 +480,12 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                         Uri getUri = task.getResult();
                         mUrl = getUri.toString();
                         mUrlList.add(mUrl);
-                        Toast.makeText(getApplicationContext(),"uploaded",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),"uploaded",Toast.LENGTH_SHORT).show();
 
                         if(mUrlList.size()==nbImages) {
-                            Toast.makeText(getApplicationContext(), "ajout annonce", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "ajout annonce", Toast.LENGTH_SHORT).show();
                             addAnnonce(titre, description,estProfessionnel,telephoneContact, mailContact, prix, mdp, cat, mUrlList,latitude,longitude,departement);
                         }
-                        //updateAnnonce(id,mUrl);
-                        //uploadImageToFirebaseStorageRecursive() //Call when completes
                     }
                 }
             });
@@ -574,8 +553,6 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                             mProgressBar.setProgress((int) progress);
                         }
                     });
-        } else {
-            Toast.makeText(this,"pas d'image boloss", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -706,8 +683,6 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
         };
 
         initialiserLocalisation();
-        //tv.setText("Latitude : " + String.valueOf(Latitude)+ " Longitude : " + String.valueOf(Longitude));
-
     }
 
     @Override

@@ -39,4 +39,6 @@ public class CustomToast {
         toast.show();// Finally show toast
     }
 
+    public static class ProductGridItemDecoration {
+    }
 }
