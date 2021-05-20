@@ -1,5 +1,7 @@
 package com.example.lebonpetitcoin.ClassFirestore;
 
+import com.google.firebase.firestore.Exclude;
+
 import java.util.Calendar;
 
 import java.util.Date;
@@ -10,11 +12,13 @@ public class Statistique {
     String idAuteur;
     String idAnnonce;
     Date date;
+    boolean estMembre;
 
-    public Statistique(String idAuteur, String idAnnonce) {
+    public Statistique(String idAuteur, String idAnnonce,boolean estMembre) {
         this.idAuteur = idAuteur;
         this.idAnnonce = idAnnonce;
         this.date  = Calendar.getInstance().getTime();
+        this.estMembre = estMembre;
     }
 
     public Statistique(){
@@ -45,4 +49,11 @@ public class Statistique {
         this.date = date;
     }
 
+    public boolean isEstMembre() {
+        return estMembre;
+    }
+
+    public void setEstMembre(boolean estMembre) {
+        this.estMembre = estMembre;
+    }
 }

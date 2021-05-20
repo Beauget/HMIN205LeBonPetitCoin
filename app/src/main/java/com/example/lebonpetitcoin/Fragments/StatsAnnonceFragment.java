@@ -21,6 +21,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -40,7 +41,8 @@ public class StatsAnnonceFragment extends Fragment {
     private CollectionReference cCompte = firestoreDB.collection("Compte");
     private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
 
-    ArrayList<BarEntry> barEntries;
+    ArrayList<BarEntry> barEntriesNonMembre;
+    ArrayList<BarEntry> barEntriesMembre;
     BarChart barChartMois;
     BarChart barChartSemaine;
     int MAXJOUR = 30;
@@ -66,7 +68,8 @@ public class StatsAnnonceFragment extends Fragment {
 
     public void getStatistiqueBar(String annonce, BarChart barChart, int nbJour){
         Date now = Calendar.getInstance().getTime();
-        int [] array =new int[nbJour];
+        int [] arrayNonMembre =new int[nbJour];
+        int [] arrayMembre =new int[nbJour];
         Task<QuerySnapshot> query = cStatistique.whereEqualTo("idAnnonce", annonce).get();
         query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -79,27 +82,33 @@ public class StatsAnnonceFragment extends Fragment {
                         int difference = (int) ((now.getTime()-date.getTime())/ (1000 * 3600 * 24));
 
                         if(difference<nbJour){
-                            array[difference]= array[difference] + 1;
+                            if(statistique.isEstMembre()==false)
+                                arrayNonMembre[difference]= arrayNonMembre[difference] + 1;
+                            else
+                                arrayMembre[difference]= arrayMembre[difference] + 1;
 
                         }
                     }
-                    setBar(array,barChart,nbJour);
+                    setBar(arrayNonMembre,arrayMembre,barChart,nbJour);
                 }
             }
         });
     }
 
-    public void setBar(int [] array ,BarChart barChart, int nbJour){
+    public void setBar(int [] arrayNonMembre,int [] arrayMembre ,BarChart barChart, int nbJour){
 
-        BarDataSet set;
+        BarDataSet setNonMembre;
+        BarDataSet setMembre;
         int x = nbJour -1;
-        barEntries = new ArrayList<>();
+        barEntriesNonMembre = new ArrayList<>();
+        barEntriesMembre = new ArrayList<>();
 
 
         String[] labels = new String[nbJour];
         for (int i = 0; i<nbJour; i++)
         {
-            barEntries.add(new BarEntry(x,array[i]));
+            barEntriesNonMembre.add(new BarEntry(x,arrayNonMembre[i]));
+            barEntriesMembre.add(new BarEntry(x,arrayMembre[i]));
             labels[i]= "J-"+x;
             x--;
 
@@ -111,11 +120,17 @@ public class StatsAnnonceFragment extends Fragment {
         barChart.getXAxis().setValueFormatter(new com.github.mikephil.charting.formatter.IndexAxisValueFormatter(labels));
 
         ArrayList<IBarDataSet> dataSets = new ArrayList<>();
-        set = new BarDataSet(barEntries, "Nb vues");
-        //set.setColors(ColorTemplate.VORDIPLOM_COLORS);
-        set.setDrawValues(false);
-        set.setStackLabels(labels);
-        dataSets.add(set);
+        setNonMembre = new BarDataSet(barEntriesNonMembre, getString(R.string.visalisation_par_un_nonMembre));
+        setNonMembre.setColors(R.color.black);
+        setNonMembre.setDrawValues(false);
+        setNonMembre.setStackLabels(labels);
+        dataSets.add(setNonMembre);
+
+        setMembre = new BarDataSet(barEntriesMembre, getString(R.string.visalisation_par_un_membre));
+        setMembre.setColors(R.color.green_500);
+        setMembre.setDrawValues(false);
+        setMembre.setStackLabels(labels);
+        dataSets.add(setMembre);
         BarData data = new BarData(dataSets);
         barChart.setData(data);
         barChart.setFitBars(false);

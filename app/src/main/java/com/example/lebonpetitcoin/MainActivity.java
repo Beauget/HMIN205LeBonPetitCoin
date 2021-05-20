@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else {
             lecteur = "";
-            Toast.makeText(MainActivity.this, "Pas connecté", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, getString(R.string.notConnected), Toast.LENGTH_SHORT).show();
         }
     }
     // [END on_start_check_user]
@@ -278,18 +278,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     MainActivity.this.startActivity(myIntent);
                 }
                 else{
-                    Toast.makeText(v.getContext(), "Vous devez être connecté", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), getString(R.string.notConnected), Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        this.home = findViewById(R.id.bottomAppBar_home);
+/*        this.home = findViewById(R.id.bottomAppBar_home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.this.showAccueilFragment();
             }
-        });
+        });*/
     }
 
 
@@ -314,7 +314,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.activity_main_drawer_signIn:{
                 this.showFragment(FRAGMENT_SIGNIN);
-                //this.createSignInIntent();
                 break;
             }
             case R.id.activity_main_drawer_signUp:
@@ -327,7 +326,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showFragment(FRAGMENT_RESULTAT);
                 break;
             case R.id.activity_main_drawer_deconnect:
-                FirebaseAuth.getInstance().signOut();
+                {
+                    FirebaseAuth.getInstance().signOut();
+                    this.showAccueilFragment();
+                    Toast.makeText(MainActivity.this,getString(R.string.disconnected), Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.activity_main_drawer_recherche_avancee:
                 this.showFragment(FRAGMENT_RECHERCHE_AVANCE);

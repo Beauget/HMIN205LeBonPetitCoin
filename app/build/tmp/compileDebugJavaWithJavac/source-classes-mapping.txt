@@ -102,7 +102,6 @@ com/example/lebonpetitcoin/MainActivity.java
  com.example.lebonpetitcoin.MainActivity$2
  com.example.lebonpetitcoin.MainActivity$3
  com.example.lebonpetitcoin.MainActivity$4
- com.example.lebonpetitcoin.MainActivity$5
 com/example/lebonpetitcoin/Adapter/AdapterCategorie.java
  com.example.lebonpetitcoin.Adapter.AdapterCategorie
  com.example.lebonpetitcoin.Adapter.AdapterCategorie$1

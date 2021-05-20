@@ -2013,8 +2013,11 @@ id beginning
 id blocking
 id bottom
 id bottomAppBar
+id bottomAppBar_add
 id bottomAppBar_home
+id bottomAppBar_seal
 id bottomLayout
+id bottom_navigation
 id bounce
 id browser_actions_header_text
 id browser_actions_menu_item_icon
@@ -2813,6 +2816,7 @@ string common_signin_button_text_long
 string configuration
 string confirmPassword
 string confirmation
+string connected
 string connexion
 string contacter_le_vendeur_via_messagerie
 string content_description_media
@@ -2825,6 +2829,7 @@ string default_web_client_id
 string departement
 string desactive
 string description
+string disconnected
 string echec
 string ecrire_un_message
 string email
@@ -3021,6 +3026,7 @@ string navigation_drawer_close
 string navigation_drawer_open
 string newUser
 string nombre_de_vues_par_annonce
+string notConnected
 string null_auteur
 string parametres
 string passowrd
@@ -3062,6 +3068,8 @@ string terms_conditions
 string title
 string titre
 string valider
+string visalisation_par_un_membre
+string visalisation_par_un_nonMembre
 string visualisation_les_30_dernier_jours
 string visualisation_les_7_dernier_jours
 string voici_les_derni_res_annonces_ajout_s

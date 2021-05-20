@@ -48,6 +48,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -374,7 +375,12 @@ public class AnnonceFragment extends Fragment {
     }
 
     public void addStat(String idAuteur,String idAnnonce){
-        Statistique statistique= new Statistique(idAuteur,idAnnonce);
+        Statistique statistique;
+        if(FirebaseAuth.getInstance().getCurrentUser()==null){
+            statistique= new Statistique(idAuteur,idAnnonce,false);
+        }
+        else
+            statistique= new Statistique(idAuteur,idAnnonce,true);
         cStatistique.add(statistique)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

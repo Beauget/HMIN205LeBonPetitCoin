@@ -6,6 +6,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="closebutton">Close Button for Activity</string>
+    <string name="connected">Vous êtes connecté !</string>
+    <string name="notConnected">Vous n\'êtes pas connecté !</string>
+    <string name="disconnected">Vous êtes déconnecté !</string>
 
 
     <!-- Used in NavigationDrawer -->
@@ -107,6 +110,9 @@
     <string name="nombre_de_vues_par_annonce">Nombre de vues par annonce</string>
     <string name="visualisation_les_30_dernier_jours">Visualisation les 30 dernier jours</string>
     <string name="visualisation_les_7_dernier_jours">visualisation les 7 dernier jours</string>
+    <string name="visalisation_par_un_membre">Visualisation par un membre</string>
+    <string name="visalisation_par_un_nonMembre">Visualisation par un invité</string>
+
 
     <!-- Used in Recherche -->
     <string name="position_exacte">Position exacte</string>

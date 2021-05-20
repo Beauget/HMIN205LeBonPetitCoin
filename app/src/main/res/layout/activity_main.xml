@@ -45,9 +45,11 @@
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_app_bar"
             app:navigationIcon="@drawable/seal"
+            app:collapseIcon="@drawable/seal"
             app:fabCradleMargin="0dp"
             app:fabCradleRoundedCornerRadius="0mm"
             style="@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface"
+            android:visibility="gone"
             />
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/activity_main_button_add"
@@ -57,6 +59,18 @@
             app:srcCompat="@drawable/add_24dp"
             app:layout_anchor="@id/bottomAppBar"
             />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/bottom_app_bar"
+            app:itemIconSize="30dp"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            />
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
