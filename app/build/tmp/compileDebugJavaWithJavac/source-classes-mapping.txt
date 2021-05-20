@@ -45,7 +45,6 @@ com/example/lebonpetitcoin/Adapter/AdapterFavoris.java
  com.example.lebonpetitcoin.Adapter.AdapterFavoris
  com.example.lebonpetitcoin.Adapter.AdapterFavoris$1
  com.example.lebonpetitcoin.Adapter.AdapterFavoris$2
- com.example.lebonpetitcoin.Adapter.AdapterFavoris$3
  com.example.lebonpetitcoin.Adapter.AdapterFavoris$FavorisHolder
 com/example/lebonpetitcoin/DataCategorie.java
  com.example.lebonpetitcoin.DataCategorie
