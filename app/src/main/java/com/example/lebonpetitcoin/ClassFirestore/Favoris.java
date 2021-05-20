@@ -1,5 +1,7 @@
 package com.example.lebonpetitcoin.ClassFirestore;
 
+import androidx.room.PrimaryKey;
+
 import java.util.Calendar;
 import java.util.Date;
 

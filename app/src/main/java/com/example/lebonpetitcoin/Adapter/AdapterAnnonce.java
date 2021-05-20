@@ -42,6 +42,7 @@ public class AdapterAnnonce extends FirestoreRecyclerAdapter<Annonce, AdapterAnn
 
     @Override
     protected void onBindViewHolder(@NonNull AnnonceHolder holder, int position, @NonNull Annonce model) {
+
         holder.getTextViewTitle().setText(String.valueOf((model.getTitre())));
         holder.getVues().setText(String.valueOf((model.getNbDeVisites())+" vue(s)"));
         //holder.getImageViewAnnonce();

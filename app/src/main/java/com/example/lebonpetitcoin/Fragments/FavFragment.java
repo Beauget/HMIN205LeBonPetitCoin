@@ -1,23 +1,30 @@
 package com.example.lebonpetitcoin.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lebonpetitcoin.Adapter.AdapterAnnonce;
 import com.example.lebonpetitcoin.Adapter.AdapterConversation;
 import com.example.lebonpetitcoin.Adapter.AdapterFavoris;
 import com.example.lebonpetitcoin.ClassFirestore.Favoris;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -61,6 +68,24 @@ public class FavFragment extends Fragment {
         adapter = new AdapterFavoris(options,getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                //adapter.notifyItemRemoved(position);
+                //Favoris favoris = adapter.getItem(position);
+                DocumentSnapshot snapshot = adapter.getSnapshots().getSnapshot(position);
+                String idFavoris = snapshot.getId();
+                delete(idFavoris);
+
+            }
+        }).attachToRecyclerView(recyclerView);
     }
 
     @Override
@@ -76,6 +101,23 @@ public class FavFragment extends Fragment {
         adapter.stopListening();
     }
 
+
+    public void delete(String idFavoris){
+        Toast.makeText(getContext(),idFavoris, Toast.LENGTH_SHORT).show();
+        cFavoris.document(idFavoris).delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "Favoris "+idFavoris+" successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error deleting document", e);
+                    }
+                });
+    }
 
 
 }

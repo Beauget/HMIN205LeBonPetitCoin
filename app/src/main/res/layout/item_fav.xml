@@ -26,6 +26,7 @@
         android:layout_gravity="center|start"
         android:layout_marginStart="120dp"/>
     <Button
+        android:id="@+id/trash"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="bottom|end"

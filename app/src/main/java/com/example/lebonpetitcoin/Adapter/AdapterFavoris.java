@@ -2,10 +2,11 @@ package com.example.lebonpetitcoin.Adapter;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,26 +18,26 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
-import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Favoris;
 import com.example.lebonpetitcoin.Fragments.AnnonceFragment;
 import com.example.lebonpetitcoin.GlideApp;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
-
 public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFavoris.FavorisHolder> {
+    private static final String TAG = "AdapterFavoris" ;
     private Context mContext;
+
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cAnnonce= firestoreDB.collection("Annonce");
+    private CollectionReference cFavoris = firestoreDB.collection("Favoris");
 
     public AdapterFavoris(@NonNull FirestoreRecyclerOptions<Favoris> options,Context c) {
         super(options);
@@ -45,6 +46,7 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
 
     @Override
     protected void onBindViewHolder(@NonNull FavorisHolder holder, int position, @NonNull Favoris model) {
+
         holder.getTextViewTitle().setText(String.valueOf((model.getTitreAnnonce())));
 
         String s;
@@ -71,27 +73,22 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
             }
         });
 
-
-
-        String id = model.getIdAnnonce();
+        String idAnnonce = model.getIdAnnonce();
         holder.getCardView().setOnClickListener(new View.OnClickListener() {
             private Fragment fragmentAnnonce;
             @Override
             public void onClick(View v) {
                 if (this.fragmentAnnonce == null) this.fragmentAnnonce= AnnonceFragment.newInstance();
                 Bundle arguments = new Bundle();
-                arguments.putString( "idAnnonce", id);
+                arguments.putString( "idAnnonce", idAnnonce);
                 fragmentAnnonce.setArguments(arguments);
                 ((AppCompatActivity) mContext).getSupportFragmentManager()
                         .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
 
-                Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
             }
         });
 
-
     }
-
 
 
     @NonNull
@@ -101,6 +98,7 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
                 parent, false);
         return new FavorisHolder(v);
     }
+
 
     class FavorisHolder extends RecyclerView.ViewHolder {
         TextView textViewTitle;
@@ -125,5 +123,6 @@ public class AdapterFavoris extends FirestoreRecyclerAdapter<Favoris, AdapterFav
         public CardView getCardView() {
             return cardView;
         }
+
     }
 }
