@@ -436,7 +436,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     // Création de chaque fragment
-    private void showAccueilFragment() {
+    public void showAccueilFragment() {
         if (this.fragmentAccount == null) this.fragmentAccueil = AccueilFragment.newInstance();
         this.startTransactionFragment(this.fragmentAccueil);
     }

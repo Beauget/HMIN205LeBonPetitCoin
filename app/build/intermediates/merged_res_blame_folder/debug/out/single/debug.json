@@ -24,6 +24,10 @@
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/drawable_profile_back_button.xml.flat",
+        "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/profile_back_button.xml"
+    },
+    {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/layout_fragment_parametres.xml.flat",
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/layout/fragment_parametres.xml"
     },
@@ -58,6 +62,10 @@
     {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/drawable_ic_baseline_favorite_filled_24.xml.flat",
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/ic_baseline_favorite_filled_24.xml"
+    },
+    {
+        "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/layout_item_profile.xml.flat",
+        "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/layout/item_profile.xml"
     },
     {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/layout_item_message_envoye.xml.flat",
@@ -252,6 +260,10 @@
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/baseline_home_white_24dp.png"
     },
     {
+        "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/drawable_profile_bk.xml.flat",
+        "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/profile_bk.xml"
+    },
+    {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/layout_fragment_conversation.xml.flat",
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/layout/fragment_conversation.xml"
     },
@@ -382,6 +394,10 @@
     {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/drawable_ic_login_bk.xml.flat",
         "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/ic_login_bk.xml"
+    },
+    {
+        "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/drawable_back_to_home_button.xml.flat",
+        "source": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/src/main/res/drawable/back_to_home_button.xml"
     },
     {
         "merged": "/home/hayaat/Desktop/Master/M1/Git/HMIN205LeBonPetitCoin/app/build/intermediates/res/merged/debug/drawable_ic_logo.png.flat",

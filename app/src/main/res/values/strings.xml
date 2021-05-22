@@ -7,6 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="closebutton">Close Button for Activity</string>
     <string name="connected">Vous êtes connecté !</string>
+    <string name="failConnect">Echec de connexion</string>
     <string name="notConnected">Vous n\'êtes pas connecté !</string>
     <string name="disconnected">Vous êtes déconnecté !</string>
 
@@ -62,6 +63,8 @@
     <string name="password_not_same">Les deux mots de passe ne correspondent pas</string>
     <string name="badSignIn">E-mail et/ou mot de passe invalide</string>
     <string name="champ_vide">Veuillez remplir tout les champs</string>
+    <string name="badSIRET">Le SIRET est invalide</string>
+    <string name="badNum">Le numéro est invalide</string>
 
     <!-- Used in addAnnonce/ModifierAnnonce -->
     <string name="modifier_la_description">Modifier la description</string>
@@ -103,7 +106,7 @@
     <string name="selectionner_votre_moyen_de_communication_privil_gi_si_tout_est_s_l_ctionn_cela_signifie_qu_il_y_en_a_aucun">Selectionner votre moyen de communication à privilégié, si tout est séléctionné cela signifie qu\'il y en a aucun.</string>
     <string name="cliquez_sur_la_zone_grise_si_vous_souhaitez_changer_d_image_de_profile">Cliquez sur la zone grise si vous souhaitez changer d\'image de profile</string>
     <string name="cliquez_sur_la_zone_grise_vous_souhaitez_ajouter_une_image_de_profile">Cliquez sur la zone grise vous souhaitez ajouter une image de profile</string>
-    <string name="moyen_de_contacte_a_privilegier">Moyen de contacte à privilégier</string>
+    <string name="moyen_de_contacte_a_privilegier">Moyen(s) de contacte à privilégier : </string>
 
 
 
@@ -151,6 +154,9 @@
     <string name="mot_de_passe">Mot de passe</string>
     <string name="mot_de_passe_oubli">Mot de passe oublié ?</string>
     <string name="bienvenue">Bienvenue</string>
+    <string name="infos_du_vendeur">Infos du vendeur : </string>
+    <string name="infos_du_vendeur_pro">Infos du vendeur professionnel : </string>
+    <string name="autre_s_annonce_s_du_m_me_vendeur">Autre(s) annonce(s) du même vendeur</string>
 
 
 </resources>

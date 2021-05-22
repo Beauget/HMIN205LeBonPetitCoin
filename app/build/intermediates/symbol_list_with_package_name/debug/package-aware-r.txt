@@ -1013,6 +1013,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blackTextColor
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1203,6 +1204,10 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color profileAccentColor
+color profileBackground
+color profileEditTextColor
+color profilePrimaryDark
 color purple_200
 color purple_700
 color radiobutton_themeable_attribute_color
@@ -1309,6 +1314,7 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
+dimen app_bar_height
 dimen appcompat_dialog_background_inset
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
@@ -1379,6 +1385,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1659,6 +1666,7 @@ dimen subtitle_outline_width
 dimen subtitle_shadow_offset
 dimen subtitle_shadow_radius
 dimen test_mtrl_calendar_day_cornerSize
+dimen text_margin
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1756,6 +1764,7 @@ drawable abc_vector_test
 drawable add_24dp
 drawable avd_hide_password
 drawable avd_show_password
+drawable back_to_home_button
 drawable baseline_error_black_24dp
 drawable baseline_home_black_18dp
 drawable baseline_home_white_24dp
@@ -1886,6 +1895,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable profile_back_button
+drawable profile_bk
 drawable round_add_circle_24dp
 drawable rounded_rectangle_green
 drawable rounded_rectangle_orange
@@ -1912,6 +1923,7 @@ id LContacte
 id LDepartement
 id LMoyenDePaiement
 id LResultat
+id MAJView
 id META
 id NO_DEBUG
 id RvResultat
@@ -2008,6 +2020,7 @@ id always
 id animateToEnd
 id animateToStart
 id anonymous_button
+id app_bar
 id apple_signin_button
 id asConfigured
 id async
@@ -2078,7 +2091,6 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id collapseActionView
-id compteTv
 id confirmPassword
 id confirm_button
 id confirmation_code
@@ -2140,6 +2152,7 @@ id edit_text_file_name
 id edittext_message
 id elastic
 id email
+id emailImageView
 id email_button
 id email_footer_tos_and_pp_text
 id email_layout
@@ -2239,6 +2252,7 @@ id likeCountTextView
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
 id list_item
 id logo
@@ -2271,6 +2285,7 @@ id microsoft_signin_button
 id middle
 id mini
 id miseAjourButton
+id mobileImageView
 id mobileNumber
 id month_grid
 id month_navigation_bar
@@ -2279,6 +2294,7 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
+id moyenDeContacte
 id moyenDePaiementTextView
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -2348,6 +2364,7 @@ id profile
 id progress_bar
 id progress_circular
 id progress_horizontal
+id pseudo
 id radio
 id ratio
 id rechercheButton
@@ -2444,6 +2461,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id tel
 id terms_conditions
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
@@ -2485,6 +2503,8 @@ id titreeeee
 id toast_error
 id toast_root
 id toggle
+id toolbar
+id toolbar_layout
 id top
 id topAppBar
 id topLayout
@@ -2667,6 +2687,7 @@ layout item_intitule
 layout item_message_envoye
 layout item_message_recus
 layout item_messages
+layout item_profile
 layout item_signin
 layout item_signup
 layout layout_chip_entry
@@ -2792,10 +2813,13 @@ string app_name
 string appbar_scrolling_view_behavior
 string attention
 string auteur
+string autre_s_annonce_s_du_m_me_vendeur
 string badDepartement
 string badKM
 string badNoKM
+string badNum
 string badPosition
+string badSIRET
 string badSignIn
 string badTooManyPosition
 string barTitle
@@ -2864,6 +2888,7 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string facebook_application_id
 string facebook_login_protocol_scheme
+string failConnect
 string fav
 string fcm_fallback_notification_channel_label
 string firebase_web_host
@@ -2974,6 +2999,8 @@ string hide_bottom_view_on_scroll_behavior
 string hide_pwd
 string icon_content_description
 string identifiant
+string infos_du_vendeur
+string infos_du_vendeur_pro
 string item_view_role_description
 string lebonpetitcoin
 string location
@@ -3567,7 +3594,10 @@ style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
 style Theme_LeBonPetitCoin
+style Theme_LeBonPetitCoin_AppBarOverlay
 style Theme_LeBonPetitCoin_NoActionBar
+style Theme_LeBonPetitCoin_PopupOverlay
+style Theme_LeBonPetitCoin_ProfileTheme
 style Theme_MaterialComponents
 style Theme_MaterialComponents_BottomSheetDialog
 style Theme_MaterialComponents_Bridge
@@ -3667,6 +3697,7 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style ThemeOverlayColorAccentRed
+style TransparentText
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar
@@ -3885,6 +3916,12 @@ style loginParent
 style modifiedEditText
 style orangeButton
 style parent
+style profileDetailsImage
+style profileDetailsLayout
+style profileDetailsMiniText
+style profileDetailsTextMain
+style profileStyledBackButton
+style proifleDetailsView
 style tealButton
 style viewParent
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle

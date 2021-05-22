@@ -83,7 +83,7 @@
                     android:id="@+id/pro"
                     style="@style/modifiedEditText"
                     android:hint="@string/siret"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 

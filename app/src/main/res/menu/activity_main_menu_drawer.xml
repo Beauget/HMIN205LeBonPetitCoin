@@ -7,7 +7,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/activity_main_drawer_account"
-            android:icon="@drawable/seal"
+            android:icon="@drawable/ic_baseline_happy_faces_24"
             android:title="@string/mon_compte" />
     </group>
     <item android:title="@string/recherche">
@@ -15,11 +15,11 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/activity_main_drawer_recherche_avancee"
-                    android:icon="@drawable/chat_24dp"
+                    android:icon="@drawable/ic_baseline_search_24"
                     android:title="@string/recherche_avanc_e" />
                 <item
                     android:id="@+id/activity_main_drawer_resultat"
-                    android:icon="@drawable/chat_24dp"
+                    android:icon="@drawable/ic_baseline_search_24"
                     android:title="@string/voir_toute_les_annonces" />
             </group>
         </menu>

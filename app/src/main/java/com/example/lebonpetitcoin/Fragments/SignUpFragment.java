@@ -353,12 +353,20 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                         String mUrl = getUri.toString();
 
                         String siretString = siret.getText().toString();
-                        if (siretString.length() == 0) {
-                            inscription(email, password, pseudo, mUrl,false, telephoneContact, null, localisation);
+
+                        if (telephoneContact.length()!=10) {
+                            if (siretString.length() == 0) {
+                                inscription(email, password, pseudo, mUrl, false, telephoneContact, null, localisation);
+                            } else {
+                                if (siretString.length() == 14)
+                                    inscription(email, password, pseudo, mUrl, true, telephoneContact, siretString, localisation);
+                                else
+                                    new CustomToast().Show_Toast(getActivity(), view, getString(R.string.badSIRET));
+
+                            }
                         }
-                        else {
-                            inscription(email, password, pseudo, mUrl,true, telephoneContact, siretString, localisation);
-                        }
+                        else
+                            new CustomToast().Show_Toast(getActivity(), view, getString(R.string.badNum));
 
                     }
                 }
