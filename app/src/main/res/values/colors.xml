@@ -11,4 +11,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hint">#808080</color>
+    <color name="grey">#DFDFDF</color>
+    <color name="colorPrimary">#249A9B</color>
+    <color name="colorPrimaryDark">#005353</color>
+    <color name="colorAccent">#FF03DAC5</color>
+
+    <!--colors for modern ui-->
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">#249A9B</color>
+    <color name="loginBkColor">#f0f0f0</color>
+
+    <!--colros for card-->
+    <color name="whiteCardColor">#fff</color>
 </resources>

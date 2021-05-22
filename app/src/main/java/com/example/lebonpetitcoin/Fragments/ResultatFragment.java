@@ -78,6 +78,7 @@ public class ResultatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_resultat, container, false);
         tv = (TextView) view.findViewById(R.id.textView);
+        
 
         //addAnnonce("Annonce styley");
 

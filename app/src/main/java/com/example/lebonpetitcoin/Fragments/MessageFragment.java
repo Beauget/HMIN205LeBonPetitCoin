@@ -83,8 +83,6 @@ public class MessageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         String uid = mAuth.getCurrentUser().getUid();
-
-        super.onViewCreated(view, savedInstanceState);
         Bundle bundle = this.getArguments();
 
         if (bundle != null) {

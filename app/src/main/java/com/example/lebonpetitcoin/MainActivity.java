@@ -22,10 +22,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Message;
+import com.example.lebonpetitcoin.Fragments.AProposFragment;
 import com.example.lebonpetitcoin.Fragments.AccountFragment;
 import com.example.lebonpetitcoin.Fragments.AccueilFragment;
 
@@ -43,6 +45,7 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
@@ -68,12 +71,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     MaterialToolbar topAppBar;
     NavigationView navigationView;
+    BottomNavigationView bottomNavigationView;
     Menu nav_Menu;
     View headerLayout;
     ImageView header_Menu ;
+    TextView header_pseudo;
     DrawerLayout drawerLayout;
-    FloatingActionButton add;
     ActionMenuItemView home;
+    ActionMenuItemView add;
     String imgProfile ;
     public String lecteur;
     boolean estProfessionnel;
@@ -91,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Fragment fragmentResultat;
     private Fragment fragmentRechercheAvancee;
     private Fragment fragmentModifierAnnonces;
+    private Fragment fragmentAPropos;
 
     //VALEUR RETOURNE SELON LE CLIQUE
     private static final int FRAGMENT_ACCOUNT = 0;
@@ -103,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_RESULTAT = 7;
     private static final int FRAGMENT_RECHERCHE_AVANCE = 8;
     private static final int FRAGMENT_MODIFIER_ANNONCES= 9;
+    private static final int FRAGMENT_A_PROPOS = 10;
 
     // [START declare_auth]
     public FirebaseAuth mAuth;
@@ -122,6 +129,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_Menu = navigationView.getMenu();
         headerLayout = navigationView.getHeaderView(0);
         header_Menu = headerLayout.findViewById(R.id.imageView);
+        header_pseudo = headerLayout.findViewById(R.id.textView);
+
 
         this.configureTopAppBar();
         this.configureDrawerLayout();
@@ -146,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else {
             lecteur = "";
-            Toast.makeText(MainActivity.this, getString(R.string.notConnected), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, getString(R.string.notConnected), Toast.LENGTH_SHORT).show();
         }
     }
     // [END on_start_check_user]
@@ -203,6 +212,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nav_Menu.findItem(R.id.activity_main_drawer_signUp).setVisible(true);
         nav_Menu.findItem(R.id.activity_main_drawer_deconnect).setVisible(false);
         nav_Menu.findItem(R.id.activity_main_drawer_modifier_annonce).setVisible(false);
+        header_pseudo.setText("");
+
 
     }
 
@@ -266,7 +277,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void configureBottomAppBar() {
 
-        this.add = (FloatingActionButton) findViewById(R.id.activity_main_button_add);
+        this.bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.bottomAppBar_seal:
+                        MainActivity.this.showAProposFragment();
+                        return true;
+                    case R.id.bottomAppBar_add: {
+                        if(mAuth.getCurrentUser()!=null) {
+
+                            Intent myIntent = new Intent(MainActivity.this, AddAnnonceActivity.class);
+                            myIntent.putExtra("name",mAuth.getCurrentUser().getUid());
+                            MainActivity.this.startActivity(myIntent);
+                        }
+                        else{
+                            Toast.makeText(MainActivity.this, getString(R.string.notConnected), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                        return true;
+                    case R.id.bottomAppBar_home:
+                        MainActivity.this.showAccueilFragment();
+                        return true;
+                    default:
+                        return false;
+                }
+            }});
+    }
+
+/*
+        this.home = findViewById(R.id.bottomAppBar_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.this.showAccueilFragment();
+            }
+        });
+
+        this.add = findViewById(R.id.bottomAppBar_add);
         add.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -283,14 +333,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-/*        this.home = findViewById(R.id.bottomAppBar_home);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.showAccueilFragment();
-            }
-        });*/
-    }
+ */
+
 
 
     @Override
@@ -381,7 +425,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.showRechercheAvanceeFragment();
                 break;
             case FRAGMENT_MODIFIER_ANNONCES:
-                this.showModifierAnnonce();
+                this.showModifierAnnonceFragment();
+                break;
+            case FRAGMENT_A_PROPOS:
+                this.showAProposFragment();
                 break;
             default:
                 break;
@@ -399,7 +446,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.startTransactionFragment(this.fragmentAccount);
     }
 
-    private void showMessageFragment() {
+    public void showMessageFragment() {
         if (this.fragmentMessage== null) this.fragmentMessage= MessageFragment.newInstance();
         Bundle arguments = new Bundle();
         arguments.putString( "lecteur", lecteur);
@@ -443,9 +490,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.startTransactionFragment(this.fragmentRechercheAvancee);
     }
 
-    public void showModifierAnnonce() {
+    public void showModifierAnnonceFragment() {
         if (this.fragmentModifierAnnonces== null) this.fragmentModifierAnnonces= ModifierAnnoncesFragment.newInstance();
         this.startTransactionFragment(this.fragmentModifierAnnonces);
+    }
+
+    public void showAProposFragment() {
+        if (this.fragmentAPropos== null) this.fragmentAPropos= AProposFragment.newInstance();
+        this.startTransactionFragment(this.fragmentAPropos);
     }
 
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout
@@ -507,14 +559,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         if(imgProfile.length()>0){
                             GlideApp.with(MainActivity.this)
                                     .load(imgProfile)
-                                    .centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
+                                    .centerCrop()
                                     .into(header_Menu);
+                            header_pseudo.setText(lecteur);
                         }
                         else{
                             GlideApp.with(MainActivity.this)
                                     .load("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/noPP.jpg?alt=media&token=a8e9f70c-85e6-48ad-9f00-433c726f9da2")
                                     .centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
                                     .into(header_Menu);
+                            header_pseudo.setText("");
                         }
                         if(estProfessionnel==true){
                             nav_Menu.findItem(R.id.activity_main_drawer_stats).setVisible(true);

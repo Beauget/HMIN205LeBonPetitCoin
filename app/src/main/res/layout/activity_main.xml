@@ -51,14 +51,7 @@
             style="@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface"
             android:visibility="gone"
             />
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/activity_main_button_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Theme.LeBonPetitCoin"
-            app:srcCompat="@drawable/add_24dp"
-            app:layout_anchor="@id/bottomAppBar"
-            />
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"

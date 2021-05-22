@@ -377,7 +377,7 @@ public class ModifierAnnonceFragment extends Fragment {
                 }).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                ((MainActivity)getActivity()).showModifierAnnonce();
+                ((MainActivity)getActivity()).showModifierAnnonceFragment();
             }
         });
 

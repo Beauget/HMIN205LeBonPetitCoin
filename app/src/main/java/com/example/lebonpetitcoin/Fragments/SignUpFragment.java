@@ -130,7 +130,10 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
-            Picasso.get().load(mImageUri).into(mImageView);
+            GlideApp.with(getContext())
+                    .load(mImageUri)
+                    .centerCrop()
+                    .into(mImageView);
         }
     }
 
@@ -141,7 +144,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         siret = (EditText) view.findViewById(R.id.pro);
         emailId = (EditText) view.findViewById(R.id.userEmailId);
         mobileNumber = (EditText) view.findViewById(R.id.mobileNumber);
-        location = (EditText) view.findViewById(R.id.location);
+        //location = (EditText) view.findViewById(R.id.location);
         password = (EditText) view.findViewById(R.id.password);
         confirmPassword = (EditText) view.findViewById(R.id.confirmPassword);
         signUpButton = (Button) view.findViewById(R.id.signUpBtn);

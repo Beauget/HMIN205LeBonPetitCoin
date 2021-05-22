@@ -1101,9 +1101,11 @@ color fui_buttonShadow
 color fui_linkColor
 color fui_transparent
 color green_500
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color hint
+color loginBkColor
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1192,6 +1194,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color primaryTextColor
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1225,6 +1228,8 @@ color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
 color white
+color whiteCardColor
+color whiteTextColor
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1389,6 +1394,7 @@ dimen fui_field_padding_vert
 dimen fui_heading_padding_bottom
 dimen fui_min_height_target
 dimen fui_wrapper_padding_horiz
+dimen headerTextSize
 dimen highlight_alpha_material_colored
 dimen highlight_alpha_material_dark
 dimen highlight_alpha_material_light
@@ -1399,6 +1405,8 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen loginCardRadius
+dimen loginViewsMargin
 dimen material_clock_display_padding
 dimen material_clock_face_margin_top
 dimen material_clock_hand_center_dot_radius
@@ -1611,6 +1619,7 @@ dimen mtrl_tooltip_minHeight
 dimen mtrl_tooltip_minWidth
 dimen mtrl_tooltip_padding
 dimen mtrl_transition_shared_axis_slide_distance
+dimen newsMoreTextSize
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -1641,6 +1650,7 @@ dimen shr_staggered_product_grid_margin_top_second
 dimen shr_staggered_product_grid_margin_top_third
 dimen shr_staggered_product_grid_spacing_large
 dimen shr_staggered_product_grid_spacing_small
+dimen signup_text_margin_top
 dimen size_image_height
 dimen size_image_width
 dimen size_title
@@ -1762,6 +1772,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_gradient
 drawable chat_24dp
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1835,12 +1846,14 @@ drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_login_bk
 drawable ic_logo
 drawable ic_logo_test
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable login_shape_bk
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1965,7 +1978,6 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
-id activity_main_button_add
 id activity_main_drawer_account
 id activity_main_drawer_deconnect
 id activity_main_drawer_fav
@@ -2229,7 +2241,6 @@ id line3
 id linear
 id listMode
 id list_item
-id location
 id logo
 id lv
 id main_tos_and_pp
@@ -2315,6 +2326,7 @@ id parentPanel
 id parentRelative
 id parent_matrix
 id password
+id passwordTIL
 id password_layout
 id password_toggle
 id path
@@ -2387,11 +2399,11 @@ id showCustom
 id showHome
 id showTitle
 id signInBtn
+id signUp
 id signUpBtn
 id sign_in_email_sent_header_text
 id sign_in_email_sent_text
 id signaler
-id signup
 id sin
 id skipCollapsed
 id slide
@@ -2498,6 +2510,7 @@ id unlabeled
 id up
 id useLogo
 id userEmailId
+id userEmailTIL
 id valider
 id vertical
 id view_offset_helper
@@ -2603,6 +2616,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_custom_layout
 layout fav_item
+layout fragment_a_propos
 layout fragment_account
 layout fragment_accueil
 layout fragment_annonce
@@ -2653,6 +2667,8 @@ layout item_intitule
 layout item_message_envoye
 layout item_message_recus
 layout item_messages
+layout item_signin
+layout item_signup
 layout layout_chip_entry
 layout material_chip_input_combo
 layout material_clock_display
@@ -2780,12 +2796,15 @@ string badDepartement
 string badKM
 string badNoKM
 string badPosition
+string badSignIn
 string badTooManyPosition
 string barTitle
+string bienvenue
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
 string cat_gorie
 string cat_gorie_s
+string champ_vide
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2984,6 +3003,8 @@ string modifier_le_prix
 string modifier_le_titre
 string modifier_mes_annonces
 string mon_compte
+string mot_de_passe
+string mot_de_passe_oubli
 string moyen_de_contacte_a_privilegier
 string moyen_de_paiement
 string moyen_de_paiement_s
@@ -3402,6 +3423,7 @@ style ShapeAppearance_MaterialComponents_SmallComponent
 style ShapeAppearance_MaterialComponents_Test
 style ShapeAppearance_MaterialComponents_Tooltip
 style ShapeAppearanceOverlay
+style ShapeAppearanceOverlay_App_CornerSize50Percent
 style ShapeAppearanceOverlay_BottomLeftDifferentCornerSize
 style ShapeAppearanceOverlay_BottomRightCut
 style ShapeAppearanceOverlay_Cut
@@ -3545,6 +3567,7 @@ style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
 style Theme_LeBonPetitCoin
+style Theme_LeBonPetitCoin_NoActionBar
 style Theme_MaterialComponents
 style Theme_MaterialComponents_BottomSheetDialog
 style Theme_MaterialComponents_Bridge
@@ -3853,6 +3876,17 @@ style Widget_MaterialProgressBar_ProgressBar_NoPadding
 style Widget_MaterialProgressBar_ProgressBar_Small
 style Widget_MaterialProgressBar_ProgressBar_Small_NoPadding
 style Widget_Support_CoordinatorLayout
+style gradientButton
+style headerText
+style headerTextPrimary
+style linearParent
+style loginCard
+style loginParent
+style modifiedEditText
+style orangeButton
+style parent
+style tealButton
+style viewParent
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

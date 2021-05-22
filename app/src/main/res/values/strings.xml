@@ -53,13 +53,15 @@
     <string name="terms_conditions">En cliquant vous acceptez les termes de notre politiques de confidentialités.</string>
     <string name="password">Mot de passe</string>
     <string name="identifiant">Identifiant</string>
-    <string name="siret">Siret</string>
+    <string name="siret">SIRET</string>
     <string name="pseudoPris">Pseudo déja pris</string>
     <string name="envoie_en_cours">Envoie en cours</string>
     <string name="acceptez_les_conditions">Acceptez les conditions</string>
     <string name="remplir_les_champs_obligatoires">Remplir les champs obligatoires</string>
     <string name="email_invalide">Email invalide</string>
     <string name="password_not_same">Les deux mots de passe ne correspondent pas</string>
+    <string name="badSignIn">E-mail et/ou mot de passe invalide</string>
+    <string name="champ_vide">Veuillez remplir tout les champs</string>
 
     <!-- Used in addAnnonce/ModifierAnnonce -->
     <string name="modifier_la_description">Modifier la description</string>
@@ -146,6 +148,9 @@
     <string name="active"> activé !</string>
     <string name="desactive"> désactivé !</string>
     <string name="voici_les_derni_res_annonces_ajout_s">Voici les dernières annonces ajoutés</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié ?</string>
+    <string name="bienvenue">Bienvenue</string>
 
 
 </resources>

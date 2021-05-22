@@ -111,6 +111,7 @@ public class AnnonceFragment extends Fragment {
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
     private CollectionReference cStatistique = firestoreDB.collection("Statistique");
     private CollectionReference cConversation = firestoreDB.collection("Conversation");
+    public FirebaseAuth mAuth;
 
     //Listener afin que la recherche dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration annonceListener;
@@ -118,6 +119,7 @@ public class AnnonceFragment extends Fragment {
     private ListenerRegistration moyenDePaiementListener;
     ListView lv;
     private ChipGroup chipGroup;
+
 
 
     public static Fragment newInstance() {
@@ -149,6 +151,7 @@ public class AnnonceFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
 
         initButtons();
 
@@ -197,7 +200,9 @@ public class AnnonceFragment extends Fragment {
                         images.get(i).setVisibility(View.VISIBLE);
                         GlideApp.with(getContext())
                                 .load(annonce.getImages().get(i))
+                                .centerCrop()
                                 .into(images.get(i));
+
 
                         /*images.get(i).setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -214,8 +219,12 @@ public class AnnonceFragment extends Fragment {
                                 alertadd.show();
                             }
                         });*/
-
                     }
+
+                    if (mAuth.getCurrentUser()!=null){
+                        contacter.setVisibility(View.VISIBLE);
+                    }
+
                     if (annonce.getImages().size()==0){
                         images.get(0).setVisibility(View.VISIBLE);
                         GlideApp.with(getContext())
@@ -400,15 +409,25 @@ public class AnnonceFragment extends Fragment {
         //On verifie que l'auteur essaye pas de se contacter lui meme
         if (vendeur.equals((lecteur))==false) {
             Task<DocumentSnapshot> tConversation = cConversation.document(lecteur + idAnnonce).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+
+                private Fragment fragmentConversation;
+
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     Compte compte = documentSnapshot.toObject(Compte.class);
+                    String id = documentSnapshot.getId();
 
                     if (compte != null) {
-                        //rediriger vers la conversation
+                        if (this.fragmentConversation == null) this.fragmentConversation= ConversationFragment.newInstance();
+                        Bundle arguments = new Bundle();
+                        arguments.putString( "idConversation", id);
+                        arguments.putString( "lecteur", lecteur);
+                        fragmentConversation.setArguments(arguments);
+                        ((AppCompatActivity) getContext()).getSupportFragmentManager()
+                                    .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentConversation).commit();
                     } else {
                         addConversation(auteur, lecteur, titre, idAnnonce, image);
-                        //rediriger vers la conversation
+                        ((MainActivity)getActivity()).showMessageFragment();
                     }
                 }
             });

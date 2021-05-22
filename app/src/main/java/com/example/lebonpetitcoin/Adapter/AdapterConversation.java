@@ -28,6 +28,7 @@ import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -41,6 +42,7 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cAnnonce= firestoreDB.collection("Annonce");
+    public FirebaseAuth mAuth;
 
     public AdapterConversation(@NonNull FirestoreRecyclerOptions<Conversation> options,Context c,String lecteur) {
         super(options);
@@ -65,8 +67,6 @@ public class AdapterConversation extends FirestoreRecyclerAdapter<Conversation, 
         }
 
         holder.getMessage().setText(String.valueOf((model.getAnnonce())));
-
-        //Toast.makeText(mContext,model.getAnnonce(),Toast.LENGTH_SHORT).show();
 
         DocumentSnapshot snapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
         String id = snapshot.getId();

@@ -1,71 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="20dp"
-    >
+    style="@style/loginParent">
+    <ScrollView
+        style="@style/parent">
+
+        <RelativeLayout
+            style="@style/parent">
 
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/signIn"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1px"
-        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:weightSum="12"
+                android:baselineAligned="false">
 
-    <EditText
-        android:id="@+id/userEmailId"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/baseline_menu_black_24dp"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textSize="16sp"
-        android:autofillHints="" />
+                <LinearLayout
+                    style="@style/parent"
+                    android:background="@drawable/login_shape_bk"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1px"
-        />
+                    <ImageView
+                        style="@style/parent"
+                        android:background="@drawable/ic_login_bk"
+                        android:contentDescription="login background" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp">
 
 
+                <TextView
+                    style="@style/headerText"
+                    android:layout_gravity="center"
+                    android:text="Re-Bonjour !"
+                    android:layout_marginTop="40dp"/>
+                <include
+                    layout="@layout/item_signin"/>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@android:color/transparent"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:hint="@string/passowrd"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:singleLine="true"
-        android:textSize="16sp" />
+            </LinearLayout>
+        </RelativeLayout>
 
-    <Button
-        android:id="@+id/signInBtn"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:padding="3dp"
-        android:text="@string/signIn"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+    </ScrollView>
 
-
-</LinearLayout>
+</RelativeLayout>

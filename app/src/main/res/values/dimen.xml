@@ -28,4 +28,12 @@
     <dimen name="shr_staggered_product_grid_card_height_portrait">247dp</dimen>
     <dimen name="shr_staggered_product_grid_card_width_landscape">188dp</dimen>
     <dimen name="shr_staggered_product_grid_card_height_landscape">140dp</dimen>
+
+    <!--dimes for design signIn-->
+    <dimen name="headerTextSize">22sp</dimen>
+    <dimen name="newsMoreTextSize">12sp</dimen>
+    <dimen name="loginCardRadius">20dp</dimen>
+    <dimen name="loginViewsMargin">20dp</dimen>
+
+    <dimen name="signup_text_margin_top">10dp</dimen>
 </resources>

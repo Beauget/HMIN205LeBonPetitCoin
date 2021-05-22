@@ -122,7 +122,7 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
                 ((AppCompatActivity) mContext).getSupportFragmentManager()
                         .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
 
-                Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
             }
         });
 

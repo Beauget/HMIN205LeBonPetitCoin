@@ -35,12 +35,12 @@ import java.util.regex.Pattern;
 
 import static androidx.core.app.ActivityCompat.startActivityForResult;
 
-public class SignInFragment extends Fragment implements View.OnClickListener {
+public class SignInFragment extends Fragment {
     private static final int RC_SIGN_IN = 123;
     private static final int RESULT_OK = 1;
     private static View view;
     private static EditText emailId, password;
-    private static TextView login;
+    private static TextView signUp;
     private static Button signInButton;
     private String TAG = "SignInFragment" ;
 
@@ -69,6 +69,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
         emailId = (EditText) view.findViewById(R.id.userEmailId);
         password = (EditText) view.findViewById(R.id.password);
         signInButton = (Button) view.findViewById(R.id.signInBtn);
+        signUp = (TextView) view.findViewById(R.id.signUp);
 
 
         /*Setting text selector over textviews
@@ -84,7 +85,20 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
 
     // Set Listeners
     private void setListeners() {
-        signInButton.setOnClickListener(this);
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkValidation();
+            }
+        });
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signUpFragment();
+            }
+        });
+
     }
 
     private void connexion(String email, String password){
@@ -108,46 +122,35 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
                 });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.signInBtn:
-                // Call checkValidation method
-                checkValidation();
-                break;
-        }
 
-    }
-
-    // Check Validation Method
     private void checkValidation() {
 
-        // Get all edittext texts
         String getEmailId = emailId.getText().toString();
         String getPassword = password.getText().toString();
 
-        // Pattern match for email id
+        // Pattern match
         Pattern p = Pattern.compile(regEx);
         Matcher m = p.matcher(getEmailId);
 
-        // Check if all strings are null or not
         if (getEmailId.equals("") || getEmailId.length() == 0
                 || getPassword.equals("") || getPassword.length() == 0
             )
 
             new CustomToast().Show_Toast(getActivity(), view,
-                    "All fields are required.");
+                    getString(R.string.champ_vide));
 
-            // Check if email id valid or not
         else if (!m.find())
             new CustomToast().Show_Toast(getActivity(), view,
-                    "Your Email Id is Invalid.");
+                    getString(R.string.badSignIn));
 
 
             // Else do signup or do your stuff
         else
             connexion(getEmailId,getPassword);
+    }
 
+    private  void signUpFragment(){
+        ((MainActivity)getActivity()).showSignUpFragment();
     }
 
 
