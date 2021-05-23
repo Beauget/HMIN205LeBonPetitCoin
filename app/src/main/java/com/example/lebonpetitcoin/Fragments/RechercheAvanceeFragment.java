@@ -97,7 +97,6 @@ public class RechercheAvanceeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         arrayListCategorie = new ArrayList<>();
 
-        position.setText(getString(R.string.position_recherche));
         Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
                 .setQuery(queryC, Categorie.class)
@@ -111,6 +110,8 @@ public class RechercheAvanceeFragment extends Fragment {
             }
         });
         //Toast.makeText(getContext(), ecouteurGPS.toString(), Toast.LENGTH_SHORT).show();
+        Latitude = 0;
+        Longitude = 0 ;
     }
 
     public void checkValidation(){
@@ -213,6 +214,11 @@ public class RechercheAvanceeFragment extends Fragment {
 
             if(localisation != null)
             {
+                Latitude = localisation.getLatitude();
+                Longitude = localisation.getLongitude();
+
+                if(Latitude== 0 && Longitude == 0)
+                    position.setText(getString(R.string.position_recherche));
                 // on notifie la localisation
                 ecouteurGPS.onLocationChanged(localisation);
             }
