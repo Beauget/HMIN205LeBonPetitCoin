@@ -1869,6 +1869,7 @@ drawable ic_penguin
 drawable ic_seal
 drawable ic_sealbrown
 drawable ic_sealfullbody
+drawable ic_sealfullbody_icon
 drawable ic_sealfullbody_outline
 drawable login_shape_bk
 drawable material_cursor_drawable

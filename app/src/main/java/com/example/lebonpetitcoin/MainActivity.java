@@ -249,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
                         .setTheme(R.style.Theme_LeBonPetitCoin)
-                        .setLogo(R.drawable.ic_logo)
+                        .setLogo(R.drawable.ic_sealfullbody)
                         .build(),
                 RC_SIGN_IN);
         // [END auth_fui_create_intent]
