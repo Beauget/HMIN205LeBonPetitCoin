@@ -110,8 +110,6 @@ public class RechercheAvanceeFragment extends Fragment {
             }
         });
         //Toast.makeText(getContext(), ecouteurGPS.toString(), Toast.LENGTH_SHORT).show();
-        Latitude = 0;
-        Longitude = 0 ;
     }
 
     public void checkValidation(){

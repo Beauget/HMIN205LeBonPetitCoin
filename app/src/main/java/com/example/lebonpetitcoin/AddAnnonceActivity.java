@@ -610,6 +610,11 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
             if(localisation != null)
             {
+                Latitude = localisation.getLatitude();
+                Longitude = localisation.getLongitude();
+
+                if(Latitude== 0 && Longitude == 0)
+                    position.setText(getString(R.string.position_recherche));
                 // on notifie la localisation
                 ecouteurGPS.onLocationChanged(localisation);
             }
