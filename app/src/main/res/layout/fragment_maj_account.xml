@@ -2,20 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="20dp" >
+    android:padding="20dp">
 
-    <TextView
-        android:text="@string/cliquez_sur_la_zone_grise_si_vous_souhaitez_changer_d_image_de_profile"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center" />
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageProfile"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/hint"
+        android:layout_width="187.5dp"
+        android:layout_height="185.5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        app:strokeWidth="5dp"
+        app:strokeColor="@color/colorPrimary"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:background="@color/grey"
         />
+    <TextView
+        style="@style/viewParent"
+        android:text="@string/cliquez_sur_la_zone_grise_vous_souhaitez_ajouter_une_image_de_profile"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -32,12 +39,15 @@
         android:layout_height="wrap_content"
         />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/gradientButton"
+        app:backgroundTint="@null"
         android:id="@+id/miseAjourButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="@string/mettre_jour"
-        />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/loginViewsMargin"/>
+
 
 
 

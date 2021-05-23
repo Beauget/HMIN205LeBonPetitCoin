@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lebonpetitcoin.Adapter.AdapterArticle;
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
+import com.example.lebonpetitcoin.Adapter.AdapterCategorieAcceuil;
 import com.example.lebonpetitcoin.Adapter.AdapterFavoris;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
@@ -51,6 +53,10 @@ public class AccueilFragment extends Fragment {
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     private CollectionReference cAnnonces = firestoreDB.collection("Annonce");
+    private CollectionReference cCategorie = firestoreDB.collection("Categorie");
+
+    private FirestoreRecyclerAdapter adapterCategorie;
+    RecyclerView recyclerViewCategorie;
 
     //Listener afin que la recherce dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration annonceListener;
@@ -78,6 +84,7 @@ public class AccueilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_accueil, container, false);
         recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerViewCategorie = view.findViewById(R.id.LCategorie);
 
 
         return view;
@@ -101,6 +108,17 @@ public class AccueilFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
         recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
         recyclerView.setAdapter(adapter);
+
+        Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
+        FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
+                .setQuery(queryC, Categorie.class)
+                .setLifecycleOwner(this)
+                .build();
+
+        adapterCategorie = new AdapterCategorieAcceuil(optionsC,getContext());
+        recyclerViewCategorie.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerViewCategorie.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
+        recyclerViewCategorie.setAdapter(adapterCategorie);
 
 
     }

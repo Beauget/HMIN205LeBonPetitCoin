@@ -84,6 +84,11 @@
     <string name="annonce_ajoute">Annonce ajouté !</string>
     <string name="creation_de_l_annonce_en_cours">Création de l\'annonce en cours</string>
     <string name="null_auteur">Échec de la récupération du compte</string>
+    <string name="signale">L\'annonce à étais signalé</string>
+    <string name="badSignale">Erreur durant l\'envoie du signalement</string>
+    <string name="alertSignale">Êtes-vous sûre de vouloir signaler cette annonce ?</string>
+    <string name="buttonSignale">Signaler</string>
+    <string name="alertTitreSignale">Veuillez remplir ce formulaire</string>
 
 
 
@@ -157,6 +162,10 @@
     <string name="infos_du_vendeur">Infos du vendeur : </string>
     <string name="infos_du_vendeur_pro">Infos du vendeur professionnel : </string>
     <string name="autre_s_annonce_s_du_m_me_vendeur">Autre(s) annonce(s) du même vendeur</string>
+    <string name="contenu_inappropri">Contenu inapproprié</string>
+    <string name="spam_fausse_annonce">SPAM / fausse annonce</string>
+    <string name="message">Message</string>
+    <string name="message_facultatif">Message (facultatif)</string>
 
 
 </resources>

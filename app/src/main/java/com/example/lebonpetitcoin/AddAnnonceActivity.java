@@ -100,14 +100,10 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
-    private Button mButtonChooseImage;
-    private Button mButtonUpload;
-    private TextView mTextViewShowUploads;
-    private EditText mEditTextFileName;
-    private ImageView mImageView;
     private ProgressBar mProgressBar;
     private Button mButtonAdd;
     private Button mButtondelete;
+    private Button mButtonRetour;
     private Intent intent = getIntent();
     private Bundle extras ;
     private String name,telephoneContact, mailContact;
@@ -196,6 +192,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
             Upload_Btn = (Button) findViewById(R.id.UploadBtn);
             mButtonAdd = (Button) findViewById(R.id.add);
             mButtondelete = (Button) findViewById(R.id.delete);
+            mButtonRetour = (Button) findViewById(R.id.retourBtn);
 
 
             recyclerViewCategorie = findViewById(R.id.LCategorie);
@@ -251,6 +248,14 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 public void onClick(View v) {
                     deleteImage();
 
+                }
+            });
+
+            mButtonRetour.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
+                    AddAnnonceActivity.this.startActivity(myIntent);
                 }
             });
 

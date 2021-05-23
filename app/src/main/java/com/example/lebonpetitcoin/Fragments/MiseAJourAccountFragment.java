@@ -111,7 +111,11 @@ public class MiseAJourAccountFragment extends Fragment {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
-            Picasso.get().load(mImageUri).into(imageProfile);
+
+            GlideApp.with(getContext())
+                    .load(mImageUri)
+                    .centerCrop()
+                    .into(imageProfile);
         }
     }
 

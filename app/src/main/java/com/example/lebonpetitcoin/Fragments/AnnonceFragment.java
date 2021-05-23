@@ -4,11 +4,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +22,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +34,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
+import com.example.lebonpetitcoin.AddAnnonceActivity;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
+import com.example.lebonpetitcoin.ClassFirestore.AnnonceSignale;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
 import com.example.lebonpetitcoin.ClassFirestore.Conversation;
@@ -48,6 +55,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -75,15 +83,15 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import static androidx.core.content.ContextCompat.getSystemService;
+
 
 public class AnnonceFragment extends Fragment {
 
     TextView titre;
-    TextView description;
-    TextView moyenDePaiements;
-    TextView categories;
-    TextView nbVisites;
-    TextView date;
+    TextView description,all;
+    TextView moyenDePaiements,categories,nbVisites,date;
+
     ImageView image1;
     ImageView image2;
     ImageView image3;
@@ -111,13 +119,13 @@ public class AnnonceFragment extends Fragment {
     private CollectionReference cCategorie = firestoreDB.collection("Categorie");
     private CollectionReference cStatistique = firestoreDB.collection("Statistique");
     private CollectionReference cConversation = firestoreDB.collection("Conversation");
+    private CollectionReference cAnnonceSignale = firestoreDB.collection("AnnonceSignale");
     public FirebaseAuth mAuth;
 
     //Listener afin que la recherche dans la db se fasse pas quand l'application est en arrière plan
     private ListenerRegistration annonceListener;
     private ListenerRegistration categorieListener;
     private ListenerRegistration moyenDePaiementListener;
-    ListView lv;
     private ChipGroup chipGroup;
 
 
@@ -131,7 +139,7 @@ public class AnnonceFragment extends Fragment {
 
         //Champs d'écritures
         titre= view.findViewById(R.id.titre);
-        description = view.findViewById(R.id.all);
+        all = view.findViewById(R.id.all);
         image1 = view.findViewById(R.id.image1);
         image2 = view.findViewById(R.id.image2);
         image3 = view.findViewById(R.id.image3);
@@ -139,12 +147,12 @@ public class AnnonceFragment extends Fragment {
         image5 = view.findViewById(R.id.image5);
         image6 = view.findViewById(R.id.image6);
 
-        lv=view.findViewById(R.id.lv);
-        chipGroup = (ChipGroup) view.findViewById(R.id.chipGroup);
 
+        chipGroup = (ChipGroup) view.findViewById(R.id.chipGroup);
         contacter = view.findViewById(R.id.contacter);
         signaler = view.findViewById(R.id.signaler);
         profile = view.findViewById(R.id.profile);
+        description = view.findViewById(R.id.description);
         return view;
     }
 
@@ -204,26 +212,27 @@ public class AnnonceFragment extends Fragment {
                                 .into(images.get(i));
 
 
-                        /*images.get(i).setOnClickListener(new View.OnClickListener() {
+                        int finalI = i;
+                        images.get(i).setOnClickListener(new View.OnClickListener() {
                             @Override
-                            public void onClick(View view) {
-                                AlertDialog.Builder alertadd = new AlertDialog.Builder(getContext());
-                                LayoutInflater factory = LayoutInflater.from(getContext());
-                                final View viewImage = factory.inflate(R.layout.dialog_custom_layout, null);
-                                alertadd.setView(view);
-                                alertadd.setNeutralButton("Here!", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dlg, int sumthin) {
+                            public void onClick(View v) {
+                                LayoutInflater inflater = getLayoutInflater();
+                                final View formElementsView = inflater.inflate(R.layout.item_image,
+                                        null, false);
 
-                                    }
-                                });
-                                alertadd.show();
+                                ImageView imageView = formElementsView
+                                        .findViewById(R.id.imageView);
+                                GlideApp.with(getContext())
+                                        .load(annonce.getImages().get(finalI))
+                                        .into(imageView);
+
+                                // the alert dialog
+                                new AlertDialog.Builder(getContext()).setView(formElementsView)
+                                        .show();
                             }
-                        });*/
+                        });
                     }
 
-                    if (mAuth.getCurrentUser()!=null){
-                        contacter.setVisibility(View.VISIBLE);
-                    }
 
                     if (annonce.getImages().size()==0){
                         images.get(0).setVisibility(View.VISIBLE);
@@ -231,8 +240,15 @@ public class AnnonceFragment extends Fragment {
                                 .load("https://firebasestorage.googleapis.com/v0/b/lebonpetitcoin-6928c.appspot.com/o/no_image.png?alt=media&token=e4e42748-45d3-4c07-8028-d767efda4846")
                                 .into(images.get(0));
                     }
-                    String text = getString(R.string.description)+" : " + annonce.getDescription() + "\n" +
-                            getString(R.string.auteur)+ " : " + annonce.getAuteur() + "\n" +
+                    lecteur =  ((MainActivity)getActivity()).lecteur ;
+                    if(lecteur.equals(annonce.getAuteur())==false){
+                        contacter.setVisibility(View.VISIBLE);
+                    }
+                    if (mAuth.getCurrentUser()==null){
+                        contacter.setVisibility(View.GONE);
+                    }
+                    description.setText(annonce.getDescription());
+                    String text = getString(R.string.auteur)+ " : " + annonce.getAuteur() + "\n" +
                             getString(R.string.prix)+" : " + String.valueOf(annonce.getPrix()) +"€" +"\n" +
                             getString(R.string.date)+" : " + dateFormat.format(annonce.getDatePoste()) + "\n" ;
                     if (annonce.getDepartement()!=null && annonce.getPosition()!=null){
@@ -272,84 +288,11 @@ public class AnnonceFragment extends Fragment {
                     }
                     text+="\n";
 
-                    description.setText(text);
+                    all.setText(text);
 
-                    /*
-                    for(String s : annonce.getCategories())
-                    {
-                        LayoutInflater inflater = LayoutInflater.from(getContext());
-                        Chip newChip = new Chip(getContext(), null, R.style.Widget_MaterialComponents_Chip_Action);
-                        newChip.setText(s);
-                        // Other methods:
-                        //
-                        // newChip.setCloseIconVisible(true);
-                        // newChip.setCloseIconResource(R.drawable.your_icon);
-                        // newChip.setChipIconResource(R.drawable.your_icon);
-                        // newChip.setChipBackgroundColorResource(R.color.red);
-                        // newChip.setTextAppearanceResource(R.style.ChipTextStyle);
-                        // newChip.setElevation(15);
-
-                        chipGroup.addView(newChip);
-                    }*/
                 }
             });
         }
-
-            /*
-            ArrayList<String> rslt = new ArrayList<>();
-
-           // Query query = cCategorie.whereIn("id", idCategorie[0]);
-            Query query = cCategorie.whereIn("status", Arrays.asList("Sport", "sent");
-            cCategorie.where(documentId(), 'in', ["123","456","789"])
-
-            if (idCategorie[0].size()!=0){
-
-                for (String x : idCategorie[0]) {
-                    DocumentReference docRef = cCategorie.document(x);
-                    docRef.get()
-                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    if (task.isSuccessful()) {
-                                        DocumentSnapshot document = task.getResult();
-                                        if (document.exists()) {
-                                            rslt.add(document.getString("intitule"));
-                                            description.setText(document.getString("intitule"));
-                                        } else {
-                                            Log.d("TAG", "No such document");
-                                        }
-                                    } else {
-                                        Log.d("TAG", "get failed with ", task.getException());
-                                    }
-                                }
-                            });
-                }
-                //text[0]+= rslt.toString();
-            }
-            //description.setText(rslt.toString());
-        }
-
-             */
-
-        /*
-        cAnnonce.document(id).get();
-        annonceListener = cAnnonce.orderBy("intitule", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (error != null) {
-                    return;
-                }
-                String text = "";
-                for (QueryDocumentSnapshot documentSnapshot : value) {
-                    Categorie categorie = documentSnapshot.toObject(Categorie.class);
-                    categorie.setId(documentSnapshot.getId());
-
-                    text += "ID : " + categorie.getId() + "\n"
-                            + categorie.getIntitule() + "\n\n";
-                }
-                description.setText(text);
-            }
-        });*/
 
     }
 
@@ -479,16 +422,52 @@ public class AnnonceFragment extends Fragment {
 
     void initButtons(){
         lecteur =  ((MainActivity)getActivity()).lecteur ;
-        //Toast.makeText(getContext(), lecteur,Toast.LENGTH_SHORT).show();
         contacter.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 contacterAuteur(auteur,lecteur,titreAnnonce,idAnnonce,"");
             }
         });
-
+        /*
         signaler.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 contacterAdmin(auteur,lecteur,titreAnnonce,idAnnonce);
+            }
+        });*/
+
+        signaler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater inflater = getLayoutInflater();
+                final View formElementsView = inflater.inflate(R.layout.form_signaler,
+                        null, false);
+
+                final RadioGroup radioGroup = (RadioGroup) formElementsView
+                        .findViewById(R.id.radioGroup);
+
+                final EditText nameEditText = (EditText) formElementsView
+                        .findViewById(R.id.messageEditText);
+
+                // the alert dialog
+                new AlertDialog.Builder(getContext()).setView(formElementsView)
+                        .setTitle(R.string.alertTitreSignale)
+                        .setNegativeButton(R.string.annuler, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                        .setPositiveButton(R.string.buttonSignale, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialogInterface, int id) {
+                                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                                RadioButton selectedRadioButton = (RadioButton) formElementsView.findViewById(selectedId);
+
+                                String raison = selectedRadioButton.getText().toString();
+                                String message = nameEditText.getText().toString();
+
+                                addAnnonceSignale(dialogInterface,idAnnonce, raison, message);
+                            }
+                        }).show();
             }
         });
 
@@ -545,6 +524,25 @@ public class AnnonceFragment extends Fragment {
         return  null;
     }
 
+    void addAnnonceSignale(DialogInterface dialogInterface,String idAnnonce, String raison, String message){
+        AnnonceSignale annonceSignale = new AnnonceSignale(idAnnonce,raison,message);
+
+        cAnnonceSignale.add(annonceSignale)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        dialogInterface.cancel();
+                        Toast.makeText(getContext(), getString(R.string.signale),Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(), getString(R.string.badSignale),Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
 
 
 }

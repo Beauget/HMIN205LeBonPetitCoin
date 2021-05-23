@@ -31,6 +31,7 @@
         android:layout_height="50dp"
         android:layout_gravity="bottom|end"
         android:background="@drawable/ic_baseline_delete_forever_24"
+        android:visibility="gone"
         />
 
 
