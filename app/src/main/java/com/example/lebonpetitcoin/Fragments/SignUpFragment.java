@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -62,11 +63,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 public class SignUpFragment extends Fragment implements OnClickListener {
     private View view;
+    private TextInputLayout pro;
     private EditText fullName, emailId, mobileNumber, location,
             password, confirmPassword,siret;
     private ImageView mImageView;
@@ -151,7 +154,9 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         login = (TextView) view.findViewById(R.id.already_user);
         terms_conditions = (CheckBox) view.findViewById(R.id.terms_conditions);
         already_user = (TextView) view.findViewById(R.id.already_user);
+        pro = (TextInputLayout) view.findViewById(R.id.proTIL);
         signin = SignInFragment.newInstance();
+
 
         /*Setting text selector over textviews
         XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
@@ -381,5 +386,16 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                 inscription(email, password, pseudo, "",true, telephoneContact, siretString, localisation);
             }
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Bundle bundle = this.getArguments();
+        if (bundle!=null)
+            pro.setVisibility(View.VISIBLE);
+        else
+            pro.setVisibility(View.GONE);
+
     }
 }

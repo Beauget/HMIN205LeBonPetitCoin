@@ -171,6 +171,9 @@
     <string name="message_facultatif">Message (facultatif)</string>
     <string name="re_bonjour">Re-Bonjour !</string>
     <string name="afin_de_ne_pas_abuser_de_la_modification_nous_avons_interdit_le_changement_d_images_veuillez_cr_e_une_nouvelle_annonce_et_supprimer_celle_i_au_besoins">Afin de ne pas abuser de la modification, nous avons interdit le changement d\'images. Veuillez crée une nouvelle annonce et supprimer celle çi au besoins.</string>
+    <string name="propos_de_nous">À propos de nous</string>
+    <string name="ajouter_une_annonce">Ajouter une Annonce</string>
+    <string name="acceuil">Acceuil</string>
 
 
 </resources>

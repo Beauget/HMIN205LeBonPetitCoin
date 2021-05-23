@@ -39,6 +39,7 @@ import com.example.lebonpetitcoin.Fragments.ParametresFragment;
 import com.example.lebonpetitcoin.Fragments.RechercheAvanceeFragment;
 import com.example.lebonpetitcoin.Fragments.ResultatFragment;
 import com.example.lebonpetitcoin.Fragments.SignInFragment;
+import com.example.lebonpetitcoin.Fragments.SignUpChoiceFragment;
 import com.example.lebonpetitcoin.Fragments.SignUpFragment;
 import com.example.lebonpetitcoin.Fragments.StatsFragment;
 import com.firebase.ui.auth.AuthUI;
@@ -471,7 +472,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void showSignUpFragment() {
-        if (this.fragmentSignUp == null) this.fragmentSignUp = SignUpFragment.newInstance();
+        if (this.fragmentSignUp == null) this.fragmentSignUp = SignUpChoiceFragment.newInstance();
         this.startTransactionFragment(this.fragmentSignUp);
     }
 

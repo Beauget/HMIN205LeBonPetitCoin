@@ -14,7 +14,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:layout_marginTop="56dp"
         android:paddingStart="@dimen/shr_product_grid_spacing"
         android:paddingEnd="@dimen/shr_product_grid_spacing"
@@ -31,7 +32,8 @@
         android:id="@+id/LCategorie"
         android:layout_marginTop="56dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:paddingStart="@dimen/shr_product_grid_spacing"
         android:paddingEnd="@dimen/shr_product_grid_spacing"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>

@@ -77,14 +77,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/proTIL"
                 style="@style/parent"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/signup_text_margin_top">
                 <EditText
                     android:id="@+id/pro"
                     style="@style/modifiedEditText"
                     android:hint="@string/siret"
                     android:inputType="number"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout

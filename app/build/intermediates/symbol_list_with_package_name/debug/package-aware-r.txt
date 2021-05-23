@@ -1851,7 +1851,10 @@ drawable ic_baseline_send_24
 drawable ic_baseline_settings_24
 drawable ic_baseline_show_chart_24
 drawable ic_baseline_volunteer_activism_24
+drawable ic_cabin
 drawable ic_clock_black_24dp
+drawable ic_earth_globe_world
+drawable ic_globe_world_leaves
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1862,6 +1865,11 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_penguin
+drawable ic_seal
+drawable ic_sealbrown
+drawable ic_sealfullbody
+drawable ic_sealfullbody_outline
 drawable login_shape_bk
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
@@ -2342,6 +2350,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id particulier
 id password
 id passwordTIL
 id password_layout
@@ -2361,6 +2370,7 @@ id prix
 id prixEditText
 id prixTextView
 id pro
+id proTIL
 id profile
 id progress_bar
 id progress_circular
@@ -2656,6 +2666,7 @@ layout fragment_recherche_avancee
 layout fragment_resultat
 layout fragment_signin
 layout fragment_signup
+layout fragment_signup_choice
 layout fragment_stats
 layout fragment_stats_annonce
 layout fui_activity_invisible
@@ -2810,10 +2821,12 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string acceptez_les_conditions
+string acceuil
 string action_settings
 string active
 string adresse
 string afin_de_ne_pas_abuser_de_la_modification_nous_avons_interdit_le_changement_d_images_veuillez_cr_e_une_nouvelle_annonce_et_supprimer_celle_i_au_besoins
+string ajouter_une_annonce
 string alertSignale
 string alertTitreSignale
 string already_user
@@ -3111,6 +3124,7 @@ string prix_entre_0_et_9999
 string profile
 string profile_de_l_auteur
 string project_id
+string propos_de_nous
 string pseudoPris
 string re_bonjour
 string recherche

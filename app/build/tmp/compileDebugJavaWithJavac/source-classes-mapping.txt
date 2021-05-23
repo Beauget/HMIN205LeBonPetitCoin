@@ -71,6 +71,10 @@ com/example/lebonpetitcoin/Fragments/AccountFragment.java
  com.example.lebonpetitcoin.Fragments.AccountFragment$2
  com.example.lebonpetitcoin.Fragments.AccountFragment$3
  com.example.lebonpetitcoin.Fragments.AccountFragment$4
+com/example/lebonpetitcoin/Fragments/SignUpChoiceFragment.java
+ com.example.lebonpetitcoin.Fragments.SignUpChoiceFragment
+ com.example.lebonpetitcoin.Fragments.SignUpChoiceFragment$1
+ com.example.lebonpetitcoin.Fragments.SignUpChoiceFragment$2
 com/example/lebonpetitcoin/Fragments/ConversationFragment.java
  com.example.lebonpetitcoin.Fragments.ConversationFragment
  com.example.lebonpetitcoin.Fragments.ConversationFragment$1

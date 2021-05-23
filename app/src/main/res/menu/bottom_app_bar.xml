@@ -5,14 +5,14 @@
     <item
         android:id="@+id/bottomAppBar_seal"
         android:enabled="true"
-        android:icon="@drawable/seal"
-        android:title="À propos de nous" />
+        android:icon="@drawable/ic_sealfullbody_outline"
+        android:title="@string/propos_de_nous" />
 
     <item
         android:id="@+id/bottomAppBar_add"
         android:enabled="true"
         android:icon="@drawable/add_24dp"
-        android:title="Ajouter une Annonce"
+        android:title="@string/ajouter_une_annonce"
         android:titleCondensed="Ajouter une Annonce"
         />
 
@@ -20,7 +20,7 @@
         android:id="@+id/bottomAppBar_home"
         android:enabled="true"
         android:icon="@drawable/baseline_home_white_24dp"
-        android:title="Acceuil" />
+        android:title="@string/acceuil" />
 
 
 
