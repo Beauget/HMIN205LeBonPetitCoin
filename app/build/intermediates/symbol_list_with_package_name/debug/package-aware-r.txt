@@ -1920,7 +1920,6 @@ id LAnnonces
 id LC2
 id LCategorie
 id LContacte
-id LDepartement
 id LMoyenDePaiement
 id LResultat
 id MAJView
@@ -2696,6 +2695,7 @@ layout item_message_envoye
 layout item_message_recus
 layout item_messages
 layout item_profile
+layout item_recherche
 layout item_signin
 layout item_signup
 layout layout_chip_entry
@@ -2813,6 +2813,7 @@ string acceptez_les_conditions
 string action_settings
 string active
 string adresse
+string afin_de_ne_pas_abuser_de_la_modification_nous_avons_interdit_le_changement_d_images_veuillez_cr_e_une_nouvelle_annonce_et_supprimer_celle_i_au_besoins
 string alertSignale
 string alertTitreSignale
 string already_user
@@ -2826,6 +2827,7 @@ string auteur
 string autre_s_annonce_s_du_m_me_vendeur
 string badDepartement
 string badKM
+string badMessage
 string badNoKM
 string badNum
 string badPosition
@@ -3101,6 +3103,8 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string position_exacte
+string position_ok
+string position_recherche
 string prix
 string prix_entre_0_01_et_9999
 string prix_entre_0_et_9999
@@ -3108,6 +3112,7 @@ string profile
 string profile_de_l_auteur
 string project_id
 string pseudoPris
+string re_bonjour
 string recherche
 string recherche_avanc_e
 string rechercher

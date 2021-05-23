@@ -151,8 +151,7 @@ public class ResultatFragment extends Fragment {
                                 if(annonce.getPosition()!=null){
                                     double distance = distance(latitude, longitude, annonce.getPosition().getLatitude(), annonce.getPosition().getLongitude());
                                     if (distance<=km){
-                                        Toast.makeText(getContext(),String.valueOf(distance),Toast.LENGTH_SHORT).show();
-
+                                        //Toast.makeText(getContext(),String.valueOf(distance),Toast.LENGTH_SHORT).show();
                                         mAnnonces.add(annonce);
                                         mIds.add(documentSnapshot.getId());
                                     }

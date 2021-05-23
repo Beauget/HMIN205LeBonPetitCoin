@@ -189,6 +189,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
             prix = findViewById(R.id.prix);
             departement = findViewById(R.id.departement);
             position = findViewById(R.id.position);
+            position.setText(getString(R.string.position_recherche));
             Upload_Btn = (Button) findViewById(R.id.UploadBtn);
             mButtonAdd = (Button) findViewById(R.id.add);
             mButtondelete = (Button) findViewById(R.id.delete);
@@ -615,7 +616,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
             //Toast.makeText(getContext(), ecouteurGPS.toString(), Toast.LENGTH_SHORT).show();
             // on configure la mise à jour automatique : au moins 10 mètres et 15 secondes
-            locationManager.requestLocationUpdates(fournisseur, 15000, 10, ecouteurGPS);
+            locationManager.requestLocationUpdates(fournisseur, 500, 2, ecouteurGPS);
         }
     }
 
@@ -649,6 +650,7 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date(localisation.getTime());
                 Log.d("GPS", sdf.format(date));
+                position.setText(getString(R.string.position_ok));
 
                 Latitude = localisation.getLatitude();
                 Longitude = localisation.getLongitude();

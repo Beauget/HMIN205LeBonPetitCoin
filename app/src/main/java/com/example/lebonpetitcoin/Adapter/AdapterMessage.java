@@ -107,7 +107,7 @@ public class AdapterMessage extends FirestoreRecyclerAdapter<Message, AdapterMes
                 GlideApp.with(mContext)
                         .load(model.getImage())
                         .into(getImage());
-                
+
             }
         }
 

@@ -18,8 +18,16 @@ com/example/lebonpetitcoin/Adapter/AdapterMoyenDePaiement.java
  com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement
  com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement$1
  com.example.lebonpetitcoin.Adapter.AdapterMoyenDePaiement$MoyenDePaiementHolder
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
+com/example/lebonpetitcoin/Adapter/AdapterArticle.java
+ com.example.lebonpetitcoin.Adapter.AdapterArticle
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$1
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$2
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$3
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$4
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$5
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$6
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$ArticleHolder
+ com.example.lebonpetitcoin.Adapter.AdapterArticle$ViewHolder
 com/example/lebonpetitcoin/accountActivity.java
  com.example.lebonpetitcoin.accountActivity
 com/example/lebonpetitcoin/Fragments/SignInFragment.java
@@ -35,8 +43,11 @@ com/example/lebonpetitcoin/Adapter/AdapterMesAnnonces.java
  com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$1
  com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$2
  com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$ViewHolder
-com/example/lebonpetitcoin/Adapter/AdapterChip.java
- com.example.lebonpetitcoin.Adapter.AdapterChip
+com/example/lebonpetitcoin/Adapter/AdapterFavoris.java
+ com.example.lebonpetitcoin.Adapter.AdapterFavoris
+ com.example.lebonpetitcoin.Adapter.AdapterFavoris$1
+ com.example.lebonpetitcoin.Adapter.AdapterFavoris$2
+ com.example.lebonpetitcoin.Adapter.AdapterFavoris$FavorisHolder
 com/example/lebonpetitcoin/ClassFirestore/AnnonceSignale.java
  com.example.lebonpetitcoin.ClassFirestore.AnnonceSignale
 com/example/lebonpetitcoin/DataCategorie.java
@@ -220,8 +231,17 @@ com/example/lebonpetitcoin/Fragments/ModifierAnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$7
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$8
  com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$9
-com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
- com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
+com/example/lebonpetitcoin/Adapter/RecycleViewAnnonce.java
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$1
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$2
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$3
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$4
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$5
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$6
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$7
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$8
+ com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$ViewHolder
 com/example/lebonpetitcoin/ClassFirestore/Compte.java
  com.example.lebonpetitcoin.ClassFirestore.Compte
 com/example/lebonpetitcoin/Fragments/ResultatFragment.java
@@ -230,21 +250,6 @@ com/example/lebonpetitcoin/Fragments/ResultatFragment.java
  com.example.lebonpetitcoin.Fragments.ResultatFragment$2
  com.example.lebonpetitcoin.Fragments.ResultatFragment$3
  com.example.lebonpetitcoin.Fragments.ResultatFragment$4
-com/example/lebonpetitcoin/Adapter/AdapterFavoris.java
- com.example.lebonpetitcoin.Adapter.AdapterFavoris
- com.example.lebonpetitcoin.Adapter.AdapterFavoris$1
- com.example.lebonpetitcoin.Adapter.AdapterFavoris$2
- com.example.lebonpetitcoin.Adapter.AdapterFavoris$FavorisHolder
-com/example/lebonpetitcoin/Adapter/AdapterArticle.java
- com.example.lebonpetitcoin.Adapter.AdapterArticle
- com.example.lebonpetitcoin.Adapter.AdapterArticle$1
- com.example.lebonpetitcoin.Adapter.AdapterArticle$2
- com.example.lebonpetitcoin.Adapter.AdapterArticle$3
- com.example.lebonpetitcoin.Adapter.AdapterArticle$4
- com.example.lebonpetitcoin.Adapter.AdapterArticle$5
- com.example.lebonpetitcoin.Adapter.AdapterArticle$6
- com.example.lebonpetitcoin.Adapter.AdapterArticle$ArticleHolder
- com.example.lebonpetitcoin.Adapter.AdapterArticle$ViewHolder
 com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.AnnonceFragment
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$1
@@ -263,17 +268,12 @@ com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$7
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$8
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$9
-com/example/lebonpetitcoin/Adapter/RecycleViewAnnonce.java
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$1
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$2
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$3
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$4
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$5
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$6
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$7
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$8
- com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$ViewHolder
+com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
+ com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
+com/example/lebonpetitcoin/Adapter/AdapterChip.java
+ com.example.lebonpetitcoin.Adapter.AdapterChip
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
 com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
  com.example.lebonpetitcoin.Adapter.AdapterAnnonce
  com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1

@@ -44,7 +44,7 @@
                 <TextView
                     style="@style/headerText"
                     android:layout_gravity="center"
-                    android:text="Re-Bonjour !"
+                    android:text="@string/re_bonjour"
                     android:layout_marginTop="40dp"/>
                 <include
                     layout="@layout/item_signin"/>

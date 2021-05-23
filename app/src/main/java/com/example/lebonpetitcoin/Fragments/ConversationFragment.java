@@ -168,7 +168,7 @@ public class ConversationFragment extends Fragment {
     }
 
     void envoyerMessage(String idConversation, String auteur,String image){
-        if (messageAEnvoyer.getText().toString().length()>0)
+        if (messageAEnvoyer.getText().toString().length()>0 || image.length()>0)
         {
             Message message = new Message(idConversation,auteur, messageAEnvoyer.getText().toString(), image);
 
@@ -176,20 +176,21 @@ public class ConversationFragment extends Fragment {
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(getContext(),"msg envoyé",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getContext(),"msg envoyé",Toast.LENGTH_SHORT).show();
 
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(),getString(R.string.echec),Toast.LENGTH_SHORT).show();
                             Log.d(TAG,e.toString());
                         }
                     });
             adapter.startListening();
 
         }
+        Toast.makeText(getContext(),getString(R.string.badMessage),Toast.LENGTH_SHORT).show();
         messageAEnvoyer.setText("");
         supprimerImage();
     }

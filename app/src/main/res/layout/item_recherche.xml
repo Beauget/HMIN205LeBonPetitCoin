@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/loginCard"
+    app:cardCornerRadius="@dimen/loginCardRadius"
+    android:elevation="5dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/loginViewsMargin"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    android:background="@color/whiteCardColor">
+
+    <ScrollView
+        style="@style/linearParent"
+        android:orientation="vertical">
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:padding="@dimen/loginViewsMargin">
+
+
+
+
+
+            <TextView
+                android:id="@+id/Tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recherche Texte"
+                android:visibility="gone"
+                />
+            <EditText
+                android:id="@+id/rechercheEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/modifiedEditText"
+                android:hint="Mots clées" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/LCategorie"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scrollbars="vertical"
+                />
+
+            <EditText
+                android:id="@+id/km"
+                style="@style/modifiedEditText"
+                android:hint="Distance maximum en km (entre 1 et 200)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+            <CheckBox
+                android:id="@+id/position"
+                android:text="@string/position_exacte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@string/vous_ne_voulez_pas_donner_votre_position_exacte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <EditText
+                android:id="@+id/departement"
+                style="@style/modifiedEditText"
+                android:hint="@string/d_partement_ex_01_20_34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/gradientButton"
+                android:id="@+id/rechercheButton"
+                android:text="@string/rechercher"
+                app:backgroundTint="@null"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</com.google.android.material.card.MaterialCardView>

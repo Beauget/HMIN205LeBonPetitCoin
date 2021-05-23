@@ -126,13 +126,16 @@
 
     <!-- Used in Recherche -->
     <string name="position_exacte">Position exacte</string>
+    <string name="position_recherche">Position exacte (en attente de récupération)</string>
+    <string name="position_ok">Position exacte (disponible)</string>
     <string name="d_partement_ex_01_20_34">Département. Ex : 01, 20, 34</string>
     <string name="vous_ne_voulez_pas_donner_votre_position_exacte">Vous ne voulez pas donner votre position exacte ?</string>
 
     <!-- Used in Conversation -->
     <string name="ecrire_un_message">Ecrire un message</string>
     <string name="attention">Attention !</string>
-    <string name="confirmation">Êtes-vous sûre de vouloir supprimer votre annonces ?</string>
+    <string name="confirmation">Êtes-vous sûre de vouloir supprimer votre annonce ?</string>
+    <string name="badMessage">Il n\y a pas d\'image ou de texte</string>
 
     <!-- Used in Everywhere -->
     <string name="annuler">Annuler</string>
@@ -166,6 +169,8 @@
     <string name="spam_fausse_annonce">SPAM / fausse annonce</string>
     <string name="message">Message</string>
     <string name="message_facultatif">Message (facultatif)</string>
+    <string name="re_bonjour">Re-Bonjour !</string>
+    <string name="afin_de_ne_pas_abuser_de_la_modification_nous_avons_interdit_le_changement_d_images_veuillez_cr_e_une_nouvelle_annonce_et_supprimer_celle_i_au_besoins">Afin de ne pas abuser de la modification, nous avons interdit le changement d\'images. Veuillez crée une nouvelle annonce et supprimer celle çi au besoins.</string>
 
 
 </resources>

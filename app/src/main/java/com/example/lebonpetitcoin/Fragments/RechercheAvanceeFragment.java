@@ -51,7 +51,7 @@ import java.util.Locale;
 import static androidx.core.content.ContextCompat.getSystemService;
 
 public class RechercheAvanceeFragment extends Fragment {
-    private static final String TAG = "RechercheAvanceeragment";
+    private static final String TAG = "RechercheAvanceeFragment";
 
     //RECUPERATION DE LA DB
     private FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
@@ -96,6 +96,8 @@ public class RechercheAvanceeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         arrayListCategorie = new ArrayList<>();
+
+        position.setText(getString(R.string.position_recherche));
         Query queryC = cCategorie.orderBy("intitule", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Categorie> optionsC = new FirestoreRecyclerOptions.Builder<Categorie>()
                 .setQuery(queryC, Categorie.class)
@@ -217,7 +219,7 @@ public class RechercheAvanceeFragment extends Fragment {
 
             //Toast.makeText(getContext(), ecouteurGPS.toString(), Toast.LENGTH_SHORT).show();
             // on configure la mise à jour automatique : au moins 10 mètres et 15 secondes
-            locationManager.requestLocationUpdates(fournisseur, 15000, 10, ecouteurGPS);
+            locationManager.requestLocationUpdates(fournisseur, 500, 2, ecouteurGPS);
         }
     }
 
@@ -289,6 +291,7 @@ public class RechercheAvanceeFragment extends Fragment {
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date(localisation.getTime());
                 Log.d("GPS", sdf.format(date));
+                position.setText(getString(R.string.position_ok));
 
                 Latitude = localisation.getLatitude();
                 Longitude = localisation.getLongitude();

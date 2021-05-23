@@ -188,7 +188,7 @@ public class ModifierAnnonceFragment extends Fragment {
             float prixBase =Float.parseFloat(prix.getText().toString());
             float getPrix = 0;
             int prixInteger = (int) (prixBase * 100);
-            getPrix = prixInteger / 100;
+            getPrix = (float)prixInteger / 100;
 
             if (prixBase==getPrix && getPrix<9999){
             updates.put("prix", Float.parseFloat(p));
