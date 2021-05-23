@@ -35,26 +35,29 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.LeBonPetitCoin" >
-        <activity android:name="com.example.lebonpetitcoin.SplashScreen" >
+        <activity
+            android:name="com.example.lebonpetitcoin.SplashScreen"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.lebonpetitcoin.MainActivity" >
+        <activity
+            android:name="com.example.lebonpetitcoin.MainActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="com.example.lebonpetitcoin.AddAnnonceActivity" >
+        <activity
+            android:name="com.example.lebonpetitcoin.AddAnnonceActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.lebonpetitcoin.AddImageActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.example.lebonpetitcoin.SearchableActivity" >
+        <activity
+            android:name="com.example.lebonpetitcoin.SearchableActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
