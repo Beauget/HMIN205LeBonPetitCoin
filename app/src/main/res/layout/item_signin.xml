@@ -52,11 +52,11 @@
 
         <TextView
             style="@style/viewParent"
+            android:id="@+id/forgot"
             android:text="@string/mot_de_passe_oubli"
             android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/newsMoreTextSize"
             android:layout_gravity="end"
-            android:onClick="viewForgotPAssword"
             android:layout_marginTop="10dp"/>
 
         <com.google.android.material.button.MaterialButton

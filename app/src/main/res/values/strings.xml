@@ -67,6 +67,7 @@
     <string name="badNum">Le numéro est invalide</string>
     <string name="googleFailSignUp">Mail déja utilisé ou mot de passe pas assez fort</string>
     <string name="compte_cre_">Compte crée !</string>
+    <string name="checkMail">C\'est envoyé ! Verifiez vos mails :) !</string>
 
 
     <!-- Used in addAnnonce/ModifierAnnonce -->
@@ -177,6 +178,17 @@
     <string name="propos_de_nous">À propos de nous</string>
     <string name="ajouter_une_annonce">Ajouter une Annonce</string>
     <string name="acceuil">Acceuil</string>
+
+
+
+    <!-- Used in Apropos-->
+
+    <string name="a_propos_pk">C\'est une façons d\'aider la plènete tout en se faisant plaisir ! \n LeBonPetitCoin donne une partie de ses revenus pour aider les animaux en antarctique</string>
+    <string name="a_propos_pk_titre">Pouquoi utiliser LeBonPetitCoin?</string>
+    <string name="a_propos_qui_somme_nous">Qui sommes-nous ?</string>
+    <string name="a_propos_qui">Nous sommes une petite équipe française attaché à la nature</string>
+    <string name="nous_contacter">Nous contacter</string>
+    <string name="a_propos_contacte">Par mail: pouetpouet@Leboncoin.fr \n Par téléphone : 0606060606</string>
 
 
 </resources>

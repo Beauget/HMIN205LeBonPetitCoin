@@ -24,6 +24,14 @@
         android:text="@string/cliquez_sur_la_zone_grise_vous_souhaitez_ajouter_une_image_de_profile"
         android:gravity="center" />
 
+    <EditText
+        android:id="@+id/tel"
+        style="@style/modifiedEditText"
+        android:hint="@string/mobileNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

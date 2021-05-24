@@ -1,6 +1,7 @@
 package com.example.lebonpetitcoin.Fragments;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,10 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.example.lebonpetitcoin.CustomToast;
@@ -22,6 +26,8 @@ import com.example.lebonpetitcoin.R;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,7 +46,7 @@ public class SignInFragment extends Fragment {
     private static final int RESULT_OK = 1;
     private static View view;
     private static EditText emailId, password;
-    private static TextView signUp;
+    private static TextView signUp,forgot;
     private static Button signInButton;
     private String TAG = "SignInFragment" ;
 
@@ -70,6 +76,7 @@ public class SignInFragment extends Fragment {
         password = (EditText) view.findViewById(R.id.password);
         signInButton = (Button) view.findViewById(R.id.signInBtn);
         signUp = (TextView) view.findViewById(R.id.signUp);
+        forgot= (TextView) view.findViewById(R.id.forgot);
 
 
         /*Setting text selector over textviews
@@ -99,6 +106,57 @@ public class SignInFragment extends Fragment {
             }
         });
 
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater inflater = getLayoutInflater();
+                final View formElementsView = inflater.inflate(R.layout.form_mot_de_passe_oublie,
+                        null, false);
+
+                final EditText emailEditText = (EditText) formElementsView
+                        .findViewById(R.id.email_oublie);
+
+                // the alert dialog
+                new AlertDialog.Builder(getContext()).setView(formElementsView)
+                        .setTitle(R.string.remplir_les_champs_obligatoires)
+                        .setNegativeButton(R.string.annuler, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                        .setPositiveButton(R.string.valider, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialogInterface, int id) {
+                                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                                mAuth.setLanguageCode("fr");
+                                String email = emailEditText.getText().toString();
+                                if(email.length()>0){
+                                    sendMail(mAuth,email,dialogInterface);
+                                }
+                                else
+                                    new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.email_invalide));
+                            }
+                        }).show();
+            }
+        });
+
+    }
+
+    private void sendMail(FirebaseAuth mAuth, String email,DialogInterface dialogInterface) {
+        mAuth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            dialogInterface.cancel();
+                            new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.checkMail));
+
+                        } else {
+                            dialogInterface.cancel();
+                            new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.echec));
+                        }
+                    }
+                });
     }
 
     private void connexion(String email, String password){

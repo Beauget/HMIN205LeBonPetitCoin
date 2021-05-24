@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -57,6 +58,7 @@ public class MiseAJourAccountFragment extends Fragment {
     Button valider;
     String uid = "";
     private Uri mImageUri;
+    private EditText tel;
     private StorageReference mStorageRef;
     private static final int PICK_IMAGE_REQUEST = 1;
     private Fragment fragmentAccount;
@@ -71,6 +73,7 @@ public class MiseAJourAccountFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_maj_account, container, false);
         valider= view.findViewById(R.id.miseAjourButton);
         imageProfile = view.findViewById(R.id.imageProfile);
+        tel = view.findViewById(R.id.tel);
         contacte= new ArrayList<>();
         recyclerViewContacte= view.findViewById(R.id.LContacte);
         recyclerViewContacte.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -119,7 +122,7 @@ public class MiseAJourAccountFragment extends Fragment {
         }
     }
 
-    public  void getCompte(String imageURL){
+    public  void getCompte(String imageURL, String tel){
         uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
         Task<QuerySnapshot> query = cCompte.whereEqualTo("uid", uid).get();
         // future.get() blocks on response
@@ -136,6 +139,10 @@ public class MiseAJourAccountFragment extends Fragment {
                         }
                         if(imageURL.length()>0){
                             updates.put("imageProfile", imageURL);
+                        }
+                        if(tel.length()>0){
+                            if (tel.length()==10)
+                                updates.put("telephoneContact", tel);
                         }
                         cCompte.document(id).update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -169,6 +176,8 @@ public class MiseAJourAccountFragment extends Fragment {
     }
 
     private void uploadFile() {
+        String getTel = tel.getText().toString();
+        tel.setText("");
         if (mImageUri != null) {
             StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
@@ -191,15 +200,13 @@ public class MiseAJourAccountFragment extends Fragment {
                     if (task.isSuccessful()) {
                         Uri getUri = task.getResult();
                         String mUrl = getUri.toString();
-                        getCompte(mUrl);
-
-
+                        getCompte(mUrl,getTel);
                     }
                 }
             });
         }
         else {
-            getCompte("");
+            getCompte("",getTel);
         }
     }
     @Override

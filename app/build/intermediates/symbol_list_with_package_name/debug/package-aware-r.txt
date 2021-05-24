@@ -1762,6 +1762,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add_24dp
+drawable antartique
 drawable avd_hide_password
 drawable avd_show_password
 drawable back_to_home_button
@@ -1842,6 +1843,7 @@ drawable ic_baseline_favorite_border_24
 drawable ic_baseline_favorite_filled_24
 drawable ic_baseline_happy_faces_24
 drawable ic_baseline_hide_image_24
+drawable ic_baseline_home_24
 drawable ic_baseline_image_24
 drawable ic_baseline_login_24
 drawable ic_baseline_message_24
@@ -1923,6 +1925,7 @@ id BtnCategorie
 id BtnMoyenDePaiement
 id CTRL
 id CategorieTextView
+id ContacteImageView
 id ETCategorie
 id ETMoyenDePaiement
 id FUNCTION
@@ -1936,6 +1939,7 @@ id LResultat
 id MAJView
 id META
 id NO_DEBUG
+id PKImageView
 id RvResultat
 id SHIFT
 id SHOW_ALL
@@ -1946,6 +1950,7 @@ id TOP_END
 id TOP_START
 id Tv
 id UploadBtn
+id WhoImageView
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2103,6 +2108,7 @@ id confirmPassword
 id confirm_button
 id confirmation_code
 id confirmation_code_layout
+id contacte
 id contacter
 id container
 id content
@@ -2163,6 +2169,7 @@ id emailImageView
 id email_button
 id email_footer_tos_and_pp_text
 id email_layout
+id email_oublie
 id email_top_layout
 id email_tos_and_pp_text
 id end
@@ -2188,6 +2195,7 @@ id fixed
 id flip
 id floating
 id forever
+id forgot
 id fragment_container_view_tag
 id fragment_phone
 id fragment_register_email
@@ -2363,6 +2371,7 @@ id phone_layout
 id phone_number
 id piechart
 id pin
+id pk
 id position
 id postLayout
 id prix
@@ -2375,6 +2384,7 @@ id progress_bar
 id progress_circular
 id progress_horizontal
 id pseudo
+id qui
 id radio
 id radioGroup
 id ratio
@@ -2646,6 +2656,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_custom_layout
 layout fav_item
+layout form_mot_de_passe_oublie
 layout form_signaler
 layout fragment_a_propos
 layout fragment_account
@@ -2692,6 +2703,7 @@ layout fui_welcome_back_email_link_prompt_layout
 layout fui_welcome_back_idp_prompt_layout
 layout fui_welcome_back_password_prompt_layout
 layout item
+layout item_a_propos_de_nous
 layout item_annonce
 layout item_article
 layout item_categorie
@@ -2789,6 +2801,11 @@ mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals fui_error_weak_password
 plurals mtrl_badge_content_description
+string a_propos_contacte
+string a_propos_pk
+string a_propos_pk_titre
+string a_propos_qui
+string a_propos_qui_somme_nous
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2855,6 +2872,7 @@ string champ_vide
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string checkMail
 string chip_text
 string clear_text_end_icon_content_description
 string cliquer_sur_une_de_vos_annonces_pour_avoir_des_d_tails
@@ -3103,6 +3121,7 @@ string navigation_drawer_open
 string newUser
 string nombre_de_vues_par_annonce
 string notConnected
+string nous_contacter
 string null_auteur
 string parametres
 string passowrd

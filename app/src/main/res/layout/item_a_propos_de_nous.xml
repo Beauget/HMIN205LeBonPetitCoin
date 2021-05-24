@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/loginCard"
+    app:cardCornerRadius="@dimen/loginCardRadius"
+    android:elevation="5dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/loginViewsMargin"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    android:background="@color/whiteCardColor">
+
+    <ScrollView
+        style="@style/linearParent"
+        android:orientation="vertical">
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:padding="@dimen/loginViewsMargin">
+
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/WhoImageView"
+                    android:src="@drawable/ic_cabin"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:id="@+id/qui"
+                    android:text="@string/a_propos_qui_somme_nous"
+                    android:layout_toRightOf="@id/WhoImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:layout_width="220dp"
+                    android:text="@string/a_propos_qui"
+                    android:layout_toRightOf="@id/WhoImageView"
+                    android:layout_below="@+id/qui"
+                    style="@style/profileDetailsMiniText" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/PKImageView"
+                    android:src="@drawable/ic_globe_world_leaves"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:id="@+id/pk"
+                    android:text="@string/a_propos_pk_titre"
+                    android:layout_toRightOf="@id/PKImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:layout_width="220dp"
+                    android:text="@string/a_propos_pk"
+                    android:layout_toRightOf="@id/PKImageView"
+                    android:layout_below="@+id/pk"
+                    style="@style/profileDetailsMiniText" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/ContacteImageView"
+                    android:src="@drawable/ic_sealbrown"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:id="@+id/contacte"
+                    android:text="@string/nous_contacter"
+                    android:layout_toRightOf="@id/ContacteImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:layout_width="220dp"
+                    android:text="@string/a_propos_contacte"
+                    android:layout_toRightOf="@id/ContacteImageView"
+                    android:layout_below="@+id/contacte"
+                    style="@style/profileDetailsMiniText" />
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</com.google.android.material.card.MaterialCardView>
