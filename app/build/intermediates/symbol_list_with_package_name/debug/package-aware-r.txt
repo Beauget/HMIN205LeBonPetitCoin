@@ -2059,7 +2059,6 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_holder
 id buttonPanel
-id button_choose_image
 id button_continue
 id button_create
 id button_done
@@ -2069,7 +2068,6 @@ id button_message
 id button_next
 id button_resend_email
 id button_sign_in
-id button_upload
 id cache_measures
 id cancel_action
 id cancel_button
@@ -2156,7 +2154,6 @@ id easeInOut
 id easeOut
 id edit_phone_number
 id edit_query
-id edit_text_file_name
 id edittext_message
 id elastic
 id email
@@ -2232,7 +2229,6 @@ id imageView
 id imageView_image
 id image_message_body
 id image_message_profile
-id image_view
 id img1
 id img2
 id img3
@@ -2496,7 +2492,6 @@ id text_input_start_icon
 id text_message_body
 id text_message_name
 id text_message_time
-id text_view_show_uploads
 id text_view_title
 id textinput_counter
 id textinput_error
@@ -2624,9 +2619,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout account_activity
 layout activity_add_annonce
-layout activity_add_annonce2
 layout activity_main
 layout activity_main_nav_header
 layout activity_splash_screen
@@ -2884,6 +2877,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string compte_cre_
 string configuration
 string confirmPassword
 string confirmation
@@ -3019,6 +3013,7 @@ string fui_welcome_back_idp_prompt
 string fui_welcome_back_password_prompt_body
 string fullName
 string gcm_defaultSenderId
+string googleFailSignUp
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key

@@ -26,19 +26,18 @@
         android:layout_marginTop="8dp"
         app:cardPreventCornerOverlap="true">
 
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_penguin"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Je suis un particulier"
             style="@style/headerText"
             android:textColor="@color/primaryTextColor"
-            />
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_penguin"
             />
     </androidx.cardview.widget.CardView>
 
@@ -63,19 +62,19 @@
         android:layout_marginTop="8dp"
         app:cardPreventCornerOverlap="true">
 
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_seal"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Je suis un professionnel"
             style="@style/headerText"
             android:textColor="@color/primaryTextColor"
-            />
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_seal"
             />
     </androidx.cardview.widget.CardView>
     <View

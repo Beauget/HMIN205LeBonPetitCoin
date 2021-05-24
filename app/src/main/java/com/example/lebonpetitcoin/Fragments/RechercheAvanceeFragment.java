@@ -33,6 +33,7 @@ import com.example.lebonpetitcoin.Adapter.AdapterCategorie;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Position;
 import com.example.lebonpetitcoin.CustomToast;
+import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -113,6 +114,7 @@ public class RechercheAvanceeFragment extends Fragment {
     }
 
     public void checkValidation(){
+        ((MainActivity)getActivity()).hideKeyboard(getActivity());
         if (position.isChecked()&& departement.getText().toString().length()>0) {
             new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.badTooManyPosition));
         }

@@ -63,7 +63,7 @@
             style="@style/gradientButton"
             app:backgroundTint="@null"
             android:id="@+id/signInBtn"
-            android:text="@string/signIn"
+            android:text="@string/valider"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"/>
 

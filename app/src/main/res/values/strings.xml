@@ -51,7 +51,7 @@
     <string name="location">Localisation</string>
     <string name="confirmPassword">Confirmez le mot de passe</string>
     <string name="already_user"><u>Vous avez déjà un compte ? Cliquez ici.</u></string>
-    <string name="terms_conditions">En cliquant vous acceptez les termes de notre politiques de confidentialités.</string>
+    <string name="terms_conditions">En cliquant sur le bouton Valider, vous indiquez avoir pris connaissance et accepté les Conditions Générales d\'Utilisation..</string>
     <string name="password">Mot de passe</string>
     <string name="identifiant">Identifiant</string>
     <string name="siret">SIRET</string>
@@ -65,6 +65,9 @@
     <string name="champ_vide">Veuillez remplir tout les champs</string>
     <string name="badSIRET">Le SIRET est invalide</string>
     <string name="badNum">Le numéro est invalide</string>
+    <string name="googleFailSignUp">Mail déja utilisé ou mot de passe pas assez fort</string>
+    <string name="compte_cre_">Compte crée !</string>
+
 
     <!-- Used in addAnnonce/ModifierAnnonce -->
     <string name="modifier_la_description">Modifier la description</string>

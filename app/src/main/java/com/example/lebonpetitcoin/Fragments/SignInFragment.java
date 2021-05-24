@@ -126,6 +126,7 @@ public class SignInFragment extends Fragment {
 
     private void checkValidation() {
 
+        ((MainActivity)getActivity()).hideKeyboard(getActivity());
         String getEmailId = emailId.getText().toString();
         String getPassword = password.getText().toString();
 

@@ -7,7 +7,9 @@ import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +17,12 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
@@ -373,6 +377,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.activity_main_drawer_deconnect:
                 {
                     FirebaseAuth.getInstance().signOut();
+                    int backStackCount = getSupportFragmentManager().getBackStackEntryCount();
+                    for (int i = 0; i < backStackCount; i++) {
+                        int backStackId = getSupportFragmentManager().getBackStackEntryAt(i).getId();
+                        getSupportFragmentManager().popBackStack(backStackId,
+                                FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                    }
+                    fragmentAccueil = null;
                     this.showAccueilFragment();
                     Toast.makeText(MainActivity.this,getString(R.string.disconnected), Toast.LENGTH_SHORT).show();
                 }
@@ -438,8 +449,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     // Création de chaque fragment
     public void showAccueilFragment() {
-        if (this.fragmentAccount == null) this.fragmentAccueil = AccueilFragment.newInstance();
+        if (this.fragmentAccueil== null) this.fragmentAccueil = AccueilFragment.newInstance();
         this.startTransactionFragment(this.fragmentAccueil);
+        Fragment fragment = ResultatFragment.newInstance();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.activity_main_frame_layout, fragmentAccueil).commit();
     }
 
     public void showAccountFragment() {
@@ -453,7 +468,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         arguments.putString( "lecteur", lecteur);
         fragmentMessage.setArguments(arguments);
         this.getSupportFragmentManager()
-                .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentMessage).commit();
+                .beginTransaction()
+                .addToBackStack("AcceuilFragment")
+                .replace(R.id.activity_main_frame_layout, fragmentMessage).commit();
     }
 
     public void showFavFragment() {
@@ -504,7 +521,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // Generic method that will replace and show a fragment inside the MainActivity Frame Layout
     private void startTransactionFragment(Fragment fragment) {
         if (!fragment.isVisible()) {
-            getSupportFragmentManager().beginTransaction()
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack("AcceuilFragment")
                     .replace(R.id.activity_main_frame_layout, fragment).commit();
         }
     }
@@ -530,7 +549,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Bundle bundle = new Bundle();
                 bundle.putString("recherche", query);
                 fragment.setArguments(bundle);
-                getSupportFragmentManager().beginTransaction()
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .addToBackStack("AcceuilFragment")
                         .replace(R.id.activity_main_frame_layout, fragment).commit();
                 return false;
             }
@@ -580,7 +601,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+        if (count == 0) {
+            super.onBackPressed();
+        }
+        else {
+            getSupportFragmentManager().popBackStack();
+        }
+    }
 
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 
 
 }

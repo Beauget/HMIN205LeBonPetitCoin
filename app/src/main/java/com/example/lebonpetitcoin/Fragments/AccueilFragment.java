@@ -47,7 +47,7 @@ import java.util.List;
 public class AccueilFragment extends Fragment {
 
     //NOM DE LA CLASSE QUI SERA ENVOYÉ EN CAS D'ECHEC D'ENVOIE
-    private static final String TAG = "ResultatFragment";
+    private static final String TAG = "AcceuilFragment";
 
 
     //RECUPERATION DE LA DB

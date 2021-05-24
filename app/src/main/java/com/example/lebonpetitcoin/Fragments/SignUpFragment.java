@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.example.lebonpetitcoin.AddImageActivity;
 import com.example.lebonpetitcoin.ClassFirestore.Annonce;
 import com.example.lebonpetitcoin.ClassFirestore.Categorie;
 import com.example.lebonpetitcoin.ClassFirestore.Compte;
@@ -52,6 +51,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -209,7 +209,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getContext(), "Mail déja utilisé ou mot de passe pas assez fort", Toast.LENGTH_SHORT).show();
+                            new CustomToast().Show_Toast(getActivity(), view, getString(R.string.googleFailSignUp));
                         }
                     }
                 });
@@ -231,15 +231,15 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(getContext(),"Compte ajouté !",Toast.LENGTH_SHORT).show();
+                        new CustomToast().Show_Toast(getActivity(), view, getString(R.string.compte_cre_));
                         ((MainActivity)getActivity()).updateUI( mAuth.getCurrentUser());
-
+                        ((MainActivity)getActivity()).showAccueilFragment();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(),"erreur",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(),getString(R.string.echec),Toast.LENGTH_SHORT).show();
                         Log.d(TAG,e.toString());
                     }
                 });
@@ -248,6 +248,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
     // Check Validation Method
     private void checkValidation() {
 
+        ((MainActivity)getActivity()).hideKeyboard(getActivity());
         // Get all edittext texts
         String getFullName = fullName.getText().toString();
         String getEmailId = emailId.getText().toString();
@@ -256,6 +257,7 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         String getLocation = "";
         String getPassword = password.getText().toString();
         String getConfirmPassword = confirmPassword.getText().toString();
+        String getSiret= siret.getText().toString();
 
         // Pattern match for email id
         Pattern p = Pattern.compile(regEx);
@@ -267,12 +269,11 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         // Check if all strings are null or not
         if (getFullName.equals("") || getFullName.length() == 0
                 || getEmailId.equals("") || getEmailId.length() == 0
-                || getMobileNumber.equals("") || getMobileNumber.length() == 0
+                || getMobileNumber.equals("") || getMobileNumber.length() ==0
                 || getPassword.equals("") || getPassword.length() == 0
                 || getConfirmPassword.equals("")
                 || getConfirmPassword.length() == 0)
             // || getLocation.equals("") || getLocation.length() == 0
-
             new CustomToast().Show_Toast(getActivity(), view,
                     getString(R.string.remplir_les_champs_obligatoires));
 
@@ -282,9 +283,16 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                     getString(R.string.email_invalide));
 
             // Check if both password should be equal
-        else if (!getConfirmPassword.equals(getPassword))
+        else if (!getConfirmPassword.equals(getPassword)){
             new CustomToast().Show_Toast(getActivity(), view,
                     getString(R.string.password_not_same));
+            password.setText("");
+            confirmPassword.setText("");
+        }
+
+        else if(getMobileNumber.length()!=10){
+            new CustomToast().Show_Toast(getActivity(), view, getString(R.string.badNum));
+        }
 
        /* else if (!mMdp.find())
             new CustomToast().Show_Toast(getActivity(), view,
@@ -311,8 +319,14 @@ public class SignUpFragment extends Fragment implements OnClickListener {
                             Toast.makeText(getContext(), getString(R.string.envoie_en_cours), Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            uploadFile(getEmailId, getPassword, getFullName, getMobileNumber, getLocation);
-
+                            if (siret.getText().toString().length()>0){
+                                if(siret.getText().toString().length()!=14)
+                                    new CustomToast().Show_Toast(getActivity(), view, getString(R.string.badSIRET));
+                                else
+                                    uploadFile(getEmailId, getPassword, getFullName, getMobileNumber, getLocation);
+                            }
+                            else
+                                uploadFile(getEmailId, getPassword, getFullName, getMobileNumber, getLocation);
                         }
                     }
                 }
@@ -334,6 +348,8 @@ public class SignUpFragment extends Fragment implements OnClickListener {
     }
 
     private void uploadFile(String email,String password,String pseudo, String telephoneContact, String localisation) {
+
+
         if (mImageUri != null) {
             StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
@@ -359,20 +375,12 @@ public class SignUpFragment extends Fragment implements OnClickListener {
 
                         String siretString = siret.getText().toString();
 
-                        if (telephoneContact.length()!=10) {
                             if (siretString.length() == 0) {
                                 inscription(email, password, pseudo, mUrl, false, telephoneContact, null, localisation);
-                            } else {
-                                if (siretString.length() == 14)
-                                    inscription(email, password, pseudo, mUrl, true, telephoneContact, siretString, localisation);
-                                else
-                                    new CustomToast().Show_Toast(getActivity(), view, getString(R.string.badSIRET));
-
                             }
-                        }
-                        else
-                            new CustomToast().Show_Toast(getActivity(), view, getString(R.string.badNum));
-
+                            else {
+                                    inscription(email, password, pseudo, mUrl, true, telephoneContact, siretString, localisation);
+                            }
                     }
                 }
             });

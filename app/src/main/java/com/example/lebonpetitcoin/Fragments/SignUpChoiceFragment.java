@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.example.lebonpetitcoin.R;
 
 public class SignUpChoiceFragment extends Fragment {
+    private static final String TAG = "SignUpChoiceFragment";
     CardView pro;
     CardView particulier;
     public static Fragment newInstance() {
@@ -42,8 +43,10 @@ public class SignUpChoiceFragment extends Fragment {
                 Bundle arguments = new Bundle();
                 arguments.putString("pro", "pro");
                 fragment.setArguments(arguments);
-                ((AppCompatActivity) getActivity()).getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.activity_main_frame_layout, fragment).commit();
+                ((AppCompatActivity) getActivity())
+                        .getSupportFragmentManager()
+                        .beginTransaction().addToBackStack(TAG)
+                        .replace(R.id.activity_main_frame_layout, fragment).commit();
             }
         });
 

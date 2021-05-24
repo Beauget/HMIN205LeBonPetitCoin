@@ -25,6 +25,7 @@ import com.example.lebonpetitcoin.Adapter.AdapterConversation;
 import com.example.lebonpetitcoin.Adapter.AdapterMessage;
 import com.example.lebonpetitcoin.ClassFirestore.Conversation;
 import com.example.lebonpetitcoin.ClassFirestore.Message;
+import com.example.lebonpetitcoin.MainActivity;
 import com.example.lebonpetitcoin.R;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.Continuation;
@@ -168,6 +169,7 @@ public class ConversationFragment extends Fragment {
     }
 
     void envoyerMessage(String idConversation, String auteur,String image){
+        ((MainActivity)getActivity()).hideKeyboard(getActivity());
         if (messageAEnvoyer.getText().toString().length()>0 || image.length()>0)
         {
             Message message = new Message(idConversation,auteur, messageAEnvoyer.getText().toString(), image);

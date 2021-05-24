@@ -119,8 +119,11 @@ public class RecycleViewAnnonce extends RecyclerView.Adapter<RecycleViewAnnonce.
                 Bundle arguments = new Bundle();
                 arguments.putString( "idAnnonce", id);
                 fragmentAnnonce.setArguments(arguments);
-                ((AppCompatActivity) mContext).getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
+                ((AppCompatActivity) mContext)
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .addToBackStack("ResultatFragment")
+                        .replace(R.id.activity_main_frame_layout, fragmentAnnonce).commit();
 
                 //Toast.makeText(mContext,id,Toast.LENGTH_SHORT).show();
             }
