@@ -129,6 +129,7 @@ public class SignInFragment extends Fragment {
         ((MainActivity)getActivity()).hideKeyboard(getActivity());
         String getEmailId = emailId.getText().toString();
         String getPassword = password.getText().toString();
+        password.setText("");
 
         // Pattern match
         Pattern p = Pattern.compile(regEx);

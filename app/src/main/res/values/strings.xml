@@ -51,7 +51,7 @@
     <string name="location">Localisation</string>
     <string name="confirmPassword">Confirmez le mot de passe</string>
     <string name="already_user"><u>Vous avez déjà un compte ? Cliquez ici.</u></string>
-    <string name="terms_conditions">En cliquant sur le bouton Valider, vous indiquez avoir pris connaissance et accepté les Conditions Générales d\'Utilisation..</string>
+    <string name="terms_conditions">En cliquant sur le bouton s\'inscrire, vous indiquez avoir pris connaissance et accepté les Conditions Générales d\'Utilisation.</string>
     <string name="password">Mot de passe</string>
     <string name="identifiant">Identifiant</string>
     <string name="siret">SIRET</string>

@@ -259,6 +259,8 @@ public class SignUpFragment extends Fragment implements OnClickListener {
         String getConfirmPassword = confirmPassword.getText().toString();
         String getSiret= siret.getText().toString();
 
+        password.setText("");
+        confirmPassword.setText("");
         // Pattern match for email id
         Pattern p = Pattern.compile(regEx);
         Matcher m = p.matcher(getEmailId);
