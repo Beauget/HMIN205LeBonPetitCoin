@@ -11,7 +11,7 @@
     <item
         android:id="@+id/bottomAppBar_add"
         android:enabled="true"
-        android:icon="@drawable/add_24dp"
+        android:icon="@drawable/ic_baseline_add_circle_outline_24"
         android:title="@string/ajouter_une_annonce"
         android:titleCondensed="Ajouter une Annonce"
         />
