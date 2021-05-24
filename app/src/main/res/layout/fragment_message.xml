@@ -8,6 +8,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_color"
     >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <TextView
         android:id="@+id/titre1"
@@ -51,5 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titre2">
 
     </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

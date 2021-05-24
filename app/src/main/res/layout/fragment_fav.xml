@@ -6,10 +6,12 @@
     android:orientation="vertical"
     android:background="@drawable/gradient_color">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reyclerview_fav_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
     />
+
 
 </LinearLayout>
