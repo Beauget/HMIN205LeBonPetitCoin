@@ -117,6 +117,7 @@ public class AccountFragment extends Fragment {
                         pseudoTV.setText(compte.getPseudo());
                         telTV.setText(compte.getTelephoneContact());
                         emailTV.setText(compte.getMailContact());
+                        majView.setVisibility(View.VISIBLE);
 
                         if (compte.getSiret()!=null)
                             titreTV.setText(getText(R.string.infos_du_vendeur_pro) +"\n"+ getString(R.string.siret) + " : "+ compte.getSiret());
