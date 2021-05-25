@@ -62,16 +62,8 @@ com/example/lebonpetitcoin/Fragments/SignUpChoiceFragment.java
  com.example.lebonpetitcoin.Fragments.SignUpChoiceFragment
  com.example.lebonpetitcoin.Fragments.SignUpChoiceFragment$1
  com.example.lebonpetitcoin.Fragments.SignUpChoiceFragment$2
-com/example/lebonpetitcoin/Fragments/ConversationFragment.java
- com.example.lebonpetitcoin.Fragments.ConversationFragment
- com.example.lebonpetitcoin.Fragments.ConversationFragment$1
- com.example.lebonpetitcoin.Fragments.ConversationFragment$2
- com.example.lebonpetitcoin.Fragments.ConversationFragment$3
- com.example.lebonpetitcoin.Fragments.ConversationFragment$4
- com.example.lebonpetitcoin.Fragments.ConversationFragment$5
- com.example.lebonpetitcoin.Fragments.ConversationFragment$6
- com.example.lebonpetitcoin.Fragments.ConversationFragment$7
- com.example.lebonpetitcoin.Fragments.ConversationFragment$8
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
 com/example/lebonpetitcoin/SearchableActivity.java
  com.example.lebonpetitcoin.SearchableActivity
 com/example/lebonpetitcoin/ClassFirestore/Image.java
@@ -98,12 +90,12 @@ com/example/lebonpetitcoin/Fragments/RechercheAvanceeFragment.java
  com.example.lebonpetitcoin.Fragments.RechercheAvanceeFragment$2
 com/example/lebonpetitcoin/ClassFirestore/Statistique.java
  com.example.lebonpetitcoin.ClassFirestore.Statistique
-com/example/lebonpetitcoin/MainActivity.java
- com.example.lebonpetitcoin.MainActivity
- com.example.lebonpetitcoin.MainActivity$1
- com.example.lebonpetitcoin.MainActivity$2
- com.example.lebonpetitcoin.MainActivity$3
- com.example.lebonpetitcoin.MainActivity$4
+com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder
 com/example/lebonpetitcoin/Adapter/AdapterCategorie.java
  com.example.lebonpetitcoin.Adapter.AdapterCategorie
  com.example.lebonpetitcoin.Adapter.AdapterCategorie$1
@@ -173,22 +165,16 @@ com/example/lebonpetitcoin/Fragments/ParametresFragment.java
  com.example.lebonpetitcoin.Fragments.ParametresFragment$9
 com/example/lebonpetitcoin/Fragments/AccueilFragment.java
  com.example.lebonpetitcoin.Fragments.AccueilFragment
-com/example/lebonpetitcoin/Adapter/AdapterConversation.java
- com.example.lebonpetitcoin.Adapter.AdapterConversation
- com.example.lebonpetitcoin.Adapter.AdapterConversation$1
- com.example.lebonpetitcoin.Adapter.AdapterConversation$2
- com.example.lebonpetitcoin.Adapter.AdapterConversation$ConversationHolder
+com/example/lebonpetitcoin/Adapter/AdapterChip.java
+ com.example.lebonpetitcoin.Adapter.AdapterChip
 com/example/lebonpetitcoin/Fragments/ModifierAnnoncesFragment.java
  com.example.lebonpetitcoin.Fragments.ModifierAnnoncesFragment
  com.example.lebonpetitcoin.Fragments.ModifierAnnoncesFragment$1
 com/example/lebonpetitcoin/ClassFirestore/Position.java
  com.example.lebonpetitcoin.ClassFirestore.Position
  com.example.lebonpetitcoin.ClassFirestore.Position$Departement
-com/example/lebonpetitcoin/Fragments/FavFragment.java
- com.example.lebonpetitcoin.Fragments.FavFragment
- com.example.lebonpetitcoin.Fragments.FavFragment$1
- com.example.lebonpetitcoin.Fragments.FavFragment$2
- com.example.lebonpetitcoin.Fragments.FavFragment$3
+com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
+ com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
 com/example/lebonpetitcoin/ClassFirestore/Favoris.java
  com.example.lebonpetitcoin.ClassFirestore.Favoris
 com/example/lebonpetitcoin/Fragments/MiseAJourAccountFragment.java
@@ -241,6 +227,22 @@ com/example/lebonpetitcoin/Fragments/ResultatFragment.java
  com.example.lebonpetitcoin.Fragments.ResultatFragment$2
  com.example.lebonpetitcoin.Fragments.ResultatFragment$3
  com.example.lebonpetitcoin.Fragments.ResultatFragment$4
+com/example/lebonpetitcoin/MainActivity.java
+ com.example.lebonpetitcoin.MainActivity
+ com.example.lebonpetitcoin.MainActivity$1
+ com.example.lebonpetitcoin.MainActivity$2
+ com.example.lebonpetitcoin.MainActivity$3
+ com.example.lebonpetitcoin.MainActivity$4
+com/example/lebonpetitcoin/Fragments/ConversationFragment.java
+ com.example.lebonpetitcoin.Fragments.ConversationFragment
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$1
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$2
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$3
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$4
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$5
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$6
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$7
+ com.example.lebonpetitcoin.Fragments.ConversationFragment$8
 com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.AnnonceFragment
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$1
@@ -259,15 +261,13 @@ com/example/lebonpetitcoin/Fragments/AnnonceFragment.java
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$7
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$8
  com.example.lebonpetitcoin.Fragments.AnnonceFragment$9
-com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
- com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
-com/example/lebonpetitcoin/Adapter/AdapterChip.java
- com.example.lebonpetitcoin.Adapter.AdapterChip
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
-com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder
+com/example/lebonpetitcoin/Fragments/FavFragment.java
+ com.example.lebonpetitcoin.Fragments.FavFragment
+ com.example.lebonpetitcoin.Fragments.FavFragment$1
+ com.example.lebonpetitcoin.Fragments.FavFragment$2
+ com.example.lebonpetitcoin.Fragments.FavFragment$3
+com/example/lebonpetitcoin/Adapter/AdapterConversation.java
+ com.example.lebonpetitcoin.Adapter.AdapterConversation
+ com.example.lebonpetitcoin.Adapter.AdapterConversation$1
+ com.example.lebonpetitcoin.Adapter.AdapterConversation$2
+ com.example.lebonpetitcoin.Adapter.AdapterConversation$ConversationHolder

@@ -183,12 +183,12 @@
 
     <!-- Used in Apropos-->
 
-    <string name="a_propos_pk">C\'est une façons d\'aider la plènete tout en se faisant plaisir ! \n LeBonPetitCoin donne une partie de ses revenus pour aider les animaux en antarctique</string>
+    <string name="a_propos_pk">C\'est une façons d\'aider la planète tout en se faisant plaisir ! \n LeBonPetitCoin donne une partie de ses revenus pour aider les animaux en antarctique</string>
     <string name="a_propos_pk_titre">Pouquoi utiliser LeBonPetitCoin?</string>
     <string name="a_propos_qui_somme_nous">Qui sommes-nous ?</string>
     <string name="a_propos_qui">Nous sommes une petite équipe française attaché à la nature</string>
     <string name="nous_contacter">Nous contacter</string>
-    <string name="a_propos_contacte">Par mail: pouetpouet@Leboncoin.fr \n Par téléphone : 0606060606</string>
+    <string name="a_propos_contacte">Par mail: pouetpouet@LebonPetitCoin.fr \n Par téléphone : 0606060606</string>
 
 
 </resources>
