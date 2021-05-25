@@ -160,14 +160,14 @@ public class SignInFragment extends Fragment {
     }
 
     private void connexion(String email, String password){
-        ((MainActivity)getActivity()).mAuth.signInWithEmailAndPassword(email, password)
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener((Activity)getContext(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = ((MainActivity)getActivity()).mAuth.getCurrentUser();
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                             ((MainActivity)getActivity()).updateUI(user);
                             new CustomToast().Show_Toast(getActivity(), getView(), getString(R.string.connected));
                             ((MainActivity)getActivity()).showAccueilFragment();

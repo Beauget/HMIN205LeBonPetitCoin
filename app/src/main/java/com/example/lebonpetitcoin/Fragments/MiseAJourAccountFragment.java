@@ -30,6 +30,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -123,8 +124,8 @@ public class MiseAJourAccountFragment extends Fragment {
     }
 
     public  void getCompte(String imageURL, String tel){
-        if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
-            uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+            uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         Task<QuerySnapshot> query = cCompte.whereEqualTo("uid", uid).get();
         // future.get() blocks on response
         query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

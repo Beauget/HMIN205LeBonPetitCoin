@@ -27,6 +27,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
@@ -109,8 +110,8 @@ public class ResultatFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        if (((MainActivity)getActivity()).mAuth.getCurrentUser() != null)
-            uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null)
+            uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {

@@ -205,7 +205,7 @@ public class ModifierAnnonceFragment extends Fragment {
         }
 
         if(moyendepaiement.size()>0){
-            updates.put("paiement", categorie);
+            updates.put("paiement", moyendepaiement);
 
         }
         cAnnonce.document(id).update(updates).addOnCompleteListener(new OnCompleteListener<Void>() {

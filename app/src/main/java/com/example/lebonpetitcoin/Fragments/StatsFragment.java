@@ -38,6 +38,7 @@ import com.google.android.gms.tasks.Task;
 import android.graphics.Typeface;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -90,8 +91,8 @@ public class StatsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
-            getCompte(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+            getCompte(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
 
         lecteur =  ((MainActivity)getActivity()).lecteur ;

@@ -33,6 +33,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.chip.Chip;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -215,8 +216,8 @@ public class AccountFragment extends Fragment {
             //Toast.makeText(getContext(),pseudo,Toast.LENGTH_SHORT).show();
         }
         else{
-            if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
-                getCompteSelf(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
+            if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+                getCompteSelf(FirebaseAuth.getInstance().getCurrentUser().getUid());
         }
 
     }
@@ -232,8 +233,8 @@ public class AccountFragment extends Fragment {
     public void setAnnonce(String pseudo){
         String uid = "";
 
-        if (((MainActivity)getActivity()).mAuth.getCurrentUser() != null)
-            uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null)
+            uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         ArrayList<Annonce> mAnnonces =new ArrayList<>();
         ArrayList<String> mIds =new ArrayList<>();

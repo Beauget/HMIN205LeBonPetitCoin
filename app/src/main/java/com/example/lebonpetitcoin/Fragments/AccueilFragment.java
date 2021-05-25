@@ -94,8 +94,8 @@ public class AccueilFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
-            uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null)
+            uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         Query query = cAnnonces.orderBy("datePoste", Query.Direction.DESCENDING).limit(4);
         FirestoreRecyclerOptions<Annonce> options = new FirestoreRecyclerOptions.Builder<Annonce>()

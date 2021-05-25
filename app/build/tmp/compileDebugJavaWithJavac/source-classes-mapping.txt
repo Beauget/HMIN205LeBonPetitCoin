@@ -27,11 +27,8 @@ com/example/lebonpetitcoin/Fragments/SignInFragment.java
 com/example/lebonpetitcoin/Fragments/MessageFragment.java
  com.example.lebonpetitcoin.Fragments.MessageFragment
  com.example.lebonpetitcoin.Fragments.MessageFragment$1
-com/example/lebonpetitcoin/Adapter/AdapterMesAnnonces.java
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$1
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$2
- com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$ViewHolder
+com/example/lebonpetitcoin/MonFileProvider.java
+ com.example.lebonpetitcoin.MonFileProvider
 com/example/lebonpetitcoin/Adapter/AdapterFavoris.java
  com.example.lebonpetitcoin.Adapter.AdapterFavoris
  com.example.lebonpetitcoin.Adapter.AdapterFavoris$1
@@ -199,29 +196,12 @@ com/example/lebonpetitcoin/Fragments/MiseAJourAccountFragment.java
  com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$3$1
  com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$4
  com.example.lebonpetitcoin.Fragments.MiseAJourAccountFragment$5
-com/example/lebonpetitcoin/Fragments/ModifierAnnonceFragment.java
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$1
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$10
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$11
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$12
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$13
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$14
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$15
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$16
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$2
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$2$1
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$2$2
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$3
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$4
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5$1
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5$1$1
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5$1$1$1
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$6
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$7
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$8
- com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$9
+com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
+ com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder
 com/example/lebonpetitcoin/Adapter/RecycleViewAnnonce.java
  com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce
  com.example.lebonpetitcoin.Adapter.RecycleViewAnnonce$1
@@ -263,11 +243,31 @@ com/example/lebonpetitcoin/ClassFirestore/MoyenDePaiement.java
  com.example.lebonpetitcoin.ClassFirestore.MoyenDePaiement
 com/example/lebonpetitcoin/Adapter/AdapterChip.java
  com.example.lebonpetitcoin.Adapter.AdapterChip
-com/example/lebonpetitcoin/MonFileProvider.java
- com.example.lebonpetitcoin.MonFileProvider
-com/example/lebonpetitcoin/Adapter/AdapterAnnonce.java
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$1
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$2
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$AnnonceHolder
- com.example.lebonpetitcoin.Adapter.AdapterAnnonce$ViewHolder
+com/example/lebonpetitcoin/Fragments/ModifierAnnonceFragment.java
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$1
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$10
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$11
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$12
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$13
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$14
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$15
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$16
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$2
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$2$1
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$2$2
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$3
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$4
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5$1
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5$1$1
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$5$1$1$1
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$6
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$7
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$8
+ com.example.lebonpetitcoin.Fragments.ModifierAnnonceFragment$9
+com/example/lebonpetitcoin/Adapter/AdapterMesAnnonces.java
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$1
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$2
+ com.example.lebonpetitcoin.Adapter.AdapterMesAnnonces$ViewHolder
