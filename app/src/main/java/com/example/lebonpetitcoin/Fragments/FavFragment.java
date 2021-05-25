@@ -103,7 +103,7 @@ public class FavFragment extends Fragment {
 
 
     public void delete(String idFavoris){
-        Toast.makeText(getContext(),idFavoris, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(),idFavoris, Toast.LENGTH_SHORT).show();
         cFavoris.document(idFavoris).delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

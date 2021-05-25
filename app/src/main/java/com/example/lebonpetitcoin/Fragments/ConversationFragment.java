@@ -192,7 +192,8 @@ public class ConversationFragment extends Fragment {
             adapter.startListening();
 
         }
-        Toast.makeText(getContext(),getString(R.string.badMessage),Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getContext(),getString(R.string.badMessage),Toast.LENGTH_SHORT).show();
         messageAEnvoyer.setText("");
         supprimerImage();
     }
