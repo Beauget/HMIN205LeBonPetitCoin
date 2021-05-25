@@ -215,7 +215,8 @@ public class AccountFragment extends Fragment {
             //Toast.makeText(getContext(),pseudo,Toast.LENGTH_SHORT).show();
         }
         else{
-            getCompteSelf(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
+            if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
+                getCompteSelf(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
         }
 
     }

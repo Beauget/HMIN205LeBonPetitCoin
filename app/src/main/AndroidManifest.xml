@@ -32,7 +32,8 @@
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".AddAnnonceActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>

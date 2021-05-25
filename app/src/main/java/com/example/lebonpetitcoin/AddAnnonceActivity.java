@@ -255,8 +255,9 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
             mButtonRetour.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
-                    AddAnnonceActivity.this.startActivity(myIntent);
+                    finish();
+                    //Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
+                    //AddAnnonceActivity.this.startActivity(myIntent);
                 }
             });
 
@@ -274,8 +275,9 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
 
         else {
             Toast.makeText(AddAnnonceActivity.this, getString(R.string.null_auteur), Toast.LENGTH_SHORT).show();
-            Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
-            AddAnnonceActivity.this.startActivity(myIntent);
+            finish();
+            //Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
+            //AddAnnonceActivity.this.startActivity(myIntent);
 
         }
 
@@ -353,8 +355,9 @@ public class AddAnnonceActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(getApplicationContext(),getString(R.string.annonce_ajoute),Toast.LENGTH_SHORT).show();
-                        Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
-                        AddAnnonceActivity.this.startActivity(myIntent);
+                        finish();
+                        //Intent myIntent = new Intent(AddAnnonceActivity.this, MainActivity.class);
+                        //AddAnnonceActivity.this.startActivity(myIntent);
 
                     }
                 })

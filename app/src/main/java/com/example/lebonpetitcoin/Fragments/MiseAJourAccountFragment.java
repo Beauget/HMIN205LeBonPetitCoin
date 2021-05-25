@@ -123,7 +123,8 @@ public class MiseAJourAccountFragment extends Fragment {
     }
 
     public  void getCompte(String imageURL, String tel){
-        uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
+        if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
+            uid = ((MainActivity)getActivity()).mAuth.getCurrentUser().getUid();
         Task<QuerySnapshot> query = cCompte.whereEqualTo("uid", uid).get();
         // future.get() blocks on response
         query.addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

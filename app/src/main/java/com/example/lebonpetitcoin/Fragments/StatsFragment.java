@@ -89,7 +89,9 @@ public class StatsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getCompte(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
+
+        if(((MainActivity)getActivity()).mAuth.getCurrentUser()!=null)
+            getCompte(((MainActivity)getActivity()).mAuth.getCurrentUser().getUid());
 
 
         lecteur =  ((MainActivity)getActivity()).lecteur ;
