@@ -29,9 +29,9 @@
         android:layout_width="fill_parent"
         android:layout_height="1px"
         />
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="201dp"
+        android:layout_height="200dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/seal"/>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <View
         android:layout_width="fill_parent"
